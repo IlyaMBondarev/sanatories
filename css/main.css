@@ -597,3 +597,67 @@ h1, h2, h3, h4, h5, h6 {
   background: #97DC52;
   box-shadow: 0px 0px 5px #97DC52;
 }
+
+.faq__item {
+  display: block;
+  padding: 23px;
+  cursor: pointer;
+}
+.faq__item:not(:last-of-type) {
+  border-bottom: 2px solid #ffffff80;
+}
+.faq__item input {
+  display: none;
+}
+.faq__item input:checked + .faq__question {
+  color: #97DC52;
+}
+.faq__item input:checked ~ .faq__answer {
+  margin-top: 10px;
+  max-height: 100px;
+  overflow: auto;
+}
+.faq__question {
+  display: block;
+  font-size: 22px;
+  line-height: 120%;
+  font-weight: 600;
+}
+.faq__answer {
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 600;
+  color: #ffffff80;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out, overflow 0s 0.21s;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff80 transparent;
+}
+.faq__answer::-webkit-scrollbar {
+  background-color: transparent;
+  width: 2px;
+}
+.faq__answer::-webkit-scrollbar-thumb {
+  background-color: #ffffff80;
+  border-radius: 1px;
+}
+
+.items-slider__button {
+  min-width: 300px;
+  width: 300px;
+  height: 48px;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #6487EB;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  transition: background 0.2s ease-in-out;
+}
+.items-slider__button:hover {
+  background: #8DAAFE;
+}
