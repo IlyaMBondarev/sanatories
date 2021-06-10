@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
@@ -12,18 +12,173 @@
 <header class="header">
     <div class="container">
         <div class="header__row">
-            <div class="header__burder"></div>
-            <div class="header__left"></div>
-            <div class="header__right"></div>
+            <div class="header__burder mobile"></div>
+            <div class="header__left">
+                <a class="header__logo" href="index.html">Санатории Кисловодска</a>
+                <a class="header__phone-link mobile" href="tel:88008553535">8 (800) 855-35-35</a>
+            </div>
+            <div class="header__right">
+                <div class="header__phone">
+                    <p class="header__phone-title">Номер в Железноводске</p>
+                    <a href="tel:88008553535" class="header__phone-link">8 (800) 855-35-35</a>
+                </div>
+                <div class="header__phone">
+                    <p class="header__phone-title">Бесплатный по России</p>
+                    <a href="tel:88008553535" class="header__phone-link">8 (800) 855-35-35</a>
+                </div>
+                <button class="header__contact _popup-contact-opener"><img src="img/icons/call.svg" alt="">Связаться</button>
+            </div>
         </div>
     </div>
-</header>    <div class="content">
-
+</header>
+<nav class="nav">
+    <ul class="nav__list container">
+        <li class="nav__item dropdown"><a href="#" class="nav__link">Популярные категории</a></li>
+        <li class="nav__item dropdown"><a href="#" class="nav__link">Профили лечения</a></li>
+        <li class="nav__item dropdown"><a href="#" class="nav__link">О Кисловодске</a></li>
+        <li class="nav__item dropdown"><a href="#" class="nav__link">Блог</a></li>
+        <li class="nav__item dropdown"><a href="#" class="nav__link">Компания</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+    </ul>
+</nav>    <div class="content">
+        <section class="main-screen">
+            <div class="main-screen__image">
+                <img src="img/main-screen/main-screen-back.jpg" alt="">
+            </div>
+            <div class="container">
+                <div class="main-screen__pick-up">
+                    <div class="main-screen__pick-up-tabs"></div>
+                    <div class="main-screen__pick-up-items"></div>
+                </div>
+            </div>
+            <button class="main-screen__slide-down">
+                <img src="img/icons/arrow-down-white.svg" alt="">
+            </button>
+        </section>
+        <section class="main-content container">
+            <section class="main-video">
+                <h2 class="main-video__title title-1"><span>Мы не продаем путёвки,</span><span> а помогаем найти подходящие санатории. </span><span class="title-1__green">Бесплатно.</span></h2>
+                <div class="main-video__items">
+                    <div class="main-video__item">
+                        <div class="main-video__video"></div>
+                    </div>
+                    <div class="main-video__item">
+                        <p class="main-video__content">Стоимость путёвки, которую вы видите на сайте — финальная. Никаких скрытых платежей и комиссий. Санатории Кисловодска - это сервис для помощи отдыхающим блаблаблаблабла. Санатории Кисловодска - это сервис для помощи отдыхающим лалалалалалалалала.</p>
+                        <p class="main-video__content">Стоимость путёвки, которую вы видите на сайте — финальная. Никаких скрытых платежей и комиссий. Санатории Кисловодска - это сервис для помощи отдыхающим блаблаблаблабла. Санатории Кисловодска - это сервис для помощи отдыхающим лалалалалалалалала.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="main-categories">
+                <h2 class="main-categories__title title-1">Популярные категории</h2>
+                <section class="main-categories__items">
+                    <a class="main-categories__item main-categories__item-big" href="#">
+                        <img class="main-categories__item-image" src="img/main-categories/1.jpg" alt="">
+                        <div class="main-categories__item-name"><p>Новый год</p></div>
+                    </a>
+                    <a class="main-categories__item" href="#">
+                        <img class="main-categories__item-image" src="img/main-categories/2.jpg" alt="">
+                        <div class="main-categories__item-name"><p>Без лечения</p></div>
+                    </a>
+                    <a class="main-categories__item" href="#">
+                        <img class="main-categories__item-image" src="img/main-categories/3.jpg" alt="">
+                        <div class="main-categories__item-name"><p>Эконом</p></div>
+                    </a>
+                    <a class="main-categories__item main-categories__item-large" href="#">
+                        <img class="main-categories__item-image" src="img/main-categories/4.jpg" alt="">
+                        <div class="main-categories__item-name"><p>Шведский стол</p></div>
+                    </a>
+                    <a class="main-categories__item main-categories__item-large" href="#">
+                        <img class="main-categories__item-image" src="img/main-categories/5.jpg" alt="">
+                        <div class="main-categories__item-name"><p>Лучшие</p></div>
+                    </a>
+                    <a class="main-categories__item" href="#">
+                        <img class="main-categories__item-image" src="img/main-categories/6.jpg" alt="">
+                        <div class="main-categories__item-name"><p>Семейные</p></div>
+                    </a>
+                    <a class="main-categories__item" href="#">
+                        <img class="main-categories__item-image" src="img/main-categories/7.jpg" alt="">
+                        <div class="main-categories__item-name"><p>С бассейном</p></div>
+                    </a>
+                </section>
+            </section>
+            <section class="main-items">
+                <h2 class="main-items__title title-1">Выбор туристов</h2>
+                <section class="main-items__items">
+                    <article class="item"></article>
+                    <article class="item"></article>
+                    <article class="item"></article>
+                    <article class="item"></article>
+                </section>
+                <button class="main-items__button">Все санатории</button>
+            </section>
+            <section class="main-pick-up">
+                <div class="main-pick-up__images">
+                    <img class="main-pick-up__image main-pick-up__image-flower-small" src="img/pick-up/flower-small.png" alt="">
+                    <img class="main-pick-up__image main-pick-up__image-flower-big" src="img/pick-up/flower-big.png" alt="">
+                    <img class="main-pick-up__image main-pick-up__image-baggage" src="img/pick-up/baggage.png" alt="">
+                </div>
+                <div class="main-pick-up__main">
+                    <p class="main-pick-up__content"><span>Найдите и забронируйте лучшую путевку</span><span> в&nbsp;санатории Кисловодска </span><span>за&nbsp;30&nbsp;секунд!</span></p>
+                    <button class="main-pick-up__button _popup-pick-up-opener">Подобрать санаторий</button>
+                </div>
+            </section>
+        </section>
     </div>
+<div class="footer-message">
+    <div class="container">
+        <div class="footer-message__row">
+            <div class="footer-message__left">
+                <div class="footer-message__image">
+                    <img src="img/footer/envelope.png" alt="">
+                </div>
+                <div class="footer-message__block">
+                    <h3 class="footer-message__title">Понравился санаторий?</h3>
+                    <p class="footer-message__content">Мы сообщим, когда цены на него снизятся или появятся скидки.</p>
+                </div>
+            </div>
+            <form class="footer-message__right" action="#">
+                <input type="email" name="email" placeholder="example@mail.ru">
+                <button type="submit">Подписаться</button>
+            </form>
+        </div>
+    </div>
+</div>
 <footer class="footer">
     <div class="container">
         <div class="footer__row">
-
+            <div class="footer__left">
+                <div class="footer__top">
+                    <div class="footer__phone">
+                        <p class="footer__phone-title">Номер в Железноводске</p>
+                        <a class="footer__phone-link" href="tel:88008553535">8 (800) 855-35-35</a>
+                    </div>
+                    <div class="footer__phone">
+                        <p class="footer__phone-title">Бесплатный по России</p>
+                        <a class="footer__phone-link" href="tel:88008553535">8 (800) 855-35-35</a>
+                    </div>
+                    <button class="footer__callback-btn">Позвоните мне</button>
+                </div>
+                <div class="footer__social">
+                    <p class="footer__social-title">Следите и общайтесь с нами</p>
+                    <div class="footer__social-links">
+                        <a class="footer__social-link" href="#" target="_blank"><img src="img/icons/instagram.svg" alt=""></a>
+                        <a class="footer__social-link" href="#" target="_blank"><img src="img/icons/whatsapp.svg" alt=""></a>
+                        <a class="footer__social-link" href="#" target="_blank"><img src="img/icons/telegram.svg" alt=""></a>
+                        <a class="footer__social-link" href="#" target="_blank"><img src="img/icons/viber.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__right">
+                <ul class="footer__list">
+                    <li class="footer__item"><a class="footer__link" href="#">Досуг</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Памятка туриста</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Афиша</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Cправочник по лечению</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Описание курорта</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Достопримечательности</a></li>
+                    <li class="footer__item"><a class="footer__link" href="#">Обзоры санаториев</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </footer></main>
