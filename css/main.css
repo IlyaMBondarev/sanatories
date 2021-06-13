@@ -1,3 +1,4 @@
+@import "swiper-bundle.min.css";
 @font-face {
   font-family: "NunitoSans";
   src: local("Nunito Sans Bold"), local("NunitoSans-Bold"), url("../fonts/Nunitosansbold.woff2") format("woff2"), url("../fonts/Nunitosansbold.woff") format("woff"), url("../fonts/Nunitosansbold.ttf") format("truetype");
@@ -591,11 +592,42 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   margin-right: 20px;
 }
+.item__images {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.item__images .swiper-wrapper {
+  align-items: center;
+}
 .item__image {
   display: block;
 }
 .item__image img {
+  width: 100%;
   max-width: 100%;
+  border-radius: 5px;
+}
+.item__arrow {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.item__arrow-left {
+  left: 10px;
+}
+.item__arrow-right {
+  right: 10px;
 }
 .item__right {
   flex-grow: 1;
@@ -866,6 +898,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 0px 5px #97DC52;
 }
 
+.faq {
+  margin-bottom: 40px;
+}
 .faq__item {
   display: block;
   padding: 23px;
@@ -880,16 +915,34 @@ h1, h2, h3, h4, h5, h6 {
 .faq__item input:checked + .faq__question {
   color: #97DC52;
 }
+.faq__item input:checked + .faq__question svg {
+  transform: rotateX(180deg);
+}
+.faq__item input:checked + .faq__question svg * {
+  fill: #97DC52;
+}
 .faq__item input:checked ~ .faq__answer {
   margin-top: 10px;
   max-height: 200px;
   overflow: auto;
 }
 .faq__question {
-  display: block;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 22px;
   line-height: 120%;
   font-weight: 600;
+}
+.faq__question span {
+  transition: all 0.2s ease-in-out;
+  margin-right: 20px;
+}
+.faq__question svg {
+  transition: all 0.2s ease-in-out;
+}
+.faq__question svg * {
   transition: all 0.2s ease-in-out;
 }
 .faq__answer {
