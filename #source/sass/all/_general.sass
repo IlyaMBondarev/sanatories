@@ -1,0 +1,96 @@
+//<шрифты>
+
+//<подключаем шрифты>
+
+@font-face
+  font-family: 'NunitoSans'
+  src: local('Nunito Sans Bold'), local('NunitoSans-Bold'), url('../fonts/Nunitosansbold.woff2') format('woff2'), url('../fonts/Nunitosansbold.woff') format('woff'), url('../fonts/Nunitosansbold.ttf') format('truetype')
+  font-weight: 700
+  font-style: normal
+
+@font-face
+  font-family: 'NunitoSans'
+  src: local('Nunito Sans SemiBold'), local('NunitoSans-SemiBold'), url('../fonts/Nunitosanssemibold.woff2') format('woff2'), url('../fonts/Nunitosanssemibold.woff') format('woff'), url('../fonts/Nunitosanssemibold.ttf') format('truetype')
+  font-weight: 600
+  font-style: normal
+
+//</подключаем шрифты>
+
+//<шрифт по умолчанию>
+$fontfamily: "NunitoSans"
+//</шрифт по умолчанию>
+
+//</шрифты>
+
+//<переменные>
+$minwidth: 320px
+$white: #ffffff
+$black: #000000
+//</переменные>
+
+//<общие параметры>
+
+.hidden
+  display: none !important
+
+body
+  width: 100%
+  font-family: $fontfamily
+  font-size: 10px
+  font-weight: 600
+  color: $white
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 15.63%, rgba(0, 0, 0, 0) 81.77%, rgba(0, 0, 0, 0.3) 100%), #252B4F
+
+.page
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  width: 100%
+  overflow-x: hidden
+  overflow-anchor: none
+
+.content
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  position: relative
+  & > div
+    width: 100%
+
+.container
+  width: 100%
+  max-width: 1200px
+  padding: 0 15px
+  margin: 0 auto
+
+.title
+  &-1
+    font-size: 40px
+    line-height: 50px
+    font-weight: 700
+    text-align: center
+    margin-bottom: 30px
+    &__green
+      color: #97dc52
+
+.mobile
+  @media screen and ( min-width: 768px )
+    display: none
+  
+input
+  border: 1.5px solid transparent
+  transition: all 0.2s ease-in-out
+  &:focus
+    border-color: #97DC52
+  &._error
+    border-color: #E23A58
+
+
+//<общие параметры>
+
+
+//<основной блок>
+
+//</основной блок>
+

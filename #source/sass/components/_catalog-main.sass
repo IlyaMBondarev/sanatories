@@ -1,0 +1,177 @@
+.catalog-main
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    &__aside
+        width: 220px
+        max-width: 220px
+        min-width: 220px
+    &__main
+        width: 840px
+        max-width: 840px
+        min-width: 840px
+        margin-bottom: 40px
+    &__top
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 30px
+    &__title
+        margin-bottom: 0
+    &__switch-btn
+        padding: 7px 30px
+        display: flex
+        justify-content: center
+        align-items: center
+        background: #6487EB
+        border-radius: 10px
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #ffffff80
+        transition: all 0.2s ease-in-out
+        & img
+            margin-right: 10px
+        &:hover
+            background: #8DAAFE
+    &__sort
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        flex-wrap: wrap
+        margin-bottom: 30px
+    &__sort-content
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #ffffff60
+    &__sort-item
+        & label
+            margin-left: 23px
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            cursor: pointer
+            transition: all 0.2s ease-in-out
+            &:hover
+                color: #97DC52
+                text-decoration-line: underline
+        & input
+            position: absolute
+            left: -100vw
+            width: 0
+            height: 0
+            opacity: 0
+            visibility: hidden
+            &:checked + label
+                color: #97DC52
+                text-decoration-line: underline
+    &__consultation
+        padding: 20px
+        margin-bottom: 30px
+        background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+        border-radius: 10px
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__consultation-image
+        position: relative
+        min-height: 112px
+        min-width: 166px
+        border-radius: 10px
+        overflow: hidden
+        & img
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 100%
+    &__consultation-main
+        padding: 0 30px
+    &__consultation-title
+        font-size: 22px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 10px
+    &__consultation-content
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #ffffff80
+        white-space: normal
+    &__consultation-form
+    &__consultation-input
+        display: block
+        height: 48px
+        width: 228px
+        min-width: 228px
+        border-radius: 10px
+        background: #00000020
+        padding: 8px 12px
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: $white
+        margin-bottom: 16px
+    &__consultation-submit
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 48px
+        width: 228px
+        min-width: 228px
+        border-radius: 10px
+        background: #4EB012
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        transition: all 0.2s ease-in-out
+        &:hover
+            background: #97DC52
+            box-shadow: 0px 0px 5px #97DC52
+    &__subscribe
+        position: relative
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        padding: 25px 25px 20px 25px
+        background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+        border-radius: 10px
+        &::before
+            content: url('../img/consultation/paper-plane.svg')
+            position: absolute
+            bottom: 0
+            right: 40px
+    &__subscribe-image
+        position: relative
+        margin-right: 20px
+    &__subscribe-main
+        position: relative
+    &__subscribe-title
+        font-size: 22px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 10px
+    &__subscribe-content
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #ffffff80
+        margin-bottom: 10px
+    &__subscribe-button
+        padding: 10px 32px
+        background: $white
+        border-radius: 10px
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #3D92F5
+        transition: all 0.2s ease-in-out
+        &:hover
+            background: #97DC52
+            box-shadow: 0px 0px 5px #97DC52
+            color: #FFFFFF

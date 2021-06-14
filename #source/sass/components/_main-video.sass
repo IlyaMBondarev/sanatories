@@ -1,0 +1,25 @@
+.main-video
+    margin-bottom: 60px
+    &__title
+        & span
+            display: block
+    &__items
+        display: flex
+        justify-content: space-between
+        align-items: stretch
+    &__item
+        width: calc(50% - 15px)
+    &__video
+        height: 100%
+        background: #000
+        border-radius: 10px
+        overflow: hidden
+        & > *
+            max-width: 100%
+            max-height: 100%
+    &__content
+        font-size: 17px
+        line-height: 27px
+        color: #ffffff80
+        &:not(:first-of-type)
+            margin-top: 40px
