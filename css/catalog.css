@@ -45,6 +45,7 @@ body {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
@@ -1048,4 +1049,101 @@ h1, h2, h3, h4, h5, h6 {
 .item__button:hover {
   background: #97DC52;
   box-shadow: 0px 0px 5px #97DC52;
+}
+
+.consultation {
+  margin-bottom: 30px;
+}
+.consultation__row {
+  padding: 30px;
+  background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.consultation__image {
+  position: relative;
+  width: 270px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 25px;
+}
+.consultation__image img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.consultation__main {
+  flex-grow: 1;
+}
+.consultation__title {
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+.consultation__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 23px;
+}
+.consultation__input {
+  width: calc((100% - 40px) / 3);
+  height: 48px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.consultation__input::placeholder {
+  color: #ffffff40;
+}
+.consultation__submit {
+  width: calc((100% - 40px) / 3);
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4EB012;
+  border-radius: 10px;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.consultation__submit:hover {
+  background: #97DC52;
+  box-shadow: 0px 0px 5px #97DC52;
+}
+.consultation__phones {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.consultation__phone {
+  width: calc((100% - 40px) / 3);
+  margin-right: 20px;
+}
+.consultation__phone-link {
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+}
+.consultation__phone-content {
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 600;
+  color: #ffffff80;
 }
