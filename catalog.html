@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/catalog.css">
 </head>
 <body>
 <main class="page">
@@ -42,12 +42,159 @@
     </ul>
 </nav>    <section class="content">
         <section class="search"></section>
-        <section class="breadcrumbs">
-            <div class="breadcrumbs__item">Санатории Кисловодска</div>
-            <div class="breadcrumbs__item">Подбор по параметрам</div>
+        <section class="breadcrumbs container">
+            <div class="breadcrumbs__container">
+                <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Санатории Кисловодска</a></div>
+                <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Подбор по параметрам</a></div>
+            </div>
         </section>
-        <section class="main-content"></section>
-        <section class="consultation"></section>
+        <section class="main-content catalog-main container">
+            <div class="catalog-main__left">
+                <div class="filters">
+                    <p class="filters__title">Профиль лечения</p>
+                    <div class="filters__block">
+
+                    </div>
+                    <p class="filters__title">Сервис</p>
+                    <div class="filters__block">
+                        <input id="filterWiFi" name="filterWiFi" type="checkbox">
+                        <label for="filterWiFi">Wi-Fi в номерах</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterPool" name="filterPool" type="checkbox">
+                        <label for="filterPool">Есть бассейн</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterSPA" name="filterSPA" type="checkbox">
+                        <label for="filterSPA">СПА-процедуры</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterPumpRoom" name="filterPumpRoom" type="checkbox">
+                        <label for="filterPumpRoom">Свой бювет</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterBuffet" name="filterBuffet" type="checkbox">
+                        <label for="filterBuffet">Шведский стол</label>
+                    </div>
+                    <p class="filters__title">Цена за человека в сутки</p>
+                    <div class="filters__block filters__block-prices">
+                        <label for="filterPriceBefore">
+                            <span>от</span>
+                            <input id="filterPriceBefore" name="filterPriceBefore" type="number" placeholder="1500">
+                        </label>
+                        <label for="filterPriceAfter">
+                            <span>до</span>
+                            <input id="filterPriceAfter" name="filterPriceAfter" type="number" placeholder="3500">
+                        </label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterPrice1500" name="filterPrice1500" type="checkbox">
+                        <label for="filterPrice1500">1 500 (6)</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterPrice15002500" name="filterPrice15002500" type="checkbox">
+                        <label for="filterPrice15002500">1 500 - 2 500 (25)</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterPrice25003500" name="filterPrice25003500" type="checkbox">
+                        <label for="filterPrice25003500">2 500 - 3 500 (57)</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterPrice3500" name="filterPrice3500" type="checkbox">
+                        <label for="filterPrice3500">от 3 500  (36)</label>
+                    </div>
+                    <p class="filters__title">Класс санатория</p>
+                    <div class="filters__block">
+                        <input id="filterVIP" name="filterVIP" type="checkbox">
+                        <label for="filterVIP">VIP</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterPrestige" name="filterPrestige" type="checkbox">
+                        <label for="filterPrestige">Престиж</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterEconom" name="filterEconom" type="checkbox">
+                        <label for="filterEconom">Эконом</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterStandart" name="filterStandart" type="checkbox">
+                        <label for="filterStandart">Стандарт</label>
+                    </div>
+                    <p class="filters__title">Оценка по отзывам</p>
+                    <div class="filters__block">
+                        <input id="filterGreat" name="filterGreat" type="checkbox">
+                        <label for="filterGreat">Превосходно 9+</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterVeryGood" name="filterVeryGood" type="checkbox">
+                        <label for="filterVeryGood">Очень хорошо 8+</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterGood" name="filterGood" type="checkbox">
+                        <label for="filterGood">Хорошо 7+</label>
+                    </div>
+                    <div class="filters__block">
+                        <input id="filterGoodEnough" name="filterGoodEnough" type="checkbox">
+                        <label for="filterGoodEnough">Достаточно хорошо 6+</label>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-main__right">
+                <article class="item">
+                    <div class="item__main">
+                        <div class="item__left">
+                            <div class="item__images swiper-container">
+                                <div class="swiper-wrapper">
+                                    <a class="item__image swiper-slide" href="#">
+                                        <img src="img/products/id/1.jpg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item__right">
+                            <h3 class="item__title"><a href="#">Санаторий Заря</a></h3>
+                            <div class="item__desc">
+                                <p class="item__address"><span>г. Пятигорск</span> <span>В парке  800 м. от бювета</span></p>
+                                <p class="item__replies"><a href="#">1 отзыв</a></p>
+                                <p class="item__desc-info"><span>92 процедуры</span></p>
+                                <p class="item__rating item__rating-orange"><img src="img/products/common/rating.svg" alt=""> <span>3.8</span></p>
+                            </div>
+                            <ul class="item__list">
+                                <li class="item__list-item"><img class="item__icon" src="img/products/common/spa.svg" alt=""><span>Работает СПА-салон</span></li>
+                                <li class="item__list-item"><img class="item__icon" src="img/products/common/pool.svg" alt=""><span>Cовременный бассейн</span></li>
+                                <li class="item__list-item"><img class="item__icon" src="img/products/common/child.svg" alt=""><span>Можно младенцам</span></li>
+                                <li class="item__list-item"><img class="item__icon" src="img/products/common/parking-lot.svg" alt=""><span>Бесплатная парковка</span></li>
+                                <li class="item__list-item"><img class="item__icon" src="img/products/common/pets.svg" alt=""><span>Можно с животными</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item__info">
+                        <span class="item__info-block">
+                            <span>Внимание! Цена без учёта стоимости ребёнка, подробности у менеджера</span>
+                        </span>
+                    </div>
+                    <div class="item__bottom">
+                        <div class="item__prices">
+                            <div class="item__price">
+                                <p class="item__price-title"><span>1 300 600</span> руб</p>
+                                <p class="item__price-content">проживание + питание</p>
+                            </div>
+                            <div class="item__price">
+                                <p class="item__price-title"><span>1 300 600</span> руб</p>
+                                <p class="item__price-content">проживание + питание + лечение</p>
+                            </div>
+                        </div>
+                        <div class="item__buttons">
+                            <a class="item__link" href="#">Подробнее</a>
+                            <button class="item__button">Выбрать</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="consultation">
+
+        </section>
     </section>
 <div class="footer-message">
     <div class="container">
