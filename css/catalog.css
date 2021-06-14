@@ -67,6 +67,17 @@ body {
   }
 }
 
+input {
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+input:focus {
+  border-color: #97DC52;
+}
+input._error {
+  border-color: #E23A58;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -454,6 +465,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 840px;
   max-width: 840px;
   min-width: 840px;
+  margin-bottom: 40px;
 }
 .catalog-main__top {
   display: flex;
@@ -595,6 +607,57 @@ h1, h2, h3, h4, h5, h6 {
 .catalog-main__consultation-submit:hover {
   background: #97DC52;
   box-shadow: 0px 0px 5px #97DC52;
+}
+.catalog-main__subscribe {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 25px 25px 20px 25px;
+  background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%);
+  border-radius: 10px;
+}
+.catalog-main__subscribe::before {
+  content: url("../img/consultation/paper-plane.svg");
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+}
+.catalog-main__subscribe-image {
+  position: relative;
+  margin-right: 20px;
+}
+.catalog-main__subscribe-main {
+  position: relative;
+}
+.catalog-main__subscribe-title {
+  font-size: 22px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.catalog-main__subscribe-content {
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 600;
+  color: #ffffff80;
+  margin-bottom: 10px;
+}
+.catalog-main__subscribe-button {
+  padding: 10px 32px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 600;
+  color: #3D92F5;
+  transition: all 0.2s ease-in-out;
+}
+.catalog-main__subscribe-button:hover {
+  background: #97DC52;
+  box-shadow: 0px 0px 5px #97DC52;
+  color: #FFFFFF;
 }
 
 .filters__title {
@@ -848,6 +911,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .item__rating-orange {
   background: #CD7713;
+}
+.item__rating-red {
+  background: #D92C4B;
 }
 .item__list {
   display: flex;
