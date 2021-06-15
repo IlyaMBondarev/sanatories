@@ -631,8 +631,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-.product-item__rating-block:not(:last-of-type) {
   margin-bottom: 20px;
 }
 .product-item__rating-title {
@@ -656,7 +654,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .product-item__rating-number {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   font-size: 30px;
   line-height: 120%;
   font-weight: 700;
@@ -760,11 +758,83 @@ h1, h2, h3, h4, h5, h6 {
 .product-about__video {
   width: 100%;
   height: 370px;
-}
-.product-banner {
   border-radius: 10px;
   overflow: hidden;
 }
+.product-banner {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 220px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 .product-banner-blue {
   background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%);
+}
+.product-banner-black {
+  background: linear-gradient(274.32deg, #51486C 0%, #52594A 0.01%, #050606 102.13%);
+}
+.product-banner__main {
+  max-width: 55%;
+  padding-left: 30px;
+  position: relative;
+  z-index: 2;
+}
+.product-banner__title {
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+.product-banner__content {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.product-banner__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 40px;
+  margin-top: 12px;
+  border-radius: 10px;
+  background: #E45E12;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.product-banner__submit:hover {
+  box-shadow: 0px 0px 7px #E45E12;
+}
+.product-banner__image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-height: 100%;
+  max-height: 100%;
+}
+.product-banner__more {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+  background: #6487EB;
+  border-radius: 10px;
+  padding: 4px 7px;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.product-banner__more:hover {
+  background: #8DAAFE;
 }
