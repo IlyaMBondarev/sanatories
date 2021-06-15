@@ -237,6 +237,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 17px;
   font-weight: 600;
   color: #ffffff85;
+  transition: all 0.2s ease-in-out;
+}
+.nav__link:hover {
+  color: #ffffff;
 }
 
 .footer-message {
@@ -711,21 +715,6 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 15px;
   max-height: 20px;
 }
-.item__rating-green {
-  background: #119E5B;
-}
-.item__rating-lightgreen {
-  background: #68A41D;
-}
-.item__rating-yellow {
-  background: #AEA817;
-}
-.item__rating-orange {
-  background: #CD7713;
-}
-.item__rating-red {
-  background: #D92C4B;
-}
 .item__list {
   display: flex;
   align-items: center;
@@ -859,6 +848,21 @@ h1, h2, h3, h4, h5, h6 {
 .item__button:hover {
   background: #97DC52;
   box-shadow: 0px 0px 5px #97DC52;
+}
+.item.item-great .item__rating {
+  background: #119E5B;
+}
+.item.item-verygood .item__rating {
+  background: #68A41D;
+}
+.item.item-good .item__rating {
+  background: #AEA817;
+}
+.item.item-bad .item__rating {
+  background: #CD7713;
+}
+.item.item-verybad .item__rating {
+  background: #D92C4B;
 }
 
 .pick-up {
