@@ -1,7 +1,4 @@
 
-document.querySelector('.page').classList.add('loaded');
-
-
 /**
  * Swiper 6.6.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
