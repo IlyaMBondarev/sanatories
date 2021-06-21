@@ -838,3 +838,149 @@ h1, h2, h3, h4, h5, h6 {
 .product-banner__more:hover {
   background: #8DAAFE;
 }
+
+.product-service {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.product-service__title {
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.product-service__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.product-service__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 48%;
+  margin-right: 2%;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff80;
+  margin-bottom: 20px;
+}
+.product-service__item img {
+  margin-right: 10px;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+}
+
+.product-treatment {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.product-treatment__title {
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.product-treatment__main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.product-treatment__block {
+  width: 48%;
+  margin-right: 2%;
+}
+.product-treatment__block-title {
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.product-treatment__block-list {
+  padding-left: 20px;
+}
+.product-treatment__block-item {
+  list-style-type: disc;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff80;
+  margin-bottom: 20px;
+}
+
+.product-medical-base {
+  margin-bottom: 40px;
+}
+.product-medical-base__title {
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.product-medical-base__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 13px;
+}
+.product-medical-base__item {
+  position: relative;
+  height: 171px;
+  width: calc((100% - 34px)/3);
+  border-radius: 10px;
+  background: #4E5AC0;
+  overflow: hidden;
+  margin-bottom: 17px;
+}
+.product-medical-base__item:not(:nth-child(3n)) {
+  margin-right: 17px;
+}
+.product-medical-base__item > img {
+  min-width: 100%;
+  min-height: 100%;
+}
+.product-medical-base__item-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4E5AC0;
+  opacity: 0.8;
+  padding: 0 17px 0 10px;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff;
+}
+.product-medical-base__item-link img {
+  transition: transform 0.2s ease-in-out;
+}
+.product-medical-base__item-link:hover img {
+  transform: translateX(7px);
+}
+.product-medical-base__more {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #97DC52;
+  background: transparent;
+}
+.product-medical-base__more svg {
+  transition: transform 0.2s;
+}
+.product-medical-base__more:hover svg {
+  transform: translateX(5px);
+}
