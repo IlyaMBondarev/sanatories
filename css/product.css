@@ -1105,3 +1105,50 @@ h1, h2, h3, h4, h5, h6 {
 .product-replies__item.product-replies-verybad .product-replies__star:nth-of-type(1) svg * {
   fill: #FFCD4B;
 }
+
+.product-map__title {
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.product-map__map {
+  position: relative;
+  height: 370px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.product-map__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.product-map__block {
+  width: 44%;
+  margin-right: 2%;
+}
+.product-map__block-title {
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.product-map__block-title:not(:first-of-type) {
+  margin-top: 30px;
+}
+.product-map__block-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff80;
+}
+.product-map__block-item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
