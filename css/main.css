@@ -1,13 +1,13 @@
 @import "swiper-bundle.min.css";
 @font-face {
   font-family: "NunitoSans";
-  src: local("Nunito Sans Bold"), local("NunitoSans-Bold"), url("../fonts/Nunitosansbold.woff2") format("woff2"), url("../fonts/Nunitosansbold.woff") format("woff"), url("../fonts/Nunitosansbold.ttf") format("truetype");
+  src: url("../fonts/NunitoSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "NunitoSans";
-  src: local("Nunito Sans SemiBold"), local("NunitoSans-SemiBold"), url("../fonts/Nunitosanssemibold.woff2") format("woff2"), url("../fonts/Nunitosanssemibold.woff") format("woff"), url("../fonts/Nunitosanssemibold.ttf") format("truetype");
+  src: url("../fonts/NunitoSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
