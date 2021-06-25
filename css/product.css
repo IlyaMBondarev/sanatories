@@ -100,9 +100,12 @@ input._error {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
-.select.active > .select__main {
+.select.active .select__main {
   padding: 10px;
   max-height: 312px;
+}
+.select.active .select__arrow {
+  transform: rotateX(180deg);
 }
 .select__block {
   height: 100%;
@@ -123,6 +126,9 @@ input._error {
   font-weight: 600;
   color: #ffffff;
 }
+.select__arrow {
+  transition: all 0.2s ease-in-out;
+}
 .select__main {
   min-width: 280px;
   position: absolute;
@@ -141,9 +147,11 @@ input._error {
 .select__main::-webkit-scrollbar {
   width: 2px;
   background-color: transparent;
+  border-radius: 2px;
 }
 .select__main::-webkit-scrollbar-thumb {
   background-color: #ffffff;
+  border-radius: 2px;
 }
 .select__list {
   display: flex;
@@ -769,6 +777,71 @@ h1, h2, h3, h4, h5, h6 {
   background: #373F80;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+.product-search__title {
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff80;
+  margin-bottom: 12px;
+}
+.product-search__block {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.product-search__select {
+  height: 40px;
+  width: 100%;
+}
+.product-search__select .select__current {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff80;
+}
+.product-search__select .select__arrow {
+  opacity: 0.8;
+}
+.product-search__select .select__main {
+  left: auto;
+  right: 0;
+}
+.product-search__submit {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #6487EB;
+  border-radius: 10px;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.product-search__submit:hover {
+  background: #8DAAFE;
+}
+.product-search__content {
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+.product-search__content span {
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 700;
+}
+.product-search__subcontent {
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff80;
+  text-align: center;
 }
 
 .product-consultation {

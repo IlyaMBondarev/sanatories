@@ -81,8 +81,8 @@ if (document.querySelector('.select')) {
         })
 
         if (select.querySelector('.select-list')) {
-            list = select.querySelector('.select-list');
-            items = list.querySelectorAll('.select-item');
+            let list = select.querySelector('.select-list');
+            let items = list.querySelectorAll('.select-item');
             let activeIndex = 0;
 
             items.forEach((item, index) => {
