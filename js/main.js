@@ -98,6 +98,125 @@ if (document.querySelector('.select')) {
                 })
             })
         }
+
+        if (select.querySelector('.select-count')) {
+            function checkEnding(count, endings) {
+                if (count === 1) {
+                    return endings[0]
+                }
+                if (count < 5) {
+                    return endings[1]
+                }
+                return endings[2]
+            }
+
+
+            let parentsBlock = select.querySelector('.select-parents');
+            let parentsCountBlock = parentsBlock.querySelector('.select-parents-count');
+            let parentsCount = +parentsCountBlock.textContent;
+            let parentsBtnLess = parentsBlock.querySelector('.select-parents-less');
+            let parentsBtnMore = parentsBlock.querySelector('.select-parents-more');
+            let parentsEnding = ['взрослый', 'взрослых', 'взрослых'];
+            let parentsSpan = '';
+
+            if (parentsCount > 0) {
+                parentsSpan = `${parentsCount} ${checkEnding(parentsCount, parentsEnding)}`;
+            }
+
+            let childsBlock = select.querySelector('.select-childs');
+            let childsCountBlock = childsBlock.querySelector('.select-childs-count');
+            let childsCount = +childsCountBlock.textContent;
+            let childsBtnLess = childsBlock.querySelector('.select-childs-less');
+            let childsBtnMore = childsBlock.querySelector('.select-childs-more');
+            let childsEnding = ['ребёнок', 'ребёнка', 'детей'];
+            let childsSpan = '';
+
+            if (childsCount > 0) {
+                childsSpan = `${childsCount} ${checkEnding(childsCount, childsEnding)}`;
+            }
+
+            if (parentsSpan && childsSpan) {
+                current.innerHTML = `<span>${parentsSpan}</span>, <span>${childsSpan}</span>`;
+            } else if (parentsSpan) {
+                current.innerHTML = `<span>${parentsSpan}</span>`;
+            } else if (childsSpan) {
+                current.innerHTML = `<span>${childsSpan}</span>`;
+            } else {
+                current.innerHTML = `<span>Ничего не выбрано</span>`;
+            }
+
+            parentsBtnLess.addEventListener('click', () => {
+                if (parentsCount > 0) {
+                    parentsCount--;
+                    parentsCountBlock.textContent = parentsCount;
+                    if (parentsCount > 0) {
+                        parentsSpan = `${parentsCount} ${checkEnding(parentsCount, parentsEnding)}`;
+                    } else {
+                        parentsSpan = '';
+                    }
+                    if (parentsSpan && childsSpan) {
+                        current.innerHTML = `<span>${parentsSpan}</span>, <span>${childsSpan}</span>`;
+                    } else if (parentsSpan) {
+                        current.innerHTML = `<span>${parentsSpan}</span>`;
+                    } else if (childsSpan) {
+                        current.innerHTML = `<span>${childsSpan}</span>`;
+                    } else {
+                        current.innerHTML = `<span>Ничего не выбрано</span>`;
+                    }
+                }
+            })
+
+            parentsBtnMore.addEventListener('click', () => {
+                parentsCount++;
+                parentsCountBlock.textContent = parentsCount;
+                parentsSpan = `${parentsCount} ${checkEnding(parentsCount, parentsEnding)}`;
+                if (parentsSpan && childsSpan) {
+                    current.innerHTML = `<span>${parentsSpan}</span>, <span>${childsSpan}</span>`;
+                } else if (parentsSpan) {
+                    current.innerHTML = `<span>${parentsSpan}</span>`;
+                } else if (childsSpan) {
+                    current.innerHTML = `<span>${childsSpan}</span>`;
+                } else {
+                    current.innerHTML = `<span>Ничего не выбрано</span>`;
+                }
+            })
+
+            childsBtnLess.addEventListener('click', () => {
+                if (childsCount > 0) {
+                    childsCount--;
+                    childsCountBlock.textContent = childsCount;
+                    if (childsCount > 0) {
+                        childsSpan = `${childsCount} ${checkEnding(childsCount, childsEnding)}`;
+                    } else {
+                        childsSpan = '';
+                    }
+                    if (parentsSpan && childsSpan) {
+                        current.innerHTML = `<span>${parentsSpan}</span>, <span>${childsSpan}</span>`;
+                    } else if (parentsSpan) {
+                        current.innerHTML = `<span>${parentsSpan}</span>`;
+                    } else if (childsSpan) {
+                        current.innerHTML = `<span>${childsSpan}</span>`;
+                    } else {
+                        current.innerHTML = `<span>Ничего не выбрано</span>`;
+                    }
+                }
+            })
+
+            childsBtnMore.addEventListener('click', () => {
+                childsCount++;
+                childsCountBlock.textContent = childsCount;
+                childsSpan = `${childsCount} ${checkEnding(childsCount, childsEnding)}`;
+                if (parentsSpan && childsSpan) {
+                    current.innerHTML = `<span>${parentsSpan}</span>, <span>${childsSpan}</span>`;
+                } else if (parentsSpan) {
+                    current.innerHTML = `<span>${parentsSpan}</span>`;
+                } else if (childsSpan) {
+                    current.innerHTML = `<span>${childsSpan}</span>`;
+                } else {
+                    current.innerHTML = `<span>Ничего не выбрано</span>`;
+                }
+            })
+        }
     })
 }
 if (document.querySelector('.item__images')) {

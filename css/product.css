@@ -176,6 +176,51 @@ input._error {
 .select__item:hover {
   background: rgba(0, 0, 0, 0.2);
 }
+.select__count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select__count:not(:first-of-type) {
+  margin-top: 8px;
+}
+.select__count > span {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.select__count-block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.select__count-block > button {
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: background 0.2s ease-in-out;
+}
+.select__count-block > button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.select__count-block > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32px;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
 
 * {
   padding: 0;
