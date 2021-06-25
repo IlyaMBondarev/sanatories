@@ -1,0 +1,139 @@
+.product-item
+    padding-top: 35px
+    padding-bottom: 30px
+    &__title
+        font-size: 30px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 20px
+    &__content
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: #ffffff80
+        margin-bottom: 20px
+    &__images
+        margin-bottom: 30px
+    &__rating
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 33px
+    &__rating-column
+        width: calc(50% - 27px)
+    &__rating-row
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__rating-block
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        margin-bottom: 20px
+    &__rating-title
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+    &__rating-eval
+        font-size: 22px
+        line-height: 120%
+        font-weight: 700
+        color: #ffffff80
+    &__rating-content
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: #ffffff80
+        margin-top: 7px
+    &__rating-number
+        display: flex
+        align-items: center
+        font-size: 30px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        & span
+            font-size: 22px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+        & img
+            width: 24px
+            min-width: 24px
+            height: 24px
+            margin-right: 14px
+    &__rating-number-under
+        font-size: 14px
+        line-height: 19px
+        font-weight: 700
+        color: #ffffff80
+    &__rating-item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background: #4E5AC0
+        border-radius: 10px
+        height: 44px
+        width: 100%
+        padding: 0 12px
+        &:not(:last-of-type)
+            margin-bottom: 10px
+    &__rating-stars
+        display: flex
+        justify-content: flex-end
+        align-items: center
+    &__rating-star
+        & svg
+            width: 20px
+            min-width: 20px
+            height: 20px
+            & *
+                fill: #323967
+    &__list-item
+        font-size: 17px
+        line-height: 24px
+        font-weight: 600
+        color: #ffffff80
+        margin-bottom: 20px
+        & img
+            width: 24px
+            min-width: 24px
+            height: 24px
+            margin-right: 20px
+    &.product-item-great
+        & .product-item__rating-eval
+            color: #119E5B
+        & .product-item__rating-star:nth-of-type(1) svg *,
+        & .product-item__rating-star:nth-of-type(2) svg *,
+        & .product-item__rating-star:nth-of-type(3) svg *,
+        & .product-item__rating-star:nth-of-type(4) svg *,
+        & .product-item__rating-star:nth-of-type(5) svg *
+            fill: #FFCD4B
+    &.product-item-verygood
+        & .product-item__rating-eval
+            color: #97DC52
+        & .product-item__rating-star:nth-of-type(1) svg *,
+        & .product-item__rating-star:nth-of-type(2) svg *,
+        & .product-item__rating-star:nth-of-type(3) svg *,
+        & .product-item__rating-star:nth-of-type(4) svg *
+            fill: #FFCD4B
+    &.product-item-good
+        & .product-item__rating-eval
+            color: #AEA817
+        & .product-item__rating-star:nth-of-type(1) svg *,
+        & .product-item__rating-star:nth-of-type(2) svg *,
+        & .product-item__rating-star:nth-of-type(3) svg *
+            fill: #FFCD4B
+    &.product-item-bad
+        & .product-item__rating-eval
+            color: #CD7713
+        & .product-item__rating-star:nth-of-type(1) svg *,
+        & .product-item__rating-star:nth-of-type(2) svg *
+            fill: #FFCD4B
+    &.product-item-verybad
+        & .product-item__rating-eval
+            color: #D92C4B
+        & .product-item__rating-star:nth-of-type(1) svg *
+            fill: #FFCD4B

@@ -20,6 +20,29 @@
         overflow: hidden
         & .swiper-wrapper
             align-items: center
+        & > span
+            position: absolute
+            z-index: 2
+            bottom: 5px
+            left: 10px
+            display: inline-block
+            padding: 4px 10px
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: $white
+            border-radius: 5px
+            background: #4F75FC
+            &.popular
+                background: #D92C4B
+            &.important
+                background: #E3871B
+            &.econom
+                background: #68A41D
+            &.travel
+                background: #6E51D9
+            &.note
+                background: #4F75FC
     &__image
         display: block
         & img
@@ -100,16 +123,6 @@
             margin-right: 7px
             max-width: 15px
             max-height: 20px
-        &-green
-            background: #119E5B
-        &-lightgreen
-            background: #68A41D
-        &-yellow
-            background: #AEA817
-        &-orange
-            background: #CD7713
-        &-red
-            background: #D92C4B
     &__list
         display: flex
         align-items: center
@@ -223,3 +236,18 @@
         &:hover
             background: #97DC52
             box-shadow: 0px 0px 5px #97DC52
+    &.item-great
+        & .item__rating
+            background: #119E5B
+    &.item-verygood
+        & .item__rating
+            background: #68A41D
+    &.item-good
+        & .item__rating
+            background: #AEA817
+    &.item-bad
+        & .item__rating
+            background: #CD7713
+    &.item-verybad
+        & .item__rating
+            background: #D92C4B
