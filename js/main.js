@@ -44,15 +44,11 @@ if (document.querySelectorAll('.popups')) {
     })
 }
 
-
-
-
-
-
 if (document.querySelector('._callbacktabs')) {
     let callbacktabs = document.querySelector('._callbacktabs');
     let inputs = callbacktabs.querySelectorAll('._callbacktabs-input');
     let contents = callbacktabs.querySelectorAll('._callbacktabs-content');
+    let activeIndex = 0;
 
     inputs.forEach((input, index) => {
         if (input.checked) {
@@ -67,6 +63,43 @@ if (document.querySelector('._callbacktabs')) {
     })
 }
 
+if (document.querySelector('.select')) {
+    let selects = document.querySelectorAll('.select');
+
+    selects.forEach(select => {
+        let block = select.querySelector('.select-block');
+        let current = select.querySelector('.select-current');
+
+        block.addEventListener('click', () => {
+            select.classList.toggle('active');
+        })
+
+        document.addEventListener('click', (event) => {
+            if (!(select.contains(event.target)) && select.classList.contains('active')) {
+                select.classList.remove('active');
+            }
+        })
+
+        if (select.querySelector('.select-list')) {
+            list = select.querySelector('.select-list');
+            items = list.querySelectorAll('.select-item');
+            let activeIndex = 0;
+
+            items.forEach((item, index) => {
+                if (item.classList.contains('active')) {
+                    activeIndex = index;
+                }
+                item.addEventListener('click', () => {
+                    items[activeIndex].classList.remove('active');
+                    activeIndex = index;
+                    items[activeIndex].classList.add('active');
+                    current.innerHTML = items[activeIndex].textContent;
+                    select.classList.remove('active');
+                })
+            })
+        }
+    })
+}
 if (document.querySelector('.item__images')) {
     const itemImagesSlider = new Swiper('.item__images', {
         navigation: {
