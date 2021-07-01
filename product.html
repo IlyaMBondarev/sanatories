@@ -1321,11 +1321,11 @@
                         </svg>
                     </button>
                 </div>
-                <div class="product-prices">
-                    <div class="product-prices-tab-1">
+                <div class="product-prices _hor-tabs">
+                    <div class="product-prices__tab _hor-tab active">
                         <p class="product-prices__title">Узнайте цену отдыха в Санатории «Виктория» на Ваши даты</p>
                         <div class="product-prices__main">
-                            <form class="product-prices__left" action="#">
+                            <form class="product-prices__left" action="#" onsubmit="event.preventDefault();">
                                 <div class="product-prices__row product-prices__row-1">
                                     <div class="product-prices__block">
                                         <p class="product-prices__block-title">Тип номера</p>
@@ -1455,10 +1455,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="product-prices__submit">Узнать точные цены</button>
+                                <button class="product-prices__submit _hor-tab-slide-button" data-slideto="1">Узнать точные цены</button>
                             </form>
                             <div class="product-prices__right">
-                                <p class="product-prices__title">Предварительная стоимость путевки:</p>
+                                <p class="product-prices__right-title">Предварительная стоимость путевки:</p>
                                 <div class="product-prices__price">
                                     <p class="product-prices__price-title">от <span>1 300 600</span> руб</p>
                                     <p class="product-prices__price-content">проживание + питание + лечение</p>
@@ -1468,6 +1468,53 @@
                                     <p class="product-prices__price-content">проживание + питание</p>
                                 </div>
                                 <p class="product-prices__content_small">Цена стойки санатория. Указанная цена является ориентировочной, точную цену вы можете узнать у наших мененджеров.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-prices__tab _hor-tab">
+                        <button class="product-prices__back _hor-tab-slide-button" data-slideto="0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                    <path d="M10.5828 17.856L7.81608 15.0153L5.04932 12.1745L10.5828 6.49298C11.1391 5.9219 11.1391 4.99939 10.5828 4.42831C10.0266 3.85723 9.12816 3.85723 8.57195 4.42831L2.02585 11.1495C1.46965 11.7206 1.46965 12.6431 2.02585 13.2142L8.57195 19.9353C9.12816 20.5064 10.0266 20.5064 10.5828 19.9353C11.1248 19.3642 11.1391 18.4271 10.5828 17.856Z" fill="white" fill-opacity="0.8"/>
+                                    <path d="M22 12.5C22 13.3284 21.3284 14 20.5 14L6.5 14C5.67157 14 5 13.3284 5 12.5C5 11.6716 5.67157 11 6.5 11L20.5 11C21.3284 11 22 11.6716 22 12.5Z" fill="white" fill-opacity="0.8"/>
+                                </g>
+                            </svg>
+                            <span>Изменить параметры</span>
+                        </button>
+                        <div class="product-prices__main">
+                            <div class="product-prices__center">
+                                <h3 class="product-prices__center-title">Остался один шаг до получения точной стоимости</h3>
+                                <p class="product-prices__center-content">Эксперт куратолог перезвонит вам и сообщит точные цены</p>
+                                <form class="product-prices__callback" action="#" onsubmit="event.preventDefault();">
+                                    <div class="product-prices__row product-prices__row-2">
+                                        <div class="product-prices__block">
+                                            <p class="product-prices__block-title">Ваше имя</p>
+                                            <div class="product-prices__input">
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                        <div class="product-prices__block">
+                                            <p class="product-prices__block-title">Телефон</p>
+                                            <div class="product-prices__input">
+                                                <input type="tel">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-prices__row">
+                                        <button class="product-prices__submit _hor-tab-slide-button" data-slideto="2">Перезвоните мне!</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-prices__tab _hor-tab">
+                        <div class="product-prices__main">
+                            <div class="product-prices__center">
+                                <img class="product-prices__icon" src="img/icons/check-big.svg" alt="">
+                                <h3 class="product-prices__center-title">Скоро мы перезвоним!</h3>
+                                <p class="product-prices__center-content">Спасибо за заполнение формы.</p>
+                                <p class="product-prices__center-content">Сейчас эксперт уточняет наличие мест по вашим параметрам.</p>
+                                <p class="product-prices__center-content">Мы свяжемся с вами в течении одного рабочего дня.</p>
                             </div>
                         </div>
                     </div>

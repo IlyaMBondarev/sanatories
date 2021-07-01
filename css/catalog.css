@@ -119,6 +119,7 @@ input._error {
 .select__current {
   display: inline-block;
   max-width: calc(100% - 25px);
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   font-size: 17px;
