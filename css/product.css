@@ -1385,7 +1385,48 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 .product-item__images {
+  display: grid;
+  height: 430px;
+  gap: 10px;
+  grid-template-columns: repeat(5, calc((100% - 40px)/5));
+  grid-template-rows: repeat(4, calc((100% - 30px)/4));
   margin-bottom: 30px;
+}
+.product-item__image {
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.product-item__image-big {
+  grid-column: span 4;
+  grid-row: span 4;
+}
+.product-item__image > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-heidht: 100%;
+  border-radius: 10px;
+}
+.product-item__images-btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  border-radius: 10px;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+}
+.product-item__images-btn > span {
+  font-size: 30px;
 }
 .product-item__rating {
   display: flex;
@@ -1520,6 +1561,61 @@ h1, h2, h3, h4, h5, h6 {
 }
 .product-item.product-item-verybad .product-item__rating-star:nth-of-type(1) svg * {
   fill: #FFCD4B;
+}
+
+.popup-images {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100vw);
+}
+.popup-images.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.popup-images .swiper-container {
+  height: 100%;
+  width: 100%;
+}
+.popup-images .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-images__item {
+  position: relative;
+  min-width: 50%;
+  max-width: 80%;
+  max-height: 80%;
+}
+.popup-images__item > img {
+  width: 100%;
+  border-radius: 10px;
+}
+.popup-images__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  transform: translate(75%, -75%);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+.popup-images__close:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+:root {
+  --swiper-navigation-size: 100px;
 }
 
 .product-about__title {

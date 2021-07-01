@@ -75,6 +75,27 @@ if (document.querySelector('.popups')) {
             })
         })
     }
+
+    if (document.querySelectorAll('.popup-images')) {
+        let popupImages = document.querySelector('.popup-images');
+        
+        let popupImagesOpeners = document.querySelectorAll('._popup-images-opener');
+        let popupImagesClosers = document.querySelectorAll('._popup-images-closer');
+
+        popupImagesOpeners.forEach((opener, index) => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupImages.classList.add('active');
+            })
+        })
+        
+        popupImagesClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupImages.classList.remove('active');
+            })
+        })
+    }
 }
 
 if (document.querySelector('._callbacktabs')) {
@@ -282,7 +303,7 @@ if (document.querySelector('.popup-room__demo') && document.querySelector('.popu
     })
 }
 if (document.querySelector('.popup-room__slider > .swiper-container')) {
-    const itemImagesSlider = new Swiper('.popup-room__slider > .swiper-container', {
+    const popupRoomImagesSlider = new Swiper('.popup-room__slider > .swiper-container', {
         navigation: {
             nextEl: '.popup-room__slider-arrow-right',
             prevEl: '.popup-room__slider-arrow-left'
@@ -291,6 +312,25 @@ if (document.querySelector('.popup-room__slider > .swiper-container')) {
         slidesPerView: 4,
         spaceBetween: 20
     });
+}
+
+if (document.querySelector('.popup-images > .swiper-container')) {
+    const popupImagesSlider = new Swiper('.popup-images > .swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+        watchOverflow: true,
+        slidesPerView: 1,
+    });
+
+    let popupImagesOpeners = document.querySelectorAll('._popup-images-opener');
+
+    popupImagesOpeners.forEach((opener, index) => {
+        opener.addEventListener('click', () => {
+            popupImagesSlider.slideTo(index, 0);
+        })
+    })
 }
 let horTabs = document.querySelectorAll('._hor-tabs');
 

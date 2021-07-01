@@ -1531,3 +1531,33 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #ffffff80;
 }
+
+.pagination {
+  margin: 30px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination__link {
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.pagination__link:not(.disabled, .inactive):hover {
+  background: #7383C5;
+}
+.pagination__link.active {
+  background: #7383C5;
+}
+.pagination__link.disabled {
+  cursor: default;
+  opacity: 0.1;
+}

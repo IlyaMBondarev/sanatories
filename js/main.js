@@ -75,6 +75,27 @@ if (document.querySelector('.popups')) {
             })
         })
     }
+
+    if (document.querySelectorAll('.popup-images')) {
+        let popupImages = document.querySelector('.popup-images');
+        
+        let popupImagesOpeners = document.querySelectorAll('._popup-images-opener');
+        let popupImagesClosers = document.querySelectorAll('._popup-images-closer');
+
+        popupImagesOpeners.forEach((opener, index) => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupImages.classList.add('active');
+            })
+        })
+        
+        popupImagesClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupImages.classList.remove('active');
+            })
+        })
+    }
 }
 
 if (document.querySelector('._callbacktabs')) {
