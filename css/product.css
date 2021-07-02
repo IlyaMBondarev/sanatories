@@ -78,6 +78,25 @@ body {
   color: #97dc52;
 }
 
+.video-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+.video-play-btn path:first-child {
+  transition: fill 0.2s ease-in-out;
+}
+.video-play-btn:hover {
+  opacity: 1;
+}
+.video-play-btn:hover path:first-child {
+  fill: #FF0000;
+}
+
 @media screen and (min-width: 768px) {
   .mobile {
     display: none;
@@ -1678,11 +1697,38 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   transition: all 0.5s ease-in-out;
 }
+.product-tabs__title {
+  font-size: 22px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
 .product-tabs__content {
   font-size: 17px;
   line-height: 120%;
   font-weight: 600;
   color: #ffffff80;
+  margin-bottom: 20px;
+}
+.product-tabs__list {
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff80;
+  margin-bottom: 20px;
+}
+.product-tabs__list_ordered {
+  padding-left: 20px;
+}
+.product-tabs__list_unordered {
+  padding-left: 20px;
+}
+.product-tabs__list_unordered li {
+  list-style: disc;
+}
+.product-tabs hr {
+  border: 1px inset #ffffff80;
   margin-bottom: 20px;
 }
 
@@ -2368,7 +2414,7 @@ h1, h2, h3, h4, h5, h6 {
 .product-replies__items {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   flex-wrap: wrap;
 }
 .product-replies__item {
@@ -2377,6 +2423,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 10px;
   padding: 20px 15px 30px 20px;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
 .product-replies__item:not(:nth-of-type(2n)) {
   margin-right: 30px;
@@ -2410,12 +2458,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 .product-replies__video {
-  height: 100px;
   width: 100%;
   margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
 .product-replies__audio {
+  margin-top: 20px;
   margin-bottom: 20px;
+}
+.product-replies__audio > audio {
+  width: 100%;
 }
 .product-replies__bottom {
   display: flex;

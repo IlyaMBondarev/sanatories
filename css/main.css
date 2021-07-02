@@ -78,6 +78,25 @@ body {
   color: #97dc52;
 }
 
+.video-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+.video-play-btn path:first-child {
+  transition: fill 0.2s ease-in-out;
+}
+.video-play-btn:hover {
+  opacity: 1;
+}
+.video-play-btn:hover path:first-child {
+  fill: #FF0000;
+}
+
 @media screen and (min-width: 768px) {
   .mobile {
     display: none;
