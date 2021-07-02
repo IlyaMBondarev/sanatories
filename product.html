@@ -81,7 +81,7 @@
             </svg>
         </button>
         <div class="popup-room__block">
-            <h3 class="popup-room__title">Double plus однокомнатный двухместный (корпус АБ) </h3>
+            <h3 class="popup-room__title">Double plus однокомнатный двухместный (корпус&nbsp;АБ) </h3>
             <div class="popup-room__demo">
                 <img src="img/products/id/room2.jpg" alt="">
             </div>
@@ -172,7 +172,7 @@
                         <img src="img/products/common/flame.svg" alt="">
                         <span>Осталось 2 номера</span>
                     </p>
-                    <button class="popup-room__submit">Выбрать</button>
+                    <button class="popup-room__submit _popup-choice-opener _popup-room-closer" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">Выбрать</button>
                 </div>
             </div>
             <div class="popup-room__price-lists lists-2">
@@ -743,7 +743,7 @@
                         <p class="popup-room__price-content">питание + проживание + лечение</p>
                     </div>
                 </div>
-                <button class="popup-room__submit">Выбрать</button>
+                <button class="popup-room__submit _popup-choice-opener _popup-room-closer" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">Выбрать</button>
             </div>
         </div>
     </div>
@@ -834,6 +834,96 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
+    </div>
+    <div class="popup-parameters">
+        <button class="popup-parameters__close _popup-parameters-closer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+            </svg>
+        </button>
+        <p class="popup-parameters__title">Выберите параметры поездки:</p>
+        <form class="popup-parameters__form" action="#">
+            <div class="popup-parameters__block">
+                <p class="popup-parameters__block-title">Цель поездки</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-current">С лечением</span>
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <ul class="select__list select-list">
+                            <li class="select__item select-item active">С лечением</li>
+                            <li class="select__item select-item">Без лечения</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-parameters__block">
+                <p class="popup-parameters__block-title">Даты / Количество дней</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-current">Будут даты</span>
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <ul class="select__list select-list">
+                            <li class="select__item select-item active">Будут даты</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-parameters__block">
+                <p class="popup-parameters__block-title">Количество билетов</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-current">—</span>
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <ul class="select__list select-list">
+                            <li class="select__item select-item active">—</li>
+                            <li class="select__item select-item">1</li>
+                            <li class="select__item select-item">2</li>
+                            <li class="select__item select-item">3</li>
+                            <li class="select__item select-item">4</li>
+                            <li class="select__item select-item">5</li>
+                            <li class="select__item select-item">6</li>
+                            <li class="select__item select-item">7</li>
+                            <li class="select__item select-item">8</li>
+                            <li class="select__item select-item">9</li>
+                            <li class="select__item select-item">10+</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="popup-parameters__submit">Применить</button>
+        </form>
+    </div>
+    <div class="popup-choice">
+        <button class="popup-choice__close _popup-choice-closer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+            </svg>
+        </button>
+        <p class="popup-choice__title"><span>Double plus однокомнатный двухместный / </span>Санаторий «Плаза - SPA»</p>
+        <p class="popup-choice__content">Отличный выбор! Наш эксперт-куротолог с вами свяжется для уточнение деталей.</p>
+        <form class="popup-choice__form" action="#">
+            <div class="popup-choice__block">
+                <p class="popup-choice__block-title">Ваше имя</p>
+                <div class="popup-choice__input">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="popup-choice__block">
+                <p class="popup-choice__block-title">Телефон</p>
+                <div class="popup-choice__input">
+                    <input type="tel">
+                </div>
+            </div>
+            <button class="popup-choice__submit">Применить</button>
+        </form>
     </div></div><header class="header">
     <div class="container">
         <div class="header__row">
@@ -1142,7 +1232,7 @@
                             <p class="product-rooms__content">Показаны цены до 27 февраля.</p>
                             <p class="product-rooms__content product-rooms__content_important">Получите точные цены, указав желаемые даты заезда</p>
                         </div>
-                        <button class="product-rooms__change">Изменить</button>
+                        <button class="product-rooms__parameters _popup-parameters-opener">Изменить</button>
                     </div>
                     <article class="room">
                         <div class="room__main">
@@ -1234,7 +1324,7 @@
                                     <p class="room__price-content">питание + проживание + лечение</p>
                                 </div>
                             </div>
-                            <button class="room__submit">Выбрать</button>
+                            <button class="room__submit _popup-choice-opener" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">Выбрать</button>
                         </div>
                     </article>
                     <article class="room">
@@ -1243,7 +1333,7 @@
                                 <img src="img/products/id/room1.jpg" alt="">
                             </div>
                             <div class="room__right">
-                                <h2 class="room__title">Double plus однокомнатный двухместный (корпус&nbsp;АБ)</h2>
+                                <h2 class="room__title">Double plus однокомнатный двухместный</h2>
                                 <p class="room__content">Площадь номера: 43 кв.м.</p>
                                 <p class="room__content">Количество комнат: 1</p>
                                 <p class="room__content">Вмещает: 2 + 1</p>
@@ -1327,7 +1417,7 @@
                                     <p class="room__price-content">питание + проживание + лечение</p>
                                 </div>
                             </div>
-                            <button class="room__submit">Выбрать</button>
+                            <button class="room__submit _popup-choice-opener" data-roomName="Double plus однокомнатный двухместный">Выбрать</button>
                         </div>
                     </article>
                     <button class="product-rooms__more">

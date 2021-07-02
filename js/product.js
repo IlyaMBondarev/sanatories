@@ -76,6 +76,50 @@ if (document.querySelector('.popups')) {
         })
     }
 
+    if (document.querySelectorAll('.popup-parameters')) {
+        let popupParameters = document.querySelector('.popup-parameters');
+        
+        let popupParametersOpeners = document.querySelectorAll('._popup-parameters-opener');
+        let popupParametersClosers = document.querySelectorAll('._popup-parameters-closer');
+
+        popupParametersOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupParameters.classList.add('active');
+            })
+        })
+        
+        popupParametersClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupParameters.classList.remove('active');
+            })
+        })
+    }
+
+    if (document.querySelectorAll('.popup-choice')) {
+        let popupChoice = document.querySelector('.popup-choice');
+        let popupChoiceRoomName = document.querySelector('.popup-choice__title > span');
+        
+        let popupChoiceOpeners = document.querySelectorAll('._popup-choice-opener');
+        let popupChoiceClosers = document.querySelectorAll('._popup-choice-closer');
+
+        popupChoiceOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popupChoiceRoomName.textContent = `${opener.dataset.roomname} / `
+                popups.classList.add('active');
+                popupChoice.classList.add('active');
+            })
+        })
+        
+        popupChoiceClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupChoice.classList.remove('active');
+            })
+        })
+    }
+
     if (document.querySelectorAll('.popup-images')) {
         let popupImages = document.querySelector('.popup-images');
         
