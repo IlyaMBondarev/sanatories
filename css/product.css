@@ -1323,8 +1323,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .popup-choice__block {
   width: 300px;
-  margin: 0 10px;
-  margin-bottom: 20px;
+  margin: 0 10px 20px;
 }
 .popup-choice__block-title {
   font-size: 14px;

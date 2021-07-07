@@ -76,6 +76,40 @@ if (document.querySelector('.popups')) {
         })
     }
 
+    if (document.querySelectorAll('.popup-pick-up')) {
+        let popupPickUp = document.querySelector('.popup-pick-up');
+        
+        let popupPickUpOpeners = document.querySelectorAll('._popup-pick-up-opener');
+        let popupPickUpClosers = document.querySelectorAll('._popup-pick-up-closer');
+
+        popupPickUpOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupPickUp.classList.add('active');
+            })
+        })
+        
+        popupPickUpClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupPickUp.classList.remove('active');
+            })
+        })
+    }
+
+    if (document.querySelectorAll('.popup-pick-up-thanks')) {
+        let popupPickUp = document.querySelector('.popup-pick-up-thanks');
+        
+        let popupPickUpClosers = document.querySelectorAll('._popup-pick-up-thanks-closer');
+        
+        popupPickUpClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupPickUp.classList.remove('active');
+            })
+        })
+    }
+
     if (document.querySelectorAll('.popup-parameters')) {
         let popupParameters = document.querySelector('.popup-parameters');
         
@@ -142,21 +176,24 @@ if (document.querySelector('.popups')) {
     }
 }
 
-if (document.querySelector('._callbacktabs')) {
-    let callbacktabs = document.querySelector('._callbacktabs');
-    let inputs = callbacktabs.querySelectorAll('._callbacktabs-input');
-    let contents = callbacktabs.querySelectorAll('._callbacktabs-content');
-    let activeIndex = 0;
+if (document.querySelector('._labeltabs')) {
+    let labeltabs = document.querySelectorAll('._labeltabs');
 
-    inputs.forEach((input, index) => {
-        if (input.checked) {
-            activeIndex = index;
-            contents[activeIndex].classList.add('active');
-        }
-        input.addEventListener('change', () => {
-            contents[activeIndex].classList.remove('active');
-            activeIndex = index;
-            contents[activeIndex].classList.add('active');
+    labeltabs.forEach(labeltabs => {
+        let inputs = labeltabs.querySelectorAll('._labeltabs-input');
+        let contents = labeltabs.querySelectorAll('._labeltabs-content');
+        let activeIndex = 0;
+
+        inputs.forEach((input, index) => {
+            if (input.checked) {
+                activeIndex = index;
+                contents[activeIndex].classList.add('active');
+            }
+            input.addEventListener('change', () => {
+                contents[activeIndex].classList.remove('active');
+                activeIndex = index;
+                contents[activeIndex].classList.add('active');
+            })
         })
     })
 }

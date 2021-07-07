@@ -76,6 +76,40 @@ if (document.querySelector('.popups')) {
         })
     }
 
+    if (document.querySelectorAll('.popup-pick-up')) {
+        let popupPickUp = document.querySelector('.popup-pick-up');
+        
+        let popupPickUpOpeners = document.querySelectorAll('._popup-pick-up-opener');
+        let popupPickUpClosers = document.querySelectorAll('._popup-pick-up-closer');
+
+        popupPickUpOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupPickUp.classList.add('active');
+            })
+        })
+        
+        popupPickUpClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupPickUp.classList.remove('active');
+            })
+        })
+    }
+
+    if (document.querySelectorAll('.popup-pick-up-thanks')) {
+        let popupPickUp = document.querySelector('.popup-pick-up-thanks');
+        
+        let popupPickUpClosers = document.querySelectorAll('._popup-pick-up-thanks-closer');
+        
+        popupPickUpClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupPickUp.classList.remove('active');
+            })
+        })
+    }
+
     if (document.querySelectorAll('.popup-parameters')) {
         let popupParameters = document.querySelector('.popup-parameters');
         
@@ -142,21 +176,24 @@ if (document.querySelector('.popups')) {
     }
 }
 
-if (document.querySelector('._callbacktabs')) {
-    let callbacktabs = document.querySelector('._callbacktabs');
-    let inputs = callbacktabs.querySelectorAll('._callbacktabs-input');
-    let contents = callbacktabs.querySelectorAll('._callbacktabs-content');
-    let activeIndex = 0;
+if (document.querySelector('._labeltabs')) {
+    let labeltabs = document.querySelectorAll('._labeltabs');
 
-    inputs.forEach((input, index) => {
-        if (input.checked) {
-            activeIndex = index;
-            contents[activeIndex].classList.add('active');
-        }
-        input.addEventListener('change', () => {
-            contents[activeIndex].classList.remove('active');
-            activeIndex = index;
-            contents[activeIndex].classList.add('active');
+    labeltabs.forEach(labeltabs => {
+        let inputs = labeltabs.querySelectorAll('._labeltabs-input');
+        let contents = labeltabs.querySelectorAll('._labeltabs-content');
+        let activeIndex = 0;
+
+        inputs.forEach((input, index) => {
+            if (input.checked) {
+                activeIndex = index;
+                contents[activeIndex].classList.add('active');
+            }
+            input.addEventListener('change', () => {
+                contents[activeIndex].classList.remove('active');
+                activeIndex = index;
+                contents[activeIndex].classList.add('active');
+            })
         })
     })
 }
@@ -315,6 +352,51 @@ if (document.querySelector('.select')) {
                 }
             })
         }
+    })
+}
+if (document.querySelector('._popup-quiz')) {
+    let quiz = document.querySelector('._popup-quiz');
+    let questions = quiz.querySelectorAll('._popup-quiz-question');
+    let stepsCurr = quiz.querySelector('._popup-quiz-steps-curr');
+    let stepsLength = quiz.querySelector('._popup-quiz-steps-length');
+    let line = quiz.querySelector('._popup-quiz-line');
+    let prev = quiz.querySelector('._popup-quiz-prev');
+    let next = quiz.querySelector('._popup-quiz-next');
+    let indexOfActiveQuestion = null;
+    stepsLength.textContent = questions.length;
+
+    questions.forEach((question, i) => {
+        if (question.classList.contains('active')) {
+            indexOfActiveQuestion = i;
+            stepsCurr.textContent = indexOfActiveQuestion + 1;
+            line.style.width = `${(indexOfActiveQuestion + 1) * 25}%`;
+        }
+    })
+
+    prev.addEventListener('click', () => {
+        if (indexOfActiveQuestion > 0) {
+            questions[indexOfActiveQuestion].classList.remove('active');
+            indexOfActiveQuestion--;
+            stepsCurr.textContent = indexOfActiveQuestion + 1;
+            line.style.width = `${(indexOfActiveQuestion + 1) * 25}%`;
+            questions[indexOfActiveQuestion].classList.add('active');
+            next.classList.add('_popup-thanks-opener');
+            next.classList.add('_popup-pick-up-closer');
+        }
+    })
+
+    next.addEventListener('click', () => {
+        questions[indexOfActiveQuestion].classList.remove('active');
+        if (indexOfActiveQuestion < questions.length - 1) {
+            indexOfActiveQuestion++;
+        } else {
+            document.querySelector('.popup-pick-up').classList.remove('active');
+            document.querySelector('.popup-pick-up-thanks').classList.add('active');
+            indexOfActiveQuestion = 0;
+        }
+        stepsCurr.textContent = indexOfActiveQuestion + 1;
+        line.style.width = `${(indexOfActiveQuestion + 1) * 25}%`;
+        questions[indexOfActiveQuestion].classList.add('active');
     })
 }
 if (document.querySelector('.item__images')) {
