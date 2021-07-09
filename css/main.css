@@ -767,6 +767,69 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 20px;
 }
 
+.popup-thanks {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 900px;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%);
+  border-radius: 10px;
+  opacity: 0;
+  transform: translate(-50%, -50%) translateX(100vw);
+}
+.popup-thanks.active {
+  transform: translate(-50%, -50%) translateX(0);
+  opacity: 1;
+}
+.popup-thanks__close {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc(100% + 10px);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+.popup-thanks__close:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+.popup-thanks__icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 35px;
+}
+.popup-thanks__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.popup-thanks__title {
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.popup-thanks__content {
+  font-size: 22px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
 .main-screen {
   position: relative;
   width: 100%;
@@ -869,13 +932,13 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0px 10px 10px 10px;
 }
 .main-pick-up__item {
-  height: 100%;
   padding: 30px;
   border-radius: 0px 10px 10px 10px;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 100%;
   top: 0;
   left: 0;
   opacity: 0;
@@ -1814,27 +1877,27 @@ h1, h2, h3, h4, h5, h6 {
   background: #D92C4B;
 }
 
-.pick-up {
+.main-banner {
   position: relative;
   margin: 0 -30px 60px;
   background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%);
 }
-.pick-up__image {
+.main-banner__image {
   position: absolute;
 }
-.pick-up__image-flower-small {
+.main-banner__image-flower-small {
   bottom: 63.5%;
   left: 5%;
 }
-.pick-up__image-flower-big {
+.main-banner__image-flower-big {
   bottom: 0;
   left: 0;
 }
-.pick-up__image-baggage {
+.main-banner__image-baggage {
   bottom: 0;
   right: 0;
 }
-.pick-up__main {
+.main-banner__main {
   position: relative;
   z-index: 1;
   padding: 100px 0;
@@ -1842,16 +1905,16 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
 }
-.pick-up__content {
+.main-banner__content {
   font-size: 30px;
   line-height: 120%;
   font-weight: 700;
   text-align: center;
 }
-.pick-up__content span {
+.main-banner__content span {
   display: block;
 }
-.pick-up__button {
+.main-banner__button {
   font-size: 17px;
   line-height: 27px;
   font-weight: 600;
@@ -1862,7 +1925,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
 }
-.pick-up__button:hover {
+.main-banner__button:hover {
   background: #97DC52;
   box-shadow: 0px 0px 5px #97DC52;
 }

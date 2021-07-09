@@ -55,6 +55,17 @@ if (document.querySelector('.popups')) {
         })
     })
 
+    let popupThanks = document.querySelector('.popup-thanks');
+    
+    let popupThanksClosers = document.querySelectorAll('._popup-thanks-closer');
+    
+    popupThanksClosers.forEach(closer => {
+        closer.addEventListener('click', () => {
+            popups.classList.remove('active');
+            popupThanks.classList.remove('active');
+        })
+    })
+
     if (document.querySelectorAll('.popup-room')) {
         let popupRoom = document.querySelector('.popup-room');
         
