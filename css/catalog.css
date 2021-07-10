@@ -245,6 +245,10 @@ input._error {
   color: #ffffff;
 }
 
+._video {
+  cursor: pointer;
+}
+
 * {
   padding: 0;
   margin: 0;

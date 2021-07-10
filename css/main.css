@@ -245,6 +245,10 @@ input._error {
   color: #ffffff;
 }
 
+._video {
+  cursor: pointer;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -1459,13 +1463,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 .main-video__video {
   height: 100%;
-  background: #000;
+  min-height: 300px;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
-.main-video__video > * {
+.main-video__video > img {
   max-width: 100%;
   max-height: 100%;
+  border-radius: 10px;
 }
 .main-video__content {
   font-size: 17px;
