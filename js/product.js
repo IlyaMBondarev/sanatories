@@ -245,6 +245,38 @@ if (document.querySelector('.select')) {
             })
         }
 
+        if (select.querySelector('.select-calendar')) {
+            let calendarTable = document.querySelector('.select-calendar');
+        
+            function fillTable(currMonth, currYear) {
+                let Dlast = new Date(currYear,currMonth+1,0).getDate();
+                let D = new Date(currYear,currMonth,Dlast);
+                let DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay();
+                let DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay();
+                let calendar = '<tr>';
+                let month = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+                if (DNfirst != 0) {
+                    for(let i = 1; i < DNfirst; i++) calendar += '<td></td>';
+                } else {
+                    for(let i = 0; i < 6; i++) calendar += '<td></td>';
+                }
+                for(let i = 1; i <= Dlast; i++) {
+                    /*if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+                        calendar += '<td class="today">' + i + '</td>';
+                    } else {
+                        calendar += '<td>' + i + '</td>';
+                    }*/
+                    calendar += '<td>' + i + '</td>';
+                    if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+                        calendar += '</tr><tr>';
+                    }
+                }
+                for(let i = DNlast; i < 7; i++) calendar += '<td></td>';
+                calendarTable.querySelector('tbody').innerHTML = calendar;
+            }
+            fillTable(new Date().getMonth(), new Date().getFullYear());
+        }
+
         if (select.querySelector('.select-count')) {
             function checkEnding(count, endings) {
                 if (count === 1) {

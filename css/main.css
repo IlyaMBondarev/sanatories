@@ -244,6 +244,27 @@ input._error {
   font-weight: 700;
   color: #ffffff;
 }
+.select__calendar-table {
+  width: 100%;
+}
+.select__calendar-table td {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.select__calendar-table td:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.select__calendar-table td.active {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+}
 
 ._video {
   cursor: pointer;
