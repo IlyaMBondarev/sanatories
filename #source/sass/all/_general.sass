@@ -35,6 +35,8 @@ $black: #000000
 
 body
   width: 100%
+  max-width: 100%
+  overflow: hidden
   font-family: $fontfamily
   font-size: 10px
   font-weight: 600
@@ -45,15 +47,16 @@ body
   display: flex
   flex-direction: column
   min-height: 100vh
+  max-height: 100vh
   width: 100%
   overflow-x: hidden
+  overflow-y: auto
   overflow-anchor: none
 
 .content
   flex-grow: 1
   display: flex
   flex-direction: column
-  overflow: hidden
   position: relative
   & > div
     width: 100%
@@ -88,6 +91,21 @@ body
     &__green
       color: #97dc52
 
+.video-play-btn
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  background: none
+  opacity: 0.8
+  transition: opacity 0.2s ease-in-out
+  & path:first-child
+    transition: fill 0.2s ease-in-out
+  &:hover
+    opacity: 1
+    & path:first-child
+      fill: #FF0000
+
 .mobile
   @media screen and ( min-width: 768px )
     display: none
@@ -120,6 +138,7 @@ input
   &__current
     display: inline-block
     max-width: calc(100% - 25px)
+    text-overflow: ellipsis
     white-space: nowrap
     overflow: hidden
     font-size: 17px

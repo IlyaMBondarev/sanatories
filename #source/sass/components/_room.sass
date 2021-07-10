@@ -1,0 +1,182 @@
+.room
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2)
+    margin-bottom: 20px
+    &__main
+        display: flex
+        justify-content: space-between
+        align-items: stretch
+        padding: 10px
+        background: #404A9B
+        border-radius: 10px 10px 0 0
+    &__image
+        width: 30%
+        min-height: 190px
+        border-radius: 5px
+        overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        & > img
+            width: 100%
+            border-radius: 5px
+    &__right
+        width: calc(70%)
+        padding: 10px
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+    &__title
+        font-size: 22px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 15px
+    &__content
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: #ffffff80
+        margin-bottom: 8px
+    &__more
+        margin-top: auto
+        align-self: flex-end
+        display: flex
+        align-items: center
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: #97DC52
+        background: transparent
+        & svg
+            transition: transform 0.2s
+        &:hover svg
+            transform: translateX(5px)
+    &__info
+        background: #404A9B
+        height: 30px
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        border-top: 3px solid #4E5AC0
+    &__info-block
+        display: flex
+        align-items: center
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #ffffff80
+        margin-right: 25px
+        & img
+            width: 20px
+            min-width: 20px
+            height: 20px
+            margin-right: 10px
+        &_important
+            color: #FFCD4B
+    &__bottom
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 20px
+        background: #4E5AC0
+        border-radius: 0 0 10px 10px
+    &__prices
+        display: flex
+        justify-content: flex-start
+        align-items: center
+    &__price
+        margin-right: 20px
+        &:not(:first-of-type)
+            padding-left: 20px
+            border-left: 2px solid #C4C4C440
+    &__price-title
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: $white
+        margin-bottom: 2px
+        & > p
+            margin-right: 6px
+            & > span
+                font-size: 22px
+                line-height: 120%
+                font-weight: 700
+    &__price-info
+        position: relative
+        cursor: pointer
+        height: 20px
+        width: 20px
+        min-width: 20px
+        & > svg
+            width: 20px
+            height: 20px
+            & *
+                transition: all 0.2s ease-in-out
+        &:hover &-list
+            opacity: 1
+            display: block
+            transition: all 0.2s ease-in-out
+        &:hover > svg
+            & rect
+                fill: #4E5AC0
+            & path
+                fill: $white
+    &__price-info-list
+        position: absolute
+        bottom: calc(100% + 18px)
+        left: 10px
+        background: #7383C5
+        padding: 20px
+        width: max-content
+        max-width: 500px
+        border-radius: 10px 10px 10px 0px
+        cursor: default
+        opacity: 0
+        display: none
+        transition: all 0.2s ease-in-out
+        &::after
+            content: url('../img/products/common/room-info-tail.svg')
+            position: absolute
+            top: 98%
+            left: 0
+        & > li
+            margin-left: 20px
+            list-style-type: disc
+            &:not(:last-child)
+                margin-bottom: 10px
+    &__price-info-title
+        font-size: 14px
+        line-height: 19px
+        font-weight: 700
+        color: $white
+    &__price-info-content
+        font-size: 12px
+        line-height: 115.5%
+        font-weight: 700
+        color: $white
+    &__price-content
+        font-size: 14px
+        line-height: 20px
+        font-weight: 700
+        color:#ffffff80
+    &__submit
+        height: 40px
+        width: 200px
+        min-width: 200px
+        margin-left: 20px
+        border-radius: 10px
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        background: #4EB012
+        transition: all 0.2s ease-in-out
+        &:hover
+            background: #97DC52
+            box-shadow: 0px 0px 5px #97DC52

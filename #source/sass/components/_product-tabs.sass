@@ -37,9 +37,30 @@
         max-height: 0
         overflow: hidden
         transition: all 0.5s ease-in-out
+    &__title
+        font-size: 22px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 20px
     &__content
         font-size: 17px
         line-height: 120%
         font-weight: 600
         color: #ffffff80
+        margin-bottom: 20px
+    &__list
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: #ffffff80
+        margin-bottom: 20px
+        &_ordered
+            padding-left: 20px
+        &_unordered
+            padding-left: 20px
+            & li
+                list-style: disc
+    & hr
+        border: 1px inset #ffffff80
         margin-bottom: 20px

@@ -1,0 +1,45 @@
+.popup-images
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    opacity: 0
+    transform: translateX(100vw)
+    &.active
+        transform: translateX(0)
+        opacity: 1
+    & .swiper-container
+        height: 100%
+        width: 100%
+    & .swiper-slide
+        display: flex
+        justify-content: center
+        align-items: center
+    &__item
+        position: relative
+        min-width: 50%
+        max-width: 80%
+        max-height: 80%
+        & > img
+            width: 100%
+            border-radius: 10px
+    &__close
+        position: absolute
+        right: 0
+        top: 0
+        z-index: 1
+        transform: translate(75%, -75%)
+        height: 32px
+        width: 32px
+        border-radius: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        background: rgba(255, 255, 255, 0.3)
+        transition: all 0.2s ease-in-out
+        &:hover
+            background: rgba(255, 255, 255, 0.6)
+
+:root
+    --swiper-navigation-size: 100px
