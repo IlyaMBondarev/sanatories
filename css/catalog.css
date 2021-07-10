@@ -17,6 +17,8 @@
 
 body {
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   font-family: "NunitoSans";
   font-size: 10px;
   font-weight: 600;
@@ -28,8 +30,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
   overflow-anchor: none;
 }
 
@@ -37,7 +41,6 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   position: relative;
 }
 .content > div {
@@ -944,13 +947,15 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   align-items: center;
   transform: scaleX(0);
-  transform-origin: left;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .pick-up__item-block.active {
   transform: none;
 }
-.pick-up__item-block.active ~ .pick-up__item-block {
+.pick-up__item-block:first-of-type {
+  transform-origin: left;
+}
+.pick-up__item-block:last-of-type {
   transform-origin: right;
 }
 .pick-up__item-left {

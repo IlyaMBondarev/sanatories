@@ -365,6 +365,51 @@ if (document.querySelector('.select')) {
         }
     })
 }
+
+if (document.querySelector('._pick-up-type')) {
+    let types = document.querySelectorAll('._pick-up-type');
+
+    types.forEach(type => {
+        let list = type.querySelector('._pick-up-type_list');
+        let items = list.querySelectorAll('._pick-up-type_item');
+        let typeblocks = type.querySelectorAll('._pick-up-type_block');
+        let indexOfActiveBlock = null;
+
+        items.forEach((item, index) => {
+            if (item.classList.contains('active')) {
+                indexOfActiveBlock = index;
+            }
+            item.addEventListener('click', () => {
+                typeblocks[indexOfActiveBlock].classList.add('hidden');
+                indexOfActiveBlock = index;
+                typeblocks[indexOfActiveBlock].classList.remove('hidden');
+            })
+        })
+    })
+}
+
+if (document.querySelector('._pick-up__edit')) {
+    let pickUpEdit = document.querySelector('._pick-up__edit');
+    let pickUpEditBlock = pickUpEdit.querySelector('._pick-up__edit-block');
+    let pickUpEditForm = pickUpEdit.querySelector('._pick-up__edit-form');
+    
+    let pickUpEditOpeners = pickUpEdit.querySelectorAll('._pick-up__edit-opener');
+    let pickUpEditClosers = pickUpEdit.querySelectorAll('._pick-up__edit-closer');
+
+    pickUpEditOpeners.forEach(opener => {
+        opener.addEventListener('click', () => {
+            pickUpEditBlock.classList.remove('active');
+            pickUpEditForm.classList.add('active');
+        })
+    })
+
+    pickUpEditClosers.forEach(closer => {
+        closer.addEventListener('click', () => {
+            pickUpEditBlock.classList.add('active');
+            pickUpEditForm.classList.remove('active');
+        })
+    })
+}
 if (document.querySelector('._popup-quiz')) {
     let quiz = document.querySelector('._popup-quiz');
     let questions = quiz.querySelectorAll('._popup-quiz-question');

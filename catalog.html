@@ -421,16 +421,16 @@
             <div class="pick-up__main">
                 <div class="pick-up__items">
                     <div class="pick-up__item _labeltabs-content active">
-                        <div class="pick-up__container container">
-                            <div class="pick-up__item-block">
+                        <div class="pick-up__container container _pick-up__edit">
+                            <div class="pick-up__item-block _pick-up__edit-block active">
                                 <div class="pick-up__item-left">
                                     <p class="pick-up__item-title">Вы выбрали:</p>
                                     <p class="pick-up__item-content"><span>лечение + проживание + 3-х разовое питание</span> <span>2 взрослых</span> <span>1 ребёнок</span> <span class="important"><img src="img/icons/gift.svg" alt=""> Встреча в подарок</span></p>
                                 </div>
-                                <button class="pick-up__edit-btn"><img src="img/icons/pencil.svg" alt=""></button>
+                                <button class="pick-up__edit-btn _pick-up__edit-opener"><img src="img/icons/pencil.svg" alt=""></button>
                             </div>
-                            <div class="pick-up__item-block active">
-                                <form class="pick-up__edit" action="#" onsubmit="event.preventDefault();">
+                            <div class="pick-up__item-block _pick-up__edit-form">
+                                <form class="pick-up__edit _pick-up-type" action="#" onsubmit="event.preventDefault();">
                                     <div class="pick-up__block">
                                         <div class="pick-up__select select">
                                             <div class="select__block select-block">
@@ -438,14 +438,14 @@
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-main">
-                                                <ul class="select__list select-list">
-                                                    <li class="select__item select-item active">С лечением</li>
-                                                    <li class="select__item select-item">Без лечения</li>
+                                                <ul class="select__list select-list _pick-up-type_list">
+                                                    <li class="select__item select-item _pick-up-type_item active">С лечением</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Без лечения</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="pick-up__block">
+                                    <div class="pick-up__block _pick-up-type_block">
                                         <div class="pick-up__select select">
                                             <div class="select__block select-block">
                                                 <span class="select__current select-current">Профиль лечения</span>
@@ -459,6 +459,21 @@
                                                     <li class="select__item select-item">Профиль 3</li>
                                                     <li class="select__item select-item">Профиль 4</li>
                                                     <li class="select__item select-item">Профиль 5</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pick-up__block _pick-up-type_block hidden">
+                                        <div class="pick-up__select select">
+                                            <div class="select__block select-block">
+                                                <span class="select__current select-current">Питание</span>
+                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                                            </div>
+                                            <div class="select__main select-main">
+                                                <ul class="select__list select-list">
+                                                    <li class="select__item select-item active">Без питания</li>
+                                                    <li class="select__item select-item">Двухразовое</li>
+                                                    <li class="select__item select-item">Трёхразовое</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -518,7 +533,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="pick-up__submit" type="submit">Найти санатории</button>
+                                    <button class="pick-up__submit _pick-up__edit-closer" type="submit">Найти санатории</button>
                                 </form>
                             </div>
                         </div>
