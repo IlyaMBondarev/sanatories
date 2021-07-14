@@ -226,7 +226,112 @@ if (document.querySelector('.select')) {
             }
         })
 
-        if (select.querySelector('.select-list')) {
+        if (select.querySelector('.select-calendar')) {
+            let calendarBlock = document.querySelector('.select-calendar');
+            let calendarTable = calendarBlock.querySelector('.select-calendar-table');
+            let calendarMonth = calendarBlock.querySelector('.select-calendar-month');
+            let calendarArrowLeft = calendarBlock.querySelector('.select-calendar-arrow-left');
+            let calendarArrowRight = calendarBlock.querySelector('.select-calendar-arrow-right');
+            let calendarEnterDay = calendarBlock.querySelector('.select-calendar-enter-input');
+            let calendarEnterMonth = calendarBlock.querySelector('.select-calendar-enter-select');
+            let calendarEnterMonthCurr = calendarEnterMonth.querySelector('.select-current');
+            let calendarEnterMonthList = calendarEnterMonth.querySelector('.select-list');
+            let calendarEnterMonthItems = calendarEnterMonth.querySelectorAll('.select-item');
+            let calendarExitDay = calendarBlock.querySelector('.select-calendar-exit-input');
+            let calendarExitMonth = calendarBlock.querySelector('.select-calendar-exit-select');
+            let calendarExitMonthCurr = calendarExitMonth.querySelector('.select-current');
+            let calendarExitMonthList = calendarExitMonth.querySelector('.select-list');
+            let calendarExitMonthItems = calendarExitMonth.querySelectorAll('.select-item');
+            let calendarCountDays = calendarBlock.querySelector('.select-calendar-count-days');
+            let startDayAfterToday = 7;
+            let startCountDays = 3;
+        
+            // функция заполнения календаря, 
+            // принимает в себя месяц и год отображаемого месяца
+            function fillTable(currMonth, currYear) {
+                let Dlast = new Date(currYear,currMonth+1,0).getDate();
+                let D = new Date(currYear,currMonth,Dlast);
+                let DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay();
+                let DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay();
+                let calendar = '<tr>';
+                let month = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+                if (DNfirst != 0) {
+                    for(let i = 1; i < DNfirst; i++) calendar += '<td></td>';
+                } else {
+                    for(let i = 0; i < 6; i++) calendar += '<td></td>';
+                }
+                for(let i = 1; i <= Dlast; i++) {
+                    // если нужно выделить сегодняшний день
+                    /*if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+                        calendar += '<td class="today">' + i + '</td>';
+                    } else {
+                        calendar += '<td>' + i + '</td>';
+                    }*/
+                    calendar += '<td>' + i + '</td>';
+                    if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+                        calendar += '</tr><tr>';
+                    }
+                }
+                for(let i = DNlast; i < 7; i++) calendar += '<td></td>';
+
+                calendarTable.querySelector('tbody').innerHTML = calendar;
+                calendarTable.dataset.month = D.getMonth();
+                calendarTable.dataset.year = D.getFullYear();
+
+                calendarMonth.innerHTML = month[D.getMonth()];
+            }
+
+            function startFillTable(currDate, currMonth, currYear, startDayAfterToday, startCountDays) {
+                fillTable(currMonth, currYear);
+
+                let Dlast = new Date(currYear,currMonth+1,0).getDate();
+                let month = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+
+                if (currDate + 10 <= Dlast) {
+                    calendarEnterDay.value = currDate + startDayAfterToday;
+                    calendarExitDay.value = currDate + startDayAfterToday + startCountDays;
+
+                    calendarEnterMonthCurr.textContent = month[currMonth];
+                    calendarExitMonthCurr.textContent = month[currMonth];
+                } else if (currDate + 7 <= Dlast) {
+                    calendarEnterDay.value = currDate + startDayAfterToday;
+                    calendarExitDay.value = startCountDays - (Dlast - currDate - startDayAfterToday);
+                    
+                    calendarEnterMonthCurr.textContent = month[currMonth];
+                    if (month[currMonth + 1]) {
+                        calendarExitMonthCurr.textContent = month[currMonth + 1];
+                    } else {
+                        calendarExitMonthCurr.textContent = month[0];
+                    }
+                } else {
+                    calendarEnterDay.value = startDayAfterToday - (Dlast - currDate);
+                    calendarExitDay.value = startDayAfterToday - (Dlast - currDate) + startCountDays;
+
+                    if (month[currMonth + 1]) {
+                        calendarEnterMonthCurr.textContent = month[currMonth + 1];
+                        calendarExitMonthCurr.textContent = month[currMonth + 1];
+                    } else {
+                        calendarEnterMonthCurr.textContent = month[0];
+                        calendarExitMonthCurr.textContent = month[0];
+                    }
+                }
+
+                calendarCountDays.value = startCountDays;
+            }
+
+            // первоначальное заполнение календаря
+            startFillTable(new Date().getDate(), new Date().getMonth(), new Date().getFullYear(), startDayAfterToday, startCountDays);
+
+            // переключатель минус месяц
+            calendarArrowLeft.addEventListener('click', () => {
+                fillTable( parseFloat(calendarTable.dataset.month)-1, calendarTable.dataset.year);
+            })
+            // переключатель плюс месяц
+            calendarArrowRight.addEventListener('click', () => {
+                fillTable( parseFloat(calendarTable.dataset.month)+1, calendarTable.dataset.year);
+            })
+            
+        } else if (select.querySelector('.select-list')) {
             let list = select.querySelector('.select-list');
             let items = list.querySelectorAll('.select-item');
             let activeIndex = 0;
@@ -243,41 +348,7 @@ if (document.querySelector('.select')) {
                     select.classList.remove('active');
                 })
             })
-        }
-
-        if (select.querySelector('.select-calendar')) {
-            let calendarTable = document.querySelector('.select-calendar');
-        
-            function fillTable(currMonth, currYear) {
-                let Dlast = new Date(currYear,currMonth+1,0).getDate();
-                let D = new Date(currYear,currMonth,Dlast);
-                let DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay();
-                let DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay();
-                let calendar = '<tr>';
-                let month = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
-                if (DNfirst != 0) {
-                    for(let i = 1; i < DNfirst; i++) calendar += '<td></td>';
-                } else {
-                    for(let i = 0; i < 6; i++) calendar += '<td></td>';
-                }
-                for(let i = 1; i <= Dlast; i++) {
-                    /*if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-                        calendar += '<td class="today">' + i + '</td>';
-                    } else {
-                        calendar += '<td>' + i + '</td>';
-                    }*/
-                    calendar += '<td>' + i + '</td>';
-                    if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
-                        calendar += '</tr><tr>';
-                    }
-                }
-                for(let i = DNlast; i < 7; i++) calendar += '<td></td>';
-                calendarTable.querySelector('tbody').innerHTML = calendar;
-            }
-            fillTable(new Date().getMonth(), new Date().getFullYear());
-        }
-
-        if (select.querySelector('.select-count')) {
+        } else if (select.querySelector('.select-count')) {
             function checkEnding(count, endings) {
                 if (count === 1) {
                     return endings[0]
