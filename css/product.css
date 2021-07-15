@@ -854,6 +854,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .select-calendar__parent {
   width: 125%;
+  min-width: 340px;
 }
 .select-calendar__main {
   display: flex;
@@ -1684,10 +1685,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .product-search__select .select__arrow {
   opacity: 0.8;
-}
-.product-search__select .select__main {
-  left: auto;
-  right: 0;
 }
 .product-search__submit {
   height: 40px;
@@ -2624,7 +2621,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   min-height: 423px;
   max-height: 423px;
-  overflow-x: hidden;
   overflow-y: visible;
   width: 100%;
   background: linear-gradient(103.16deg, #4B71F4 31.8%, #6487EB 100%);
@@ -2680,6 +2676,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 4px;
+}
+.product-prices__select .select__main {
+  left: 0;
+  transform: none;
 }
 .product-prices__submit {
   height: 48px;
