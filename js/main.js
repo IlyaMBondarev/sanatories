@@ -260,7 +260,7 @@ if (document.querySelector('._pick-up__edit')) {
         
 // функция заполнения календаря, 
 // принимает в себя месяц и год отображаемого месяца
-function fillTable(currMonth, currYear, calendarTable, calendarMonth) {
+function fillTable(currMonth, currYear, calendarObj) {
     let Dlast = new Date(currYear,currMonth+1,0).getDate();
     let D = new Date(currYear,currMonth,Dlast);
     let DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay();
@@ -272,43 +272,53 @@ function fillTable(currMonth, currYear, calendarTable, calendarMonth) {
         for(let i = 0; i < 6; i++) calendar += '<td></td>';
     }
     for(let i = 1; i <= Dlast; i++) {
-        // если нужно выделить сегодняшний день
-        /*if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-            calendar += '<td class="today">' + i + '</td>';
+        if ((calendarObj.calendarEnterMonthCurr.dataset.month < currMonth || (+calendarObj.calendarEnterMonthCurr.dataset.month === +currMonth && calendarObj.calendarEnterDay.value <= i))
+            && (calendarObj.calendarExitMonthCurr.dataset.month > currMonth || (+calendarObj.calendarExitMonthCurr.dataset.month === +currMonth && calendarObj.calendarExitDay.value >= i))) {
+            calendar += '<td class="date active">' + i + '</td>';
         } else {
-            calendar += '<td>' + i + '</td>';
-        }*/
-        calendar += '<td>' + i + '</td>';
+            calendar += '<td class="date">' + i + '</td>';
+        }
         if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
             calendar += '</tr><tr>';
         }
     }
     for(let i = DNlast; i < 7; i++) calendar += '<td></td>';
 
-    calendarTable.querySelector('tbody').innerHTML = calendar;
-    calendarTable.dataset.month = D.getMonth();
-    calendarTable.dataset.year = D.getFullYear();
+    calendarObj.calendarTable.querySelector('tbody').innerHTML = calendar;
+    calendarObj.calendarTable.dataset.month = D.getMonth();
+    calendarObj.calendarTable.dataset.year = D.getFullYear();
 
-    calendarMonth.innerHTML = month[D.getMonth()];
+    calendarObj.calendarMonth.innerHTML = month[D.getMonth()];
 }
 
 function pullDates(currYear, enterMonth, exitMonth, enterDate, exitDate, calendarObj) {
     calendarObj.calendarEnterDay.value = enterDate;
     calendarObj.calendarExitDay.value = exitDate;
 
+    calendarObj.calendarEnterMonthItems[calendarObj.calendarEnterMonthCurr.dataset.month].classList.remove('active');
     calendarObj.calendarEnterMonthCurr.dataset.month = enterMonth;
+    calendarObj.calendarEnterMonthCurr.textContent = month[enterMonth];
+    calendarObj.calendarEnterMonthItems[calendarObj.calendarEnterMonthCurr.dataset.month].classList.add('active');
+
+    calendarObj.calendarExitMonthItems[calendarObj.calendarExitMonthCurr.dataset.month].classList.remove('active');
     calendarObj.calendarExitMonthCurr.dataset.month = exitMonth;
+    calendarObj.calendarExitMonthCurr.textContent = month[exitMonth];
+    calendarObj.calendarExitMonthItems[calendarObj.calendarExitMonthCurr.dataset.month].classList.add('active');
 
     let startDate = new Date(currYear, enterMonth, enterDate);
     let endDate = new Date(currYear, exitMonth, exitDate);
+    calendarObj.calendarCountDays.value = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24) + 1;
 
-    calendarObj.calendarCountDays.value = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24);
+    calendarObj.calendarCurr.textContent = `${enterDate} ${month[enterMonth].slice(0,3).toLowerCase()} - ${exitDate} ${month[exitMonth].slice(0,3).toLowerCase()} / ${calendarObj.calendarCountDays.value} дн.`;
+
+    fillTable(+calendarObj.calendarTable.dataset.month, +calendarObj.calendarTable.dataset.year, calendarObj);
 }
 
 function startFillTable(currDate, currMonth, currYear, calendarObj) {
-    fillTable(currMonth, currYear, calendarObj.calendarTable, calendarObj.calendarMonth);
 
     let Dlast = new Date(currYear,currMonth+1,0).getDate();
+    let mouseMovingOnCalendar = false;
+    let startDayOnMoving = null;
 
     if (currDate + calendarObj.startDayAfterToday + calendarObj.startCountDays <= Dlast) {
         calendarObj.calendarEnterDay.value = currDate + calendarObj.startDayAfterToday;
@@ -353,6 +363,31 @@ function startFillTable(currDate, currMonth, currYear, calendarObj) {
     }
 
     calendarObj.calendarCountDays.value = calendarObj.startCountDays;
+    
+    pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.month, calendarObj.calendarExitMonthCurr.dataset.month, calendarObj.calendarEnterDay.value, calendarObj.calendarExitDay.value, calendarObj);
+    fillTable(currMonth, currYear, calendarObj);
+
+    calendarObj.calendarTable.querySelector('tbody').addEventListener('mousedown', (event) => {
+        if (event.target.classList.contains('date')) {
+            mouseMovingOnCalendar = true;
+            startDayOnMoving = event.target.textContent;
+            pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarTable.dataset.month, calendarObj.calendarTable.dataset.month, startDayOnMoving, startDayOnMoving, calendarObj);
+        }
+    })
+
+    calendarObj.calendarTable.querySelector('tbody').addEventListener('mousemove', (event) => {
+        if (mouseMovingOnCalendar && event.target.classList.contains('date')) {
+            if (+event.target.textContent >= startDayOnMoving) {
+                pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarTable.dataset.month, calendarObj.calendarTable.dataset.month, startDayOnMoving, event.target.textContent, calendarObj);
+            } else {
+                pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarTable.dataset.month, calendarObj.calendarTable.dataset.month, event.target.textContent, startDayOnMoving, calendarObj);
+            }
+        }
+    })
+
+    calendarObj.calendarTable.querySelector('tbody').addEventListener('mouseup', () => {
+        mouseMovingOnCalendar = false;
+    })
 }
 
 if (document.querySelector('.select')) {
@@ -373,9 +408,10 @@ if (document.querySelector('.select')) {
         })
 
         if (select.querySelector('.select-calendar')) {
-            let calendarBlock = document.querySelector('.select-calendar');
+            let calendarBlock = select.querySelector('.select-calendar');
             let calendarTable = calendarBlock.querySelector('.select-calendar-table');
             let calendarMonth = calendarBlock.querySelector('.select-calendar-month');
+            let calendarCurr = select.querySelector('.select-calendar-current');
             let calendarArrowLeft = calendarBlock.querySelector('.select-calendar-arrow-left');
             let calendarArrowRight = calendarBlock.querySelector('.select-calendar-arrow-right');
             let calendarEnterDay = calendarBlock.querySelector('.select-calendar-enter-input');
@@ -396,6 +432,7 @@ if (document.querySelector('.select')) {
                 calendarBlock,
                 calendarTable,
                 calendarMonth,
+                calendarCurr,
                 calendarArrowLeft,
                 calendarArrowRight,
                 calendarEnterDay,
@@ -412,17 +449,20 @@ if (document.querySelector('.select')) {
                 startDayAfterToday,
                 startCountDays
             }
+            
+            calendarTable.dataset.month = new Date().getMonth();
+            calendarTable.dataset.year = new Date().getFullYear();
 
             // первоначальное заполнение календаря
             startFillTable(new Date().getDate(), new Date().getMonth(), new Date().getFullYear(), calendarObj);
 
             // переключатель минус месяц
             calendarArrowLeft.addEventListener('click', () => {
-                fillTable( parseFloat(calendarTable.dataset.month)-1, calendarTable.dataset.year);
+                fillTable( parseFloat(calendarTable.dataset.month)-1, calendarTable.dataset.year, calendarObj);
             })
             // переключатель плюс месяц
             calendarArrowRight.addEventListener('click', () => {
-                fillTable( parseFloat(calendarTable.dataset.month)+1, calendarTable.dataset.year);
+                fillTable( parseFloat(calendarTable.dataset.month)+1, calendarTable.dataset.year, calendarObj);
             })
             
             calendarEnterDay.addEventListener('input', () => {
@@ -463,22 +503,34 @@ if (document.querySelector('.select')) {
 
             calendarEnterMonthItems.forEach((item, index) => {
                 item.addEventListener('click', () => {
-                    calendarEnterMonthCurr.dataset.month = index;
-                    if (calendarEnterDay.value > new Date(calendarTable.dataset.year, +calendarEnterMonthCurr.dataset.month + 1, 0).getDate()) {
-                        calendarEnterDay.value = new Date(calendarTable.dataset.year, +calendarEnterMonthCurr.dataset.month + 1, 0).getDate();
+                    if (calendarEnterDay.value > new Date(calendarTable.dataset.year, +index + 1, 0).getDate()) {
+                        calendarEnterDay.value = new Date(calendarTable.dataset.year, +index + 1, 0).getDate();
                     }
-                    pullDates(calendarTable.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj);
+                    pullDates(calendarTable.dataset.year, index, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj);
                 })
             })
 
             calendarExitMonthItems.forEach((item, index) => {
                 item.addEventListener('click', () => {
-                    calendarExitMonthCurr.dataset.month = index;
-                    if (calendarExitDay.value > new Date(calendarTable.dataset.year, +calendarExitMonthCurr.dataset.month + 1, 0).getDate()) {
-                        calendarExitDay.value = new Date(calendarTable.dataset.year, +calendarExitMonthCurr.dataset.month + 1, 0).getDate();
+                    if (calendarExitDay.value > new Date(calendarTable.dataset.year, +index + 1, 0).getDate()) {
+                        calendarExitDay.value = new Date(calendarTable.dataset.year, +index + 1, 0).getDate();
                     }
-                    pullDates(calendarTable.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj);
+                    pullDates(calendarTable.dataset.year, calendarEnterMonthCurr.dataset.month, index, calendarEnterDay.value, calendarExitDay.value, calendarObj);
                 })
+            })
+            
+            calendarCountDays.addEventListener('blur', () => {
+
+                let startDate = new Date(calendarTable.dataset.year, calendarEnterMonthCurr.dataset.month, calendarEnterDay.value);
+                let endDate = new Date(startDate.getTime()+(calendarObj.calendarCountDays.value*24*60*60*1000));
+
+                if (startDate.getFullYear() === endDate.getFullYear() && startDate.getMonth() === endDate.getMonth() && startDate.getDate() === endDate.getDate()) {
+                    pullDates(calendarTable.dataset.year, startDate.getMonth(), endDate.getMonth(), startDate.getDate(), endDate.getDate(), calendarObj);
+                } else if (+endDate.getDate() === 1) {
+                    pullDates(calendarTable.dataset.year, startDate.getMonth(), endDate.getMonth()-1, startDate.getDate(), new Date(calendarTable.dataset.year, endDate.getMonth(), 0).getDate(), calendarObj);
+                } else {
+                    pullDates(calendarTable.dataset.year, startDate.getMonth(), endDate.getMonth(), startDate.getDate(), endDate.getDate()-1, calendarObj);
+                }
             })
             
         } else if (select.querySelector('.select-list')) {

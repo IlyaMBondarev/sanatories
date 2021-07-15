@@ -875,6 +875,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .select-calendar__table {
   width: 100%;
+  border-collapse: collapse;
 }
 .select-calendar__table td {
   width: 32px;
@@ -887,11 +888,10 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: middle;
   cursor: pointer;
 }
-.select-calendar__table td:hover {
+.select-calendar__table td.date:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 .select-calendar__table td.active {
-  border: 2px solid rgba(255, 255, 255, 0.6);
   background: rgba(255, 255, 255, 0.1);
 }
 .select-calendar__table thead td {

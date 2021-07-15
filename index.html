@@ -424,7 +424,7 @@
                     <div class="main-pick-up__items">
                         <div class="main-pick-up__item _labeltabs-content active">
                             <h2 class="main-pick-up__title">Санатории Кисловодска цены на 2020 год</h2>
-                            <form class="main-pick-up__form" action="#">
+                            <form class="main-pick-up__form" action="#" onsubmit="event.preventDefault();" onkeydown="if (event.key == 'Enter') event.preventDefault()">
                                 <div class="main-pick-up__form-main _pick-up-type">
                                     <div class="main-pick-up__block">
                                         <div class="main-pick-up__select select">
@@ -476,7 +476,7 @@
                                     <div class="main-pick-up__block">
                                         <div class="main-pick-up__select select">
                                             <div class="select__block select-block">
-                                                <span class="select__current select-current">Будет дата</span>
+                                                <span class="select__current select-calendar-current"></span>
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-calendar__parent select-main">
