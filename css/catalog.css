@@ -117,278 +117,6 @@ input._error {
   border-color: #E23A58;
 }
 
-.select {
-  position: relative;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-.select.active > .select__main {
-  padding: 10px;
-  max-height: none;
-  overflow: visible;
-}
-.select.active > .select__block > .select__arrow {
-  transform: rotateX(180deg);
-}
-.select__block {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 12px;
-  cursor: pointer;
-}
-.select__current {
-  display: inline-block;
-  max-width: calc(100% - 25px);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 17px;
-  line-height: 27px;
-  font-weight: 600;
-  color: #ffffff;
-}
-.select__arrow {
-  transition: all 0.2s ease-in-out;
-}
-.select__main {
-  min-width: 100%;
-  position: absolute;
-  z-index: 50;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  max-height: 0;
-  background: #4E5AC0;
-  border-radius: 4px;
-  padding: 0 10px;
-  overflow: auto;
-  scrollbar-width: 2px;
-  scrollbar-color: #ffffff;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-.select__main::-webkit-scrollbar {
-  width: 2px;
-  background-color: transparent;
-  border-radius: 2px;
-}
-.select__main::-webkit-scrollbar-thumb {
-  background-color: #ffffff;
-  border-radius: 2px;
-}
-.select__list {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  max-height: 312px;
-  overflow: auto;
-  scrollbar-width: 2px;
-  scrollbar-color: #ffffff;
-}
-.select__list::-webkit-scrollbar {
-  width: 2px;
-  background-color: transparent;
-  border-radius: 2px;
-}
-.select__list::-webkit-scrollbar-thumb {
-  background-color: #ffffff;
-  border-radius: 2px;
-}
-.select__item {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 3px 13px;
-  font-size: 17px;
-  line-height: 27px;
-  font-weight: 600;
-  color: #F6F6FE;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.select__item.active {
-  background: rgba(0, 0, 0, 0.2);
-}
-.select__item:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-.select__count {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.select__count:not(:first-of-type) {
-  margin-top: 8px;
-}
-.select__count > span {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 700;
-  color: #ffffff;
-}
-.select__count-block {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.select__count-block > button {
-  width: 32px;
-  min-width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  transition: background 0.2s ease-in-out;
-}
-.select__count-block > button:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-.select__count-block > span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 32px;
-  margin-left: 8px;
-  margin-right: 8px;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 700;
-  color: #ffffff;
-}
-.select-calendar__parent {
-  width: 125%;
-}
-.select-calendar__main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.select-calendar__arrow {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  background: transparent;
-}
-.select-calendar__arrow:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-.select-calendar__center {
-  padding: 16px;
-  text-align: center;
-}
-.select-calendar__table {
-  width: 100%;
-}
-.select-calendar__table td {
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  line-height: 120%;
-  font-weight: 700;
-  color: #ffffff;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-}
-.select-calendar__table td:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-.select-calendar__table td.active {
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.1);
-}
-.select-calendar__table thead td {
-  color: #ffffff80;
-}
-.select-calendar__content {
-  font-size: 14px;
-  line-height: 120%;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-.select-calendar__around {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-}
-.select-calendar__enter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.select-calendar__exit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.select-calendar__count {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.select-calendar__enter input[type=number], .select-calendar__exit input[type=number], .select-calendar__count input[type=number] {
-  height: 32px;
-  padding: 6px;
-  text-align: center;
-  margin-right: 4px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  font-size: 14px;
-  line-height: 120%;
-  font-weight: 700;
-  color: #ffffff;
-  -moz-appearance: textfield;
-}
-.select-calendar__enter input[type=number]:placeholder, .select-calendar__exit input[type=number]:placeholder, .select-calendar__count input[type=number]:placeholder {
-  color: #ffffff80;
-}
-.select-calendar__enter input[type=number]::-webkit-inner-spin-button, .select-calendar__enter input[type=number]::-webkit-outer-spin-button, .select-calendar__exit input[type=number]::-webkit-inner-spin-button, .select-calendar__exit input[type=number]::-webkit-outer-spin-button, .select-calendar__count input[type=number]::-webkit-inner-spin-button, .select-calendar__count input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.select-calendar__enter input[type=number], .select-calendar__exit input[type=number] {
-  width: 32px;
-}
-.select-calendar__count input[type=number] {
-  width: 60px;
-}
-.select-calendar__block {
-  display: flex;
-}
-.select-calendar__select {
-  height: 32px;
-  width: 96px;
-  border-radius: 5px;
-}
-.select-calendar__select .select__main {
-  padding: 0 6px;
-}
-.select-calendar__select.active .select__main {
-  padding: 6px;
-}
-.select-calendar__select .select__block {
-  padding: 8px 6px;
-}
-.select-calendar__select .select__arrow {
-  width: 6px;
-}
-.select-calendar__select .select__current, .select-calendar__select .select__item {
-  font-size: 14px;
-  line-height: 120%;
-  font-weight: 700;
-  color: #ffffff;
-}
-.select-calendar__select .select__item {
-  padding: 3px 8px;
-}
-
 ._video {
   cursor: pointer;
 }
@@ -980,6 +708,278 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #ffffff;
   text-align: center;
+}
+
+.select {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.select.active > .select__main {
+  padding: 10px;
+  max-height: none;
+  overflow: visible;
+}
+.select.active > .select__block > .select__arrow {
+  transform: rotateX(180deg);
+}
+.select__block {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.select__current {
+  display: inline-block;
+  max-width: calc(100% - 25px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.select__arrow {
+  transition: all 0.2s ease-in-out;
+}
+.select__main {
+  min-width: 100%;
+  position: absolute;
+  z-index: 50;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 0;
+  background: #4E5AC0;
+  border-radius: 4px;
+  padding: 0 10px;
+  overflow: auto;
+  scrollbar-width: 2px;
+  scrollbar-color: #ffffff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.select__main::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+  border-radius: 2px;
+}
+.select__main::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+.select__list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 312px;
+  overflow: auto;
+  scrollbar-width: 2px;
+  scrollbar-color: #ffffff;
+}
+.select__list::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+  border-radius: 2px;
+}
+.select__list::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+.select__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 3px 13px;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 600;
+  color: #F6F6FE;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.select__item.active {
+  background: rgba(0, 0, 0, 0.2);
+}
+.select__item:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.select__count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select__count:not(:first-of-type) {
+  margin-top: 8px;
+}
+.select__count > span {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.select__count-block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.select__count-block > button {
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: background 0.2s ease-in-out;
+}
+.select__count-block > button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.select__count-block > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32px;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.select-calendar__parent {
+  width: 125%;
+}
+.select-calendar__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select-calendar__arrow {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background: transparent;
+}
+.select-calendar__arrow:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.select-calendar__center {
+  padding: 16px;
+  text-align: center;
+}
+.select-calendar__table {
+  width: 100%;
+}
+.select-calendar__table td {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.select-calendar__table td:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.select-calendar__table td.active {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+}
+.select-calendar__table thead td {
+  color: #ffffff80;
+}
+.select-calendar__content {
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.select-calendar__around {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.select-calendar__enter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.select-calendar__exit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.select-calendar__count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.select-calendar__enter input[type=number], .select-calendar__exit input[type=number], .select-calendar__count input[type=number] {
+  height: 32px;
+  padding: 6px;
+  text-align: center;
+  margin-right: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+  -moz-appearance: textfield;
+}
+.select-calendar__enter input[type=number]:placeholder, .select-calendar__exit input[type=number]:placeholder, .select-calendar__count input[type=number]:placeholder {
+  color: #ffffff80;
+}
+.select-calendar__enter input[type=number]::-webkit-inner-spin-button, .select-calendar__enter input[type=number]::-webkit-outer-spin-button, .select-calendar__exit input[type=number]::-webkit-inner-spin-button, .select-calendar__exit input[type=number]::-webkit-outer-spin-button, .select-calendar__count input[type=number]::-webkit-inner-spin-button, .select-calendar__count input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.select-calendar__enter input[type=number], .select-calendar__exit input[type=number] {
+  width: 32px;
+}
+.select-calendar__count input[type=number] {
+  width: 60px;
+}
+.select-calendar__block {
+  display: flex;
+}
+.select-calendar__select {
+  height: 32px;
+  width: 96px;
+  border-radius: 5px;
+}
+.select-calendar__select .select__main {
+  padding: 0 6px;
+}
+.select-calendar__select.active .select__main {
+  padding: 6px;
+}
+.select-calendar__select .select__block {
+  padding: 8px 6px;
+}
+.select-calendar__select .select__arrow {
+  width: 6px;
+}
+.select-calendar__select .select__current, .select-calendar__select .select__item {
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #ffffff;
+}
+.select-calendar__select .select__item {
+  padding: 3px 8px;
 }
 
 .pick-up {
