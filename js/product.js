@@ -66,7 +66,7 @@ if (document.querySelector('.popups')) {
         })
     })
 
-    if (document.querySelectorAll('.popup-room')) {
+    if (document.querySelector('.popup-room')) {
         let popupRoom = document.querySelector('.popup-room');
         let popupRoomRoomName = popupRoom.querySelector('.popup-room__title');
         
