@@ -66,6 +66,17 @@ if (document.querySelector('.popups')) {
         })
     })
 
+    let popupError = document.querySelector('.popup-error');
+    
+    let popupErrorClosers = document.querySelectorAll('._popup-error-closer');
+    
+    popupErrorClosers.forEach(closer => {
+        closer.addEventListener('click', () => {
+            popups.classList.remove('active');
+            popupError.classList.remove('active');
+        })
+    })
+
     if (document.querySelector('.popup-room')) {
         let popupRoom = document.querySelector('.popup-room');
         let popupRoomRoomName = popupRoom.querySelector('.popup-room__title');
@@ -380,6 +391,8 @@ function pullDates(currYear, enterMonth, exitMonth, enterDate, exitDate, calenda
     }
     
     calendarObj.calendarCurr.textContent = `${enterDate} ${month[enterMonth].slice(0,3).toLowerCase()} - ${exitDate} ${month[exitMonth].slice(0,3).toLowerCase()} / ${calendarObj.calendarCountDays.value} дн.`;
+    calendarObj.calendarCurrInput.value = "true";
+    calendarObj.calendarCurrInput.classList.remove('_error');
 }
 
 function startFillTable(currDate, currMonth, currYear, calendarObj) {
@@ -395,10 +408,14 @@ function startFillTable(currDate, currMonth, currYear, calendarObj) {
         calendarObj.calendarEnterMonthCurr.textContent = month[currMonth];
         calendarObj.calendarEnterMonthCurr.dataset.month = currMonth;
         calendarObj.calendarEnterMonthItems[currMonth].classList.add('active');
+        let currentEnterInput = calendarObj.calendarEnterMonth.querySelector('.select-current-input');
+        currentEnterInput.value = calendarObj.calendarEnterMonthItems[currMonth].textContent;
 
         calendarObj.calendarExitMonthCurr.textContent = month[currMonth];
         calendarObj.calendarExitMonthCurr.dataset.month = currMonth;
         calendarObj.calendarExitMonthItems[currMonth].classList.add('active');
+        let currentExitInput = calendarObj.calendarExitMonth.querySelector('.select-current-input');
+        currentExitInput.value = calendarObj.calendarExitMonthItems[currMonth].textContent;
 
     } else if (currDate + calendarObj.startDayAfterToday <= Dlast) {
         calendarObj.calendarEnterDay.value = currDate + calendarObj.startDayAfterToday;
@@ -480,6 +497,7 @@ if (document.querySelector('.select')) {
             let calendarTable = calendarBlock.querySelector('.select-calendar-table');
             let calendarMonth = calendarBlock.querySelector('.select-calendar-month');
             let calendarCurr = select.querySelector('.select-calendar-current');
+            let calendarCurrInput = select.querySelector('.select-current-input-dates');
             let calendarArrowLeft = calendarBlock.querySelector('.select-calendar-arrow-left');
             let calendarArrowRight = calendarBlock.querySelector('.select-calendar-arrow-right');
             let calendarEnterDay = calendarBlock.querySelector('.select-calendar-enter-input');
@@ -501,6 +519,7 @@ if (document.querySelector('.select')) {
                 calendarTable,
                 calendarMonth,
                 calendarCurr,
+                calendarCurrInput,
                 calendarArrowLeft,
                 calendarArrowRight,
                 calendarEnterDay,
@@ -603,6 +622,7 @@ if (document.querySelector('.select')) {
             
         } else if (select.querySelector('.select-list')) {
             let list = select.querySelector('.select-list');
+            let currentInput = select.querySelector('.select-current-input');
             let items = list.querySelectorAll('.select-item');
             let activeIndex = 0;
 
@@ -615,6 +635,7 @@ if (document.querySelector('.select')) {
                     activeIndex = index;
                     items[activeIndex].classList.add('active');
                     current.innerHTML = items[activeIndex].textContent;
+                    currentInput.value = items[activeIndex].textContent;
                     select.classList.remove('active');
                 })
             })
@@ -629,8 +650,10 @@ if (document.querySelector('.select')) {
                 return endings[2]
             }
 
+            let ticketsCurrentInput = select.querySelector('.select-current-input-tickets');
 
             let parentsBlock = select.querySelector('.select-parents');
+            let parentsCurrentInput = select.querySelector('.select-current-input-parents');
             let parentsCountBlock = parentsBlock.querySelector('.select-parents-count');
             let parentsCount = +parentsCountBlock.textContent;
             let parentsBtnLess = parentsBlock.querySelector('.select-parents-less');
@@ -643,6 +666,7 @@ if (document.querySelector('.select')) {
             }
 
             let childsBlock = select.querySelector('.select-childs');
+            let childsCurrentInput = select.querySelector('.select-current-input-childs');
             let childsCountBlock = childsBlock.querySelector('.select-childs-count');
             let childsCount = +childsCountBlock.textContent;
             let childsBtnLess = childsBlock.querySelector('.select-childs-less');
@@ -663,6 +687,10 @@ if (document.querySelector('.select')) {
             } else {
                 current.innerHTML = `<span>Ничего не выбрано</span>`;
             }
+            parentsCurrentInput.value = parentsCount;
+            childsCurrentInput.value = childsCount;
+            ticketsCurrentInput.value = +childsCount + +parentsCount;
+            ticketsCurrentInput.classList.remove('_error');
 
             parentsBtnLess.addEventListener('click', () => {
                 if (parentsCount > 0) {
@@ -682,6 +710,9 @@ if (document.querySelector('.select')) {
                     } else {
                         current.innerHTML = `<span>Ничего не выбрано</span>`;
                     }
+                    parentsCurrentInput.value = parentsCount;
+                    ticketsCurrentInput.value = +childsCount + +parentsCount;
+                    ticketsCurrentInput.classList.remove('_error');
                 }
             })
 
@@ -698,6 +729,9 @@ if (document.querySelector('.select')) {
                 } else {
                     current.innerHTML = `<span>Ничего не выбрано</span>`;
                 }
+                parentsCurrentInput.value = parentsCount;
+                ticketsCurrentInput.value = +childsCount + +parentsCount;
+                ticketsCurrentInput.classList.remove('_error');
             })
 
             childsBtnLess.addEventListener('click', () => {
@@ -718,6 +752,9 @@ if (document.querySelector('.select')) {
                     } else {
                         current.innerHTML = `<span>Ничего не выбрано</span>`;
                     }
+                    childsCurrentInput.value = childsCount;
+                    ticketsCurrentInput.value = +childsCount + +parentsCount;
+                    ticketsCurrentInput.classList.remove('_error');
                 }
             })
 
@@ -734,6 +771,9 @@ if (document.querySelector('.select')) {
                 } else {
                     current.innerHTML = `<span>Ничего не выбрано</span>`;
                 }
+                childsCurrentInput.value = childsCount;
+                ticketsCurrentInput.value = +childsCount + +parentsCount;
+                ticketsCurrentInput.classList.remove('_error');
             })
         }
     })
@@ -825,5 +865,758 @@ if (document.querySelector('._video')) {
                 video.classList.remove('_video');
             }
         })
+    })
+}
+function isValid(input) {
+    if (input.name === 'dates') {
+        return !!input.value
+    }
+    if (input.name === 'tickets') {
+        return input.value !== '0'
+    }
+    if (input.name === 'name') {
+        return !!input.value
+    }
+    if (input.name === 'phone') {
+        if (input.value[0] === '+') {
+            let val = input.value.split('');
+            val.shift();
+            val = val.join('');
+            return val.length === 11 && !isNaN(+val)
+        } else {
+            return input.value.length === 11 && !isNaN(input.value)
+        }
+    }
+    if (input.name === 'mail') {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(input.value).toLowerCase());
+    }
+}
+
+if (document.getElementById('mainPickUpForm')) {
+    let mainPickUpForm = document.getElementById('mainPickUpForm');
+
+    mainPickUpForm.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+        }
+    })
+
+    let requiredInputs = mainPickUpForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    mainPickUpForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(mainPickUpForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо за обращение';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы вам перезвоним в течение года';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('popupQuizForm') && document.getElementById('popupQuizThanksForm')) {
+    let popupQuizForm = document.getElementById('popupQuizForm');
+    let popupQuizThanksForm = document.getElementById('popupQuizThanksForm');
+
+    let requiredInputs = popupQuizThanksForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    popupQuizThanksForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(popupQuizForm);
+            let formDataAdding = new FormData(popupQuizThanksForm);
+            for (var pair of formDataAdding.entries()) {
+                formData.append(pair[0], pair[1]);
+            }
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо за заполнение опроса';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы вам перезвоним в течение полугода';
+                document.querySelector('.popups .popup-pick-up-thanks').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-pick-up-thanks').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('callbackForm')) {
+    let callbackForm = document.getElementById('callbackForm');
+
+    let requiredInputs = callbackForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    callbackForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(callbackForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы с вами свяжемся после додичка в четверг';
+                document.querySelector('.popups .popup-callback').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-callback').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('popupChoiceForm')) {
+    let popupChoiceForm = document.getElementById('popupChoiceForm');
+
+    let requiredInputs = popupChoiceForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    popupChoiceForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let popupChoiceTitle = document.querySelector('.popup-choice .popup-choice__title').textContent;
+            let formData = new FormData(popupChoiceForm);
+            formData.append('choice', popupChoiceTitle);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы с вами свяжемся после додичка в четверг';
+                document.querySelector('.popups .popup-choice').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-choice').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('footerSubscribeForm')) {
+    let footerSubscribeForm = document.getElementById('footerSubscribeForm');
+
+    let requiredInputs = footerSubscribeForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    footerSubscribeForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(footerSubscribeForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо за подписку';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = '';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('pickUpForm')) {
+    let pickUpForm = document.getElementById('pickUpForm');
+
+    pickUpForm.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+        }
+    })
+
+    let requiredInputs = pickUpForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    pickUpForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(pickUpForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо за обращение';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы вам перезвоним в течение года';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('catalogConsultationForm')) {
+    let catalogConsultationForm = document.getElementById('catalogConsultationForm');
+
+    let requiredInputs = catalogConsultationForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    catalogConsultationForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(catalogConsultationForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо за обращение';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы вам перезвоним в течение года';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('popupSubscribeForm')) {
+    let popupSubscribeForm = document.getElementById('popupSubscribeForm');
+
+    let requiredInputs = popupSubscribeForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    popupSubscribeForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let popupChoiceTitle = document.querySelector('.popup-choice .popup-choice__title').textContent;
+            let formData = new FormData(popupSubscribeForm);
+            formData.append('choice', popupChoiceTitle);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы с вами свяжемся после додичка в четверг';
+                document.querySelector('.popups .popup-subscribe').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-subscribe').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('consultationForm')) {
+    let consultationForm = document.getElementById('consultationForm');
+
+    let requiredInputs = consultationForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    consultationForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let popupChoiceTitle = document.querySelector('.popup-choice .popup-choice__title').textContent;
+            let formData = new FormData(consultationForm);
+            formData.append('choice', popupChoiceTitle);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы с вами свяжемся после додичка в четверг';
+                document.querySelector('.popups .popup-choice').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-choice').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('searchProductForm')) {
+    let searchProductForm = document.getElementById('searchProductForm');
+
+    searchProductForm.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+        }
+    })
+
+    let requiredInputs = searchProductForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    searchProductForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(searchProductForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (!result.ok) {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('parametersProductForm')) {
+    let parametersProductForm = document.getElementById('parametersProductForm');
+
+    parametersProductForm.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+        }
+    })
+
+    let requiredInputs = parametersProductForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    parametersProductForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(parametersProductForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups').classList.remove('active');
+                document.querySelector('.popups .popup-parameters').classList.remove('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-parameters').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('pricesProductForm') && document.getElementById('pricesProductLastForm')) {
+    let pricesProductForm = document.getElementById('pricesProductForm');
+    let pricesProductLastForm = document.getElementById('pricesProductLastForm');
+
+    let requiredInputs = pricesProductLastForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    pricesProductLastForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(pricesProductForm);
+            let formDataAdding = new FormData(pricesProductLastForm);
+            for (var pair of formDataAdding.entries()) {
+                formData.append(pair[0], pair[1]);
+            }
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.product-prices._hor-tabs ._hor-tab:nth-child(2)').classList.remove('active');
+                document.querySelector('.product-prices._hor-tabs ._hor-tab:last-child').classList.add('active');
+            } else {
+                document.querySelector('.product-prices._hor-tabs ._hor-tab:nth-child(2)').classList.remove('active');
+                document.querySelector('.product-prices._hor-tabs ._hor-tab:first-child').classList.add('active');
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
     })
 }

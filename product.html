@@ -30,10 +30,18 @@
         <div class="popup-callback__block">
             <div class="popup-callback__tab-content _labeltabs-content">
                 <p class="popup-callback__content">Заполните форму с контактами и мы перезвоним вам в течение дня</p>
-                <form action="#" class="popup-callback__form">
-                    <input type="text" name="name" placeholder="Имя*">
-                    <input type="tel" name="tel" placeholder="Телефон*">
-                    <input type="email" name="email" placeholder="Почта">
+                <form class="popup-callback__form" id="callbackForm" action="#">
+                    <div class="popup-callback__form-block">
+                        <input class="_req" type="text" name="name" placeholder="Имя*">
+                        <div class="error-block"><span>Введите имя</span></div>
+                    </div>
+                    <div class="popup-callback__form-block">
+                        <input class="_req" type="tel" name="phone" placeholder="Телефон*">
+                        <div class="error-block"><span>Введите корректный номер</span></div>
+                    </div>
+                    <div class="popup-callback__form-block">
+                        <input type="email" name="mail" placeholder="Почта">
+                    </div>
                     <button type="submit">Перезвоните мне</button>
                 </form>
             </div>
@@ -86,6 +94,18 @@
         </div>
         <h4 class="popup-thanks__title"></h4>
         <p class="popup-thanks__content"></p>
+    </div>
+    <div class="popup-error">
+        <button class="popup-error__close _popup-error-closer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+            </svg>
+        </button>
+        <div class="popup-error__icon">
+            <img src="img/icons/check-big.svg" alt="">
+        </div>
+        <h4 class="popup-error__title">Что-то пошло не так, попробуйте ещё раз</h4>
     </div>    <div class="popup-room">
         <button class="popup-room__close _popup-room-closer">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,7 +205,7 @@
                         <img src="img/products/common/flame.svg" alt="">
                         <span>Осталось 2 номера</span>
                     </p>
-                    <button class="popup-room__submit _popup-choice-opener _popup-room-closer" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">Выбрать</button>
+                    <button class="popup-room__submit _popup-choice-opener _popup-room-closer" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                 </div>
             </div>
             <div class="popup-room__price-lists lists-2">
@@ -756,7 +776,7 @@
                         <p class="popup-room__price-content">питание + проживание + лечение</p>
                     </div>
                 </div>
-                <button class="popup-room__submit _popup-choice-opener _popup-room-closer" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">Выбрать</button>
+                <button class="popup-room__submit _popup-choice-opener _popup-room-closer" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
             </div>
         </div>
     </div>
@@ -856,18 +876,27 @@
             </svg>
         </button>
         <p class="popup-parameters__title">Выберите параметры поездки:</p>
-        <form class="popup-parameters__form" action="#">
+        <form class="popup-parameters__form" id="parametersProductForm" action="#">
             <div class="popup-parameters__block">
                 <p class="popup-parameters__block-title">Цель поездки</p>
                 <div class="popup-parameters__select select">
                     <div class="select__block select-block">
-                        <span class="select__current select-current">С лечением</span>
+                        <span class="select__current select-current">Заболние</span>
+                        <input class="select__current-input select-current-input" name="medical" type="text" value="Заболние">
                         <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                     </div>
                     <div class="select__main select-main">
                         <ul class="select__list select-list">
-                            <li class="select__item select-item active">С лечением</li>
-                            <li class="select__item select-item">Без лечения</li>
+                            <li class="select__item select-item">Заболевание</li>
+                            <li class="select__item select-item">Сердечно-сосудистые заболевания</li>
+                            <li class="select__item select-item">Заболевание</li>
+                            <li class="select__item select-item">Сердечно-</li>
+                            <li class="select__item select-item active">Заболние</li>
+                            <li class="select__item select-item">Сердечно-сист</li>
+                            <li class="select__item select-item">Заболеван</li>
+                            <li class="select__item select-item">Серно-сосудист</li>
+                            <li class="select__item select-item">вание</li>
+                            <li class="select__item select-item">осудист</li>
                         </ul>
                     </div>
                 </div>
@@ -877,6 +906,8 @@
                 <div class="popup-parameters__select select">
                     <div class="select__block select-block">
                         <span class="select__current select-calendar-current"></span>
+                        <input class="select__current-input select-current-input-dates _req" name="dates" type="text" value="">
+                        <div class="error-block"><span>Пожалуйста, заполните даты</span></div>
                         <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                     </div>
                     <div class="select__main select-calendar__parent select-main">
@@ -916,10 +947,11 @@
                                 <div class="select-calendar__enter">
                                     <p class="select-calendar__content">Заезд</p>
                                     <div class="select-calendar__block">
-                                        <input class="select-calendar-enter-input" type="number" min="1" max="31" step="1">
+                                        <input class="select-calendar-enter-input" name="enter-date" type="number" min="1" max="31" step="1">
                                         <div class="select-calendar__select select select-calendar-enter-select">
                                             <div class="select__block select-block">
                                                 <span class="select__current select-current"></span>
+                                                <input class="select__current-input select-current-input" name="enter-month" type="text" value="">
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-main">
@@ -944,10 +976,11 @@
                                 <div class="select-calendar__exit">
                                     <p class="select-calendar__content">Выезд</p>
                                     <div class="select-calendar__block">
-                                        <input class="select-calendar-exit-input" type="number" min="1" max="31" step="1">
+                                        <input class="select-calendar-exit-input" name="exit-date" type="number" min="1" max="31" step="1">
                                         <div class="select-calendar__select select select-calendar-exit-select">
                                             <div class="select__block select-block">
                                                 <span class="select__current select-current"></span>
+                                                <input class="select__current-input select-current-input" name="exit-month" type="text" value="">
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-main">
@@ -973,7 +1006,7 @@
                             <div class="select-calendar__count">
                                 <p class="select-calendar__content">Кол-во дней</p>
                                 <div class="select-calendar__block">
-                                    <input class="select-calendar-count-days" type="number" min="1" max="30" step="1">
+                                    <input class="select-calendar-count-days" name="count-days" type="number" min="1" max="30" step="1">
                                 </div>
                             </div>
                         </div>
@@ -983,24 +1016,47 @@
             <div class="popup-parameters__block">
                 <p class="popup-parameters__block-title">Количество билетов</p>
                 <div class="popup-parameters__select select">
-                    <div class="select__block select-block">
-                        <span class="select__current select-current">—</span>
+                    <div class="select__block select-block" data-text="">
+                        <span class="select__current select-current"></span>
+                        <input class="select__current-input select-current-input-tickets _req" name="tickets" type="number" value="">
+                        <div class="error-block"><span>Пожалуйста, заполните количество</span></div>
+                        <input class="select__current-input select-current-input-parents" name="parents" type="number" value="">
+                        <input class="select__current-input select-current-input-childs" name="childs" type="number" value="">
                         <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                     </div>
                     <div class="select__main select-main">
-                        <ul class="select__list select-list">
-                            <li class="select__item select-item active">—</li>
-                            <li class="select__item select-item">1</li>
-                            <li class="select__item select-item">2</li>
-                            <li class="select__item select-item">3</li>
-                            <li class="select__item select-item">4</li>
-                            <li class="select__item select-item">5</li>
-                            <li class="select__item select-item">6</li>
-                            <li class="select__item select-item">7</li>
-                            <li class="select__item select-item">8</li>
-                            <li class="select__item select-item">9</li>
-                            <li class="select__item select-item">10+</li>
-                        </ul>
+                        <div class="select__count select-count">
+                            <span>Взрослых:</span>
+                            <div class="select__count-block select-parents">
+                                <button class="select-parents-less" type="button">
+                                    <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
+                                    </svg>
+                                </button>
+                                <span class="select-parents-count">1</span>
+                                <button class="select-parents-more" type="button">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="select__count select-count">
+                            <span>Детей:</span>
+                            <div class="select__count-block select-childs">
+                                <button class="select-childs-less" type="button">
+                                    <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
+                                    </svg>
+                                </button>
+                                <span class="select-childs-count">2</span>
+                                <button class="select-childs-more" type="button">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1016,17 +1072,19 @@
         </button>
         <p class="popup-choice__title"><span></span><span></span></p>
         <p class="popup-choice__content">Отличный выбор! Наш эксперт-куротолог с вами свяжется для уточнение деталей.</p>
-        <form class="popup-choice__form" action="#">
+        <form class="popup-choice__form" id="popupChoiceForm" action="#">
             <div class="popup-choice__block">
                 <p class="popup-choice__block-title">Ваше имя</p>
                 <div class="popup-choice__input">
-                    <input type="text">
+                    <input class="_req" type="text" name="name">
+                    <div class="error-block"><span>Введите имя</span></div>
                 </div>
             </div>
             <div class="popup-choice__block">
                 <p class="popup-choice__block-title">Телефон</p>
                 <div class="popup-choice__input">
-                    <input type="tel">
+                    <input class="_req" type="tel" name="phone">
+                    <div class="error-block"><span>Введите корректный номер</span></div>
                 </div>
             </div>
             <button class="popup-choice__submit">Применить</button>
@@ -1437,7 +1495,7 @@
                                     <p class="room__price-content">питание + проживание + лечение</p>
                                 </div>
                             </div>
-                            <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)"  data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
+                            <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                         </div>
                     </article>
                     <article class="room">
@@ -1589,9 +1647,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-medical-base">
+                <div class="product-medical-base _medical-base">
                     <h2 class="product-medical-base__title">Лечебная база</h2>
-                    <div class="product-medical-base__items">
+                    <div class="product-medical-base__items _medical-base-items">
                         <div class="product-medical-base__item">
                             <img src="img/products/id/medical-base1.jpg" alt="">
                             <a class="product-medical-base__item-link" href="#">
@@ -1635,7 +1693,7 @@
                             </a>
                         </div>
                     </div>
-                    <button class="product-medical-base__more">
+                    <button class="product-medical-base__more _medical-base-load">
                         <span>Все процедуры здравницы </span>
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1644,9 +1702,9 @@
                 </div>
                 <div class="product-prices _hor-tabs">
                     <div class="product-prices__tab _hor-tab active">
-                        <p class="product-prices__title">Узнайте цену отдыха в Санатории «Виктория» на Ваши даты</p>
+                        <p class="product-prices__title">Узнайте цену отдыха в Санатории <span>«Виктория»</span> на Ваши даты</p>
                         <div class="product-prices__main">
-                            <form class="product-prices__left" action="#" onsubmit="event.preventDefault();">
+                            <form class="product-prices__left" id="pricesProductForm" action="#" onsubmit="event.preventDefault();">
                                 <div class="product-prices__row product-prices__row-1">
                                     <div class="product-prices__block">
                                         <p class="product-prices__block-title">Тип номера</p>
@@ -1672,6 +1730,8 @@
                                         <div class="product-prices__select select">
                                             <div class="select__block select-block">
                                                 <span class="select__current select-calendar-current"></span>
+                                                <input class="select__current-input select-current-input-dates _req" name="dates" type="text" value="">
+                                                <div class="error-block"><span>Пожалуйста, заполните даты</span></div>
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-calendar__parent select-main">
@@ -1711,10 +1771,11 @@
                                                         <div class="select-calendar__enter">
                                                             <p class="select-calendar__content">Заезд</p>
                                                             <div class="select-calendar__block">
-                                                                <input class="select-calendar-enter-input" type="number" min="1" max="31" step="1">
+                                                                <input class="select-calendar-enter-input" name="enter-date" type="number" min="1" max="31" step="1">
                                                                 <div class="select-calendar__select select select-calendar-enter-select">
                                                                     <div class="select__block select-block">
                                                                         <span class="select__current select-current"></span>
+                                                                        <input class="select__current-input select-current-input" name="enter-month" type="text" value="">
                                                                         <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                                                     </div>
                                                                     <div class="select__main select-main">
@@ -1739,10 +1800,11 @@
                                                         <div class="select-calendar__exit">
                                                             <p class="select-calendar__content">Выезд</p>
                                                             <div class="select-calendar__block">
-                                                                <input class="select-calendar-exit-input" type="number" min="1" max="31" step="1">
+                                                                <input class="select-calendar-exit-input" name="exit-date" type="number" min="1" max="31" step="1">
                                                                 <div class="select-calendar__select select select-calendar-exit-select">
                                                                     <div class="select__block select-block">
                                                                         <span class="select__current select-current"></span>
+                                                                        <input class="select__current-input select-current-input" name="exit-month" type="text" value="">
                                                                         <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                                                     </div>
                                                                     <div class="select__main select-main">
@@ -1768,7 +1830,7 @@
                                                     <div class="select-calendar__count">
                                                         <p class="select-calendar__content">Кол-во дней</p>
                                                         <div class="select-calendar__block">
-                                                            <input class="select-calendar-count-days" type="number" min="1" max="30" step="1">
+                                                            <input class="select-calendar-count-days" name="count-days" type="number" min="1" max="30" step="1">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1900,23 +1962,25 @@
                             <div class="product-prices__center">
                                 <h3 class="product-prices__center-title">Остался один шаг до получения точной стоимости</h3>
                                 <p class="product-prices__center-content">Эксперт куратолог перезвонит вам и сообщит точные цены</p>
-                                <form class="product-prices__callback" action="#" onsubmit="event.preventDefault();">
+                                <form class="product-prices__callback" id="pricesProductLastForm" action="#">
                                     <div class="product-prices__row product-prices__row-2">
                                         <div class="product-prices__block">
                                             <p class="product-prices__block-title">Ваше имя</p>
                                             <div class="product-prices__input">
-                                                <input type="text">
+                                                <input class="_req" name="name" type="text">
+                                                <div class="error-block"><span>Введите имя</span></div>
                                             </div>
                                         </div>
                                         <div class="product-prices__block">
                                             <p class="product-prices__block-title">Телефон</p>
                                             <div class="product-prices__input">
-                                                <input type="tel">
+                                                <input class="_req" name="phone" type="tel">
+                                                <div class="error-block"><span>Введите корректный номер</span></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="product-prices__row">
-                                        <button class="product-prices__submit _hor-tab-slide-button" data-slideto="2">Перезвоните мне!</button>
+                                        <button class="product-prices__submit">Перезвоните мне!</button>
                                     </div>
                                 </form>
                             </div>
@@ -2107,11 +2171,15 @@
             <aside class="product-main__aside _aside">
                 <div class="product-search">
                     <h3 class="product-search__title">Вы выбрали:</h3>
-                    <form action="#" class="product-search__form">
+                    <form class="product-search__form" id="searchProductForm" action="#">
                         <div class="product-search__block">
                             <div class="product-search__select select">
-                                <div class="select__block select-block">
+                                <div class="select__block select-block" data-text="">
                                     <span class="select__current select-current"></span>
+                                    <input class="select__current-input select-current-input-tickets _req" name="tickets" type="number" value="">
+                                    <div class="error-block"><span>Пожалуйста, заполните количество</span></div>
+                                    <input class="select__current-input select-current-input-parents" name="parents" type="number" value="">
+                                    <input class="select__current-input select-current-input-childs" name="childs" type="number" value="">
                                     <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                 </div>
                                 <div class="select__main select-main">
@@ -2154,6 +2222,7 @@
                             <div class="product-search__select select">
                                 <div class="select__block select-block">
                                     <span class="select__current select-current">Заболние</span>
+                                    <input class="select__current-input select-current-input" name="medical" type="text" value="Заболние">
                                     <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                 </div>
                                 <div class="select__main select-main">
@@ -2176,6 +2245,8 @@
                             <div class="product-search__select select">
                                 <div class="select__block select-block">
                                     <span class="select__current select-calendar-current"></span>
+                                    <input class="select__current-input select-current-input-dates _req" name="dates" type="text" value="">
+                                    <div class="error-block"><span>Пожалуйста, заполните даты</span></div>
                                     <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                 </div>
                                 <div class="select__main select-calendar__parent select-main">
@@ -2215,10 +2286,11 @@
                                             <div class="select-calendar__enter">
                                                 <p class="select-calendar__content">Заезд</p>
                                                 <div class="select-calendar__block">
-                                                    <input class="select-calendar-enter-input" type="number" min="1" max="31" step="1">
+                                                    <input class="select-calendar-enter-input" name="enter-date" type="number" min="1" max="31" step="1">
                                                     <div class="select-calendar__select select select-calendar-enter-select">
                                                         <div class="select__block select-block">
                                                             <span class="select__current select-current"></span>
+                                                            <input class="select__current-input select-current-input" name="enter-month" type="text" value="">
                                                             <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                                         </div>
                                                         <div class="select__main select-main">
@@ -2243,10 +2315,11 @@
                                             <div class="select-calendar__exit">
                                                 <p class="select-calendar__content">Выезд</p>
                                                 <div class="select-calendar__block">
-                                                    <input class="select-calendar-exit-input" type="number" min="1" max="31" step="1">
+                                                    <input class="select-calendar-exit-input" name="exit-date" type="number" min="1" max="31" step="1">
                                                     <div class="select-calendar__select select select-calendar-exit-select">
                                                         <div class="select__block select-block">
                                                             <span class="select__current select-current"></span>
+                                                            <input class="select__current-input select-current-input" name="exit-month" type="text" value="">
                                                             <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                                         </div>
                                                         <div class="select__main select-main">
@@ -2272,7 +2345,7 @@
                                         <div class="select-calendar__count">
                                             <p class="select-calendar__content">Кол-во дней</p>
                                             <div class="select-calendar__block">
-                                                <input class="select-calendar-count-days" type="number" min="1" max="30" step="1">
+                                                <input class="select-calendar-count-days" name="count-days" type="number" min="1" max="30" step="1">
                                             </div>
                                         </div>
                                     </div>
@@ -2321,8 +2394,9 @@
                     <p class="footer-message__content">Мы сообщим, когда цены на него снизятся или появятся скидки.</p>
                 </div>
             </div>
-            <form class="footer-message__right" action="#">
-                <input type="email" name="subscribeEmail" placeholder="example@mail.ru">
+            <form class="footer-message__right" id="footerSubscribeForm" action="#">
+                <input class="_req" type="email" name="mail" placeholder="example@mail.ru">
+                <div class="error-block"><span>Введите корректную почту</span></div>
                 <button type="submit">Подписаться</button>
             </form>
         </div>
