@@ -1631,6 +1631,19 @@ h1, h2, h3, h4, h5, h6 {
   width: 270px;
   min-width: 270px;
   max-width: 270px;
+  height: calc(100vh - 30px);
+  overflow: auto;
+  scrollbar-width: 0px;
+  scrollbar-color: transparent;
+}
+.product-main__aside::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+.product-main__aside::-webkit-scrollbar-thumb {
+  width: 0;
+  background-color: transparent;
 }
 .product-main__aside-block {
   padding: 20px;
@@ -2195,6 +2208,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  cursor: pointer;
 }
 .room__image > img {
   width: 100%;
@@ -2213,6 +2227,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 .room__content {
   font-size: 17px;
@@ -2634,15 +2649,13 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   padding: 25px 30px 30px;
   opacity: 0;
-  transform: translateX(-100%) scaleX(0);
-  transition: all 0.5s ease-in-out;
+  transform-origin: center;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 .product-prices__tab.active {
   opacity: 1;
-  transform: translateX(0);
-}
-.product-prices__tab.active ~ .product-prices__tab {
-  transform: translateX(100%) scaleX(0);
+  transform: none;
 }
 .product-prices__title {
   font-size: 22px;

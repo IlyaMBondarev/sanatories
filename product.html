@@ -84,8 +84,8 @@
         <div class="popup-thanks__icon">
             <img src="img/icons/check-big.svg" alt="">
         </div>
-        <h4 class="popup-thanks__title">Какой-то заголовок благодарности</h4>
-        <p class="popup-thanks__content">Какой-то текст благодарности</p>
+        <h4 class="popup-thanks__title"></h4>
+        <p class="popup-thanks__content"></p>
     </div>    <div class="popup-room">
         <button class="popup-room__close _popup-room-closer">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1014,7 +1014,7 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
             </svg>
         </button>
-        <p class="popup-choice__title"><span>Double plus однокомнатный двухместный / </span>Санаторий «Плаза - SPA»</p>
+        <p class="popup-choice__title"><span></span><span></span></p>
         <p class="popup-choice__content">Отличный выбор! Наш эксперт-куротолог с вами свяжется для уточнение деталей.</p>
         <form class="popup-choice__form" action="#">
             <div class="popup-choice__block">
@@ -1275,12 +1275,12 @@
                             <h3 class="product-banner__title">Хорошее предолжение</h3>
                             <p class="product-banner__content">Скидка -10% на лечение и отдых!</p>
                             <p class="product-banner__content">На заезды с 11.01.21 г. по 20.03.21 г.</p>
-                            <button class="product-banner__submit">Забронировать цену</button>
+                            <button class="product-banner__submit _popup-callback-opener">Забронировать цену</button>
                         </div>
                         <div class="product-banner__image">
                             <img src="img/products/banners/family.png" alt="">
                         </div>
-                        <button class="product-banner__more">Подробнее у менеджеров</button>
+                        <button class="product-banner__more _popup-callback-opener">Подробнее у менеджеров</button>
                     </div>
                     <div class="product-tabs _tabs">
                         <div class="product-tabs__left">
@@ -1349,15 +1349,15 @@
                     </div>
                     <article class="room">
                         <div class="room__main">
-                            <div class="room__image">
+                            <div class="room__image _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
                                 <img src="img/products/id/room1.jpg" alt="">
                             </div>
                             <div class="room__right">
-                                <h2 class="room__title">Double plus однокомнатный двухместный (корпус&nbsp;АБ)</h2>
+                                <h2 class="room__title _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">Double plus однокомнатный двухместный (корпус&nbsp;АБ)</h2>
                                 <p class="room__content">Площадь номера: 43 кв.м.</p>
                                 <p class="room__content">Количество комнат: 1</p>
                                 <p class="room__content">Вмещает: 2 + 1</p>
-                                <button class="room__more _popup-room-opener" data-api="">
+                                <button class="room__more _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
                                     <span>Подробнее о номере </span>
                                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1437,20 +1437,20 @@
                                     <p class="room__price-content">питание + проживание + лечение</p>
                                 </div>
                             </div>
-                            <button class="room__submit _popup-choice-opener" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">Выбрать</button>
+                            <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)"  data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                         </div>
                     </article>
                     <article class="room">
                         <div class="room__main">
-                            <div class="room__image">
+                            <div class="room__image _popup-room-opener" data-roomname="Double plus однокомнатный двухместный">
                                 <img src="img/products/id/room1.jpg" alt="">
                             </div>
                             <div class="room__right">
-                                <h2 class="room__title">Double plus однокомнатный двухместный</h2>
+                                <h2 class="room__title _popup-room-opener" data-roomname="Double plus однокомнатный двухместный">Double plus однокомнатный двухместный</h2>
                                 <p class="room__content">Площадь номера: 43 кв.м.</p>
                                 <p class="room__content">Количество комнат: 1</p>
                                 <p class="room__content">Вмещает: 2 + 1</p>
-                                <button class="room__more _popup-room-opener" data-api="">
+                                <button class="room__more _popup-room-opener" data-roomname="Double plus однокомнатный двухместный">
                                     <span>Подробнее о номере </span>
                                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1530,7 +1530,7 @@
                                     <p class="room__price-content">питание + проживание + лечение</p>
                                 </div>
                             </div>
-                            <button class="room__submit _popup-choice-opener" data-roomName="Double plus однокомнатный двухместный">Выбрать</button>
+                            <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный"  data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                         </div>
                     </article>
                     <button class="product-rooms__more">
@@ -2301,7 +2301,7 @@
                         <a class="product-consultation__phone-link" href="tel:88007751377">8 800 77-513-77</a>
                         <p class="product-consultation__phone-content">Бесплатный по России</p>
                     </div>
-                    <button class="product-consultation__submit">Помощь с подбором</button>
+                    <button class="product-consultation__submit _popup-callback-opener">Помощь с подбором</button>
                 </div>
                 <div class="product-main__aside-block">
                     <p class="product-main__aside-content">Возможны противопоказания. Необходима консультация специалиста.</p>

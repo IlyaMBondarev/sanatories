@@ -68,12 +68,18 @@ if (document.querySelector('.popups')) {
 
     if (document.querySelectorAll('.popup-room')) {
         let popupRoom = document.querySelector('.popup-room');
+        let popupRoomRoomName = popupRoom.querySelector('.popup-room__title');
         
         let popupRoomOpeners = document.querySelectorAll('._popup-room-opener');
         let popupRoomClosers = document.querySelectorAll('._popup-room-closer');
 
         popupRoomOpeners.forEach(opener => {
             opener.addEventListener('click', () => {
+                if (opener.dataset.roomname) {
+                    popupRoomRoomName.textContent = `${opener.dataset.roomname}`;
+                } else {
+                    popupRoomRoomName.textContent = '';
+                }
                 popups.classList.add('active');
                 popupRoom.classList.add('active');
             })
@@ -144,14 +150,24 @@ if (document.querySelector('.popups')) {
 
     if (document.querySelectorAll('.popup-choice')) {
         let popupChoice = document.querySelector('.popup-choice');
-        let popupChoiceRoomName = document.querySelector('.popup-choice__title > span');
+        let popupChoiceRoomName = document.querySelector('.popup-choice__title > span:first-child');
+        let popupChoiceSanatoryName = document.querySelector('.popup-choice__title > span:last-child');
         
         let popupChoiceOpeners = document.querySelectorAll('._popup-choice-opener');
         let popupChoiceClosers = document.querySelectorAll('._popup-choice-closer');
 
         popupChoiceOpeners.forEach(opener => {
             opener.addEventListener('click', () => {
-                popupChoiceRoomName.textContent = `${opener.dataset.roomname} / `
+                if (opener.dataset.roomname) {
+                    popupChoiceRoomName.textContent = `${opener.dataset.roomname} / `;
+                } else {
+                    popupChoiceRoomName.textContent = '';
+                }
+                if (opener.dataset.sanatoryname) {
+                    popupChoiceSanatoryName.textContent = `${opener.dataset.sanatoryname}`;
+                } else {
+                    popupChoiceSanatoryName.textContent = '';
+                }
                 popups.classList.add('active');
                 popupChoice.classList.add('active');
             })
@@ -161,6 +177,27 @@ if (document.querySelector('.popups')) {
             closer.addEventListener('click', () => {
                 popups.classList.remove('active');
                 popupChoice.classList.remove('active');
+            })
+        })
+    }
+
+    if (document.querySelectorAll('.popup-subscribe')) {
+        let popupSubscribe = document.querySelector('.popup-subscribe');
+        
+        let popupSubscribeOpeners = document.querySelectorAll('._popup-subscribe-opener');
+        let popupSubscribeClosers = document.querySelectorAll('._popup-subscribe-closer');
+
+        popupSubscribeOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupSubscribe.classList.add('active');
+            })
+        })
+        
+        popupSubscribeClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupSubscribe.classList.remove('active');
             })
         })
     }
