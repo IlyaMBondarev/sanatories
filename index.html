@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pc/main.css">
+    <link rel="stylesheet" href="css/tablet/main.css">
+    <!--<link rel="stylesheet" href="css/mobile/main.css">-->
 </head>
 <body>
 <main class="page">
@@ -13,12 +15,12 @@
     <img src="img/gifs/loader.gif" alt="">
 </div><div class="popups">
     <div class="popup-callback _labeltabs">
-        <div class="popup-callback__close _popup-callback-closer">
+        <button class="popup-callback__close _popup-callback-closer">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M1.18175 22.2736C1.76754 22.8593 2.71729 22.8593 3.30307 22.2736L22.395 3.18167C22.9807 2.59588 22.9807 1.64613 22.395 1.06035C21.8092 0.474561 20.8594 0.474562 20.2736 1.06035L1.18175 20.1522C0.595968 20.738 0.595968 21.6878 1.18175 22.2736Z" fill="white"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M1.06043 1.27355C0.474647 1.85934 0.474647 2.80908 1.06043 3.39487L20.1523 22.4868C20.7381 23.0725 21.6879 23.0725 22.2736 22.4868C22.8594 21.901 22.8594 20.9512 22.2736 20.3654L3.18175 1.27355C2.59597 0.687765 1.64622 0.687764 1.06043 1.27355Z" fill="white"/>
             </svg>
-        </div>
+        </button>
         <div class="popup-callback__tabs">
             <label class="popup-callback__tab" for="callbacktab0">
                 <input class="_labeltabs-input" id="callbacktab0" type="radio" name="callbacktab" value="callbacktab0" checked>
@@ -357,7 +359,7 @@
                     <p class="header__phone-title">Номер в Железноводске</p>
                     <a href="tel:88008553535" class="header__phone-link">8 (800) 855-35-35</a>
                 </div>
-                <div class="header__phone">
+                <div class="header__phone not-tablet">
                     <p class="header__phone-title">Бесплатный по России</p>
                     <a href="tel:88008553535" class="header__phone-link">8 (800) 855-35-35</a>
                 </div>
@@ -705,16 +707,14 @@
             <section class="main-video">
                 <h2 class="main-video__title title-1"><span>Мы не продаем путёвки,</span><span> а помогаем найти подходящие санатории. </span><span class="title-1__green">Бесплатно.</span></h2>
                 <div class="main-video__items">
-                    <div class="main-video__item">
-                        <div class="main-video__video _video" data-linktovideo='https://www.youtube.com/embed/QchY6IOypxY'>
-                            <img src="img/main-video/banner.jpg" alt="">
-                            <button class="video-play-btn">
-                                <svg width="100" height="70" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M97.7912 10.8695C97.2177 8.76863 96.0988 6.8533 94.5461 5.31427C92.9933 3.77525 91.0609 2.66622 88.9412 2.09764C81.1811 0 49.9491 0 49.9491 0C49.9491 0 18.7155 0.0634942 10.9553 2.16113C8.83557 2.72975 6.90313 3.83884 5.35039 5.37793C3.79766 6.91703 2.67882 8.83244 2.1053 10.9334C-0.241966 24.5994 -1.15251 45.4232 2.16975 58.5425C2.74334 60.6434 3.8622 62.5588 5.41493 64.0978C6.96766 65.6368 8.90007 66.7458 11.0198 67.3144C18.7799 69.4121 50.0127 69.4121 50.0127 69.4121C50.0127 69.4121 81.2451 69.4121 89.0049 67.3144C91.1247 66.7459 93.0572 65.6369 94.61 64.0979C96.1628 62.5588 97.2817 60.6435 97.8553 58.5425C100.331 44.8572 101.094 24.0465 97.7912 10.8699V10.8695Z" fill="#2A2A2A"/>
-                                    <path d="M40.0078 49.5799L65.9176 34.706L40.0082 19.832L40.0078 49.5799Z" fill="white"/>
-                                </svg>                                        
-                            </button>
-                        </div>
+                    <div class="main-video__video _video" data-linktovideo='https://www.youtube.com/embed/QchY6IOypxY'>
+                        <img src="img/main-video/banner.jpg" alt="">
+                        <button class="video-play-btn">
+                            <svg width="100" height="70" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M97.7912 10.8695C97.2177 8.76863 96.0988 6.8533 94.5461 5.31427C92.9933 3.77525 91.0609 2.66622 88.9412 2.09764C81.1811 0 49.9491 0 49.9491 0C49.9491 0 18.7155 0.0634942 10.9553 2.16113C8.83557 2.72975 6.90313 3.83884 5.35039 5.37793C3.79766 6.91703 2.67882 8.83244 2.1053 10.9334C-0.241966 24.5994 -1.15251 45.4232 2.16975 58.5425C2.74334 60.6434 3.8622 62.5588 5.41493 64.0978C6.96766 65.6368 8.90007 66.7458 11.0198 67.3144C18.7799 69.4121 50.0127 69.4121 50.0127 69.4121C50.0127 69.4121 81.2451 69.4121 89.0049 67.3144C91.1247 66.7459 93.0572 65.6369 94.61 64.0979C96.1628 62.5588 97.2817 60.6435 97.8553 58.5425C100.331 44.8572 101.094 24.0465 97.7912 10.8699V10.8695Z" fill="#2A2A2A"/>
+                                <path d="M40.0078 49.5799L65.9176 34.706L40.0082 19.832L40.0078 49.5799Z" fill="white"/>
+                            </svg>                                        
+                        </button>
                     </div>
                     <div class="main-video__item">
                         <p class="main-video__content">Стоимость путёвки, которую вы видите на сайте — финальная. Никаких скрытых платежей и комиссий. Санатории Кисловодска - это сервис для помощи отдыхающим блаблаблаблабла. Санатории Кисловодска - это сервис для помощи отдыхающим лалалалалалалалала.</p>
@@ -737,7 +737,7 @@
                         <img class="main-categories__item-image" src="img/main-categories/3.jpg" alt="">
                         <div class="main-categories__item-name"><p>Эконом</p></div>
                     </a>
-                    <a class="main-categories__item main-categories__item-large" href="#">
+                    <a class="main-categories__item" href="#">
                         <img class="main-categories__item-image" src="img/main-categories/4.jpg" alt="">
                         <div class="main-categories__item-name"><p>Шведский стол</p></div>
                     </a>
@@ -1025,8 +1025,14 @@
             <section class="main-banner">
                 <div class="main-banner__images">
                     <img class="main-banner__image main-banner__image-flower-small" src="img/pick-up/flower-small.png" alt="">
-                    <img class="main-banner__image main-banner__image-flower-big" src="img/pick-up/flower-big.png" alt="">
-                    <img class="main-banner__image main-banner__image-baggage" src="img/pick-up/baggage.png" alt="">
+                    <picture>
+                        <source srcset="img/pick-up/flower-big-mobile.png" media="(max-width: 1230px)">
+                        <img class="main-banner__image main-banner__image-flower-big" src="img/pick-up/flower-big.png" alt="">
+                    </picture>
+                    <picture>
+                        <source srcset="img/pick-up/baggage-mobile.png" media="(max-width: 1230px)">
+                        <img class="main-banner__image main-banner__image-baggage" src="img/pick-up/baggage.png" alt="">
+                    </picture>
                 </div>
                 <div class="main-banner__main">
                     <p class="main-banner__content"><span>Найдите и забронируйте лучшую путевку</span><span> в&nbsp;санатории Кисловодска </span><span>за&nbsp;30&nbsp;секунд!</span></p>

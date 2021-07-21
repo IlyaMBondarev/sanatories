@@ -169,6 +169,27 @@ if (document.querySelector('.popups')) {
         })
     }
 
+    if (document.querySelectorAll('.popup-settings')) {
+        let popupSettings = document.querySelector('.popup-settings');
+        
+        let popupSettingsOpeners = document.querySelectorAll('._popup-settings-opener');
+        let popupSettingsClosers = document.querySelectorAll('._popup-settings-closer');
+
+        popupSettingsOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupSettings.classList.add('active');
+            })
+        })
+        
+        popupSettingsClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupSettings.classList.remove('active');
+            })
+        })
+    }
+
     if (document.querySelectorAll('.popup-choice')) {
         let popupChoice = document.querySelector('.popup-choice');
         let popupChoiceRoomName = document.querySelector('.popup-choice__title > span:first-child');
@@ -955,10 +976,19 @@ if (document.querySelector('.interesting__slider')) {
             nextEl: '.interesting__arrow-right',
             prevEl: '.interesting__arrow-left'
         },
-        simulateTouch: false,
         watchOverflow: true,
-        slidesPerView: 4,
-        spaceBetween: 24
+        breakpoints: {
+            320: {
+                simulateTouch: true,
+                slidesPerView: 'auto',
+                spaceBetween: 14,
+            },
+            1230: {
+                simulateTouch: false,
+                slidesPerView: 4,
+                spaceBetween: 24,
+            }
+        }
     });
 }
 if (document.querySelector('._video')) {
@@ -1720,6 +1750,61 @@ if (document.getElementById('pricesProductForm') && document.getElementById('pri
                 document.querySelector('.product-prices._hor-tabs ._hor-tab:first-child').classList.add('active');
                 document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
                 document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('popupSettingsForm')) {
+    let popupSettingsForm = document.getElementById('popupSettingsForm');
+
+    let requiredInputs = popupSettingsForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    popupSettingsForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(popupSettingsForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-settings').classList.remove('active');
+                document.querySelector('.popups').classList.remove('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-settings').classList.remove('active');
                 document.querySelector('.popups .popup-error').classList.add('active');
             }
         }
