@@ -1165,7 +1165,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px;
 }
 .popup-room__demo {
-  height: 467px;
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
@@ -2011,10 +2010,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .product-item__image > img {
   position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  max-heidht: 100%;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 .product-item__images-btn {
@@ -2322,7 +2322,7 @@ h1, h2, h3, h4, h5, h6 {
 .room__main {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: flex-start;
   padding: 10px;
   background: #404A9B;
   border-radius: 10px 10px 0 0;
@@ -2339,6 +2339,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .room__image > img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 5px;
 }
 .room__right {
@@ -2718,8 +2720,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 17px;
 }
 .product-medical-base__item > img {
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .product-medical-base__item-link {
   position: absolute;
