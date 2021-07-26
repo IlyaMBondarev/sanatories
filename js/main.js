@@ -333,6 +333,133 @@ if (document.querySelector('._pick-up__edit')) {
     })
 }
 
+if (document.querySelector('._tel')) {
+    let phoneInputs = document.querySelectorAll('._tel');
+
+    phoneInputs.forEach(phone => {
+        phone.addEventListener('focus', () => {
+            if (!(phone.value.length)) {
+                phone.value = '+7 (';
+            }
+        })
+        phone.addEventListener('input', (event) => {
+            if (event.inputType.split('')[0] === 'i') {
+                let valueArr = phone.value.split('').filter(sym => !isNaN(sym) && sym !== ' ');
+                switch (valueArr.length) {
+                    case 0: {
+                        phone.value = '+7 (';
+                        break;
+                    }
+                    case 1: {
+                        phone.value = '+7 (';
+                        break;
+                    }
+                    case 2: {
+                        phone.value = `+7 (${valueArr[1]}`;
+                        break;
+                    }
+                    case 3: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}`;
+                        break;
+                    }
+                    case 4: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) `;
+                        break;
+                    }
+                    case 5: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}`;
+                        break;
+                    }
+                    case 6: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}`;
+                        break;
+                    }
+                    case 7: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-`;
+                        break;
+                    }
+                    case 8: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}`;
+                        break;
+                    }
+                    case 9: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}${valueArr[8]}-`;
+                        break;
+                    }
+                    case 10: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}${valueArr[8]}-${valueArr[9]}`;
+                        break;
+                    }
+                    case 11: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}${valueArr[8]}-${valueArr[9]}${valueArr[10]}`;
+                        break;
+                    }
+                    default: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}${valueArr[8]}-${valueArr[9]}${valueArr[10]}`;
+                        break;
+                    }
+                }
+            } else if (event.inputType.split('')[0] === 'd') {
+                let valueArr = phone.value.split('').filter(sym => !isNaN(sym) && sym !== ' ');
+                switch (valueArr.length) {
+                    case 0: {
+                        phone.value = '+7 (';
+                        break;
+                    }
+                    case 1: {
+                        phone.value = '+7 (';
+                        break;
+                    }
+                    case 2: {
+                        phone.value = `+7 (${valueArr[1]}`;
+                        break;
+                    }
+                    case 3: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}`;
+                        break;
+                    }
+                    case 4: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}`;
+                        break;
+                    }
+                    case 5: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}`;
+                        break;
+                    }
+                    case 6: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}`;
+                        break;
+                    }
+                    case 7: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}`;
+                        break;
+                    }
+                    case 8: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}`;
+                        break;
+                    }
+                    case 9: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}${valueArr[8]}`;
+                        break;
+                    }
+                    case 10: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}${valueArr[8]}-${valueArr[9]}`;
+                        break;
+                    }
+                    case 11: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}${valueArr[8]}-${valueArr[9]}${valueArr[10]}`;
+                        break;
+                    }
+                    default: {
+                        phone.value = `+7 (${valueArr[1]}${valueArr[2]}${valueArr[3]}) ${valueArr[4]}${valueArr[5]}${valueArr[6]}-${valueArr[7]}${valueArr[8]}-${valueArr[9]}${valueArr[10]}`;
+                        break;
+                    }
+                }
+            }
+        })
+    })
+}
+
 
 let month = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
         
@@ -372,9 +499,17 @@ function fillTable(currMonth, currYear, calendarObj) {
         for(let i = 1; i <= Dlast; i++) {
             if ((calendarObj.calendarEnterMonthCurr.dataset.month < currMonth || (+calendarObj.calendarEnterMonthCurr.dataset.month === +currMonth && calendarObj.calendarEnterDay.value <= i))
                 && (calendarObj.calendarExitMonthCurr.dataset.month > currMonth || (+calendarObj.calendarExitMonthCurr.dataset.month === +currMonth && calendarObj.calendarExitDay.value >= i))) {
-                calendar += '<td class="date active">' + i + '</td>';
+                if (+currYear === new Date().getFullYear() && +currMonth === new Date().getMonth() && i === new Date().getDate()) {
+                    calendar += '<td class="date active today">' + i + '</td>';
+                } else {
+                    calendar += '<td class="date active">' + i + '</td>';
+                }
             } else {
-                calendar += '<td class="date">' + i + '</td>';
+                if (+currYear === new Date().getFullYear() && +currMonth === new Date().getMonth() && i === new Date().getDate()) {
+                    calendar += '<td class="date today">' + i + '</td>';
+                } else {
+                    calendar += '<td class="date">' + i + '</td>';
+                }
             }
             if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
                 calendar += '</tr><tr>';
@@ -392,6 +527,10 @@ function fillTable(currMonth, currYear, calendarObj) {
 }
 
 function pullDates(currYear, enterMonth, exitMonth, enterDate, exitDate, calendarObj) {
+    if (+currYear < new Date().getFullYear() || (+currYear === new Date().getFullYear() && +enterMonth < new Date().getMonth()) || (+currYear === new Date().getFullYear() && +enterMonth === new Date().getMonth() && +enterDate < new Date().getDate())) {
+        return
+    }
+    
     calendarObj.calendarEnterDay.value = enterDate;
     calendarObj.calendarExitDay.value = exitDate;
 
@@ -431,6 +570,8 @@ function startFillTable(currDate, currMonth, currYear, calendarObj) {
     let Dlast = new Date(currYear,currMonth+1,0).getDate();
     let mouseMovingOnCalendar = false;
     let startDayOnMoving = null;
+    let mouseDidNotMove = null;
+    let firstClick = true;
 
     if (currDate + calendarObj.startDayAfterToday + calendarObj.startCountDays <= Dlast) {
         calendarObj.calendarEnterDay.value = currDate + calendarObj.startDayAfterToday;
@@ -471,10 +612,14 @@ function startFillTable(currDate, currMonth, currYear, calendarObj) {
 
         if (month[currMonth + 1]) {
             calendarObj.calendarEnterMonthCurr.textContent = month[currMonth + 1];
+            calendarObj.calendarEnterMonthCurr.dataset.month = currMonth + 1;
             calendarObj.calendarExitMonthCurr.textContent = month[currMonth + 1];
+            calendarObj.calendarExitMonthCurr.dataset.month = currMonth + 1;
         } else {
             calendarObj.calendarEnterMonthCurr.textContent = month[0];
+            calendarObj.calendarEnterMonthCurr.dataset.month = currMonth + 1;
             calendarObj.calendarExitMonthCurr.textContent = month[0];
+            calendarObj.calendarExitMonthCurr.dataset.month = currMonth + 1;
         }
     }
 
@@ -486,13 +631,15 @@ function startFillTable(currDate, currMonth, currYear, calendarObj) {
     calendarObj.calendarTable.querySelector('tbody').addEventListener('mousedown', (event) => {
         if (event.target.classList.contains('date')) {
             mouseMovingOnCalendar = true;
+            mouseDidNotMove = true;
             startDayOnMoving = event.target.textContent;
-            pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarTable.dataset.month, calendarObj.calendarTable.dataset.month, startDayOnMoving, startDayOnMoving, calendarObj);
         }
     })
 
     calendarObj.calendarTable.querySelector('tbody').addEventListener('mousemove', (event) => {
+        mouseDidNotMove = false;
         if (mouseMovingOnCalendar && event.target.classList.contains('date')) {
+            firstClick = true;
             if (+event.target.textContent >= startDayOnMoving) {
                 pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarTable.dataset.month, calendarObj.calendarTable.dataset.month, startDayOnMoving, event.target.textContent, calendarObj);
             } else {
@@ -501,7 +648,19 @@ function startFillTable(currDate, currMonth, currYear, calendarObj) {
         }
     })
 
-    calendarObj.calendarTable.querySelector('tbody').addEventListener('mouseup', () => {
+    calendarObj.calendarTable.querySelector('tbody').addEventListener('mouseup', (event) => {
+        if (mouseDidNotMove) {
+            if (firstClick) {
+                pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarTable.dataset.month, calendarObj.calendarTable.dataset.month, event.target.textContent, event.target.textContent, calendarObj);
+            } else {
+                if (+event.target.textContent >= +calendarObj.calendarEnterDay.value && +calendarObj.calendarEnterMonthCurr.dataset.month === +calendarObj.calendarTable.dataset.month || +calendarObj.calendarEnterMonthCurr.dataset.month < +calendarObj.calendarTable.dataset.month){
+                    pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.month, calendarObj.calendarTable.dataset.month, +calendarObj.calendarEnterDay.value, event.target.textContent, calendarObj);
+                } else {
+                    pullDates(calendarObj.calendarTable.dataset.year, calendarObj.calendarTable.dataset.month, calendarObj.calendarExitMonthCurr.dataset.month, event.target.textContent, +calendarObj.calendarExitDay.value, calendarObj);
+                }
+            }
+            firstClick = !firstClick;
+        }
         mouseMovingOnCalendar = false;
     })
 }
@@ -1014,14 +1173,7 @@ function isValid(input) {
         return !!input.value
     }
     if (input.name === 'phone') {
-        if (input.value[0] === '+') {
-            let val = input.value.split('');
-            val.shift();
-            val = val.join('');
-            return val.length === 11 && !isNaN(+val)
-        } else {
-            return input.value.length === 11 && !isNaN(input.value)
-        }
+        return input.value.length === 18
     }
     if (input.name === 'mail') {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -1382,10 +1534,7 @@ if (document.getElementById('pickUpForm')) {
             }
 
             if (result.ok) {
-                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо за обращение';
-                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы вам перезвоним в течение года';
-                document.querySelector('.popups').classList.add('active');
-                document.querySelector('.popups .popup-thanks').classList.add('active');
+                
             } else {
                 document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
                 document.querySelector('.popups').classList.add('active');
