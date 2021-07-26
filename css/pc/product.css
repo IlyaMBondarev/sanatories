@@ -163,6 +163,10 @@ input._error + .error-block {
   cursor: pointer;
 }
 
+.swiper-button-disabled {
+  opacity: 0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -1018,6 +1022,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .select-calendar__table td.active {
   background: rgba(255, 255, 255, 0.1);
+}
+.select-calendar__table td.today {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
 }
 .select-calendar__table thead td {
   color: #ffffff80;
@@ -2229,8 +2236,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .product-tabs__tab-content {
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out 0.5s;
+}
+.product-tabs__tab-content.active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0.5s, max-height 0.5s ease-in-out 0.5s;
 }
 .product-tabs__title {
   font-size: 22px;
@@ -2293,11 +2305,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFCD4B;
 }
 .product-rooms__parameters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   background: transparent;
   font-size: 17px;
   line-height: 120%;
   font-weight: 700;
   color: #97DC52;
+  margin-left: 20px;
+}
+.product-rooms__parameters img {
+  transition: transform 0.2s ease-in-out;
+}
+.product-rooms__parameters:hover img {
+  transform: translateX(-5px);
 }
 .product-rooms__more {
   display: flex;

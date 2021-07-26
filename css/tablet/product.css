@@ -181,6 +181,10 @@
   ._video {
     cursor: pointer;
   }
+
+  .swiper-button-disabled {
+    opacity: 0;
+  }
 }
 * {
   padding: 0;
@@ -2210,6 +2214,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out 0.5s;
   }
   .product-tabs__left {
     width: 200px;
@@ -2249,7 +2254,10 @@ h1, h2, h3, h4, h5, h6 {
   .product-tabs__tab-content {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.5s ease-in-out;
+  }
+  .product-tabs.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 0.5s, max-height 0.5s ease-in-out 0.5s;
   }
   .product-tabs__title {
     font-size: 22px;
