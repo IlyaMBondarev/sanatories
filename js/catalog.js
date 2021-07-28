@@ -131,19 +131,12 @@ if (document.querySelector('.popups')) {
 
     if (document.querySelector('.popup-procedure')) {
         let popupProcedure = document.querySelector('.popup-procedure');
-        let popupProcedureTitle = popupProcedure.querySelector('.popup-procedure__title');
-        let popupProcedureContent = popupProcedure.querySelector('.popup-procedure__content');
         
         let popupProcedureOpeners = document.querySelectorAll('._popup-procedure-opener');
         let popupProcedureClosers = document.querySelectorAll('._popup-procedure-closer');
 
         popupProcedureOpeners.forEach(opener => {
             opener.addEventListener('click', () => {
-                /*if (opener.dataset.roomname) {
-                    popupRoomRoomName.textContent = `${opener.dataset.roomname}`;
-                } else {
-                    popupRoomRoomName.textContent = '';
-                }*/
                 popups.classList.add('active');
                 popupProcedure.classList.add('active');
             })
@@ -157,7 +150,7 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelectorAll('.popup-pick-up')) {
+    if (document.querySelector('.popup-pick-up')) {
         let popupPickUp = document.querySelector('.popup-pick-up');
         
         let popupPickUpOpeners = document.querySelectorAll('._popup-pick-up-opener');
@@ -178,7 +171,7 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelectorAll('.popup-pick-up-thanks')) {
+    if (document.querySelector('.popup-pick-up-thanks')) {
         let popupPickUp = document.querySelector('.popup-pick-up-thanks');
         
         let popupPickUpClosers = document.querySelectorAll('._popup-pick-up-thanks-closer');
@@ -191,7 +184,7 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelectorAll('.popup-parameters')) {
+    if (document.querySelector('.popup-parameters')) {
         let popupParameters = document.querySelector('.popup-parameters');
         
         let popupParametersOpeners = document.querySelectorAll('._popup-parameters-opener');
@@ -212,7 +205,7 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelectorAll('.popup-settings')) {
+    if (document.querySelector('.popup-settings')) {
         let popupSettings = document.querySelector('.popup-settings');
         
         let popupSettingsOpeners = document.querySelectorAll('._popup-settings-opener');
@@ -233,7 +226,7 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelectorAll('.popup-choice')) {
+    if (document.querySelector('.popup-choice')) {
         let popupChoice = document.querySelector('.popup-choice');
         let popupChoiceRoomName = document.querySelector('.popup-choice__title > span:first-child');
         let popupChoiceSanatoryName = document.querySelector('.popup-choice__title > span:last-child');
@@ -266,7 +259,7 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelectorAll('.popup-stock')) {
+    if (document.querySelector('.popup-stock')) {
         let popupStock = document.querySelector('.popup-stock');
         let popupStockName = document.querySelector('.popup-stock__title > span');
         
@@ -293,7 +286,7 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelectorAll('.popup-subscribe')) {
+    if (document.querySelector('.popup-subscribe')) {
         let popupSubscribe = document.querySelector('.popup-subscribe');
         
         let popupSubscribeOpeners = document.querySelectorAll('._popup-subscribe-opener');
@@ -314,7 +307,7 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelectorAll('.popup-images')) {
+    if (document.querySelector('.popup-images')) {
         let popupImages = document.querySelector('.popup-images');
         
         let popupImagesOpeners = document.querySelectorAll('._popup-images-opener');
@@ -535,6 +528,30 @@ if (document.querySelector('._tel')) {
     })
 }
 
+if (document.querySelector('.burger')) {
+    let burger = document.querySelector('.burger');
+    
+    let burgerOpeners = document.querySelectorAll('._burger-opener');
+    let burgerClosers = document.querySelectorAll('._burger-closer');
+
+    burgerOpeners.forEach(opener => {
+        opener.addEventListener('click', () => {
+            burger.classList.add('active');
+            document.querySelector('main.page').style.position = 'fixed';
+            document.querySelector('main.page').style.overflow = 'hidden';
+            document.querySelector('main.page > header.header').scrollIntoView(false);
+        })
+    })
+    
+    burgerClosers.forEach(closer => {
+        closer.addEventListener('click', () => {
+            burger.classList.remove('active');
+            document.querySelector('main.page').style.position = '';
+            document.querySelector('main.page').style.overflow = '';
+        })
+    })
+}
+
 if (document.querySelector('._burger-drop')) {
     let drops = document.querySelectorAll('._burger-drop');
 
@@ -544,8 +561,10 @@ if (document.querySelector('._burger-drop')) {
         dropBtn.addEventListener('click', () => {
             if (dropBlock.style.maxHeight) {
                 dropBlock.style.maxHeight = '';
+                dropBtn.classList.remove('active');
             } else {
                 dropBlock.style.maxHeight = `${dropBlock.scrollHeight}px`;
+                dropBtn.classList.add('active');
             }
         })
     })
