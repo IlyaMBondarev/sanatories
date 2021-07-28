@@ -1093,6 +1093,64 @@
             </div>
             <button class="popup-choice__submit">Применить</button>
         </form>
+    </div>
+    <div class="popup-stock">
+        <button class="popup-stock__close _popup-stock-closer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+            </svg>
+        </button>
+        <p class="popup-stock__title">Вы выбрали акцию &laquo;<span></span>&raquo;.</p>
+        <p class="popup-stock__content">Отличный выбор! Наш эксперт-куротолог с вами свяжется для уточнение деталей.</p>
+        <form class="popup-stock__form" id="popupStockForm" action="#">
+            <div class="popup-stock__block">
+                <p class="popup-stock__block-title">Ваше имя</p>
+                <div class="popup-stock__input">
+                    <input class="_req" type="text" name="name">
+                    <div class="error-block"><span>Введите имя</span></div>
+                </div>
+            </div>
+            <div class="popup-stock__block">
+                <p class="popup-stock__block-title">Телефон</p>
+                <div class="popup-stock__input">
+                    <input class="_req _tel" type="text" name="phone">
+                    <div class="error-block"><span>Введите корректный номер</span></div>
+                </div>
+            </div>
+            <button class="popup-stock__submit">Применить</button>
+        </form>
+    </div>
+    <div class="popup-procedure">
+        <button class="popup-procedure__close _popup-procedure-closer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+            </svg>
+        </button>
+        <div class="popup-procedure__main">
+            <div class="popup-procedure__top">
+                <div class="popup-procedure__big _video" data-linktovideo='https://www.youtube.com/embed/QchY6IOypxY'>
+                    <img src="img/products/id/procedure1.jpg" alt="">
+                    <button class="video-play-btn">
+                        <svg width="100" height="70" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M97.7912 10.8695C97.2177 8.76863 96.0988 6.8533 94.5461 5.31427C92.9933 3.77525 91.0609 2.66622 88.9412 2.09764C81.1811 0 49.9491 0 49.9491 0C49.9491 0 18.7155 0.0634942 10.9553 2.16113C8.83557 2.72975 6.90313 3.83884 5.35039 5.37793C3.79766 6.91703 2.67882 8.83244 2.1053 10.9334C-0.241966 24.5994 -1.15251 45.4232 2.16975 58.5425C2.74334 60.6434 3.8622 62.5588 5.41493 64.0978C6.96766 65.6368 8.90007 66.7458 11.0198 67.3144C18.7799 69.4121 50.0127 69.4121 50.0127 69.4121C50.0127 69.4121 81.2451 69.4121 89.0049 67.3144C91.1247 66.7459 93.0572 65.6369 94.61 64.0979C96.1628 62.5588 97.2817 60.6435 97.8553 58.5425C100.331 44.8572 101.094 24.0465 97.7912 10.8699V10.8695Z" fill="#2A2A2A"/>
+                            <path d="M40.0078 49.5799L65.9176 34.706L40.0082 19.832L40.0078 49.5799Z" fill="white"/>
+                        </svg>                                        
+                    </button>
+                </div>
+                <div class="popup-procedure__list">
+                    <img src="img/products/id/procedure1.jpg" alt="">
+                    <img src="img/products/id/procedure1.jpg" alt="">
+                    <img src="img/products/id/procedure1.jpg" alt="">
+                    <img src="img/products/id/procedure1.jpg" alt="">
+                    <img src="img/products/id/procedure1.jpg" alt="">
+                    <img src="img/products/id/procedure1.jpg" alt="">
+                </div>
+            </div>
+            <h4 class="popup-procedure__title">Гимнастика в бассейне</h4>
+            <p class="popup-procedure__content">Физические упражнения в бассейне объединяют в себе положительное лечебное воздействие воды и специальных упражнений. В воде пациенту значительно легче делать упражнения, так как его мышцы расслаблены, он испытывает сопротивление и гидростатическое давление воды. Процедура применяется при дегенеративных заболеваниях опорно-двигательного аппарата, в частности – для улучшения двигательной активности суставов. Время проведения – 20 минут.</p>
+        </div>
     </div></div><header class="header">
     <div class="container">
         <div class="header__row">
@@ -1135,7 +1193,7 @@
                 </ul>
             </div>
         </li>
-        <li class="nav__item dropdown">
+        <li class="nav__item dropdown dropdown__large">
             <a href="#" class="nav__link">Профили лечения</a>
             <div class="dropdown__block dropdown__block-large">
                 <ul class="dropdown__list">
@@ -1218,87 +1276,82 @@
     <div class="burger__main">
         <div class="burger__nav">
             <ul class="burger__nav-list">
-                <li class="burger__nav-item">
-                    <input class="burger__nav-input" type="checkbox" id="burgerNav0">
-                    <label class="burger__nav-label" for="burgerNav0">Популярные категории</label>
-                    <div class="burger__nav-block">
-                        <ul class="burger__nav-list">
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Лучшие</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">С бассейном</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Без лечения</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Эконом</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Шведский стол</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Семейные</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Новый год</a></li>
+                <li class="burger__nav-item _burger-drop">
+                    <a href="#" class="burger__nav-link _burger-drop-btn">Популярные категории</a>
+                    <div class="burger__nav-drop _burger-drop-block">
+                        <ul class="burger__nav-droplist">
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Лучшие</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">С бассейном</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Без лечения</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Эконом</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Шведский стол</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Семейные</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Новый год</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="burger__nav-item">
-                    <input class="burger__nav-input" type="checkbox" id="burgerNav1">
-                    <label class="burger__nav-label" for="burgerNav1">Профили лечения</label>
-                    <div class="burger__nav-block">
-                        <ul class="burger__nav-list">
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Желудочно-кишечный тракт (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Опорно-двигательная система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Желчевыводящая система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Сердечно-сосудистая система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Офтальмология (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Мочеполовая система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Ожирение / похудение (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Заболевания печени (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Нервная система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Урология (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Сахарный диабет (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Гинекология (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Костно-мышечная система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Пищеварительная система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Эндокринная система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Иммунная система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Аллергология (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">ЛОР (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Дыхательная система (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Кожные заболевания (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">SPA (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Стоматология (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Обмен веществ (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Педиатрия (81)</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Общетерапевтический (81)</a></li>
+                <li class="burger__nav-item _burger-drop">
+                    <a href="#" class="burger__nav-link _burger-drop-btn">Профили лечения</a>
+                    <div class="burger__nav-drop _burger-drop-block">
+                        <ul class="burger__nav-droplist">
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Желудочно-кишечный тракт (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Опорно-двигательная система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Желчевыводящая система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Сердечно-сосудистая система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Офтальмология (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Мочеполовая система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Ожирение / похудение (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Заболевания печени (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Нервная система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Урология (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Сахарный диабет (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Гинекология (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Костно-мышечная система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Пищеварительная система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Эндокринная система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Иммунная система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Аллергология (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">ЛОР (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Дыхательная система (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Кожные заболевания (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">SPA (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Стоматология (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Обмен веществ (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Педиатрия (81)</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Общетерапевтический (81)</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="burger__nav-item">
-                    <input class="burger__nav-input" type="checkbox" id="burgerNav2">
-                    <label class="burger__nav-label" for="burgerNav2">О Кисловодске</label>
-                    <div class="burger__nav-block">
-                        <ul class="burger__nav-list">
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Обзоры санаториев</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Описание курорта</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Достопримечательности</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Досуг</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Афиша</a></li>
+                <li class="burger__nav-item _burger-drop">
+                    <a href="#" class="burger__nav-link _burger-drop-btn">О Кисловодске</a>
+                    <div class="burger__nav-drop _burger-drop-block">
+                        <ul class="burger__nav-droplist">
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Обзоры санаториев</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Описание курорта</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Достопримечательности</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Досуг</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Афиша</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="burger__nav-item">
-                    <input class="burger__nav-input" type="checkbox" id="burgerNav3">
-                    <label class="burger__nav-label" for="burgerNav3">Блог</label>
-                    <div class="burger__nav-block">
-                        <ul class="burger__nav-list">
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Памятка туриста</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Памятка туриста</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Новости</a></li>
+                <li class="burger__nav-item _burger-drop">
+                    <a href="#" class="burger__nav-link _burger-drop-btn">Блог</a>
+                    <div class="burger__nav-drop _burger-drop-block">
+                        <ul class="burger__nav-droplist">
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Памятка туриста</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Памятка туриста</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Новости</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="burger__nav-item">
-                    <input class="burger__nav-input" type="checkbox" id="burgerNav4">
-                    <label class="burger__nav-label" for="burgerNav4">Компанияи</label>
-                    <div class="burger__nav-block">
-                        <ul class="burger__nav-list">
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">О компании</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Наша команда</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Вопросы и ответы</a></li>
-                            <li class="burger__nav-item"><a href="#" class="burger__nav-link">Отзывы</a></li>
+                <li class="burger__nav-item _burger-drop">
+                    <a href="#" class="burger__nav-link _burger-drop-btn">Компания</a>
+                    <div class="burger__nav-drop _burger-drop-block">
+                        <ul class="burger__nav-droplist">
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">О компании</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Наша команда</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Вопросы и ответы</a></li>
+                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Отзывы</a></li>
                         </ul>
                     </div>
                 </li>
@@ -1456,12 +1509,12 @@
                             <h3 class="product-banner__title">Хорошее предолжение</h3>
                             <p class="product-banner__content">Скидка -10% на лечение и отдых!</p>
                             <p class="product-banner__content">На заезды с 11.01.21 г. по 20.03.21 г.</p>
-                            <button class="product-banner__submit _popup-callback-opener">Забронировать цену</button>
+                            <button class="product-banner__submit _popup-stock-opener" data-stockname="Скидка 10%">Забронировать цену</button>
                         </div>
                         <div class="product-banner__image">
                             <img src="img/products/banners/family.png" alt="">
                         </div>
-                        <button class="product-banner__more _popup-callback-opener">Подробнее у менеджеров</button>
+                        <button class="product-banner__more _popup-callback-opener" data-slideto="1">Подробнее у менеджеров</button>
                     </div>
                     <div class="product-tabs _tabs">
                         <div class="product-tabs__left">
@@ -1780,42 +1833,42 @@
                     <div class="product-medical-base__items _medical-base-items">
                         <div class="product-medical-base__item">
                             <img src="img/products/id/medical-base1.jpg" alt="">
-                            <a class="product-medical-base__item-link" href="#">
+                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
                                 <span>УЗИ-диагностика</span>
                                 <img src="img/icons/arrow-right-white.svg" alt="">
                             </a>
                         </div>
                         <div class="product-medical-base__item">
                             <img src="img/products/id/medical-base2.jpg" alt="">
-                            <a class="product-medical-base__item-link" href="#">
+                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
                                 <span>Спирография</span>
                                 <img src="img/icons/arrow-right-white.svg" alt="">
                             </a>
                         </div>
                         <div class="product-medical-base__item">
                             <img src="img/products/id/medical-base3.jpg" alt="">
-                            <a class="product-medical-base__item-link" href="#">
+                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
                                 <span>Питьевое лечение</span>
                                 <img src="img/icons/arrow-right-white.svg" alt="">
                             </a>
                         </div>
                         <div class="product-medical-base__item">
                             <img src="img/products/id/medical-base1.jpg" alt="">
-                            <a class="product-medical-base__item-link" href="#">
+                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
                                 <span>УЗИ-диагностика</span>
                                 <img src="img/icons/arrow-right-white.svg" alt="">
                             </a>
                         </div>
                         <div class="product-medical-base__item">
                             <img src="img/products/id/medical-base2.jpg" alt="">
-                            <a class="product-medical-base__item-link" href="#">
+                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
                                 <span>Спирография</span>
                                 <img src="img/icons/arrow-right-white.svg" alt="">
                             </a>
                         </div>
                         <div class="product-medical-base__item">
                             <img src="img/products/id/medical-base3.jpg" alt="">
-                            <a class="product-medical-base__item-link" href="#">
+                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
                                 <span>Питьевое лечение</span>
                                 <img src="img/icons/arrow-right-white.svg" alt="">
                             </a>
