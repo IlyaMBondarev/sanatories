@@ -1900,6 +1900,9 @@ h1, h2, h3, h4, h5, h6 {
   .main-video {
     margin-bottom: 30px;
   }
+  .main-video + * {
+    clear: both;
+  }
   .main-video__title span {
     display: block;
   }
