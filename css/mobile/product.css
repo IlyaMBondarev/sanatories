@@ -1499,6 +1499,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media screen and (max-width: 767px) {
+  .breadcrumbs {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
   .main-content {
     position: relative;
     z-index: 10;

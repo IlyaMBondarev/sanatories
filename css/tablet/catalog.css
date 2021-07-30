@@ -2239,6 +2239,47 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
   }
+  .catalog-main__chosen {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-width: none;
+    scrollbar-color: #ffffff80 transparent;
+  }
+  .catalog-main__chosen::-webkit-scrollbar {
+    background-color: #ffffff10;
+    width: 0;
+    height: 0;
+  }
+  .catalog-main__chosen::-webkit-scrollbar-thumb {
+    background-color: #ffffff80;
+    border-radius: 10px;
+    width: 0;
+  }
+  .catalog-main__chosen-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    background: #ffffff12;
+    border: 1px solid #ffffff24;
+    border-radius: 16px;
+    font-size: 17px;
+    line-height: 120%;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .catalog-main__chosen-item:not(:last-child) {
+    margin-right: 15px;
+  }
+  .catalog-main__chosen-item > button {
+    margin-left: 10px;
+    background: transparent;
+  }
   .catalog-main__consultation {
     padding: 10px;
     margin-bottom: 15px;

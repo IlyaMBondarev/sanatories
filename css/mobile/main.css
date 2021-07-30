@@ -2472,13 +2472,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 17px;
     line-height: 27px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 0;
   }
   .item__desc-info span {
     display: inline-block;
     background: #4E5AC0;
     border-radius: 5px;
     padding: 1.5px 10px;
+    margin-bottom: 15px;
   }
   .item__rating {
     order: -2;
