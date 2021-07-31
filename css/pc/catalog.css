@@ -10,6 +10,30 @@
   font-weight: 600;
   font-style: normal;
 }
+@media screen and (max-width: 1230px) {
+  .not-tablet {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .not-mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1231px) {
+  .tablet {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none !important;
+  }
+}
+
 .hidden {
   display: none !important;
 }
@@ -112,12 +136,6 @@ body {
 }
 .video-play-btn:hover path:first-child {
   fill: #FF0000;
-}
-
-@media screen and (min-width: 768px) {
-  .mobile {
-    display: none;
-  }
 }
 
 .error-block {
@@ -1320,6 +1338,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 27px;
   font-weight: 600;
   color: #ffffff;
+}
+
+.popup-settings {
+  display: none;
 }
 
 .pick-up {

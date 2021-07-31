@@ -184,11 +184,32 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelector('.popup-parameters')) {
-        let popupParameters = document.querySelector('.popup-parameters');
+    if (document.querySelector('.popup-parameters-pc')) {
+        let popupParameters = document.querySelector('.popup-parameters-pc');
         
-        let popupParametersOpeners = document.querySelectorAll('._popup-parameters-opener');
-        let popupParametersClosers = document.querySelectorAll('._popup-parameters-closer');
+        let popupParametersOpeners = document.querySelectorAll('._popup-parameters-pc-opener');
+        let popupParametersClosers = document.querySelectorAll('._popup-parameters-pc-closer');
+
+        popupParametersOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupParameters.classList.add('active');
+            })
+        })
+        
+        popupParametersClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupParameters.classList.remove('active');
+            })
+        })
+    }
+
+    if (document.querySelector('.popup-parameters-mobile')) {
+        let popupParameters = document.querySelector('.popup-parameters-mobile');
+        
+        let popupParametersOpeners = document.querySelectorAll('._popup-parameters-mobile-opener');
+        let popupParametersClosers = document.querySelectorAll('._popup-parameters-mobile-closer');
 
         popupParametersOpeners.forEach(opener => {
             opener.addEventListener('click', () => {
@@ -411,7 +432,7 @@ if (document.querySelector('._tel')) {
             }
         })
         phone.addEventListener('input', (event) => {
-            if (event.inputType.split('')[0] === 'i') {
+            if (event.inputType && event.inputType.split('')[0] === 'i') {
                 let valueArr = phone.value.split('').filter(sym => !isNaN(sym) && sym !== ' ');
                 switch (valueArr.length) {
                     case 0: {
@@ -467,7 +488,7 @@ if (document.querySelector('._tel')) {
                         break;
                     }
                 }
-            } else if (event.inputType.split('')[0] === 'd') {
+            } else {
                 let valueArr = phone.value.split('').filter(sym => !isNaN(sym) && sym !== ' ');
                 switch (valueArr.length) {
                     case 0: {
@@ -1276,18 +1297,14 @@ if (document.querySelector('.popup-room__demo') && document.querySelector('.popu
     })
 }
 
+let mobile = document.documentElement.clientWidth < 768;
+
 if (document.querySelector('._nav')) {
     let navBlock = document.querySelector('._nav');
 
     let links = navBlock.querySelectorAll('._nav-link');
     let items = document.querySelectorAll('._nav-item');
     let indexOfActiveLink = null;
-
-    if (navBlock.parentElement.getBoundingClientRect().top < 0 && Math.abs(navBlock.parentElement.getBoundingClientRect().top) + navBlock.scrollHeight < navBlock.parentElement.scrollHeight) {
-        navBlock.style.top = `${-navBlock.parentElement.getBoundingClientRect().top}px`;
-    } else {
-        navBlock.style.top = '0';
-    }
 
     links.forEach((link, index) => {
         if (link.classList.contains('active')) {
@@ -1302,22 +1319,32 @@ if (document.querySelector('._nav')) {
             })
         })
     })
-
-    document.querySelector('main.page').addEventListener('scroll', () => {
-        if (navBlock.parentElement.getBoundingClientRect().top < 0 && Math.abs(navBlock.parentElement.getBoundingClientRect().top) - navBlock.scrollHeight < navBlock.parentElement.scrollHeight) {
+    if (!mobile) {
+        if (navBlock.parentElement.getBoundingClientRect().top < 0 && Math.abs(navBlock.parentElement.getBoundingClientRect().top) + navBlock.scrollHeight < navBlock.parentElement.scrollHeight) {
             navBlock.style.top = `${-navBlock.parentElement.getBoundingClientRect().top}px`;
         } else {
             navBlock.style.top = '0';
         }
-
-        items.forEach((item, index) => {
-            if (item.getBoundingClientRect().top - navBlock.scrollHeight <= 0) {
-                links[indexOfActiveLink].classList.remove('active');
-                indexOfActiveLink = index;
-                links[indexOfActiveLink].classList.add('active');
+    }
+    
+    document.querySelector('main.page').addEventListener('scroll', () => {
+        if (!mobile) {
+            if (navBlock.parentElement.getBoundingClientRect().top < 0 && Math.abs(navBlock.parentElement.getBoundingClientRect().top) - navBlock.scrollHeight < navBlock.parentElement.scrollHeight) {
+                navBlock.style.top = `${-navBlock.parentElement.getBoundingClientRect().top}px`;
+            } else {
+                navBlock.style.top = '0';
             }
-        })
+
+            items.forEach((item, index) => {
+                if (item.getBoundingClientRect().top - navBlock.scrollHeight <= 0) {
+                    links[indexOfActiveLink].classList.remove('active');
+                    indexOfActiveLink = index;
+                    links[indexOfActiveLink].classList.add('active');
+                }
+            })
+        }
     })
+
 }
 if (document.querySelector('._video')) {
     let videos = document.querySelectorAll('._video');
@@ -1360,6 +1387,32 @@ if (document.querySelector('.popup-images > .swiper-container')) {
             popupImagesSlider.slideTo(index, 0);
         })
     })
+}
+
+if (document.querySelector('.product-item__images.swiper-container')) {
+    const productItemImagesSlider = new Swiper('.product-item__images.swiper-container', {
+        watchOverflow: true,
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        }
+    });
+}
+
+if (document.querySelector('.product-replies__items.swiper-container')) {
+    const productItemImagesSlider = new Swiper('.product-replies__items.swiper-container', {
+        watchOverflow: true,
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        }
+    });
 }
 let rooms = document.querySelector('._rooms');
 let roomsItems = rooms.querySelector('._rooms-items');
@@ -1407,33 +1460,64 @@ medicalBaseLoadBtn.addEventListener('click', () => {
         medicalBaseLoadBtn.classList.add('hidden');
     }
 })
-let horTabs = document.querySelectorAll('._hor-tabs');
+if (document.querySelector('._hor-tabs')) {
+    let horTabs = document.querySelectorAll('._hor-tabs');
 
-horTabs.forEach(horTabs => {
-    let buttons = horTabs.querySelectorAll('._hor-tab-slide-button');
-    let contents = horTabs.querySelectorAll('._hor-tab');
-    let activeIndex = null;
-
-    contents.forEach((content, index) => {
-        if (content.classList.contains('active')) {
-            activeIndex = index;
-            return
-        }
-    })
-
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            contents.forEach((content, index) => {
-                if (content.classList.contains('active')) {
-                    activeIndex = index;
-                }
-            });
-            contents[activeIndex].classList.remove('active');
-            activeIndex = button.dataset.slideto;
-            contents[button.dataset.slideto].classList.add('active');
+    horTabs.forEach(horTabs => {
+        let buttons = horTabs.querySelectorAll('._hor-tab-slide-button');
+        let contents = horTabs.querySelectorAll('._hor-tab');
+        let activeIndex = null;
+    
+        contents.forEach((content, index) => {
+            if (content.classList.contains('active')) {
+                activeIndex = index;
+                return
+            }
+        })
+    
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                contents.forEach((content, index) => {
+                    if (content.classList.contains('active')) {
+                        activeIndex = index;
+                    }
+                });
+                contents[activeIndex].classList.remove('active');
+                activeIndex = button.dataset.slideto;
+                contents[button.dataset.slideto].classList.add('active');
+            })
         })
     })
-})
+}
+
+if (document.querySelector('._vert-tabs')) {
+    let vertTabs = document.querySelectorAll('._vert-tabs');
+
+    vertTabs.forEach(vertTabs => {
+        let buttons = vertTabs.querySelectorAll('._vert-tabs-button');
+        let contents = vertTabs.querySelectorAll('._vert-tabs-button + ._vert-tabs-content');
+        let activeIndex = null;
+
+        buttons.forEach((button, index) => {
+            if (button.classList.contains('active')) {
+                activeIndex = index;
+                button.classList.add('active');
+                contents[activeIndex].style.maxHeight = `${contents[activeIndex].scrollHeight}px`;
+            }
+            button.addEventListener('click', () => {
+                if (activeIndex === index) {
+                    contents[activeIndex].style.maxHeight = '0';
+                    button.classList.remove('active');
+                    activeIndex = null;
+                } else {
+                    activeIndex = index;
+                    button.classList.add('active');
+                    contents[activeIndex].style.maxHeight = `${contents[activeIndex].scrollHeight}px`;
+                }
+            })
+        })
+    })
+}
 function isValid(input) {
     if (input.name === 'dates') {
         return !!input.value
@@ -1455,6 +1539,69 @@ function isValid(input) {
 
 if (document.getElementById('mainPickUpForm')) {
     let mainPickUpForm = document.getElementById('mainPickUpForm');
+
+    mainPickUpForm.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+        }
+    })
+
+    let requiredInputs = mainPickUpForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    mainPickUpForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(mainPickUpForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо за обращение';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы вам перезвоним в течение года';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('mainPickUpFormMobile')) {
+    let mainPickUpForm = document.getElementById('mainPickUpFormMobile');
 
     mainPickUpForm.addEventListener('keydown', (event) => {
         if (event.key == 'Enter') {
@@ -2117,6 +2264,68 @@ if (document.getElementById('searchProductForm')) {
 
 if (document.getElementById('parametersProductForm')) {
     let parametersProductForm = document.getElementById('parametersProductForm');
+
+    parametersProductForm.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+        }
+    })
+
+    let requiredInputs = parametersProductForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    parametersProductForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(parametersProductForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups').classList.remove('active');
+                document.querySelector('.popups .popup-parameters').classList.remove('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-parameters').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('parametersProductFormMobile')) {
+    let parametersProductForm = document.getElementById('parametersProductFormMobile');
 
     parametersProductForm.addEventListener('keydown', (event) => {
         if (event.key == 'Enter') {

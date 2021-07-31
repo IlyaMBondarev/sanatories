@@ -184,11 +184,32 @@ if (document.querySelector('.popups')) {
         })
     }
 
-    if (document.querySelector('.popup-parameters')) {
-        let popupParameters = document.querySelector('.popup-parameters');
+    if (document.querySelector('.popup-parameters-pc')) {
+        let popupParameters = document.querySelector('.popup-parameters-pc');
         
-        let popupParametersOpeners = document.querySelectorAll('._popup-parameters-opener');
-        let popupParametersClosers = document.querySelectorAll('._popup-parameters-closer');
+        let popupParametersOpeners = document.querySelectorAll('._popup-parameters-pc-opener');
+        let popupParametersClosers = document.querySelectorAll('._popup-parameters-pc-closer');
+
+        popupParametersOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupParameters.classList.add('active');
+            })
+        })
+        
+        popupParametersClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupParameters.classList.remove('active');
+            })
+        })
+    }
+
+    if (document.querySelector('.popup-parameters-mobile')) {
+        let popupParameters = document.querySelector('.popup-parameters-mobile');
+        
+        let popupParametersOpeners = document.querySelectorAll('._popup-parameters-mobile-opener');
+        let popupParametersClosers = document.querySelectorAll('._popup-parameters-mobile-closer');
 
         popupParametersOpeners.forEach(opener => {
             opener.addEventListener('click', () => {
@@ -411,7 +432,7 @@ if (document.querySelector('._tel')) {
             }
         })
         phone.addEventListener('input', (event) => {
-            if (event.inputType.split('')[0] === 'i') {
+            if (event.inputType && event.inputType.split('')[0] === 'i') {
                 let valueArr = phone.value.split('').filter(sym => !isNaN(sym) && sym !== ' ');
                 switch (valueArr.length) {
                     case 0: {
@@ -467,7 +488,7 @@ if (document.querySelector('._tel')) {
                         break;
                     }
                 }
-            } else if (event.inputType.split('')[0] === 'd') {
+            } else {
                 let valueArr = phone.value.split('').filter(sym => !isNaN(sym) && sym !== ' ');
                 switch (valueArr.length) {
                     case 0: {
@@ -1391,6 +1412,69 @@ if (document.getElementById('mainPickUpForm')) {
     })
 }
 
+if (document.getElementById('mainPickUpFormMobile')) {
+    let mainPickUpForm = document.getElementById('mainPickUpFormMobile');
+
+    mainPickUpForm.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+        }
+    })
+
+    let requiredInputs = mainPickUpForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    mainPickUpForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(mainPickUpForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо за обращение';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы вам перезвоним в течение года';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
 if (document.getElementById('popupQuizForm') && document.getElementById('popupQuizThanksForm')) {
     let popupQuizForm = document.getElementById('popupQuizForm');
     let popupQuizThanksForm = document.getElementById('popupQuizThanksForm');
@@ -1992,6 +2076,68 @@ if (document.getElementById('searchProductForm')) {
 
 if (document.getElementById('parametersProductForm')) {
     let parametersProductForm = document.getElementById('parametersProductForm');
+
+    parametersProductForm.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            event.preventDefault();
+        }
+    })
+
+    let requiredInputs = parametersProductForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    parametersProductForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(parametersProductForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups').classList.remove('active');
+                document.querySelector('.popups .popup-parameters').classList.remove('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-parameters').classList.remove('active');
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('parametersProductFormMobile')) {
+    let parametersProductForm = document.getElementById('parametersProductFormMobile');
 
     parametersProductForm.addEventListener('keydown', (event) => {
         if (event.key == 'Enter') {

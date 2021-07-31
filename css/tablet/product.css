@@ -12,25 +12,25 @@
 }
 @media screen and (max-width: 1230px) {
   .not-tablet {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 767px) {
   .not-mobile {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (min-width: 1231px) {
   .tablet {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (min-width: 768px) {
   .mobile {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -2452,7 +2452,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out 0.5s;
   }
   .product-tabs__left {
     width: 200px;
@@ -2492,6 +2491,7 @@ h1, h2, h3, h4, h5, h6 {
   .product-tabs__tab-content {
     max-height: 0;
     overflow: hidden;
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out 0.5s;
   }
   .product-tabs.active {
     opacity: 1;

@@ -12,25 +12,25 @@
 }
 @media screen and (max-width: 1230px) {
   .not-tablet {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 767px) {
   .not-mobile {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (min-width: 1231px) {
   .tablet {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (min-width: 768px) {
   .mobile {
-    display: none;
+    display: none !important;
   }
 }
 

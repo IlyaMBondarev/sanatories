@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/pc/product.css">
-    <link rel="stylesheet" href="css/tablet/product.css">
+    <link rel="stylesheet" href="css/mobile/product.css">
 </head>
 <body>
 <main class="page">
@@ -1559,213 +1558,272 @@
         <button class="burger__callback-btn _popup-callback-opener">Заказать звонок</button>
     </div>
 </div>    <section class="content">
-        <section class="breadcrumbs container">
-            <div class="breadcrumbs__container">
-                <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Санатории Кисловодска</a></div>
-                <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Подбор по параметрам</a></div>
-                <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Выбор санатория</a></div>
+        <div class="product-chosen">
+            <a class="product-chosen__back" href="#">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                        <path d="M10.5828 17.856L7.81608 15.0153L5.04932 12.1745L10.5828 6.49298C11.1391 5.9219 11.1391 4.99939 10.5828 4.42831C10.0266 3.85723 9.12816 3.85723 8.57195 4.42831L2.02585 11.1495C1.46965 11.7206 1.46965 12.6431 2.02585 13.2142L8.57195 19.9353C9.12816 20.5064 10.0266 20.5064 10.5828 19.9353C11.1248 19.3642 11.1391 18.4271 10.5828 17.856Z" fill="white" fill-opacity="0.8"/>
+                        <path d="M22 12.5C22 13.3284 21.3284 14 20.5 14L6.5 14C5.67157 14 5 13.3284 5 12.5C5 11.6716 5.67157 11 6.5 11L20.5 11C21.3284 11 22 11.6716 22 12.5Z" fill="white" fill-opacity="0.8"/>
+                    </g>
+                </svg>
+                <span>Изменить параметры</span>
+            </a>
+            <div class="product-chosen__block product-chosen__block_hor">
+                <div class="product-chosen__left">
+                    <p class="product-chosen__title">Вы выбрали:</p>
+                    <p class="product-chosen__content"><span>1 - 13 сен</span> <span>• 12 ночей</span></p>
+                    <p class="product-chosen__content"><span>3 билета</span></p>
+                </div>
+                <button class="product-chosen__edit _popup-parameters-mobile-opener"><img src="img/icons/pencil.svg" alt=""></button>
             </div>
-        </section>
+            <div class="product-chosen__block product-chosen__block_hor">
+                <div class="product-chosen__left">
+                    <p class="product-chosen__content product-chosen__content_important">Даты не выбраны.</p>
+                    <p class="product-chosen__content">Показаны приблизительные цены</p>
+                </div>
+                <button class="product-chosen__edit _popup-parameters-mobile-opener"><img src="img/icons/pencil.svg" alt=""></button>
+            </div>
+            <div class="product-chosen__block">
+                <p class="product-chosen__price">
+                    <span class="white">от</span>
+                    <span class="price">5 600</span>
+                    <span class="white">руб</span>
+                    <span>лечебная путёвка</span>
+                </p>
+                <p class="product-chosen__price">
+                    <span class="white">от</span>
+                    <span class="price">4 800</span>
+                    <span class="white">руб</span>
+                    <span>оздоровительная путёвка</span>
+                </p>
+            </div>
+        </div>
         <section class="product-main container">
             <section class="main-content">
-                <div class="product-nav _nav not-mobile">
+                <div class="product-nav _nav mobile">
                     <ul class="product-nav__list">
-                        <li class="product-nav__item"><a class="product-nav__link _nav-link active" href="#">О санатории</a></li>
-                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">Номера и цены</a></li>
-                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">Сервис и удобства</a></li>
-                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">Лечение</a></li>
-                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">Отзывы</a></li>
-                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">Карта</a></li>
+                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">
+                            <img src="img/icons/product-nav1.svg" alt="">
+                            <span>Номера</span>
+                        </a></li>
+                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">
+                            <img src="img/icons/product-nav2.svg" alt="">
+                            <span>Сервис</span>
+                        </a></li>
+                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">
+                            <img src="img/icons/product-nav3.svg" alt="">
+                            <span>Лечение</span>
+                        </a></li>
+                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">
+                            <img src="img/icons/product-nav4.svg" alt="">
+                            <span>Отзывы</span>
+                        </a></li>
+                        <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">
+                            <img src="img/icons/product-nav5.svg" alt="">
+                            <span>Карта</span>
+                        </a></li>
                     </ul>
                 </div>
-                <div class="product-item product-item-verygood _nav-item">
+                <div class="product-item product-item-verygood">
                     <h1 class="product-item__title">Санаторий «Плаза - SPA» в Железноводске</h1>
                     <p class="product-item__content">г. Кисловодск, улица Калинина, д. 14</p>
-                    <div class="product-item__images not-mobile">
-                        <div class="product-item__image _popup-images-opener product-item__image-big">
-                            <img src="img/products/id/6.jpg" alt="">
+                    <div class="product-item__images swiper-container mobile">
+                        <div class="swiper-wrapper">
+                            <div class="product-item__image swiper-slide _popup-images-opener">
+                                <img src="img/products/id/6.jpg" alt="">
+                            </div>
+                            <div class="product-item__image swiper-slide _popup-images-opener">
+                                <img src="img/products/id/7.jpg" alt="">
+                            </div>
+                            <div class="product-item__image swiper-slide _popup-images-opener">
+                                <img src="img/products/id/8.jpg" alt="">
+                            </div>
+                            <div class="product-item__image swiper-slide _popup-images-opener">
+                                <img src="img/products/id/9.jpg" alt="">
+                            </div>
+                            <div class="product-item__image swiper-slide _popup-images-opener">
+                                <img src="img/products/id/2.jpg" alt="">
+                            </div>
                         </div>
-                        <div class="product-item__image _popup-images-opener">
-                            <img src="img/products/id/7.jpg" alt="">
-                        </div>
-                        <div class="product-item__image _popup-images-opener">
-                            <img src="img/products/id/8.jpg" alt="">
-                        </div>
-                        <div class="product-item__image _popup-images-opener">
-                            <img src="img/products/id/9.jpg" alt="">
-                        </div>
-                        <div class="product-item__image _popup-images-opener">
-                            <img src="img/products/id/2.jpg" alt="">
-                            <button class="product-item__images-btn"><span>170</span> ещё фото</button>
-                        </div>
+                        <div class="product-item__images-pagination swiper-pagination"></div>
                     </div>
-                    <div class="product-item__rating not-mobile">
-                        <div class="product-item__rating-column">
-                            <div class="product-item__rating-row">
-                                <div class="product-item__rating-block">
-                                    <p class="product-item__rating-title">Оценка гостей</p>
-                                    <p class="product-item__rating-eval">Потрясающе</p>
+                    <div class="product-main__mobile-container mobile">
+                        <div class="product-item__rating">
+                            <div class="product-item__rating-column">
+                                <div class="product-item__rating-row">
+                                    <div class="product-item__rating-block">
+                                        <p class="product-item__rating-title">Оценка гостей</p>
+                                        <p class="product-item__rating-eval">Потрясающе</p>
+                                    </div>
+                                    <div class="product-item__rating-block">
+                                        <p class="product-item__rating-number"><img src="img/products/common/rating.svg" alt="">9.6</p>
+                                        <p class="product-item__rating-number-under">по отзывам</p>
+                                    </div>
                                 </div>
-                                <div class="product-item__rating-block">
-                                    <p class="product-item__rating-number"><img src="img/products/common/rating.svg" alt="">9.6</p>
-                                    <p class="product-item__rating-number-under">по отзывам</p>
+                                <div class="product-item__rating-row">
+                                    <div class="product-item__rating-block">
+                                        <p class="product-item__rating-title">Расположение</p>
+                                        <p class="product-item__rating-content">В парке</p>
+                                        <p class="product-item__rating-content">800 м. от бювета</p>
+                                    </div>
+                                    <div class="product-item__rating-block">
+                                        <p class="product-item__rating-number"><img src="img/products/common/rating.svg" alt="">9.2</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="product-item__rating-row">
-                                <div class="product-item__rating-block">
-                                    <p class="product-item__rating-title">Расположение</p>
-                                    <p class="product-item__rating-content">В парке / 800 м. от бювета</p>
+                            <p class="product-item__rating-title mobile">Преимущества санатория</p>
+                            <div class="product-item__rating-column">
+                                <div class="product-item__rating-item">
+                                    <p class="product-item__rating-title">Серцифицировано</p>
+                                    <div class="product-item__rating-stars">
+                                        <div class="product-item__rating-star">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                            </svg>
+                                        </div>
+                                        <div class="product-item__rating-star">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                            </svg>
+                                        </div>
+                                        <div class="product-item__rating-star">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                            </svg>
+                                        </div>
+                                        <div class="product-item__rating-star">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                            </svg>
+                                        </div>
+                                        <div class="product-item__rating-star">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="product-item__rating-block">
-                                    <p class="product-item__rating-number"><img src="img/products/common/rating.svg" alt="">9.2</p>
+                                <div class="product-item__rating-item">
+                                    <p class="product-item__rating-title">Место в рейтинге</p>
+                                    <p class="product-item__rating-number">5 <span> / 40</span></p>
+                                </div>
+                                <div class="product-item__rating-item">
+                                    <p class="product-item__rating-title">Количество процедур</p>
+                                    <p class="product-item__rating-number">92</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-item__rating-column">
-                            <div class="product-item__rating-item">
-                                <p class="product-item__rating-title">Серцифицировано</p>
-                                <div class="product-item__rating-stars">
-                                    <div class="product-item__rating-star">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                        </svg>
-                                    </div>
-                                    <div class="product-item__rating-star">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                        </svg>
-                                    </div>
-                                    <div class="product-item__rating-star">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                        </svg>
-                                    </div>
-                                    <div class="product-item__rating-star">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                        </svg>
-                                    </div>
-                                    <div class="product-item__rating-star">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-item__rating-item">
-                                <p class="product-item__rating-title">Место в рейтинге</p>
-                                <p class="product-item__rating-number">5 <span> / 40</span></p>
-                            </div>
-                            <div class="product-item__rating-item">
-                                <p class="product-item__rating-title">Количество процедур</p>
-                                <p class="product-item__rating-number">92</p>
-                            </div>
-                        </div>
+                        <ul class="product-item__list">
+                            <li class="product-item__list-item">
+                                <img src="img/products/common/star.svg" alt="">
+                                <span>Европейский сервис и высокий уровень комфорта</span>
+                            </li>
+                            <li class="product-item__list-item">
+                                <img src="img/products/common/car.svg" alt="">
+                                <span>Охраняемая автостоянка, бесплатная при наличии свободных мест.</span>
+                            </li>
+                            <li class="product-item__list-item">
+                                <img src="img/products/common/kid.svg" alt="">
+                                <span>С 9 до 22 часов открыт детский клуб. Есть игровая площадка. За отдельную плату можно пригласить няню.</span>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="product-item__list not-mobile">
-                        <li class="product-item__list-item">
-                            <img src="img/products/common/star.svg" alt="">
-                            <span>Европейский сервис и высокий уровень комфорта</span>
-                        </li>
-                        <li class="product-item__list-item">
-                            <img src="img/products/common/car.svg" alt="">
-                            <span>Охраняемая автостоянка, бесплатная при наличии свободных мест.</span>
-                        </li>
-                        <li class="product-item__list-item">
-                            <img src="img/products/common/kid.svg" alt="">
-                            <span>С 9 до 22 часов открыт детский клуб. Есть игровая площадка. За отдельную плату можно пригласить няню.</span>
-                        </li>
-                    </ul>
                 </div>
-                <div class="product-about not-mobile">
-                    <h2 class="product-about__title">Про санаторий</h2>
-                    <div class="product-about__video _video" data-linktovideo='https://www.youtube.com/embed/QchY6IOypxY'>
-                        <img src="img/products/id/video.jpg" alt="">
-                        <button class="video-play-btn">
-                            <svg width="100" height="70" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M97.7912 10.8695C97.2177 8.76863 96.0988 6.8533 94.5461 5.31427C92.9933 3.77525 91.0609 2.66622 88.9412 2.09764C81.1811 0 49.9491 0 49.9491 0C49.9491 0 18.7155 0.0634942 10.9553 2.16113C8.83557 2.72975 6.90313 3.83884 5.35039 5.37793C3.79766 6.91703 2.67882 8.83244 2.1053 10.9334C-0.241966 24.5994 -1.15251 45.4232 2.16975 58.5425C2.74334 60.6434 3.8622 62.5588 5.41493 64.0978C6.96766 65.6368 8.90007 66.7458 11.0198 67.3144C18.7799 69.4121 50.0127 69.4121 50.0127 69.4121C50.0127 69.4121 81.2451 69.4121 89.0049 67.3144C91.1247 66.7459 93.0572 65.6369 94.61 64.0979C96.1628 62.5588 97.2817 60.6435 97.8553 58.5425C100.331 44.8572 101.094 24.0465 97.7912 10.8699V10.8695Z" fill="#2A2A2A"/>
-                                <path d="M40.0078 49.5799L65.9176 34.706L40.0082 19.832L40.0078 49.5799Z" fill="white"/>
-                            </svg>                                        
-                        </button>
-                    </div>
-                    <div class="product-banner product-banner-blue">
-                        <div class="product-banner__main">
-                            <h3 class="product-banner__title">Хорошее предолжение</h3>
-                            <p class="product-banner__content">Скидка -10% на лечение и отдых!</p>
-                            <p class="product-banner__content">На заезды с 11.01.21 г. по 20.03.21 г.</p>
-                            <button class="product-banner__submit _popup-stock-opener" data-stockname="Скидка 10%">Забронировать цену</button>
+                <div class="product-main__mobile-container mobile">
+                    <div class="product-about">
+                        <h2 class="product-about__title">Про санаторий</h2>
+                        <div class="product-about__video _video" data-linktovideo='https://www.youtube.com/embed/QchY6IOypxY'>
+                            <img src="img/products/id/video.jpg" alt="">
+                            <button class="video-play-btn">
+                                <svg width="65" height="45" viewBox="0 0 65 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.8" clip-path="url(#clip0)">
+                                        <path d="M62.8657 6.98756C62.497 5.63697 61.7777 4.40569 60.7795 3.41632C59.7813 2.42695 58.5391 1.714 57.1764 1.34848C52.1878 0 32.11 0 32.11 0C32.11 0 12.0313 0.0408177 7.04261 1.3893C5.67992 1.75484 4.43764 2.46782 3.43945 3.45724C2.44127 4.44666 1.72201 5.67799 1.35332 7.02862C-0.155637 15.8139 -0.740988 29.2006 1.39475 37.6345C1.76349 38.9851 2.48275 40.2164 3.48094 41.2057C4.47912 42.1951 5.72139 42.908 7.08404 43.2736C12.0727 44.622 32.151 44.622 32.151 44.622C32.151 44.622 52.2289 44.622 57.2174 43.2736C58.5801 42.9081 59.8224 42.1952 60.8206 41.2058C61.8188 40.2164 62.5381 38.9851 62.9069 37.6345C64.4985 28.8368 64.9889 15.4585 62.8657 6.9878V6.98756Z" fill="#2A2A2A"/>
+                                        <path d="M25.7194 31.8717L42.3756 22.3099L25.7196 12.748L25.7194 31.8717Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0">
+                                            <rect width="64.2857" height="44.8" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
                         </div>
-                        <div class="product-banner__image">
-                            <img src="img/products/banners/family.png" alt="">
+                        <div class="product-banner product-banner-blue">
+                            <div class="product-banner__main">
+                                <h3 class="product-banner__title">Хорошее предолжение</h3>
+                                <p class="product-banner__subtitle">Скидка -10%<br/>на лечение и отдых!</p>
+                                <button class="product-banner__submit _popup-stock-opener" data-stockname="Скидка 10%">Забронировать цену</button>
+                                <p class="product-banner__content">На заезды с 11.01.21 г.<br/>по 20.03.21 г.</p>
+                            </div>
+                            <div class="product-banner__image">
+                                <picture>
+                                    <source srcset="img/products/banners/family-mobile.png" media="(max-width: 767px)">
+                                    <img src="img/products/banners/family.png" alt="">
+                                </picture>
+                            </div>
+                            <button class="product-banner__more _popup-callback-opener" data-slideto="1">Подробнее у менеджеров</button>
                         </div>
-                        <button class="product-banner__more _popup-callback-opener" data-slideto="1">Подробнее у менеджеров</button>
-                    </div>
-                    <div class="product-tabs _tabs">
-                        <div class="product-tabs__left">
-                            <label class="product-tabs__tab" for="tab0">
-                                <input class="_tabs-input" id="tab0" type="radio" name="tab" value="tab0" checked>
-                                <span>Наши впечатления</span>
-                            </label>
-                            <label class="product-tabs__tab" for="tab1">
-                                <input class="_tabs-input" id="tab1" type="radio" name="tab" value="tab1">
-                                <span>Описание</span>
-                            </label>
-                            <label class="product-tabs__tab" for="tab2">
-                                <input class="_tabs-input" id="tab2" type="radio" name="tab" value="tab2">
-                                <span>Лечение</span>
-                            </label>
-                            <label class="product-tabs__tab" for="tab3">
-                                <input class="_tabs-input" id="tab3" type="radio" name="tab" value="tab3">
-                                <span>Развлечения</span>
-                            </label>
-                        </div>
-                        <div class="product-tabs__right">
-                            <div class="product-tabs__tab-content _tabs-content">
-                                <p class="product-tabs__title">«Плаза-СПА»</p>
-                                <p class="product-tabs__content">«Плаза-СПА» в Железноводске — новый и современный санаторий, который подойдёт даже самому взыскательному отдыхающему. Он очень удобно расположен — все интересные для отдыхающих объекты находятся поблизости.</p>
-                                <ul class="product-tabs__list product-tabs__list_unordered">
-                                    <li>Комфорт и сервис</li>
-                                    <li>Комфорт и сервис</li>
-                                    <li>Комфорт и сервис</li>
-                                </ul>
-                                <p class="product-tabs__content">Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
-                                <p class="product-tabs__content">Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
-                            </div>
-                            <div class="product-tabs__tab-content _tabs-content">
-                                <p class="product-tabs__title">«Плаза-СПА»</p>
-                                <p class="product-tabs__content">«Плаза-СПА» в Железноводске — новый и современный санаторий, который подойдёт даже самому взыскательному отдыхающему. Он очень удобно расположен — все интересные для отдыхающих объекты находятся поблизости.</p>
-                                <p class="product-tabs__content">Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
-                            </div>
-                            <div class="product-tabs__tab-content _tabs-content">
-                                <p class="product-tabs__title">«Плаза-СПА»</p>
-                                <ol class="product-tabs__list product-tabs__list_ordered">
-                                    <li>Комфорт и сервис</li>
-                                    <li>Комфорт и сервис</li>
-                                    <li>Комфорт и сервис</li>
-                                </ol>
-                                <p class="product-tabs__content">«Плаза-СПА» в Железноводске — новый и современный санаторий, который подойдёт даже самому взыскательному отдыхающему. Он очень удобно расположен — все интересные для отдыхающих объекты находятся поблизости.</p>
-                            </div>
-                            <div class="product-tabs__tab-content _tabs-content">
-                                <p class="product-tabs__title">«Плаза-СПА»</p>
-                                <p class="product-tabs__content">«Плаза-СПА» в Железноводске — новый и современный санаторий, который подойдёт даже самому взыскательному отдыхающему. Он очень удобно расположен — все интересные для отдыхающих объекты находятся поблизости.</p>
-                                <p class="product-tabs__content">Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
-                                <hr/>
-                                <p class="product-tabs__content">Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
-                                <p class="product-tabs__content">Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
+                        <div class="product-tabs">
+                            <div class="product-tabs__items _vert-tabs">
+                                <div class="product-tabs__item">
+                                    <div class="product-tabs__item-title _vert-tabs-button">
+                                        <span>Наши впечатления</span>
+                                        <img src="img/icons/arrow-down-white.svg" alt="">
+                                    </div>
+                                    <div class="product-tabs__item-content _vert-tabs-content">
+                                        <p class="product-tabs__content">«Плаза-СПА» в Железноводске — новый и современный санаторий, который подойдёт даже самому взыскательному отдыхающему. Он очень удобно расположен — все интересные для отдыхающих объекты находятся поблизости. Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
+                                    </div>
+                                </div>
+                                <div class="product-tabs__item">
+                                    <div class="product-tabs__item-title _vert-tabs-button">
+                                        <span>Описание санатория</span>
+                                        <img src="img/icons/arrow-down-white.svg" alt="">
+                                    </div>
+                                    <div class="product-tabs__item-content _vert-tabs-content">
+                                        <p class="product-tabs__content">«Плаза-СПА» в Железноводске — новый и современный санаторий, который подойдёт даже самому взыскательному отдыхающему. Он очень удобно расположен — все интересные для отдыхающих объекты находятся поблизости. Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
+                                    </div>
+                                </div>
+                                <div class="product-tabs__item">
+                                    <div class="product-tabs__item-title _vert-tabs-button">
+                                        <span>Лечение в санатории</span>
+                                        <img src="img/icons/arrow-down-white.svg" alt="">
+                                    </div>
+                                    <div class="product-tabs__item-content _vert-tabs-content">
+                                        <p class="product-tabs__content">«Плаза-СПА» в Железноводске — новый и современный санаторий, который подойдёт даже самому взыскательному отдыхающему. Он очень удобно расположен — все интересные для отдыхающих объекты находятся поблизости. Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
+                                    </div>
+                                </div>
+                                <div class="product-tabs__item">
+                                    <div class="product-tabs__item-title _vert-tabs-button">
+                                        <span>Развлечения в санатории</span>
+                                        <img src="img/icons/arrow-down-white.svg" alt="">
+                                    </div>
+                                    <div class="product-tabs__item-content _vert-tabs-content">
+                                        <p class="product-tabs__content">«Плаза-СПА» в Железноводске — новый и современный санаторий, который подойдёт даже самому взыскательному отдыхающему. Он очень удобно расположен — все интересные для отдыхающих объекты находятся поблизости. Комфорт и сервис здесь на очень высоком, можно сказать европейском уровне. Персонал тщательно создаёт в санатории настолько уютную и позитивную атмосферу, чтобы она ощущалась с порога. «Плаза» — санаторий действительно международного уровня.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-rooms _nav-item _rooms">
+                    <h2 class="product-rooms__title">Номера и тарифы</h2>
                     <div class="product-rooms__top">
                         <div class="product-rooms__left">
-                            <h2 class="product-rooms__title">Номера и цены</h2>
-                            <p class="product-rooms__content">Показаны цены до 27 февраля.</p>
-                            <p class="product-rooms__content product-rooms__content_important">Получите точные цены, указав желаемые даты заезда</p>
+                            <p class="product-rooms__top-title">Вы выбрали:</p>
+                            <p class="product-rooms__content"><span>1 фев. - 13 сен.</span> <span>• 12 ночей</span></p>
+                            <p class="product-rooms__content"><span>3 взрослых, 1 детский</span></p>
                         </div>
-                        <button class="product-rooms__parameters _popup-parameters-pc-opener">
-                            <img src="img/icons/pencil_green.svg" alt="">
+                        <button class="product-rooms__parameters _popup-parameters-mobile-opener">
                             <span>Изменить</span>
+                        </button>
+                    </div>
+                    <div class="product-rooms__top">
+                        <div class="product-rooms__left">
+                            <p class="product-rooms__top-title product-rooms__top-title_important">Даты не выбраны.</p>
+                            <p class="product-rooms__content">Показаны приблизительные цены</p>
+                        </div>
+                        <button class="product-rooms__parameters _popup-parameters-mobile-opener">
+                            <span>Указать</span>
                         </button>
                     </div>
                     <div class="product-rooms__item _rooms-items">
@@ -1779,12 +1837,6 @@
                                     <p class="room__content">Площадь номера: 43 кв.м.</p>
                                     <p class="room__content">Количество комнат: 1</p>
                                     <p class="room__content">Вмещает: 2 + 1</p>
-                                    <button class="room__more _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
-                                        <span>Подробнее о номере </span>
-                                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
                                 </div>
                             </div>
                             <div class="room__info">
@@ -1807,6 +1859,9 @@
                                     <div class="room__price">
                                         <div class="room__price-title">
                                             <p>от <span>3 600</span> руб</p>
+                                        </div>
+                                        <div class="room__price-content">
+                                            <span>без лечения</span>
                                             <div class="room__price-info">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="#4E5AC0" stroke-width="1.2"/>
@@ -1829,11 +1884,16 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <p class="room__price-content">питание + проживание</p>
                                     </div>
+                                    <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
+                                </div>
+                                <div class="room__prices">
                                     <div class="room__price">
                                         <div class="room__price-title">
                                             <p>от <span>1 300 600</span> руб</p>
+                                        </div>
+                                        <div class="room__price-content">
+                                            <span>с лечением</span>
                                             <div class="room__price-info">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
@@ -1856,28 +1916,27 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <p class="room__price-content">питание + проживание + лечение</p>
                                     </div>
+                                    <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                                 </div>
-                                <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                             </div>
+                            <button class="room__more _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
+                                <span>Подробнее о номере </span>
+                                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
                         </article>
                         <article class="room">
                             <div class="room__main">
-                                <div class="room__image _popup-room-opener" data-roomname="Double plus однокомнатный двухместный">
+                                <div class="room__image _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
                                     <img src="img/products/id/room1.jpg" alt="">
                                 </div>
                                 <div class="room__right">
-                                    <h2 class="room__title _popup-room-opener" data-roomname="Double plus однокомнатный двухместный">Double plus однокомнатный двухместный</h2>
+                                    <h2 class="room__title _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">Double plus однокомнатный двухместный (корпус&nbsp;АБ)</h2>
                                     <p class="room__content">Площадь номера: 43 кв.м.</p>
                                     <p class="room__content">Количество комнат: 1</p>
                                     <p class="room__content">Вмещает: 2 + 1</p>
-                                    <button class="room__more _popup-room-opener" data-roomname="Double plus однокомнатный двухместный">
-                                        <span>Подробнее о номере </span>
-                                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
                                 </div>
                             </div>
                             <div class="room__info">
@@ -1900,6 +1959,9 @@
                                     <div class="room__price">
                                         <div class="room__price-title">
                                             <p>от <span>3 600</span> руб</p>
+                                        </div>
+                                        <div class="room__price-content">
+                                            <span>без лечения</span>
                                             <div class="room__price-info">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="#4E5AC0" stroke-width="1.2"/>
@@ -1922,14 +1984,19 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <p class="room__price-content">питание + проживание</p>
                                     </div>
+                                    <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
+                                </div>
+                                <div class="room__prices">
                                     <div class="room__price">
                                         <div class="room__price-title">
                                             <p>от <span>1 300 600</span> руб</p>
+                                        </div>
+                                        <div class="room__price-content">
+                                            <span>с лечением</span>
                                             <div class="room__price-info">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="#4E5AC0" stroke-width="1.2"/>
+                                                    <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
                                                     <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
                                                     <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
                                                 </svg>
@@ -1949,11 +2016,16 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <p class="room__price-content">питание + проживание + лечение</p>
                                     </div>
+                                    <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                                 </div>
-                                <button class="room__submit _popup-choice-opener" data-roomname="Double plus однокомнатный двухместный"  data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                             </div>
+                            <button class="room__more _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
+                                <span>Подробнее о номере </span>
+                                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
                         </article>
                     </div>
                     <button class="product-rooms__more _rooms-load">
@@ -1963,7 +2035,123 @@
                         </svg>
                     </button>
                 </div>
-                <div class="product-banner product-banner-black not-mobile">
+                <div class="product-main__mobile-container mobile _nav-item">
+                    <div class="product-service">
+                        <h2 class="product-service__title">Сервис и удобства</h2>
+                        <ul class="product-service__list">
+                            <li class="product-service__item"><img src="img/products/common/wifi.svg" alt=""><span>Wi-Fi на всей территории</span></li>
+                            <li class="product-service__item"><img src="img/products/common/wifi.svg" alt=""><span>Wi-Fi на всей территории</span></li>
+                            <li class="product-service__item"><img src="img/products/common/child.svg" alt=""><span>Принимают с детьми от 0 лет</span></li>
+                            <li class="product-service__item"><img src="img/products/common/child.svg" alt=""><span>Принимают с детьми от 0 лет</span></li>
+                            <li class="product-service__item"><img src="img/products/common/pool.svg" alt=""><span>Работает крытый бассейн</span></li>
+                            <li class="product-service__item"><img src="img/products/common/pool.svg" alt=""><span>Работает крытый бассейн</span></li>
+                            <li class="product-service__item"><img src="img/products/common/parking-lot.svg" alt=""><span>Бесплатная парковка</span></li>
+                            <li class="product-service__item"><img src="img/products/common/parking-lot.svg" alt=""><span>Бесплатная парковка</span></li>
+                        </ul>
+                        <button class="product-service__more mobile">
+                            <span>Подробнее</span>
+                            <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.8929 0.707107C13.5024 0.316582 12.8692 0.316582 12.4787 0.707107L7.91956 5.26623C7.70471 5.48108 7.35715 5.48114 7.14352 5.26508C6.25527 4.36675 4.04063 2.13055 2.69336 0.801655C2.27994 0.393878 1.61876 0.40143 1.20796 0.811851C0.790054 1.22938 0.7899 1.90668 1.20762 2.3244L6.53189 7.64867C7.03824 8.15502 7.8592 8.15502 8.36555 7.64867L13.8929 2.12132C14.2834 1.7308 14.2834 1.09763 13.8929 0.707107Z" fill="#97DC52"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-main__mobile-container mobile _nav-item">
+                    <div class="product-treatment">
+                        <h2 class="product-treatment__title">Лечение</h2>
+                        <div class="product-treatment__main _vert-tabs">
+                            <div class="product-treatment__block">
+                                <h3 class="product-treatment__block-title _vert-tabs-button">
+                                    <span>Основые профили</span>
+                                    <img src="img/icons/arrow-down-white.svg" alt="">
+                                </h3>
+                                <ul class="product-treatment__block-list _vert-tabs-content">
+                                    <li class="product-treatment__block-item">Желудочно-кишечный тракт</li>
+                                    <li class="product-treatment__block-item">Урология</li>
+                                    <li class="product-treatment__block-item">Обмен веществ</li>
+                                    <li class="product-treatment__block-item">Общетерапевтический</li>
+                                    <li class="product-treatment__block-item">Пищеварительная система</li>
+                                    <li class="product-treatment__block-item">Мочеполовая система</li>
+                                    <li class="product-treatment__block-item">SPA</li>
+                                </ul>
+                            </div>
+                            <div class="product-treatment__block">
+                                <h3 class="product-treatment__block-title _vert-tabs-button">
+                                    <span>Дополнительные профили</span>
+                                    <img src="img/icons/arrow-down-white.svg" alt="">
+                                </h3>
+                                <ul class="product-treatment__block-list _vert-tabs-content">
+                                    <li class="product-treatment__block-item">УЗИ-диагностика</li>
+                                    <li class="product-treatment__block-item">Питьевое лечение</li>
+                                    <li class="product-treatment__block-item">Спирография</li>
+                                    <li class="product-treatment__block-item">Диетотерапия</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-main__mobile-container mobile">
+                    <div class="product-main__mobile-important">
+                        <img src="img/icons/sign.svg" alt="">
+                        <span>Возможны противопоказания. Необходима консультация специалиста.</span>
+                    </div>
+                </div>
+                <div class="product-main__mobile-container mobile">
+                    <div class="product-medical-base _medical-base">
+                        <h2 class="product-medical-base__title">Лечебная база</h2>
+                        <div class="product-medical-base__items _medical-base-items">
+                            <div class="product-medical-base__item">
+                                <img src="img/products/id/medical-base1.jpg" alt="">
+                                <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
+                                    <span>УЗИ-диагностика</span>
+                                    <img src="img/icons/arrow-right-white.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-medical-base__item">
+                                <img src="img/products/id/medical-base2.jpg" alt="">
+                                <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
+                                    <span>Спирография</span>
+                                    <img src="img/icons/arrow-right-white.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-medical-base__item">
+                                <img src="img/products/id/medical-base3.jpg" alt="">
+                                <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
+                                    <span>Питьевое лечение</span>
+                                    <img src="img/icons/arrow-right-white.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-medical-base__item">
+                                <img src="img/products/id/medical-base1.jpg" alt="">
+                                <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
+                                    <span>УЗИ-диагностика</span>
+                                    <img src="img/icons/arrow-right-white.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-medical-base__item">
+                                <img src="img/products/id/medical-base2.jpg" alt="">
+                                <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
+                                    <span>Спирография</span>
+                                    <img src="img/icons/arrow-right-white.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-medical-base__item">
+                                <img src="img/products/id/medical-base3.jpg" alt="">
+                                <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
+                                    <span>Питьевое лечение</span>
+                                    <img src="img/icons/arrow-right-white.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <button class="product-medical-base__more _medical-base-load">
+                            <span>Все процедуры здравницы </span>
+                            <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-banner product-banner-black mobile">
                     <div class="product-banner__main">
                         <h3 class="product-banner__title">Встреча в подарок</h3>
                         <p class="product-banner__content">Встречаем бесплатно</p>
@@ -1972,101 +2160,9 @@
                     <div class="product-banner__image">
                         <picture>
                             <source srcset="img/products/banners/car-mobile.png" media="(max-width: 767px)">
-                            <img src="img/products/banners/car.png" alt="">
+                            <img class="contain" src="img/products/banners/car.png" alt="">
                         </picture>
                     </div>
-                </div>
-                <div class="product-service _nav-item">
-                    <h2 class="product-service__title">Сервис и удобства</h2>
-                    <ul class="product-service__list">
-                        <li class="product-service__item"><img src="img/products/common/wifi.svg" alt=""><span>Wi-Fi на всей территории</span></li>
-                        <li class="product-service__item"><img src="img/products/common/wifi.svg" alt=""><span>Wi-Fi на всей территории</span></li>
-                        <li class="product-service__item"><img src="img/products/common/child.svg" alt=""><span>Принимают с детьми от 0 лет</span></li>
-                        <li class="product-service__item"><img src="img/products/common/child.svg" alt=""><span>Принимают с детьми от 0 лет</span></li>
-                        <li class="product-service__item"><img src="img/products/common/pool.svg" alt=""><span>Работает крытый бассейн</span></li>
-                        <li class="product-service__item"><img src="img/products/common/pool.svg" alt=""><span>Работает крытый бассейн</span></li>
-                        <li class="product-service__item"><img src="img/products/common/parking-lot.svg" alt=""><span>Бесплатная парковка</span></li>
-                        <li class="product-service__item"><img src="img/products/common/parking-lot.svg" alt=""><span>Бесплатная парковка</span></li>
-                    </ul>
-                </div>
-                <div class="product-treatment _nav-item">
-                    <h2 class="product-treatment__title">Лечение</h2>
-                    <div class="product-treatment__main">
-                        <div class="product-treatment__block">
-                            <h3 class="product-treatment__block-title">Основые профили</h3>
-                            <ul class="product-treatment__block-list">
-                                <li class="product-treatment__block-item">Желудочно-кишечный тракт</li>
-                                <li class="product-treatment__block-item">Урология</li>
-                                <li class="product-treatment__block-item">Обмен веществ</li>
-                                <li class="product-treatment__block-item">Общетерапевтический</li>
-                                <li class="product-treatment__block-item">Пищеварительная система</li>
-                                <li class="product-treatment__block-item">Мочеполовая система</li>
-                                <li class="product-treatment__block-item">SPA</li>
-                            </ul>
-                        </div>
-                        <div class="product-treatment__block">
-                            <h3 class="product-treatment__block-title">Дополнительные профили</h3>
-                            <ul class="product-treatment__block-list">
-                                <li class="product-treatment__block-item">УЗИ-диагностика</li>
-                                <li class="product-treatment__block-item">Питьевое лечение</li>
-                                <li class="product-treatment__block-item">Спирография</li>
-                                <li class="product-treatment__block-item">Диетотерапия</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-medical-base _medical-base">
-                    <h2 class="product-medical-base__title">Лечебная база</h2>
-                    <div class="product-medical-base__items _medical-base-items">
-                        <div class="product-medical-base__item">
-                            <img src="img/products/id/medical-base1.jpg" alt="">
-                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
-                                <span>УЗИ-диагностика</span>
-                                <img src="img/icons/arrow-right-white.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-medical-base__item">
-                            <img src="img/products/id/medical-base2.jpg" alt="">
-                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
-                                <span>Спирография</span>
-                                <img src="img/icons/arrow-right-white.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-medical-base__item">
-                            <img src="img/products/id/medical-base3.jpg" alt="">
-                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
-                                <span>Питьевое лечение</span>
-                                <img src="img/icons/arrow-right-white.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-medical-base__item">
-                            <img src="img/products/id/medical-base1.jpg" alt="">
-                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
-                                <span>УЗИ-диагностика</span>
-                                <img src="img/icons/arrow-right-white.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-medical-base__item">
-                            <img src="img/products/id/medical-base2.jpg" alt="">
-                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
-                                <span>Спирография</span>
-                                <img src="img/icons/arrow-right-white.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-medical-base__item">
-                            <img src="img/products/id/medical-base3.jpg" alt="">
-                            <a class="product-medical-base__item-link _popup-procedure-opener" href="#">
-                                <span>Питьевое лечение</span>
-                                <img src="img/icons/arrow-right-white.svg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <button class="product-medical-base__more _medical-base-load">
-                        <span>Все процедуры здравницы </span>
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
                 </div>
                 <div class="product-prices _hor-tabs">
                     <div class="product-prices__tab _hor-tab active">
@@ -2238,20 +2334,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="product-prices__right">
+                                    <p class="product-prices__right-title">Предварительная стоимость путевки:</p>
+                                    <div class="product-prices__price">
+                                        <p class="product-prices__price-title">от <span>1 300 600</span> руб</p>
+                                        <p class="product-prices__price-content">проживание + питание + лечение</p>
+                                    </div>
+                                    <div class="product-prices__price">
+                                        <p class="product-prices__price-title">от <span>1 300 600</span> руб</p>
+                                        <p class="product-prices__price-content">проживание + питание</p>
+                                    </div>
+                                    <p class="product-prices__content_small">Цена стойки санатория. Указанная цена является ориентировочной, точную цену вы можете узнать у наших мененджеров.</p>
+                                </div>
                                 <button class="product-prices__submit _hor-tab-slide-button" data-slideto="1">Узнать точные цены</button>
                             </form>
-                            <div class="product-prices__right">
-                                <p class="product-prices__right-title">Предварительная стоимость путевки:</p>
-                                <div class="product-prices__price">
-                                    <p class="product-prices__price-title">от <span>1 300 600</span> руб</p>
-                                    <p class="product-prices__price-content">проживание + питание + лечение</p>
-                                </div>
-                                <div class="product-prices__price">
-                                    <p class="product-prices__price-title">от <span>1 300 600</span> руб</p>
-                                    <p class="product-prices__price-content">проживание + питание</p>
-                                </div>
-                                <p class="product-prices__content_small">Цена стойки санатория. Указанная цена является ориентировочной, точную цену вы можете узнать у наших мененджеров.</p>
-                            </div>
                         </div>
                     </div>
                     <div class="product-prices__tab _hor-tab">
@@ -2269,7 +2365,7 @@
                                 <h3 class="product-prices__center-title">Остался один шаг до получения точной стоимости</h3>
                                 <p class="product-prices__center-content">Эксперт куратолог перезвонит вам и сообщит точные цены</p>
                                 <form class="product-prices__callback" id="pricesProductLastForm" action="#">
-                                    <div class="product-prices__row product-prices__row-2">
+                                    <div class="product-prices__row product-prices__row-1">
                                         <div class="product-prices__block">
                                             <p class="product-prices__block-title">Ваше имя</p>
                                             <div class="product-prices__input">
@@ -2277,6 +2373,8 @@
                                                 <div class="error-block"><span>Введите имя</span></div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="product-prices__row product-prices__row-1">
                                         <div class="product-prices__block">
                                             <p class="product-prices__block-title">Телефон</p>
                                             <div class="product-prices__input">
@@ -2306,132 +2404,135 @@
                 </div>
                 <div class="product-replies _nav-item">
                     <h2 class="product-replies__title">Отзывы</h2>
-                    <div class="product-replies__items">
-                        <div class="product-replies__item product-replies-great">
-                            <p class="product-replies__name">Константин Контсантинович</p>
-                            <div class="product-replies__stars">
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
+                    <div class="product-replies__items swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="product-replies__item product-replies-verybad swiper-slide">
+                                <p class="product-replies__name">Константин Контсантинович</p>
+                                <div class="product-replies__stars">
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
+                                <p class="product-replies__content">Большое спасибо всему персоналу санатория за высококлассную работу и внимательное отношение к людям. Я буду смело рекомендовать Ваш санаторий всем своим друзьям и знакомым...</p>
+                                <div class="product-replies__bottom">
+                                    <span class="product-replies__date">15 августа</span>
                                 </div>
                             </div>
-                            <p class="product-replies__content">Большое спасибо всему персоналу санатория за высококлассную работу и внимательное отношение к людям. Я буду смело рекомендовать Ваш санаторий всем своим друзьям и знакомым...</p>
-                            <div class="product-replies__bottom">
-                                <span class="product-replies__date">15 августа</span>
+                            <div class="product-replies__item product-replies-verygood swiper-slide">
+                                <p class="product-replies__name">Константин Контсантинович</p>
+                                <div class="product-replies__stars">
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="product-replies__audio">
+                                    <audio src="assets/products/id/reply1.mp3" controls></audio>
+                                </div>
+                                <div class="product-replies__bottom">
+                                    <span class="product-replies__date">15 августа</span>
+                                </div>
+                            </div>
+                            <div class="product-replies__item product-replies-good swiper-slide">
+                                <p class="product-replies__name">Константин Контсантинович</p>
+                                <div class="product-replies__stars">
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-replies__star">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="product-replies__content">Большое спасибо всему персоналу санатория за высококлассную работу и внимательное отношение к людям. Я буду смело рекомендовать Ваш санаторий всем своим друзьям и знакомым...</p>
+                                <div class="product-replies__bottom">
+                                    <span class="product-replies__date">15 августа</span>
+                                    <button class="product-replies__full-reply">
+                                        <span>Весь отзыв </span>
+                                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-replies__item product-replies-bad swiper-slide">
+                                <p class="product-replies__name">Константин Контсантинович</p>
+                                <div class="product-replies__video _video" data-linktovideo='https://www.youtube.com/embed/QchY6IOypxY'>
+                                    <img class="product-replies__video-poster" src="img/products/id/reply-video.jpg" alt="">
+                                    <button class="video-play-btn">
+                                        <svg width="100" height="70" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M97.7912 10.8695C97.2177 8.76863 96.0988 6.8533 94.5461 5.31427C92.9933 3.77525 91.0609 2.66622 88.9412 2.09764C81.1811 0 49.9491 0 49.9491 0C49.9491 0 18.7155 0.0634942 10.9553 2.16113C8.83557 2.72975 6.90313 3.83884 5.35039 5.37793C3.79766 6.91703 2.67882 8.83244 2.1053 10.9334C-0.241966 24.5994 -1.15251 45.4232 2.16975 58.5425C2.74334 60.6434 3.8622 62.5588 5.41493 64.0978C6.96766 65.6368 8.90007 66.7458 11.0198 67.3144C18.7799 69.4121 50.0127 69.4121 50.0127 69.4121C50.0127 69.4121 81.2451 69.4121 89.0049 67.3144C91.1247 66.7459 93.0572 65.6369 94.61 64.0979C96.1628 62.5588 97.2817 60.6435 97.8553 58.5425C100.331 44.8572 101.094 24.0465 97.7912 10.8699V10.8695Z" fill="#2A2A2A"/>
+                                            <path d="M40.0078 49.5799L65.9176 34.706L40.0082 19.832L40.0078 49.5799Z" fill="white"/>
+                                        </svg>                                        
+                                    </button>
+                                </div>
+                                <div class="product-replies__bottom">
+                                    <span class="product-replies__date">15 августа</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="product-replies__item product-replies-great">
-                            <p class="product-replies__name">Константин Контсантинович</p>
-                            <div class="product-replies__stars">
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="product-replies__audio">
-                                <audio src="assets/products/id/reply1.mp3" controls></audio>
-                            </div>
-                            <div class="product-replies__bottom">
-                                <span class="product-replies__date">15 августа</span>
-                            </div>
-                        </div>
-                        <div class="product-replies__item product-replies-great">
-                            <p class="product-replies__name">Константин Контсантинович</p>
-                            <div class="product-replies__stars">
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                                <div class="product-replies__star">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <p class="product-replies__content">Большое спасибо всему персоналу санатория за высококлассную работу и внимательное отношение к людям. Я буду смело рекомендовать Ваш санаторий всем своим друзьям и знакомым...</p>
-                            <div class="product-replies__bottom">
-                                <span class="product-replies__date">15 августа</span>
-                                <button class="product-replies__full-reply">
-                                    <span>Весь отзыв </span>
-                                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-replies__item product-replies-great">
-                            <p class="product-replies__name">Константин Контсантинович</p>
-                            <div class="product-replies__video _video" data-linktovideo='https://www.youtube.com/embed/QchY6IOypxY'>
-                                <img class="product-replies__video-poster" src="img/products/id/reply-video.jpg" alt="">
-                                <button class="video-play-btn">
-                                    <svg width="100" height="70" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M97.7912 10.8695C97.2177 8.76863 96.0988 6.8533 94.5461 5.31427C92.9933 3.77525 91.0609 2.66622 88.9412 2.09764C81.1811 0 49.9491 0 49.9491 0C49.9491 0 18.7155 0.0634942 10.9553 2.16113C8.83557 2.72975 6.90313 3.83884 5.35039 5.37793C3.79766 6.91703 2.67882 8.83244 2.1053 10.9334C-0.241966 24.5994 -1.15251 45.4232 2.16975 58.5425C2.74334 60.6434 3.8622 62.5588 5.41493 64.0978C6.96766 65.6368 8.90007 66.7458 11.0198 67.3144C18.7799 69.4121 50.0127 69.4121 50.0127 69.4121C50.0127 69.4121 81.2451 69.4121 89.0049 67.3144C91.1247 66.7459 93.0572 65.6369 94.61 64.0979C96.1628 62.5588 97.2817 60.6435 97.8553 58.5425C100.331 44.8572 101.094 24.0465 97.7912 10.8699V10.8695Z" fill="#2A2A2A"/>
-                                        <path d="M40.0078 49.5799L65.9176 34.706L40.0082 19.832L40.0078 49.5799Z" fill="white"/>
-                                    </svg>                                        
-                                </button>
-                            </div>
-                            <div class="product-replies__bottom">
-                                <span class="product-replies__date">15 августа</span>
-                            </div>
-                        </div>
+                        <div class="product-replies__pagination swiper-pagination"></div>
                     </div>
                     <button class="product-replies__more">
                         <span>Показать все отзывы </span>
@@ -2440,250 +2541,45 @@
                         </svg>
                     </button>
                 </div>
-                <div class="product-map _nav-item">
-                    <h2 class="product-map__title">Расположение</h2>
-                    <div class="product-map__map">
-                        <img src="img/products/id/map.jpg" alt="">
+                <div class="product-main__mobile-container mobile _nav-item">
+                    <div class="product-map">
+                        <h2 class="product-map__title">Расположение</h2>
+                        <div class="product-map__map">
+                            <img src="img/products/id/map.jpg" alt="">
+                        </div>
+                        <div class="product-map__main _vert-tabs">
+                            <div class="product-map__block">
+                                <p class="product-map__block-title _vert-tabs-button">
+                                    <span>Транспорт</span>
+                                    <img src="img/icons/arrow-down-white.svg" alt="">
+                                </p>
+                                <ul class="product-map__block-list _vert-tabs-content">
+                                    <li class="product-map__block-item"><span>Зимний театр</span><span>0,2 км</span></li>
+                                    <li class="product-map__block-item"><span>Летний театр</span><span>0,2 км</span></li>
+                                    <li class="product-map__block-item"><span>Музей Н.А. Островского</span><span>0,2 км</span></li>
+                                    <li class="product-map__block-item"><span>Собор Михаила Архангела</span><span>0,2 км</span></li>
+                                    <li class="product-map__block-item"><span>Дерево Дружбы</span><span>0,2 км</span></li>
+                                    <li class="product-map__block-item"><span>Пещера вечной мерзлоты</span><span>0,2 км</span></li>
+                                    <li class="product-map__block-item"><span>Центральная площадь</span><span>0,2 км</span></li>
+                                </ul>
+                            </div>
+                            <div class="product-map__block">
+                                <p class="product-map__block-title _vert-tabs-button">
+                                    <span>Ближайшие достопримечательности</span>
+                                    <img src="img/icons/arrow-down-white.svg" alt="">
+                                </p>
+                                <ul class="product-map__block-list _vert-tabs-content">
+                                    <li class="product-map__block-item"><span>Курортный парк</span><span>0,2 км</span></li>
+                                    <li class="product-map__block-item"><span>Смирновский источник</span><span>0,2 км</span></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-map__main">
-                        <div class="product-map__block">
-                            <p class="product-map__block-title">В окрестностях</p>
-                            <ul class="product-map__block-list">
-                                <li class="product-map__block-item"><span>Зимний театр</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Летний театр</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Музей Н.А. Островского</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Собор Михаила Архангела</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Дерево Дружбы</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Пещера вечной мерзлоты</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Центральная площадь</span><span>0,2 км</span></li>
-                            </ul>
-                        </div>
-                        <div class="product-map__block">
-                            <p class="product-map__block-title">Главные достопримечательности</p>
-                            <ul class="product-map__block-list">
-                                <li class="product-map__block-item"><span>Курортный парк</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Смирновский источник</span><span>0,2 км</span></li>
-                            </ul>
-                            <p class="product-map__block-title">Главные достопримечательности</p>
-                            <ul class="product-map__block-list">
-                                <li class="product-map__block-item"><span>Аэропорт Мин-Воды</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Ж / д вокзал</span><span>0,2 км</span></li>
-                                <li class="product-map__block-item"><span>Авто-вокзал</span><span>0,2 км</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <aside class="product-main__aside _aside not-tablet">
-                <div class="product-search">
-                    <h3 class="product-search__title">Вы выбрали:</h3>
-                    <form class="product-search__form" id="searchProductForm" action="#">
-                        <div class="product-search__block">
-                            <div class="product-search__select select">
-                                <div class="select__block select-block" data-text="">
-                                    <span class="select__current select-current"></span>
-                                    <input class="select__current-input select-current-input-tickets _req" name="tickets" type="number" value="">
-                                    <div class="error-block"><span>Пожалуйста, заполните количество</span></div>
-                                    <input class="select__current-input select-current-input-parents" name="parents" type="number" value="">
-                                    <input class="select__current-input select-current-input-childs" name="childs" type="number" value="">
-                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                </div>
-                                <div class="select__main select-main">
-                                    <div class="select__count select-count">
-                                        <span>Взрослых:</span>
-                                        <div class="select__count-block select-parents">
-                                            <button class="select-parents-less" type="button">
-                                                <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
-                                                </svg>
-                                            </button>
-                                            <span class="select-parents-count">1</span>
-                                            <button class="select-parents-more" type="button">
-                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="select__count select-count">
-                                        <span>Детей:</span>
-                                        <div class="select__count-block select-childs">
-                                            <button class="select-childs-less" type="button">
-                                                <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
-                                                </svg>
-                                            </button>
-                                            <span class="select-childs-count">2</span>
-                                            <button class="select-childs-more" type="button">
-                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-search__block">
-                            <div class="product-search__select select">
-                                <div class="select__block select-block">
-                                    <span class="select__current select-current">Профиль лечения</span>
-                                    <input class="select__current-input select-current-input" name="medical" type="text" value="">
-                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                </div>
-                                <div class="select__main select-main">
-                                    <ul class="select__list select-list">
-                                        <li class="select__item select-item">Желудочно-кишечный тракт</li>
-                                        <li class="select__item select-item">Опорно-двигательная система</li>
-                                        <li class="select__item select-item">Сердечно-сосудистая система</li>
-                                        <li class="select__item select-item">Желчевыводящая система</li>
-                                        <li class="select__item select-item">Офтальмология</li>
-                                        <li class="select__item select-item">Мочеполовая система</li>
-                                        <li class="select__item select-item">Ожирение/похудение</li>
-                                        <li class="select__item select-item">Заболевания печени</li>
-                                        <li class="select__item select-item">Нервная система</li>
-                                        <li class="select__item select-item">Урология</li>
-                                        <li class="select__item select-item">Сахарный диабет</li>
-                                        <li class="select__item select-item">Гинекология</li>
-                                        <li class="select__item select-item">Костно-мышечная система</li>
-                                        <li class="select__item select-item">Пищеварительная система</li>
-                                        <li class="select__item select-item">Эндокринная система</li>
-                                        <li class="select__item select-item">Иммунная система</li>
-                                        <li class="select__item select-item">Аллергология</li>
-                                        <li class="select__item select-item">ЛОР</li>
-                                        <li class="select__item select-item">Дыхательная система</li>
-                                        <li class="select__item select-item">Кожные заболевания</li>
-                                        <li class="select__item select-item">SPA</li>
-                                        <li class="select__item select-item">Стоматология</li>
-                                        <li class="select__item select-item">Обмен веществ</li>
-                                        <li class="select__item select-item">Педиатрия</li>
-                                        <li class="select__item select-item">Общетерапевтический</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-search__block">
-                            <div class="product-search__select select">
-                                <div class="select__block select-block">
-                                    <span class="select__current select-calendar-current"></span>
-                                    <input class="select__current-input select-current-input-dates _req" name="dates" type="text" value="">
-                                    <div class="error-block"><span>Пожалуйста, заполните даты</span></div>
-                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                </div>
-                                <div class="select__main select-calendar__parent select-main">
-                                    <div class="select-calendar">
-                                        <div class="select-calendar__main">
-                                            <button class="select-calendar__arrow select-calendar-arrow-left" type="button">
-                                                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M19 9L11.5 16.5L19 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </button>
-                                            <div class="select-calendar__center">
-                                                <p class="select-calendar__content select-calendar-month"></p>
-                                                <table class="select-calendar__table select-calendar-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>пн</td>
-                                                            <td>вт</td>
-                                                            <td>ср</td>
-                                                            <td>чт</td>
-                                                            <td>пт</td>
-                                                            <td>сб</td>
-                                                            <td>вс</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <button class="select-calendar__arrow select-calendar-arrow-right" type="button">
-                                                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M12 9L19.5 16.5L12 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div class="select-calendar__around">
-                                            <div class="select-calendar__enter">
-                                                <p class="select-calendar__content">Заезд</p>
-                                                <div class="select-calendar__block">
-                                                    <input class="select-calendar-enter-input" name="enter-date" type="number" min="1" max="31" step="1">
-                                                    <div class="select-calendar__select select select-calendar-enter-select">
-                                                        <div class="select__block select-block">
-                                                            <span class="select__current select-current"></span>
-                                                            <input class="select__current-input select-current-input" name="enter-month" type="text" value="">
-                                                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                                        </div>
-                                                        <div class="select__main select-main">
-                                                            <ul class="select__list select-list _pick-up-type_list">
-                                                                <li class="select__item select-item _pick-up-type_item">Январь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Февраль</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Март</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Апрель</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Май</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Июнь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Июль</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Август</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Сентябрь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Октябрь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Ноябрь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Декабрь</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="select-calendar__exit">
-                                                <p class="select-calendar__content">Выезд</p>
-                                                <div class="select-calendar__block">
-                                                    <input class="select-calendar-exit-input" name="exit-date" type="number" min="1" max="31" step="1">
-                                                    <div class="select-calendar__select select select-calendar-exit-select">
-                                                        <div class="select__block select-block">
-                                                            <span class="select__current select-current"></span>
-                                                            <input class="select__current-input select-current-input" name="exit-month" type="text" value="">
-                                                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                                        </div>
-                                                        <div class="select__main select-main">
-                                                            <ul class="select__list select-list _pick-up-type_list">
-                                                                <li class="select__item select-item _pick-up-type_item">Январь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Февраль</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Март</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Апрель</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Май</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Июнь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Июль</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Август</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Сентябрь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Октябрь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Ноябрь</li>
-                                                                <li class="select__item select-item _pick-up-type_item">Декабрь</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="select-calendar__count">
-                                            <p class="select-calendar__content">Кол-во дней</p>
-                                            <div class="select-calendar__block">
-                                                <input class="select-calendar-count-days" name="count-days" type="number" min="1" max="30" step="1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="product-search__submit">Применить</button>
-                    </form>
-                    <p class="product-search__content">от <span>1 300 600</span> сут / чел</p>
-                    <p class="product-search__subcontent">лечебная путёвка</p>
-                    <p class="product-search__content">от <span>4800</span> сут / чел</p>
-                    <p class="product-search__subcontent">оздоровительная путёвка</p>
                 </div>
                 <div class="product-consultation">
                     <h3 class="product-consultation__title">Помощь в подборе санатория</h3>
                     <div class="product-consultation__image">
-                        <img src="img/consultation/consultant-product-small.jpg" alt="">
+                        <img src="img/consultation/consultant.jpg" alt="">
                     </div>
                     <h3 class="product-consultation__name">Евгения Константиновна</h3>
                     <p class="product-consultation__name-desc">Куротолог</p>
@@ -2697,10 +2593,7 @@
                     </div>
                     <button class="product-consultation__submit _popup-callback-opener">Помощь с подбором</button>
                 </div>
-                <div class="product-main__aside-block">
-                    <p class="product-main__aside-content">Возможны противопоказания. Необходима консультация специалиста.</p>
-                </div>
-            </aside>
+            </section>
         </section>
     </section>
 <div class="footer-message">
