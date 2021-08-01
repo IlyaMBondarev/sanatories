@@ -1607,7 +1607,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.2s ease-in-out;
 }
 .price-list__price-info-list::after {
-  content: url("../img/products/common/room-info-tail.svg");
+  content: url("../../img/products/common/room-info-tail.svg");
   position: absolute;
   top: 98%;
   left: 0;
@@ -2762,7 +2762,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.2s ease-in-out;
 }
 .room__price-info-list::after {
-  content: url("../img/products/common/room-info-tail.svg");
+  content: url("../../img/products/common/room-info-tail.svg");
   position: absolute;
   top: 98%;
   left: 0;

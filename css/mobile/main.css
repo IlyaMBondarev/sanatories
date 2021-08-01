@@ -100,7 +100,7 @@
     height: 100%;
     background: #00000060;
     opacity: 0;
-    top: 100%;
+    top: 150%;
     transition: opacity 0.2s ease-in-out, top 0s 0.2s;
   }
   .popups.active {
@@ -461,7 +461,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: calc(100% - 66px);
     background: #404A9B;
-    transform: translateY(calc(101% + 66px));
+    transform: translateY(calc(151% + 66px));
     transition: transform 0.3s ease-in-out;
   }
   .burger.active {

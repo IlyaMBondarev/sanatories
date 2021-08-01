@@ -22,6 +22,7 @@ window.addEventListener('load', () => {
     }, 300);
 })
 
+let mobile = document.documentElement.clientWidth < 768;
 
 if (document.querySelector('.popups')) {
     let popups = document.querySelector('.popups');
@@ -594,9 +595,101 @@ if (document.querySelector('._burger-drop')) {
 
 let month = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
 let maxCountDays = 365;
-        
-// функция заполнения календаря, 
-// принимает в себя месяц и год отображаемого месяца
+
+
+/**
+ * Функция вставляет даты заезда/выезда в календарь, 
+ * находящийся в выпадающем списке select с соответствующим id
+ * @param {string} id 
+ * @param {string || number} enterYear 
+ * @param {string || number} exitYear 
+ * @param {string || number} enterMonth 
+ * @param {string || number} exitMonth 
+ * @param {string || number} enterDate 
+ * @param {string || number} exitDate 
+ */
+function pullDatesInCalendar(id, enterYear, exitYear, enterMonth, exitMonth, enterDate, exitDate) {
+    let select = document.querySelector(`#${id}`);
+    let calendarBlock = select.querySelector('.select-calendar');
+    let calendarTable = calendarBlock.querySelector('.select-calendar-table');
+    let calendarMonth = calendarBlock.querySelector('.select-calendar-month');
+    let calendarCurr = select.querySelector('.select-calendar-current');
+    let calendarCurrInput = select.querySelector('.select-current-input-dates');
+    let calendarArrowLeft = calendarBlock.querySelector('.select-calendar-arrow-left');
+    let calendarArrowRight = calendarBlock.querySelector('.select-calendar-arrow-right');
+    let calendarEnterDay = calendarBlock.querySelector('.select-calendar-enter-input');
+    let calendarEnterMonth = calendarBlock.querySelector('.select-calendar-enter-select');
+    let calendarEnterMonthCurr = calendarEnterMonth.querySelector('.select-current');
+    let calendarEnterMonthList = calendarEnterMonth.querySelector('.select-list');
+    let calendarEnterMonthItems = calendarEnterMonth.querySelectorAll('.select-item');
+    let calendarExitDay = calendarBlock.querySelector('.select-calendar-exit-input');
+    let calendarExitMonth = calendarBlock.querySelector('.select-calendar-exit-select');
+    let calendarExitMonthCurr = calendarExitMonth.querySelector('.select-current');
+    let calendarExitMonthList = calendarExitMonth.querySelector('.select-list');
+    let calendarExitMonthItems = calendarExitMonth.querySelectorAll('.select-item');
+    let calendarCountDays = calendarBlock.querySelector('.select-calendar-count-days');
+    let startDayAfterToday = 0;
+    let startCountDays = 0;
+
+    let calendarObj = {
+        calendarBlock,
+        calendarTable,
+        calendarMonth,
+        calendarCurr,
+        calendarCurrInput,
+        calendarArrowLeft,
+        calendarArrowRight,
+        calendarEnterDay,
+        calendarEnterMonth,
+        calendarEnterMonthCurr,
+        calendarEnterMonthList,
+        calendarEnterMonthItems,
+        calendarExitDay,
+        calendarExitMonth,
+        calendarExitMonthCurr,
+        calendarExitMonthList,
+        calendarExitMonthItems,
+        calendarCountDays,
+        startDayAfterToday,
+        startCountDays
+    }
+
+    pullDates(calendarTable.dataset.year, enterYear, exitYear, enterMonth, exitMonth, enterDate, exitDate, calendarObj);
+}
+
+/**
+ * Функция вставляет дату заезда в календарь, 
+ * находящийся в выпадающем списке select с соответствующим id
+ * @param {string} id
+ * @param {string || number} currYear
+ * @param {string || number} currMonth
+ * @param {string || number} currDate
+ */
+function pullDateInCalendar(id, currYear, currMonth, currDate) {
+    let select = document.querySelector(`#${id}`);
+    let calendarBlock = select.querySelector('.select-calendar');
+    let calendarTable = calendarBlock.querySelector('.select-calendar-table');
+    let calendarMonth = calendarBlock.querySelector('.select-calendar-month');
+    let calendarCurr = select.querySelector('.select-calendar-current');
+    let calendarCurrInput = select.querySelector('.select-current-input-dates');
+    let calendarArrowLeft = calendarBlock.querySelector('.select-calendar-arrow-left');
+    let calendarArrowRight = calendarBlock.querySelector('.select-calendar-arrow-right');
+    let startDayAfterToday = 0;
+
+    let calendarObj = {
+        calendarBlock,
+        calendarTable,
+        calendarMonth,
+        calendarCurr,
+        calendarCurrInput,
+        calendarArrowLeft,
+        calendarArrowRight,
+        startDayAfterToday
+    }
+
+    pullDate(currYear, currMonth, currDate, calendarObj);
+}
+
 function fillTable(currYear, currMonth, calendarObj) {
     if (currMonth === 12) {
         currYear++;

@@ -100,7 +100,7 @@
     height: 100%;
     background: #00000060;
     opacity: 0;
-    top: 100%;
+    top: 150%;
     transition: opacity 0.2s ease-in-out, top 0s 0.2s;
   }
   .popups.active {
@@ -461,7 +461,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: calc(100% - 66px);
     background: #404A9B;
-    transform: translateY(calc(101% + 66px));
+    transform: translateY(calc(151% + 66px));
     transition: transform 0.3s ease-in-out;
   }
   .burger.active {
@@ -1396,7 +1396,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 3px 8px;
   }
 }
-@media screen and (max-width: 1230px) {
+@media screen and (max-width: 767px) {
   .popup-room {
     position: absolute;
     left: 0;
@@ -1404,7 +1404,8 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 600px;
+    width: 90%;
+    padding: 10px;
     max-height: 90vh;
     padding: 10px 5px 5px;
     background: #404A9B;
@@ -1420,22 +1421,24 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     z-index: 1;
     top: 0;
-    left: calc(100% + 10px);
+    left: auto;
+    right: 0;
     height: 32px;
     width: 32px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.3);
+    background: transparent;
     transition: all 0.2s ease-in-out;
   }
   .popup-room__close:hover {
-    background: rgba(255, 255, 255, 0.6);
+    background: transparent;
   }
   .popup-room__block {
-    max-height: calc(90vh - 30px);
-    padding: 10px 15px;
+    position: relative;
+    max-height: calc(90vh - 20px);
+    padding: 10px;
     overflow-x: visible;
     overflow-y: auto;
     scrollbar-width: 2px;
@@ -1452,6 +1455,13 @@ h1, h2, h3, h4, h5, h6 {
     background: #ffffff;
     border-radius: 4px;
   }
+  .popup-room__top-title {
+    font-size: 22px;
+    line-height: 120%;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
   .popup-room__title {
     font-size: 22px;
     line-height: 120%;
@@ -1460,6 +1470,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
   }
   .popup-room__demo {
+    display: none;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
@@ -1470,54 +1481,45 @@ h1, h2, h3, h4, h5, h6 {
   }
   .popup-room__slider {
     position: relative;
-    margin-bottom: 30px;
+    margin: 0 -10px 15px;
+  }
+  .popup-room__slider .swiper-container {
+    padding-bottom: 30px;
   }
   .popup-room__slider .swiper-slide {
     border-radius: 10px;
     overflow: hidden;
+    max-width: 225px;
   }
   .popup-room__slider .swiper-slide > * {
     width: 100%;
     cursor: pointer;
   }
-  .popup-room__slider-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #7383C5;
+  .popup-room__slider .swiper-pagination {
+    bottom: 0;
+  }
+  .popup-room__slider .swiper-pagination > span {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    background: #ffffff80;
+    opacity: 1;
   }
-  .popup-room__slider-arrow:hover {
-    background: #8DAAFE;
+  .popup-room__slider .swiper-pagination > span.swiper-pagination-bullet-active {
+    background: #97DC52;
   }
-  .popup-room__slider-arrow.swiper-button-disabled {
-    opacity: 0;
-    cursor: default;
-    z-index: -5;
-  }
-  .popup-room__slider-arrow-left {
-    left: 0;
-    transform: translate(-50%, -50%);
-  }
-  .popup-room__slider-arrow-right {
-    right: 0;
-    transform: translate(50%, -50%);
+  .popup-room__slider-arrow {
+    display: none;
   }
   .popup-room__main {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
   .popup-room__info {
-    width: 310px;
+    width: 100%;
   }
   .popup-room__info-title {
     font-size: 22px;
@@ -1553,7 +1555,10 @@ h1, h2, h3, h4, h5, h6 {
     list-style: disc;
   }
   .popup-room__prices {
-    width: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
   }
   .popup-room__prices-title {
     font-size: 22px;
@@ -1563,6 +1568,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
   }
   .popup-room__prices-info {
+    order: -1;
     display: flex;
     align-items: center;
     font-size: 17px;
@@ -1582,7 +1588,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .popup-room__submit {
     height: 40px;
-    width: 200px;
+    width: 100%;
+    max-width: 340px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1620,30 +1627,34 @@ h1, h2, h3, h4, h5, h6 {
   }
   .popup-room__price-lists {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: 15px;
   }
   .popup-room__price-lists.lists-1 > .price-list {
     width: 100%;
   }
   .popup-room__price-lists.lists-2 > .price-list {
-    width: calc(50% - 10px);
+    width: 100%;
   }
   .popup-room__bottom {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .popup-room__bottom-prices {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
   }
   .popup-room__bottom-prices > .popup-room__price {
-    margin-bottom: 0;
+    margin-bottom: 15px;
   }
   .popup-room__bottom-prices > .popup-room__price:not(:last-child) {
-    margin-right: 40px;
+    margin-right: 20px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1766,20 +1777,40 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff80;
   }
 }
-@media screen and (max-width: 1230px) {
+@media screen and (max-width: 767px) {
   .price-list {
     width: 100%;
     background: rgba(0, 0, 0, 0.1);
     border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
   }
   .price-list__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 22px;
     line-height: 120%;
     font-weight: 700;
     color: #ffffff;
+    margin-bottom: 0;
+    transition: margin 0.3s ease-in-out;
+  }
+  .price-list__title img {
+    margin: 0 0 0 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .price-list__title.active {
     margin-bottom: 12px;
+  }
+  .price-list__title.active img {
+    transform: rotateX(180deg);
+  }
+  .price-list__blocks {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
   }
   .price-list__block {
     padding: 18px 0 16px;
@@ -1794,7 +1825,8 @@ h1, h2, h3, h4, h5, h6 {
   .price-list__item {
     margin-top: 10px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
   }
   .price-list__item-left {
@@ -1803,7 +1835,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: #ffffff80;
   }
+  .price-list__item-right {
+    display: flex;
+  }
   .price-list__item-price {
+    position: relative;
     font-size: 17px;
     line-height: 27px;
     font-weight: 600;
@@ -1812,9 +1848,16 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: flex-end;
   }
+  .price-list__item-price:nth-child(2n+1) {
+    margin-right: 10px;
+  }
+  .price-list__item-price:nth-child(2n) .price-list__price-info-list {
+    left: auto;
+    right: -15px;
+  }
   .price-list__price-info {
     margin-left: 5px;
-    position: relative;
+    position: static;
     cursor: pointer;
     height: 20px;
     width: 20px;
@@ -1838,31 +1881,23 @@ h1, h2, h3, h4, h5, h6 {
   .price-list__price-info:hover > svg path {
     fill: #ffffff;
   }
-  .price-list:nth-child(2) .price-list__price-info-list {
-    left: auto;
-    right: 10px;
-    border-radius: 10px 10px 0px 10px;
-  }
-  .price-list:nth-child(2) .price-list__price-info-list::after {
-    right: 0;
-    transform: scale(-1, 1);
-  }
   .price-list__price-info-list {
     position: absolute;
-    bottom: calc(100% + 18px);
-    left: 10px;
+    bottom: 100%;
+    left: 0;
+    right: auto;
     background: #7383C5;
-    padding: 15px;
+    padding: 10px;
     width: max-content;
-    max-width: 270px;
-    border-radius: 10px 10px 10px 0px;
+    max-width: 225px;
+    border-radius: 10px;
     cursor: default;
     opacity: 0;
     display: none;
     transition: all 0.2s ease-in-out;
   }
   .price-list__price-info-list::after {
-    content: url("../img/products/common/room-info-tail.svg");
+    content: none;
     position: absolute;
     top: 98%;
     left: 0;
@@ -3193,7 +3228,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.2s ease-in-out;
   }
   .room__price-info-list::after {
-    content: url("../img/products/common/room-info-tail.svg");
+    content: none;
     position: absolute;
     top: 98%;
     left: 0;

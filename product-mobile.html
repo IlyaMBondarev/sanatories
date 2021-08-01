@@ -110,18 +110,62 @@
         </div>
         <h4 class="popup-error__title">Что-то пошло не так, попробуйте ещё раз</h4>
     </div>    <div class="popup-room">
-        <button class="popup-room__close _popup-room-closer">
+        <button class="popup-room__close _popup-room-closer not-mobile">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
             </svg>
         </button>
         <div class="popup-room__block">
+            <button class="popup-room__close _popup-room-closer mobile">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+                </svg>
+            </button>
+            <div class="popup-room__top-title mobile">О номере</div>
+            <div class="popup-room__slider mobile">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room6.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/products/id/room5.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
             <h3 class="popup-room__title">Double plus однокомнатный двухместный (корпус&nbsp;АБ) </h3>
-            <div class="popup-room__demo">
+            <div class="popup-room__demo not-mobile">
                 <img src="img/products/id/room2.jpg" alt="">
             </div>
-            <div class="popup-room__slider">
+            <div class="popup-room__slider not-mobile">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -195,7 +239,7 @@
                     </ul>
                 </div>
                 <div class="popup-room__prices">
-                    <p class="popup-room__prices-title">Цены на ваши даты:</p>
+                    <p class="popup-room__prices-title not-mobile">Цены на ваши даты:</p>
                     <div class="popup-room__price">
                         <p class="popup-room__price-title"><span>3 600</span> руб</p>
                         <p class="popup-room__price-content">питание + проживание</p>
@@ -211,7 +255,7 @@
                     <button class="popup-room__submit _popup-choice-opener _popup-room-closer" data-roomName="Double plus однокомнатный двухместный (корпус&nbsp;АБ)" data-sanatoryname="Санаторий «Плаза - SPA»">Выбрать</button>
                 </div>
             </div>
-            <div class="popup-room__price-lists lists-2">
+            <div class="popup-room__price-lists lists-2 not-mobile">
                 <div class="popup-room__price-list price-list">
                     <h3 class="price-list__title">Цены с 1 марта по 29 апреля</h3>
                     <div class="price-list__block">
@@ -760,6 +804,572 @@
                                                 <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
                                             </li>
                                         </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-room__price-lists lists-2 mobile _vert-tabs">
+                <div class="popup-room__price-list price-list">
+                    <h3 class="price-list__title _vert-tabs-button">
+                        <span>Цены с 1 марта по 29 апреля</span>
+                        <img src="img/icons/arrow-down-white.svg" alt="">
+                    </h3>
+                    <div class="price-list__blocks _vert-tabs-content">
+                        <div class="price-list__block">
+                            <p class="price-list__block-title">Основное место</p>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price-list__block">
+                            <p class="price-list__block-title">Основное место</p>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price-list__block">
+                            <p class="price-list__block-title">Основное место</p>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-room__price-list price-list">
+                    <h3 class="price-list__title _vert-tabs-button">
+                        <span>Цены с 30 апреля по 10 мая</span>
+                        <img src="img/icons/arrow-down-white.svg" alt="">
+                    </h3>
+                    <div class="price-list__blocks _vert-tabs-content">
+                        <div class="price-list__block">
+                        <p class="price-list__block-title">Основное место</p>
+                        <div class="price-list__item">
+                            <p class="price-list__item-left">За взрослого</p>
+                            <div class="price-list__item-right">
+                                <div class="price-list__item-price">
+                                    <span>9 100 руб</span>
+                                    <div class="price-list__price-info">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                            <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                        </svg>
+                                        <ul class="price-list__price-info-list">
+                                            <li>
+                                                <p class="price-list__price-info-title">Проживание</p>
+                                                <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                            </li>
+                                            <li>
+                                                <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                            </li>
+                                            <li>
+                                                <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-list__item-price">
+                                    <span>8 600 руб</span>
+                                    <div class="price-list__price-info">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                            <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                        </svg>
+                                        <ul class="price-list__price-info-list">
+                                            <li>
+                                                <p class="price-list__price-info-title">Проживание</p>
+                                                <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                            </li>
+                                            <li>
+                                                <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                            </li>
+                                            <li>
+                                                <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="price-list__block">
+                            <p class="price-list__block-title">Основное место</p>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price-list__block">
+                            <p class="price-list__block-title">Основное место</p>
+                            <div class="price-list__item">
+                                <p class="price-list__item-left">За взрослого</p>
+                                <div class="price-list__item-right">
+                                    <div class="price-list__item-price">
+                                        <span>9 100 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="price-list__item-price">
+                                        <span>8 600 руб</span>
+                                        <div class="price-list__price-info">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 2.26406C14.272 2.26406 17.735 5.7271 17.735 9.99906C17.735 14.2702 14.272 17.7332 10 17.7332C5.72804 17.7332 2.26504 14.2702 2.26504 9.99906C2.26504 5.7271 5.72808 2.26406 10 2.26406Z" stroke="white" fill="transparent" stroke-width="1.2"/>
+                                                <rect x="8.75" y="8.75" width="2.5" height="6.25" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                                <rect x="8.75" y="5" width="2.5" height="2.5" rx="1.25" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                            <ul class="price-list__price-info-list">
+                                                <li>
+                                                    <p class="price-list__price-info-title">Проживание</p>
+                                                    <p class="price-list__price-info-content">12 ночей проживания, 3-х разовое питание</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Оздоровительный пакет</p>
+                                                    <p class="price-list__price-info-content">осмотр доктора, питьевой курс, лабораторные анализы</p>
+                                                </li>
+                                                <li>
+                                                    <p class="price-list__price-info-title">Дополнительные услуги:</p>
+                                                    <p class="price-list__price-info-content">бесплатный трансфер из аэропорта в санаторий, консультации во время вашего отдыха и лечения</p>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
