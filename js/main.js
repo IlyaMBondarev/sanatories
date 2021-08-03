@@ -594,6 +594,7 @@ if (document.querySelector('._burger-drop')) {
 
 
 let month = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+let daysInYear = 365;
 let maxCountDays = 365;
 
 
@@ -761,17 +762,17 @@ function fillTable(currYear, currMonth, calendarObj) {
 
 function pullDates(currYear, enterYear, exitYear, enterMonth, exitMonth, enterDate, exitDate, calendarObj) {
 
-    if (Math.ceil(new Date(enterYear, enterMonth, enterDate).getTime() - new Date().getTime())/24/60/60/1000 + 1 < 0) {
+    if (Math.ceil(new Date(enterYear, enterMonth, enterDate).getTime() - new Date().getTime())/24/60/60/1000 < 0) {
         enterYear = 1 + +enterYear;
     }
 
-    if (Math.ceil(new Date(exitYear, exitMonth, exitDate).getTime() - new Date().getTime())/24/60/60/1000 + 1 < 0) {
+    if (Math.ceil(new Date(exitYear, exitMonth, exitDate).getTime() - new Date().getTime())/24/60/60/1000 < 0) {
         exitYear = 1 + +exitYear;
     }
     
     let startDate = new Date(enterYear, enterMonth, enterDate);
     let endDate = new Date(exitYear, exitMonth, exitDate);
-    let datesDifference = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24) + 1;
+    let datesDifference = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24);
 
     if (exitYear > enterYear) {
         calendarObj.calendarTable.dataset.nextyear = true;
@@ -782,10 +783,21 @@ function pullDates(currYear, enterYear, exitYear, enterMonth, exitMonth, enterDa
     if (datesDifference <= 0) {
         [startDate, endDate] = [endDate, startDate];
         [enterYear, enterMonth, enterDate] = [exitYear, exitMonth, exitDate];
-        datesDifference = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24) + 1;
+        datesDifference = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24);
+    }
+
+    if (new Date().getFullYear() % 4 === 0) {
+        daysInYear = 366;
+    }
+
+    if (datesDifference > daysInYear) {
+        exitYear = exitYear - 1;
+        endDate = new Date(exitYear, exitMonth, exitDate);
+        datesDifference = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24);
     }
 
     if (datesDifference > maxCountDays) {
+        exitYear--;
         datesDifference = maxCountDays;
         endDate = new Date(startDate.getTime() + datesDifference*24*60*60*1000);
         [exitYear, exitMonth, exitDate] = [endDate.getFullYear(), endDate.getMonth(), endDate.getDate()];
@@ -1025,7 +1037,7 @@ if (document.querySelector('.select')) {
         })
 
         document.addEventListener('click', (event) => {
-            if (!(select.contains(event.target)) && select.classList.contains('active')) {
+            if ((!(select.contains(event.target)) || event.target === select) && select.classList.contains('active')) {
                 select.classList.remove('active');
             }
         })
@@ -1184,7 +1196,7 @@ if (document.querySelector('.select')) {
             calendarCountDays.addEventListener('blur', () => {
 
                 let startDate = new Date(calendarEnterMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarEnterDay.value);
-                let endDate = new Date(startDate.getTime()+(calendarObj.calendarCountDays.value*24*60*60*1000));
+                let endDate = new Date(startDate.getTime()+((+calendarObj.calendarCountDays.value + 1)*24*60*60*1000));
 
                 if (startDate.getFullYear() === endDate.getFullYear() && startDate.getMonth() === endDate.getMonth() && startDate.getDate() === endDate.getDate()) {
                     pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, endDate.getFullYear(), startDate.getMonth(), endDate.getMonth(), startDate.getDate(), endDate.getDate(), calendarObj);

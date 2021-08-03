@@ -329,6 +329,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav {
   background: #4E5AC0;
   white-space: nowrap;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .nav__list {
   height: 48px;
@@ -957,11 +958,14 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   padding: 3px 13px;
   font-size: 17px;
-  line-height: 27px;
+  line-height: 21px;
   font-weight: 600;
   color: #F6F6FE;
   border-radius: 4px;
   cursor: pointer;
+}
+.select__item:not(:last-child) {
+  margin-bottom: 6px;
 }
 .select__item.active {
   background: rgba(0, 0, 0, 0.2);
@@ -1435,7 +1439,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.6);
 }
 .popup-procedure__main {
-  max-height: calc(100% - 30px);
+  max-height: calc(90vh - 30px);
   padding: 15px 10px 10px 15px;
   overflow-x: visible;
   overflow-y: auto;
@@ -1734,7 +1738,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-start;
 }
 .popup-parameters__block {
-  width: calc((100% - 40px)/3);
+  width: calc((100% - 40px)/2);
   margin-bottom: 20px;
 }
 .popup-parameters__block-title {
@@ -1748,7 +1752,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 .popup-parameters__submit {
-  width: calc((100% - 40px)/3);
+  width: calc((100% - 40px)/2);
   height: 48px;
   display: flex;
   justify-content: center;

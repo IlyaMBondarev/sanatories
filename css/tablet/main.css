@@ -75,7 +75,7 @@
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
-    max-width: 750px;
+    max-width: none;
   }
 
   .loader {
@@ -331,6 +331,7 @@ h1, h2, h3, h4, h5, h6 {
   .nav {
     background: #4E5AC0;
     white-space: nowrap;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
   .nav__list {
     height: 48px;
@@ -520,6 +521,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .footer__phone {
     margin-bottom: 20px;
+    margin-right: 5px;
   }
   .footer__phone-title {
     font-size: 14px;
@@ -757,7 +759,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 600px;
+    width: calc(90vw - 30px);
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
@@ -821,7 +823,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 600px;
+    width: calc(90vw - 30px);
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
@@ -968,11 +970,14 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     padding: 3px 13px;
     font-size: 17px;
-    line-height: 27px;
+    line-height: 21px;
     font-weight: 600;
     color: #F6F6FE;
     border-radius: 4px;
     cursor: pointer;
+  }
+  .select__item:not(:last-child) {
+    margin-bottom: 6px;
   }
   .select__item.active {
     background: rgba(0, 0, 0, 0.2);
@@ -1163,7 +1168,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
+    width: calc(90vw - 30px);
     padding: 20px 25px;
     background: linear-gradient(103.16deg, #4B71F4 31.8%, #6487EB 100%);
     border-radius: 10px;
@@ -1478,11 +1483,11 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 1230px) {
   .popup-pick-up {
     position: absolute;
-    width: 600px;
+    width: calc(90vw - 30px);
     height: 450px;
     display: flex;
     flex-direction: column;
-    margin: calc((100vh - 450px)/2) calc((100vw - 600px)/2);
+    margin: calc((100vh - 450px)/2) calc((10vw + 30px)/2);
     background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%);
     border-radius: 10px;
     opacity: 0;
@@ -1780,14 +1785,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .popup-pick-up-thanks {
     position: absolute;
-    width: 600px;
+    width: calc(90vw - 30px);
     height: 450px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: calc((100vh - 450px)/2) calc((100vw - 600px)/2);
+    margin: calc((100vh - 450px)/2) calc((10vw + 30px)/2);
     background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%);
     border-radius: 10px;
     opacity: 0;
@@ -1887,7 +1892,7 @@ h1, h2, h3, h4, h5, h6 {
   .main-content {
     position: relative;
     z-index: 10;
-    max-width: 750px;
+    max-width: calc(100vw - 30px);
     padding: 10px;
     background: #373F80;
     border-radius: 10px;

@@ -591,7 +591,7 @@
                 <img src="img/main-screen/main-screen-back.jpg" alt="">
             </div>
             <div class="main-screen__pick-up main-pick-up container">
-                <div class="main-pick-up__main _labeltabs">
+                <div class="main-pick-up__main container _labeltabs">
                     <div class="main-pick-up__tabs">
                         <input class="_labeltabs-input" id="mainpickuptab0" type="radio" name="main-pick-up" checked>
                         <label class="main-pick-up__tab" for="mainpickuptab0">
@@ -1122,6 +1122,11 @@
             </section>
             <section class="main-categories">
                 <h2 class="main-categories__title title-1">Популярные категории</h2>
+                <!-- 
+                    main-categories__items-*
+                    где * - количество категорий
+                    Например, main-categories__items-6 - для 6 категорий
+                -->
                 <section class="main-categories__items main-categories__items-7">
                     <a class="main-categories__item main-categories__item-big" href="#">
                         <img class="main-categories__item-image" src="img/main-categories/1.jpg" alt="">
@@ -1156,6 +1161,15 @@
             <section class="main-items">
                 <h2 class="main-items__title title-1">Выбор туристов</h2>
                 <section class="main-items__items">
+                    <!-- 
+                        item-*
+                        где * - рейтинг санатория
+                        item-great - 5 звёзд (от 8.1 до 10)
+                        item-verygood - 4 звезды (от 6.1 до 8)
+                        item-good - 3 звезды (от 4.1 до 6)
+                        item-bad - 2 звезды (от 2.1 до 4)
+                        item-verybad - 1 звезда (от 0 до 2)
+                    -->
                     <article class="item item-great">
                         <div class="item__main">
                             <div class="item__left">

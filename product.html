@@ -1490,27 +1490,76 @@
             </svg>
         </button>
         <p class="popup-parameters__title">Выберите параметры поездки:</p>
-        <form class="popup-parameters__form" id="parametersProductForm" action="#">
+        <form class="popup-parameters__form _pick-up-type" id="parametersProductForm" action="#">
             <div class="popup-parameters__block">
                 <p class="popup-parameters__block-title">Цель поездки</p>
                 <div class="popup-parameters__select select">
                     <div class="select__block select-block">
-                        <span class="select__current select-current">Заболние</span>
-                        <input class="select__current-input select-current-input" name="medical" type="text" value="Заболние">
+                        <span class="select__current select-current">С лечением</span>
+                        <input class="select__current-input select-current-input" name="medical" type="text" value="С лечением">
+                        <div class="error-block"><span>Выберите один из пунктов</span></div>
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <ul class="select__list select-list _pick-up-type_list">
+                            <li class="select__item select-item _pick-up-type_item active">С лечением</li>
+                            <li class="select__item select-item _pick-up-type_item">Без лечения</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-parameters__block _pick-up-type_block">
+                <p class="popup-parameters__block-title">Профиль лечения</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-current">Профиль лечения</span>
+                        <input class="select__current-input select-current-input" type="text" value="">
                         <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                     </div>
                     <div class="select__main select-main">
                         <ul class="select__list select-list">
-                            <li class="select__item select-item">Заболевание</li>
-                            <li class="select__item select-item">Сердечно-сосудистые заболевания</li>
-                            <li class="select__item select-item">Заболевание</li>
-                            <li class="select__item select-item">Сердечно-</li>
-                            <li class="select__item select-item active">Заболние</li>
-                            <li class="select__item select-item">Сердечно-сист</li>
-                            <li class="select__item select-item">Заболеван</li>
-                            <li class="select__item select-item">Серно-сосудист</li>
-                            <li class="select__item select-item">вание</li>
-                            <li class="select__item select-item">осудист</li>
+                            <li class="select__item select-item">Желудочно-кишечный тракт</li>
+                            <li class="select__item select-item">Опорно-двигательная система</li>
+                            <li class="select__item select-item">Сердечно-сосудистая система</li>
+                            <li class="select__item select-item">Желчевыводящая система</li>
+                            <li class="select__item select-item">Офтальмология</li>
+                            <li class="select__item select-item">Мочеполовая система</li>
+                            <li class="select__item select-item">Ожирение/похудение</li>
+                            <li class="select__item select-item">Заболевания печени</li>
+                            <li class="select__item select-item">Нервная система</li>
+                            <li class="select__item select-item">Урология</li>
+                            <li class="select__item select-item">Сахарный диабет</li>
+                            <li class="select__item select-item">Гинекология</li>
+                            <li class="select__item select-item">Костно-мышечная система</li>
+                            <li class="select__item select-item">Пищеварительная система</li>
+                            <li class="select__item select-item">Эндокринная система</li>
+                            <li class="select__item select-item">Иммунная система</li>
+                            <li class="select__item select-item">Аллергология</li>
+                            <li class="select__item select-item">ЛОР</li>
+                            <li class="select__item select-item">Дыхательная система</li>
+                            <li class="select__item select-item">Кожные заболевания</li>
+                            <li class="select__item select-item">SPA</li>
+                            <li class="select__item select-item">Стоматология</li>
+                            <li class="select__item select-item">Обмен веществ</li>
+                            <li class="select__item select-item">Педиатрия</li>
+                            <li class="select__item select-item">Общетерапевтический</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-parameters__block _pick-up-type_block hidden">
+                <p class="popup-parameters__block-title">Питание</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-current">Питание</span>
+                        <input class="select__current-input select-current-input" name="food" type="text" value="">
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <ul class="select__list select-list">
+                            <li class="select__item select-item">Двухразовое</li>
+                            <li class="select__item select-item">Трёхразовое</li>
+                            <li class="select__item select-item">Шведский стол</li>
                         </ul>
                     </div>
                 </div>
@@ -1685,19 +1734,76 @@
             </svg>
         </button>
         <p class="popup-parameters__title">Выберите:</p>
-        <form class="popup-parameters__form" id="parametersProductFormMobile" action="#">
-            <div class="popup-parameters__block popup-parameters__block_large">
+        <form class="popup-parameters__form _pick-up-type" id="parametersProductForm" action="#">
+            <div class="popup-parameters__block">
                 <p class="popup-parameters__block-title">Цель поездки</p>
                 <div class="popup-parameters__select select">
                     <div class="select__block select-block">
-                        <span class="select__current select-current">Лечение</span>
-                        <input class="select__current-input select-current-input" name="medical" type="text" value="">
+                        <span class="select__current select-current">С лечением</span>
+                        <input class="select__current-input select-current-input" name="medical" type="text" value="С лечением">
+                        <div class="error-block"><span>Выберите один из пунктов</span></div>
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <ul class="select__list select-list _pick-up-type_list">
+                            <li class="select__item select-item _pick-up-type_item active">С лечением</li>
+                            <li class="select__item select-item _pick-up-type_item">Без лечения</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-parameters__block _pick-up-type_block">
+                <p class="popup-parameters__block-title">Профиль лечения</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-current">Профиль лечения</span>
+                        <input class="select__current-input select-current-input" type="text" value="">
                         <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                     </div>
                     <div class="select__main select-main">
                         <ul class="select__list select-list">
-                            <li class="select__item select-item active">Лечение</li>
-                            <li class="select__item select-item">Отдых</li>
+                            <li class="select__item select-item">Желудочно-кишечный тракт</li>
+                            <li class="select__item select-item">Опорно-двигательная система</li>
+                            <li class="select__item select-item">Сердечно-сосудистая система</li>
+                            <li class="select__item select-item">Желчевыводящая система</li>
+                            <li class="select__item select-item">Офтальмология</li>
+                            <li class="select__item select-item">Мочеполовая система</li>
+                            <li class="select__item select-item">Ожирение/похудение</li>
+                            <li class="select__item select-item">Заболевания печени</li>
+                            <li class="select__item select-item">Нервная система</li>
+                            <li class="select__item select-item">Урология</li>
+                            <li class="select__item select-item">Сахарный диабет</li>
+                            <li class="select__item select-item">Гинекология</li>
+                            <li class="select__item select-item">Костно-мышечная система</li>
+                            <li class="select__item select-item">Пищеварительная система</li>
+                            <li class="select__item select-item">Эндокринная система</li>
+                            <li class="select__item select-item">Иммунная система</li>
+                            <li class="select__item select-item">Аллергология</li>
+                            <li class="select__item select-item">ЛОР</li>
+                            <li class="select__item select-item">Дыхательная система</li>
+                            <li class="select__item select-item">Кожные заболевания</li>
+                            <li class="select__item select-item">SPA</li>
+                            <li class="select__item select-item">Стоматология</li>
+                            <li class="select__item select-item">Обмен веществ</li>
+                            <li class="select__item select-item">Педиатрия</li>
+                            <li class="select__item select-item">Общетерапевтический</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-parameters__block _pick-up-type_block hidden">
+                <p class="popup-parameters__block-title">Питание</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-current">Питание</span>
+                        <input class="select__current-input select-current-input" name="food" type="text" value="">
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <ul class="select__list select-list">
+                            <li class="select__item select-item">Двухразовое</li>
+                            <li class="select__item select-item">Трёхразовое</li>
+                            <li class="select__item select-item">Шведский стол</li>
                         </ul>
                     </div>
                 </div>
@@ -2188,6 +2294,15 @@
                         <li class="product-nav__item"><a class="product-nav__link _nav-link" href="#">Карта</a></li>
                     </ul>
                 </div>
+                <!-- 
+                    product-item-*
+                    где * - рейтинг санатория
+                    product-item-great - 5 звёзд (от 8.1 до 10)
+                    product-item-verygood - 4 звезды (от 6.1 до 8)
+                    product-item-good - 3 звезды (от 4.1 до 6)
+                    product-item-bad - 2 звезды (от 2.1 до 4)
+                    product-item-verybad - 1 звезда (от 0 до 2)
+                -->
                 <div class="product-item product-item-verygood _nav-item">
                     <h1 class="product-item__title">Санаторий «Плаза - SPA» в Железноводске</h1>
                     <p class="product-item__content">г. Кисловодск, улица Калинина, д. 14</p>
@@ -2917,6 +3032,15 @@
                 <div class="product-replies _nav-item">
                     <h2 class="product-replies__title">Отзывы</h2>
                     <div class="product-replies__items">
+                        <!-- 
+                            product-replies-*
+                            где * - оценка в отзыве
+                            product-replies-great - 5 звёзд
+                            product-replies-verygood - 4 звезды
+                            product-replies-good - 3 звезды
+                            product-replies-bad - 2 звезды
+                            product-replies-verybad - 1 звезда
+                        -->
                         <div class="product-replies__item product-replies-great">
                             <p class="product-replies__name">Константин Контсантинович</p>
                             <div class="product-replies__stars">
@@ -3087,58 +3211,28 @@
             <aside class="product-main__aside _aside not-tablet">
                 <div class="product-search">
                     <h3 class="product-search__title">Вы выбрали:</h3>
-                    <form class="product-search__form" id="searchProductForm" action="#">
-                        <div class="product-search__block">
-                            <div class="product-search__select select">
-                                <div class="select__block select-block" data-text="">
-                                    <span class="select__current select-current"></span>
-                                    <input class="select__current-input select-current-input-tickets _req" name="tickets" type="number" value="">
-                                    <div class="error-block"><span>Пожалуйста, заполните количество</span></div>
-                                    <input class="select__current-input select-current-input-parents" name="parents" type="number" value="">
-                                    <input class="select__current-input select-current-input-childs" name="childs" type="number" value="">
-                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                </div>
-                                <div class="select__main select-main">
-                                    <div class="select__count select-count">
-                                        <span>Взрослых:</span>
-                                        <div class="select__count-block select-parents">
-                                            <button class="select-parents-less" type="button">
-                                                <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
-                                                </svg>
-                                            </button>
-                                            <span class="select-parents-count">1</span>
-                                            <button class="select-parents-more" type="button">
-                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="select__count select-count">
-                                        <span>Детей:</span>
-                                        <div class="select__count-block select-childs">
-                                            <button class="select-childs-less" type="button">
-                                                <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
-                                                </svg>
-                                            </button>
-                                            <span class="select-childs-count">2</span>
-                                            <button class="select-childs-more" type="button">
-                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <form class="product-search__form _pick-up-type" id="searchProductForm" action="#">
                         <div class="product-search__block">
                             <div class="product-search__select select">
                                 <div class="select__block select-block">
+                                    <span class="select__current select-current">С лечением</span>
+                                    <input class="select__current-input select-current-input" name="medical" type="text" value="С лечением">
+                                    <div class="error-block"><span>Выберите один из пунктов</span></div>
+                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                                </div>
+                                <div class="select__main select-main">
+                                    <ul class="select__list select-list _pick-up-type_list">
+                                        <li class="select__item select-item _pick-up-type_item active">С лечением</li>
+                                        <li class="select__item select-item _pick-up-type_item">Без лечения</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-search__block _pick-up-type_block">
+                            <div class="product-search__select select">
+                                <div class="select__block select-block">
                                     <span class="select__current select-current">Профиль лечения</span>
-                                    <input class="select__current-input select-current-input" name="medical" type="text" value="">
+                                    <input class="select__current-input select-current-input" type="text" value="">
                                     <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                 </div>
                                 <div class="select__main select-main">
@@ -3168,6 +3262,22 @@
                                         <li class="select__item select-item">Обмен веществ</li>
                                         <li class="select__item select-item">Педиатрия</li>
                                         <li class="select__item select-item">Общетерапевтический</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-search__block _pick-up-type_block hidden">
+                            <div class="product-search__select select">
+                                <div class="select__block select-block">
+                                    <span class="select__current select-current">Питание</span>
+                                    <input class="select__current-input select-current-input" name="food" type="text" value="">
+                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                                </div>
+                                <div class="select__main select-main">
+                                    <ul class="select__list select-list">
+                                        <li class="select__item select-item">Двухразовое</li>
+                                        <li class="select__item select-item">Трёхразовое</li>
+                                        <li class="select__item select-item">Шведский стол</li>
                                     </ul>
                                 </div>
                             </div>
@@ -3278,6 +3388,52 @@
                                             <div class="select-calendar__block">
                                                 <input class="select-calendar-count-days" name="count-days" type="number" min="1" max="30" step="1">
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-search__block">
+                            <div class="product-search__select select">
+                                <div class="select__block select-block" data-text="">
+                                    <span class="select__current select-current"></span>
+                                    <input class="select__current-input select-current-input-tickets _req" name="tickets" type="number" value="">
+                                    <div class="error-block"><span>Пожалуйста, заполните количество</span></div>
+                                    <input class="select__current-input select-current-input-parents" name="parents" type="number" value="">
+                                    <input class="select__current-input select-current-input-childs" name="childs" type="number" value="">
+                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                                </div>
+                                <div class="select__main select-main">
+                                    <div class="select__count select-count">
+                                        <span>Взрослых:</span>
+                                        <div class="select__count-block select-parents">
+                                            <button class="select-parents-less" type="button">
+                                                <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
+                                                </svg>
+                                            </button>
+                                            <span class="select-parents-count">1</span>
+                                            <button class="select-parents-more" type="button">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="select__count select-count">
+                                        <span>Детей:</span>
+                                        <div class="select__count-block select-childs">
+                                            <button class="select-childs-less" type="button">
+                                                <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
+                                                </svg>
+                                            </button>
+                                            <span class="select-childs-count">2</span>
+                                            <button class="select-childs-more" type="button">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
+                                                </svg>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

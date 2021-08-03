@@ -387,7 +387,7 @@
             </div>
         </div>
         <form class="popup-settings__main" id="popupSettingsForm" action="#">
-            <div class="popup-settings__pick-up mobile _pick-up-type">
+            <div class="popup-settings__pick-up _pick-up-type">
                 <div class="popup-settings__pick-up-block popup-settings__pick-up-block_large">
                     <p class="popup-settings__pick-up-block-title">Цель поездки</p>
                     <div class="popup-settings__pick-up-select select">
@@ -461,7 +461,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="popup-settings__pick-up-block">
+                <div class="popup-settings__pick-up-block mobile">
                     <p class="popup-settings__pick-up-block-title">Заезд</p>
                     <div class="popup-settings__pick-up-select select">
                         <div class="select__block select-block">
@@ -507,7 +507,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="popup-settings__pick-up-block">
+                <div class="popup-settings__pick-up-block mobile">
                     <p class="popup-settings__pick-up-block-title">Количество дней</p>
                     <div class="popup-settings__pick-up-select select">
                         <div class="select__block select-block">
@@ -552,7 +552,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="popup-settings__pick-up-block">
+                <div class="popup-settings__pick-up-block mobile">
                     <p class="popup-settings__pick-up-block-title">Взрослых</p>
                     <div class="popup-settings__pick-up-select select">
                         <div class="select__block select-block">
@@ -577,7 +577,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="popup-settings__pick-up-block">
+                <div class="popup-settings__pick-up-block mobile">
                     <p class="popup-settings__pick-up-block-title">Детей</p>
                     <div class="popup-settings__pick-up-select select">
                         <div class="select__block select-block">
@@ -623,33 +623,6 @@
                 </div>
             </div>
             <div class="filters">
-                <div class="filters__theme not-mobile">
-                    <p class="filters__title">Профиль лечения</p>
-                    <div class="filters__block">
-                        <div class="filters__select select">
-                            <div class="select__block select-block">
-                                <span class="select__current select-current">Не выбрано</span>
-                                <input class="select__current-input select-current-input" name="medical" type="text" value="Не выбрано">
-                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                            </div>
-                            <div class="select__main select-main">
-                                <ul class="select__list select-list">
-                                    <li class="select__item select-item active">Не выбрано</li>
-                                    <li class="select__item select-item">Заболевание</li>
-                                    <li class="select__item select-item">Сердечно-сосудистые заболевания</li>
-                                    <li class="select__item select-item">Заболевание</li>
-                                    <li class="select__item select-item">Сердечно-</li>
-                                    <li class="select__item select-item">Заболние</li>
-                                    <li class="select__item select-item">Сердечно-сист</li>
-                                    <li class="select__item select-item">Заболеван</li>
-                                    <li class="select__item select-item">Серно-сосудист</li>
-                                    <li class="select__item select-item">вание</li>
-                                    <li class="select__item select-item">осудист</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="filters__theme">
                     <p class="filters__title">Сервис</p>
                     <div class="filters__block">
@@ -1001,14 +974,14 @@
                 <div class="pick-up__items">
                     <div class="pick-up__item _labeltabs-content active">
                         <div class="pick-up__container container _pick-up__edit">
-                            <div class="pick-up__item-block _pick-up__edit-block active">
+                            <div class="pick-up__item-block container _pick-up__edit-block active">
                                 <div class="pick-up__item-left">
                                     <p class="pick-up__item-title">Вы выбрали:</p>
                                     <p class="pick-up__item-content"><span>лечение + проживание + 3-х разовое питание</span> <span>2 взрослых</span> <span>1 ребёнок</span> <span class="important"><img src="img/icons/gift.svg" alt=""> Встреча в подарок</span></p>
                                 </div>
                                 <button class="pick-up__edit-btn _pick-up__edit-opener"><img src="img/icons/pencil.svg" alt=""></button>
                             </div>
-                            <div class="pick-up__item-block _pick-up__edit-form">
+                            <div class="pick-up__item-block container _pick-up__edit-form">
                                 <form class="pick-up__edit _pick-up-type" id="pickUpForm" action="#">
                                     <div class="pick-up__block">
                                         <div class="pick-up__select select">
@@ -1879,6 +1852,12 @@
                             <button class="catalog-main__subscribe-button _popup-subscribe-opener">Отслеживать цены</button>
                         </div>
                     </div>
+                    <button class="catalog-main__more">
+                        <span>Показать ещё</span>
+                        <svg class="mobile" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.8929 0.707107C13.5024 0.316582 12.8692 0.316582 12.4787 0.707107L7.91956 5.26623C7.70471 5.48108 7.35715 5.48114 7.14352 5.26508C6.25527 4.36675 4.04063 2.13055 2.69336 0.801655C2.27994 0.393878 1.61876 0.40143 1.20796 0.811851C0.790054 1.22938 0.7899 1.90668 1.20762 2.3244L6.53189 7.64867C7.03824 8.15502 7.8592 8.15502 8.36555 7.64867L13.8929 2.12132C14.2834 1.7308 14.2834 1.09763 13.8929 0.707107Z" fill="#97DC52"/>
+                        </svg>
+                    </button>
                     <div class="pagination not-mobile">
                         <a class="pagination__link disabled" href="#"><img src="img/icons/arrow-left-white.svg" alt=""></a>
                         <a class="pagination__link active" href="#">1</a>
@@ -1890,12 +1869,6 @@
                         <a class="pagination__link" href="#">10</a>
                         <a class="pagination__link" href="#"><img src="img/icons/arrow-right-white.svg" alt=""></a>
                     </div>
-                    <button class="catalog-main__more mobile">
-                        <span>Показать ещё</span>
-                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.8929 0.707107C13.5024 0.316582 12.8692 0.316582 12.4787 0.707107L7.91956 5.26623C7.70471 5.48108 7.35715 5.48114 7.14352 5.26508C6.25527 4.36675 4.04063 2.13055 2.69336 0.801655C2.27994 0.393878 1.61876 0.40143 1.20796 0.811851C0.790054 1.22938 0.7899 1.90668 1.20762 2.3244L6.53189 7.64867C7.03824 8.15502 7.8592 8.15502 8.36555 7.64867L13.8929 2.12132C14.2834 1.7308 14.2834 1.09763 13.8929 0.707107Z" fill="#97DC52"/>
-                        </svg>
-                    </button>
                 </section>
             </div>
         </section>
