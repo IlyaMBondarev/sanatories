@@ -383,8 +383,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.3s ease-in-out, z-index 0s 0.3s;
 }
 .dropdown__block-large {
-  max-width: 100%;
-  right: 0;
+  min-width: calc(100% - 30px);
+  max-width: calc(100% - 30px);
+  right: 15px;
+  left: 15px;
 }
 .dropdown__list {
   display: flex;

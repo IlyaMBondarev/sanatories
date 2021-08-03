@@ -385,8 +385,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.3s ease-in-out, z-index 0s 0.3s;
   }
   .dropdown__block-large {
-    max-width: 100%;
-    right: 0;
+    min-width: calc(100% - 30px);
+    max-width: calc(100% - 30px);
+    right: 15px;
+    left: 15px;
   }
   .dropdown__list {
     display: flex;
@@ -2048,7 +2050,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #373F80;
     border-radius: 10px;
     margin-bottom: 30px;
-    width: 100%;
+    width: calc(100vw - 30px);
   }
 }
 @media screen and (max-width: 1230px) {

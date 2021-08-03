@@ -2202,7 +2202,7 @@ h1, h2, h3, h4, h5, h6 {
     background: none;
     border-radius: 10px;
     margin-bottom: 0px;
-    width: 100%;
+    width: calc(100vw - 30px);
   }
 }
 @media screen and (max-width: 767px) {
@@ -2792,7 +2792,7 @@ h1, h2, h3, h4, h5, h6 {
   .faq__item input:checked + .faq__question svg * {
     fill: #97DC52;
   }
-  .faq__item input:checked ~ .faq__answer {
+  .faq__item input:checked ~ .main-faq__answer {
     margin-top: 15px;
     max-height: 200px;
     overflow: auto;
