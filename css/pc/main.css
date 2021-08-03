@@ -2375,35 +2375,35 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 0px 5px #97DC52;
 }
 
-.faq {
+.main-faq {
   margin-bottom: 40px;
 }
-.faq__item {
+.main-faq__item {
   display: block;
   padding: 23px;
   cursor: pointer;
 }
-.faq__item:not(:last-of-type) {
+.main-faq__item:not(:last-of-type) {
   border-bottom: 2px solid #ffffff80;
 }
-.faq__item input {
+.main-faq__item input {
   display: none;
 }
-.faq__item input:checked + .faq__question {
+.main-faq__item input:checked + .faq__question {
   color: #97DC52;
 }
-.faq__item input:checked + .faq__question svg {
+.main-faq__item input:checked + .faq__question svg {
   transform: rotateX(180deg);
 }
-.faq__item input:checked + .faq__question svg * {
+.main-faq__item input:checked + .faq__question svg * {
   fill: #97DC52;
 }
-.faq__item input:checked ~ .faq__answer {
+.main-faq__item input:checked ~ .main-faq__answer {
   margin-top: 10px;
   max-height: 200px;
   overflow: auto;
 }
-.faq__question {
+.main-faq__question {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -2412,17 +2412,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 120%;
   font-weight: 600;
 }
-.faq__question span {
+.main-faq__question span {
   transition: all 0.2s ease-in-out;
   margin-right: 20px;
 }
-.faq__question svg {
+.main-faq__question svg {
   transition: all 0.2s ease-in-out;
 }
-.faq__question svg * {
+.main-faq__question svg * {
   transition: all 0.2s ease-in-out;
 }
-.faq__answer {
+.main-faq__answer {
   font-size: 17px;
   line-height: 27px;
   font-weight: 600;
@@ -2433,21 +2433,21 @@ h1, h2, h3, h4, h5, h6 {
   scrollbar-width: thin;
   scrollbar-color: #ffffff80 transparent;
 }
-.faq__answer::-webkit-scrollbar {
+.main-faq__answer::-webkit-scrollbar {
   background-color: #ffffff10;
   width: 2px;
 }
-.faq__answer::-webkit-scrollbar-thumb {
+.main-faq__answer::-webkit-scrollbar-thumb {
   background-color: #ffffff80;
   border-radius: 10px;
 }
-.faq__answer ol {
+.main-faq__answer ol {
   padding-left: 20px;
 }
-.faq__answer ul {
+.main-faq__answer ul {
   padding-left: 20px;
 }
-.faq__answer ul li {
+.main-faq__answer ul li {
   list-style: disc;
 }
 
