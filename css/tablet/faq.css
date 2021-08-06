@@ -463,7 +463,14 @@ h1, h2, h3, h4, h5, h6 {
     height: 40px;
     border-radius: 10px;
   }
-  .footer-message__right input {
+  .footer-message__form-block {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .footer-message__form-block input {
     position: relative;
     z-index: 1;
     display: block;
@@ -477,7 +484,7 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
   }
-  .footer-message__right input:placeholder {
+  .footer-message__form-block input:placeholder {
     color: #ffffff40;
   }
   .footer-message__right button {
@@ -924,6 +931,73 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+@media screen and (max-width: 1230px) {
+  .content-block {
+    margin-bottom: 40px;
+  }
+  .content-block h3 {
+    font-size: 22px;
+    line-height: 120%;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .content-block h4, .content-block h5, .content-block h6 {
+    font-size: 17px;
+    line-height: 120%;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .content-block p {
+    font-size: 17px;
+    line-height: 120%;
+    font-weight: 600;
+    color: #ffffff80;
+    margin-bottom: 10px;
+  }
+  .content-block img {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+  .content-block strong {
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .content-block ul {
+    padding: 10px 0 10px 30px;
+  }
+  .content-block ul li {
+    padding-left: 5px;
+    padding-bottom: 10px;
+    list-style-type: disc;
+    font-size: 17px;
+    line-height: 120%;
+    font-weight: 600;
+    color: #ffffff80;
+  }
+  .content-block ol {
+    padding: 10px 0 10px 20px;
+  }
+  .content-block ol li {
+    padding-left: 5px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    line-height: 120%;
+    font-weight: 600;
+    color: #ffffff80;
+  }
+  .content-block a {
+    color: #ffffff;
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+  }
+  .content-block a:hover {
+    color: #ffffff80;
+    text-decoration: underline;
+  }
+}
 @media screen and (max-width: 1230px) {
   .faq__items {
     display: flex;

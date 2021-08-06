@@ -460,7 +460,14 @@ h1, h2, h3, h4, h5, h6 {
   height: 48px;
   border-radius: 10px;
 }
-.footer-message__right input {
+.footer-message__form-block {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.footer-message__form-block input {
   position: relative;
   z-index: 1;
   display: block;
@@ -470,11 +477,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 120%;
   font-weight: 700;
   color: #ffffff;
-  padding: 14px 217px 14px 17px;
+  padding: 10px 217px 10px 17px;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
-.footer-message__right input:placeholder {
+.footer-message__form-block input:placeholder {
   color: #ffffff40;
 }
 .footer-message__right button {

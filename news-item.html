@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости</title>
-    <link rel="stylesheet" href="css/pc/news.css">
-    <link rel="stylesheet" href="css/tablet/news.css">
-    <link rel="stylesheet" href="css/mobile/news.css">
+    <title>Новость такая-то</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/pc/news-item.css">
+    <link rel="stylesheet" href="css/tablet/news-item.css">
+    <link rel="stylesheet" href="css/mobile/news-item.css">
 </head>
 <body>
 <main class="page">
@@ -110,6 +111,32 @@
             <img src="img/icons/check-big.svg" alt="">
         </div>
         <h4 class="popup-error__title">Что-то пошло не так, попробуйте ещё раз</h4>
+    </div>    <div class="popup-choice">
+        <button class="popup-choice__close _popup-choice-closer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+            </svg>
+        </button>
+        <p class="popup-choice__title"><span></span><span></span></p>
+        <p class="popup-choice__content">Отличный выбор! Наш эксперт-куротолог с вами свяжется для уточнение деталей.</p>
+        <form class="popup-choice__form" id="popupChoiceForm" action="#">
+            <div class="popup-choice__block">
+                <p class="popup-choice__block-title">Ваше имя</p>
+                <div class="popup-choice__input">
+                    <input class="_req" type="text" name="name">
+                    <div class="error-block"><span>Введите имя</span></div>
+                </div>
+            </div>
+            <div class="popup-choice__block">
+                <p class="popup-choice__block-title">Телефон</p>
+                <div class="popup-choice__input">
+                    <input class="_req _tel" type="text" name="phone">
+                    <div class="error-block"><span>Введите корректный номер</span></div>
+                </div>
+            </div>
+            <button class="popup-choice__submit">Применить</button>
+        </form>
     </div></div><header class="header">
     <div class="container">
         <div class="header__row">
@@ -353,128 +380,157 @@
             <div class="breadcrumbs__container">
                 <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Санатории Кисловодска</a></div>
                 <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Новости</a></div>
+                <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Санаторно-курортная реабилитация COVID-19</a></div>
             </div>
         </section>
-        <section class="wrapper container">
-            <section class="main-content">
-                <h1 class="title-1">Новости</h1>
-                <section class="news">
-                    <div class="news__items">
-                        <div class="news__item">
-                            <a class="news__item-image" href="#"><img src="img/news/news1.jpg" alt=""></a>
-                            <div class="news__item-main">
-                                <h3 class="news__item-title"><a href="#">В санатории «Воронеж» г. Ессентуки бонусная программа 2021г.</a></h3>
-                                <p class="news__item-content">Снижение цен на оздоровительные путевки в санаторий «Воронеж» в размере 15%</p>
-                                <time class="news__item-date" datetime="2021-08-04">04.08.2021</time>
+        <section class="main-content container">
+            <div class="content-block">
+                <h1 class="title-1">Санаторно-курортная реабилитация COVID-19</h1>
+                <h3>Навигация</h3>
+                <ol>
+                    <li><a href="#news-item-title-1">Последствия коронавируса на здоровье человека</a></li>
+                    <li><a href="#news-item-title-2">Кому необходимо восстановление после излечения от COVID-19?</a></li>
+                    <li><a href="#news-item-title-3">Программы восстановления в санаториях: состав, процедуры и результат?</a></li>
+                    <li><a href="#news-item-title-4">Санатории, которые мы рекомендуем.</a></li>
+                </ol>
+                <img src="img/news/news-item1.jpg" alt="">
+                <h3 id="news-item-title-1">Последствия коронавируса на здоровье человека.</h3>
+                <p>Даже после легкой формы COVID-19 восстановление организма может длиться месяцами. Согласно ВОЗ кашель, одышка, усталость, присутствуют у 40% переболевших, даже спустя 3 недели с одинаковой частотой во всех возрастных группах. Люди, перенесшие вирус, в течение долго периода после излечения жалуются на усталость, невозможность заниматься в полной мере обычными бытовыми делами, вроде уборки, не говоря уже о возврате к физическим тренировкам. Признаки, которые говорят о том, что вам нужна помощь, многочисленны: <strong><em>слабость, одышка, нарушение пищеварения, выпадение волос, упадок энергии, проблемы с кожей, бессонница и тревога</em></strong>. Причем это не просто усталость и слабость, которые проходят после продолжительного отдыха, а астеническое состояние, требующее внимательного и длительного лечения.  К сожалению, реабилитироваться самостоятельно организму удается не всегда, а помочь можно. Санатории на КМВ предлагают специально разработанные программы восстановления организма, рассчитанные в довольно сжатые сроки привести перенесшего коронавирус в состояние здорового и энергичного человека.</p>
+                <h3 id="news-item-title-2">Кому необходимо восстановление после излечения от COVID-19?</h3>
+                <p>Реабилитация необходима всем переболевшим коронавирусной инфекцией, особенно тем, у кого заболевание протекало в средней и тяжелой форме. Программу по восстановлению необходимо соблюдать до 2-3 месяцев, в некоторых случаях до года. Особо важно обратить внимание при реабилитации на следующие моменты:</p>
+                <ul>
+                    <li>восстановление сатурации (насыщения) крови кислородом</li>
+                    <li>возобновление толерантности к нагрузкам и гипоксии (пониженное содержание кислорода в организме)</li>
+                    <li>восстановление жизненной емкости легких (максимальный объем воздуха, который можно набрать в легкие после полного выдоха)</li>
+                    <li>уменьшение или полная ликвидация клинических проявлений</li>
+                    <li>восстановление работы нервной системы, обоняния и вкуса</li>
+                    <li>повышение иммунитета и защитных возможностей организма</li>
+                    <li>стабилизация психоэмоционального состояния (психологи всего мира уже говорят о так называемой «эпидемии депрессии» - массовый психоз и, как следствие, тревожность, расстройства и депрессия, у пребывавших в больнице – панические атаки, нарушение сна).</li>
+                </ul>
+                <h3 id="news-item-title-3">Программы восстановления в санаториях: состав, процедуры и результат?</h3>
+                <p>План лечения составляется индивидуально, с учетом того, какие органы и системы пациента оказались наиболее пораженными. <strong>Первый этап</strong> обязательно включает в себя диагностику и полный сбор информации о течении болезни:</p>
+                <ul>
+                    <li>лабораторная диагностика (клинические анализы)</li>
+                    <li>пульсоксиметрия (степень насыщения крови кислородом)</li>
+                    <li>спирометрия (исследование функций внешнего дыхания)</li>
+                    <li>оценка состояния сердечно-сосудистой системы.</li>
+                </ul>
+                <p>Пациенту рекомендуется иметь с собой результаты исследований в период течения болезни и заключения врачей. В ходе лечения для проверки эффективности курса будет проводиться систематический мониторинг вентиляции легких.</p>
+                <p><strong>Второй этап</strong> - непосредственно восстановление посредством множества факторов и процедур:</p>
+                <ul>
+                    <li>лечебная гимнастика (в том числе дыхательная)</li>
+                    <li>аппаратная физиотерапия (магнитотерапия, лазеротерапия, электрофорез)</li>
+                    <li>занятия в бассейне, тренажерный зал</li>
+                    <li>массаж (ручной и аппаратный)</li>
+                    <li>ингаляции минеральной водой и лекарственными препаратами</li>
+                    <li>галотерапия (солевая пещера)</li>
+                    <li>ванны и души лечебные</li>
+                    <li>ароматерапия</li>
+                    <li>оксигенация в барокамере</li>
+                    <li>естественная оксигенация во время лечебных прогулок по терренкурам</li>
+                    <li>питьевое лечение мин. водой</li>
+                    <li>диетотерапия (белковая и другие виды диет, витаминизированная, при необходимости насыщенная пребиотиками и пробиотиками для восстановления состояния жкт после приема токсичных лекарств)</li>
+                    <li>работа с психологами, неврологами, нейропсихологами</li>
+                </ul>
+                <img src="img/news/news-item2.jpg" alt="">
+                <h5>Результаты реабилитации:</h5>
+                <ul>
+                    <li>Быстрое восстановление дыхательной системы.</li>
+                    <li>Укрепление иммунной, сердечно-сосудистой систем.</li>
+                    <li>Прилив жизненной энергии, повышение активности и тонуса.</li>
+                    <li>Полное возвращение к привычной жизни</li>
+                </ul>
+                <p>Таким образом, в составе программы будут использованы немедикаментозные методы и средства, обладающих доказанной эффективностью в соответствии с международными критериями. Курс рассчитан в среднем на 14 дней, в зависимости от состояния пациента, рекомендуемый срок  - 18-21 день. Важно помнить, что бессистемное использование активных дыхательных тренажеров, дыхательных упражнений, различных приемов дренажа дыхательной системы, а также надувание шариков может усугубить ситуацию и привести к дополнительному поражению лёгких. Реабилитация должна быть постепенной и щадящей!</p>
+                <img src="img/news/news-item3.jpg" alt="">
+                <h3 id="news-item-title-4">Санатории, которые мы рекомендуем.</h3>
+                <p>Клинических  рекомендаций по восстановлению после COVID-19 крайне много, определиться в этом потоке вам помогут наши специалисты, подобрать программу в санатории, исходя именно из вашей ситуации и пожеланий.</p>
+                <ol>
+                    <li><a href="#">Санаторий Виктория</a><strong> г. Кисловодск</strong> (реабилитация после COVID-19 в рамках программы Лечения органов дыханий – от 14 дней)</li>
+                    <li><a href="#">Санаторий Плаза</a><strong> г. Кисловодск</strong> (специализированная программа «Лечения заболевания органов дыхания – от 10 дней)</li>
+                    <li><a href="#">Санаторий Родник</a><strong> г. Кисловодск</strong> (программа «Реабилитация после вирусной пневмонии – от 14 дней)</li>
+                    <li><a href="#">Санаторий Джинал</a><strong> г. Кисловодск</strong> (комплексная программа санаторно-курортной реабилитации больных после перенесенной вирусной инфекции COVID-19 - от 14 дней)</li>
+                    <li><a href="#">Санаторий Шахтер</a><strong> г. Ессентуки</strong> («Реабилитация после перенесенного COVID-19 и других респираторных заболеваний органов дыхания – от 7 дней)</li>
+                    <li><a href="#">Санаторий Виктория</a><strong> г. Ессентуки</strong> («Реабилитация больных с неспецифическими заболеваниями бронхов и легких» от 14 дней)</li>
+                    <li><a href="#">Санаторий Жемчужина Кавказа</a><strong> г. Ессентуки</strong> («Программа восстановления для переболевших COVID-19» - от 14 дней)</li>
+                    <li><a href="#">Санаторий им. Павлова</a><strong> г. Ессентуки</strong> («Стоп Вирус» от 10 дней)</li>
+                    <li><a href="#">Санаторий Дубрава</a><strong> г. Железноводск</strong> (программа «Легкое дыхание» - от 10 дней)</li>
+                </ol>
+            </div>
+            <article class="item item-great">
+                <div class="item__main">
+                    <div class="item__left">
+                        <div class="item__images swiper-container">
+                            <div class="swiper-wrapper">
+                                <a class="item__image swiper-slide" href="#">
+                                    <img src="img/products/id/1.jpg" alt="">
+                                </a>
+                                <a class="item__image swiper-slide" href="#">
+                                    <img src="img/products/id/2.jpg" alt="">
+                                </a>
+                                <a class="item__image swiper-slide" href="#">
+                                    <img src="img/products/id/3.jpg" alt="">
+                                </a>
                             </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-image" href="#"><img src="img/news/news1.jpg" alt=""></a>
-                            <div class="news__item-main">
-                                <h3 class="news__item-title"><a href="#">В санатории «Воронеж» г. Ессентуки бонусная программа 2021г.</a></h3>
-                                <p class="news__item-content">Снижение цен на оздоровительные путевки в санаторий «Воронеж» в размере 15%</p>
-                                <time class="news__item-date" datetime="2021-08-04">04.08.2021</time>
+                            <div class="item__arrow item__arrow-left">
+                                <img src="img/icons/arrow-left-white.svg" alt="">
                             </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-image" href="#"><img src="img/news/news1.jpg" alt=""></a>
-                            <div class="news__item-main">
-                                <h3 class="news__item-title"><a href="#">В санатории «Воронеж» г. Ессентуки бонусная программа 2021г.</a></h3>
-                                <p class="news__item-content">Снижение цен на оздоровительные путевки в санаторий «Воронеж» в размере 15%</p>
-                                <time class="news__item-date" datetime="2021-08-04">04.08.2021</time>
+                            <div class="item__arrow item__arrow-right">
+                                <img src="img/icons/arrow-right-white.svg" alt="">
                             </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-image" href="#"><img src="img/news/news1.jpg" alt=""></a>
-                            <div class="news__item-main">
-                                <h3 class="news__item-title"><a href="#">В санатории «Воронеж» г. Ессентуки бонусная программа 2021г.</a></h3>
-                                <p class="news__item-content">Снижение цен на оздоровительные путевки в санаторий «Воронеж» в размере 15%</p>
-                                <time class="news__item-date" datetime="2021-08-04">04.08.2021</time>
-                            </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-image" href="#"><img src="img/news/news1.jpg" alt=""></a>
-                            <div class="news__item-main">
-                                <h3 class="news__item-title"><a href="#">В санатории «Воронеж» г. Ессентуки бонусная программа 2021г.</a></h3>
-                                <p class="news__item-content">Снижение цен на оздоровительные путевки в санаторий «Воронеж» в размере 15%</p>
-                                <time class="news__item-date" datetime="2021-08-04">04.08.2021</time>
-                            </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-image" href="#"><img src="img/news/news1.jpg" alt=""></a>
-                            <div class="news__item-main">
-                                <h3 class="news__item-title"><a href="#">В санатории «Воронеж» г. Ессентуки бонусная программа 2021г.</a></h3>
-                                <p class="news__item-content">Снижение цен на оздоровительные путевки в санаторий «Воронеж» в размере 15%</p>
-                                <time class="news__item-date" datetime="2021-08-04">04.08.2021</time>
-                            </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-image" href="#"><img src="img/news/news1.jpg" alt=""></a>
-                            <div class="news__item-main">
-                                <h3 class="news__item-title"><a href="#">В санатории «Воронеж» г. Ессентуки бонусная программа 2021г.</a></h3>
-                                <p class="news__item-content">Снижение цен на оздоровительные путевки в санаторий «Воронеж» в размере 15%</p>
-                                <time class="news__item-date" datetime="2021-08-04">04.08.2021</time>
-                            </div>
-                        </div>
-                        <button class="news__more">
-                            <span>Показать ещё</span>
-                            <svg class="mobile" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.8929 0.707107C13.5024 0.316582 12.8692 0.316582 12.4787 0.707107L7.91956 5.26623C7.70471 5.48108 7.35715 5.48114 7.14352 5.26508C6.25527 4.36675 4.04063 2.13055 2.69336 0.801655C2.27994 0.393878 1.61876 0.40143 1.20796 0.811851C0.790054 1.22938 0.7899 1.90668 1.20762 2.3244L6.53189 7.64867C7.03824 8.15502 7.8592 8.15502 8.36555 7.64867L13.8929 2.12132C14.2834 1.7308 14.2834 1.09763 13.8929 0.707107Z" fill="#97DC52"/>
-                            </svg>
-                        </button>
-                        <div class="pagination not-mobile">
-                            <a class="pagination__link disabled" href="#"><img src="img/icons/arrow-left-white.svg" alt=""></a>
-                            <a class="pagination__link active" href="#">1</a>
-                            <a class="pagination__link" href="#">2</a>
-                            <a class="pagination__link" href="#">3</a>
-                            <a class="pagination__link" href="#">4</a>
-                            <a class="pagination__link" href="#">5</a>
-                            <span class="pagination__link inactive">...</span>
-                            <a class="pagination__link" href="#">10</a>
-                            <a class="pagination__link" href="#"><img src="img/icons/arrow-right-white.svg" alt=""></a>
+                            <span class="popular"># Популярно</span>
                         </div>
                     </div>
-                </section>
-                <div class="aside-consultation mobile">
-                    <h3 class="aside-consultation__title">Помощь в подборе санатория</h3>
-                    <div class="aside-consultation__image">
-                        <img src="img/consultation/consultant.jpg" alt="">
+                    <div class="item__right">
+                        <h3 class="item__title"><a href="#">Санаторно-Курортный комплекс &laquo;Русь&raquo;</a></h3>
+                        <div class="item__desc">
+                            <p class="item__address"><span>г. Ессентуки</span> <span>В парке  800 м. от бювета</span></p>
+                            <p class="item__replies"><a href="#">21 отзыв</a></p>
+                            <p class="item__desc-info"><span>92 процедуры</span> <span>5 место в рейтинге</span></p>
+                            <p class="item__rating"><img src="img/products/common/rating.svg" alt=""> <span>10</span></p>
+                        </div>
+                        <ul class="item__list">
+                            <li class="item__list-item"><img class="item__icon" src="img/products/common/spa.svg" alt=""><span>В санатории есть SPA-центр «ЭльМонт SPA»</span></li>
+                            <li class="item__list-item"><img class="item__icon" src="img/products/common/pool.svg" alt=""><span>Большой закрытый бассейн площадью 652м²</span></li>
+                            <li class="item__list-item"><img class="item__icon" src="img/products/common/child.svg" alt=""><span>Санаторий принимает детей с 1 года</span></li>
+                            <li class="item__list-item"><img class="item__icon" src="img/products/common/parking-lot.svg" alt=""><span>Бесплатная охраняемая автопарковка</span></li>
+                            <li class="item__list-item"><img class="item__icon" src="img/products/common/pets.svg" alt=""><span>Бювет с минер. водой в здании санатория</span></li>
+                            <li class="item__list-item"><img class="item__icon" src="img/products/common/well.svg" alt=""><span>До центра: 2,8км</span></li>
+                            <li class="item__list-item"><img class="item__icon" src="img/products/common/wifi.svg" alt=""><span>Wi-Fi предоставляется на всей территории</span></li>
+                        </ul>
                     </div>
-                    <h3 class="aside-consultation__name">Евгения Константиновна</h3>
-                    <p class="aside-consultation__name-desc">Куротолог</p>
-                    <div class="aside-consultation__phone">
-                        <a class="aside-consultation__phone-link" href="tel:89383463535">8 938 346-35-35</a>
-                        <p class="aside-consultation__phone-content">прямой в Железноводске</p>
-                    </div>
-                    <div class="aside-consultation__phone">
-                        <a class="aside-consultation__phone-link" href="tel:88007751377">8 800 77-513-77</a>
-                        <p class="aside-consultation__phone-content">Бесплатный по России</p>
-                    </div>
-                    <button class="aside-consultation__submit _popup-callback-opener">Помощь с подбором</button>
                 </div>
-            </section>
-            <aside class="wrapper__aside _aside not-tablet">
-                <div class="aside-consultation">
-                    <h3 class="aside-consultation__title">Помощь в подборе санатория</h3>
-                    <div class="aside-consultation__image">
-                        <img src="img/consultation/consultant-product-small.jpg" alt="">
-                    </div>
-                    <h3 class="aside-consultation__name">Евгения Константиновна</h3>
-                    <p class="aside-consultation__name-desc">Куротолог</p>
-                    <div class="aside-consultation__phone">
-                        <a class="aside-consultation__phone-link" href="tel:89383463535">8 938 346-35-35</a>
-                        <p class="aside-consultation__phone-content">прямой в Железноводске</p>
-                    </div>
-                    <div class="aside-consultation__phone">
-                        <a class="aside-consultation__phone-link" href="tel:88007751377">8 800 77-513-77</a>
-                        <p class="aside-consultation__phone-content">Бесплатный по России</p>
-                    </div>
-                    <button class="aside-consultation__submit _popup-callback-opener">Помощь с подбором</button>
+                <div class="item__info">
+                    <span class="item__info-block item__info-block_important">
+                        <img src="img/products/common/flame.svg" alt="">
+                        <span>Осталось 2 номера</span>
+                    </span>
+                    <span class="item__info-block">
+                        <img src="img/products/common/clock.svg" alt="">
+                        <span>Забронировано 22 раза за сегодня</span>
+                    </span>
                 </div>
-                <div class="wrapper__aside-block">
-                    <p class="wrapper__aside-content">Возможны противопоказания. Необходима консультация специалиста.</p>
+                <div class="item__info">
+                    <span class="item__info-block">
+                        <span>Внимание! Цена без учёта стоимости ребёнка, подробности у менеджера</span>
+                    </span>
                 </div>
-            </aside>
+                <div class="item__bottom">
+                    <div class="item__prices">
+                        <div class="item__price">
+                            <p class="item__price-title"><span>7 200</span> руб</p>
+                            <p class="item__price-content">проживание + питание</p>
+                        </div>
+                        <div class="item__price">
+                            <p class="item__price-title"><span>8 500</span> руб</p>
+                            <p class="item__price-content">проживание + питание + лечение</p>
+                        </div>
+                    </div>
+                    <div class="item__buttons">
+                        <a class="item__link" href="#">Подробнее</a>
+                        <button class="item__button _popup-choice-opener" data-roomname="" data-sanatoryname="Санаторно-Курортный комплекс &laquo;Русь&raquo;">Выбрать</button>
+                    </div>
+                </div>
+            </article>
         </section>
     </section>
 <div class="footer-message">
@@ -538,5 +594,5 @@
         </div>
     </div>
 </footer></main>
-<script src="js/news.js"></script></body>
+<script src="js/news-item.js"></script></body>
 </html>
