@@ -2007,44 +2007,44 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
-.product-main {
+.wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
 }
-.product-main > .main-content {
+.wrapper > .main-content {
   width: calc(100% - 270px - 30px);
   overflow: hidden;
   padding-top: 0;
 }
-.product-main__aside {
+.wrapper__aside {
   position: sticky;
   top: 20px;
   width: 270px;
   min-width: 270px;
   max-width: 270px;
-  height: calc(100vh - 30px);
+  max-height: calc(100vh - 30px);
   overflow: auto;
   scrollbar-width: 0px;
   scrollbar-color: transparent;
 }
-.product-main__aside::-webkit-scrollbar {
+.wrapper__aside::-webkit-scrollbar {
   width: 0;
   height: 0;
   background-color: transparent;
 }
-.product-main__aside::-webkit-scrollbar-thumb {
+.wrapper__aside::-webkit-scrollbar-thumb {
   width: 0;
   background-color: transparent;
 }
-.product-main__aside-block {
+.wrapper__aside-block {
   padding: 20px;
   background: #373F80;
   border-radius: 10px;
   margin-bottom: 20px;
 }
-.product-main__aside-content {
+.wrapper__aside-content {
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
@@ -2130,58 +2130,58 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.product-consultation {
+.aside-consultation {
   padding: 20px;
   background: #373F80;
   border-radius: 10px;
   margin-bottom: 20px;
 }
-.product-consultation__title {
+.aside-consultation__title {
   font-size: 22px;
   line-height: 120%;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 15px;
 }
-.product-consultation__image {
+.aside-consultation__image {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
 }
-.product-consultation__image img {
+.aside-consultation__image img {
   max-width: 100%;
 }
-.product-consultation__name {
+.aside-consultation__name {
   font-size: 22px;
   line-height: 120%;
   font-weight: 700;
   color: #ffffff;
   margin-top: 15px;
 }
-.product-consultation__name-desc {
+.aside-consultation__name-desc {
   font-size: 17px;
   line-height: 20px;
   font-weight: 600;
   color: #ffffff80;
   margin-bottom: 15px;
 }
-.product-consultation__phone {
+.aside-consultation__phone {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.product-consultation__phone-link {
+.aside-consultation__phone-link {
   font-size: 17px;
   line-height: 20px;
   font-weight: 700;
   color: #ffffff;
 }
-.product-consultation__phone-content {
+.aside-consultation__phone-content {
   font-size: 17px;
   line-height: 20px;
   font-weight: 600;
   color: #ffffff80;
 }
-.product-consultation__submit {
+.aside-consultation__submit {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2195,7 +2195,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   transition: all 0.2s ease-in-out;
 }
-.product-consultation__submit:hover {
+.aside-consultation__submit:hover {
   background: #97DC52;
   box-shadow: 0px 0px 5px #97DC52;
 }
