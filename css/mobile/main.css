@@ -2214,6 +2214,15 @@ h1, h2, h3, h4, h5, h6 {
   .main-content > .title-1 {
     margin-top: 20px;
   }
+
+  .content-breaker {
+    margin: 10px 0;
+  }
+  .content-breaker img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 @media screen and (max-width: 767px) {
   .main-video {
