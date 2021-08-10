@@ -316,6 +316,27 @@ if (document.querySelector('.popups')) {
         })
     }
 
+    if (document.querySelector('.popup-reply')) {
+        let popupReply = document.querySelector('.popup-reply');
+        
+        let popupReplyOpeners = document.querySelectorAll('._popup-reply-opener');
+        let popupReplyClosers = document.querySelectorAll('._popup-reply-closer');
+
+        popupReplyOpeners.forEach(opener => {
+            opener.addEventListener('click', () => {
+                popups.classList.add('active');
+                popupReply.classList.add('active');
+            })
+        })
+        
+        popupReplyClosers.forEach(closer => {
+            closer.addEventListener('click', () => {
+                popups.classList.remove('active');
+                popupReply.classList.remove('active');
+            })
+        })
+    }
+
     if (document.querySelector('.popup-images')) {
         let popupImages = document.querySelector('.popup-images');
         
@@ -578,6 +599,18 @@ if (document.querySelector('._burger-drop')) {
         })
     })
 }
+if (document.querySelector('._video')) {
+    let videos = document.querySelectorAll('._video');
+
+    videos.forEach(video => {
+        video.addEventListener('click', () => {
+            if (video.classList.contains('_video')) {
+                video.innerHTML = `<iframe src="${video.dataset.linktovideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="height: 100%; width: 100%"></iframe>`;
+                video.classList.remove('_video');
+            }
+        })
+    })
+}
 function isValid(input) {
     if (input.name === 'dates') {
         return !!input.value
@@ -590,6 +623,9 @@ function isValid(input) {
     }
     if (input.name === 'phone') {
         return input.value.length === 18
+    }
+    if (input.name === 'reply') {
+        return !!input.value
     }
     if (input.name === 'mail') {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -1553,6 +1589,62 @@ if (document.getElementById('popupSettingsForm')) {
             if (result.ok) {
                 document.querySelector('.popups .popup-settings').classList.remove('active');
                 document.querySelector('.popups').classList.remove('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups .popup-settings').classList.remove('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('popupReplyForm')) {
+    let popupReplyForm = document.getElementById('popupReplyForm');
+
+    let requiredInputs = popupReplyForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    popupReplyForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(popupReplyForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Отзыв добавлен!';
+                document.querySelector('.popups .popup-settings').classList.remove('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
             } else {
                 document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
                 document.querySelector('.popups .popup-settings').classList.remove('active');

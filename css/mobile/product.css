@@ -129,6 +129,9 @@
     opacity: 0.8;
     transition: opacity 0.2s ease-in-out;
   }
+  .video-play-btn > svg {
+    max-width: 20vw;
+  }
   .video-play-btn path:first-child {
     transition: fill 0.2s ease-in-out;
   }

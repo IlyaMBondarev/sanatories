@@ -162,17 +162,17 @@ body {
   background-color: #D92C4B;
 }
 
-input {
+input, textarea {
   border: 1.5px solid transparent;
   transition: all 0.2s ease-in-out;
 }
-input:focus {
+input:focus, textarea:focus {
   border-color: #97DC52;
 }
-input._error {
+input._error, textarea._error {
   border-color: #E23A58;
 }
-input._error + .error-block {
+input._error + .error-block, textarea._error + .error-block {
   display: block;
 }
 
