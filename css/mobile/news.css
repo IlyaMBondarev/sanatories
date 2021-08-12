@@ -1357,13 +1357,34 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media screen and (max-width: 500px) {
+  .news__item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .news__item:nth-child(2n) > *:first-child {
+    margin-right: 0;
+  }
   .news__item-image {
-    display: none;
+    margin-right: 0;
+    margin-bottom: 15px;
+    flex: none;
+    width: 60%;
+    min-width: 250px;
+    border-radius: 5px;
+  }
+  .news__item-image img {
+    border-radius: 5px;
+  }
+  .news__item-title {
+    text-align: center;
   }
   .news__item-title a {
     text-decoration: underline;
   }
+  .news__item-content {
+    text-align: center;
+  }
   .news__item-date {
-    text-align: right;
+    text-align: left;
   }
 }
