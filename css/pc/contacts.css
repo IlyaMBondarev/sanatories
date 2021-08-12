@@ -1132,6 +1132,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 15px;
 }
 .contacts__sertificate img {
+  width: 200px;
+  height: 100%;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 .contacts__sertificate span {

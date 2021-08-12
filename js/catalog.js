@@ -1451,6 +1451,9 @@ function isValid(input) {
     if (input.name === 'reply') {
         return !!input.value
     }
+    if (input.name === 'message') {
+        return !!input.value
+    }
     if (input.name === 'mail') {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(input.value).toLowerCase());
@@ -2472,6 +2475,63 @@ if (document.getElementById('popupReplyForm')) {
             } else {
                 document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
                 document.querySelector('.popups .popup-settings').classList.remove('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('contactsForm')) {
+    let contactsForm = document.getElementById('contactsForm');
+
+    let requiredInputs = contactsForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    contactsForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(contactsForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                document.querySelector('.popups .popup-thanks .popup-thanks__title').textContent = 'Спасибо';
+                document.querySelector('.popups .popup-thanks .popup-thanks__content').textContent = 'Мы с вами свяжемся после додичка в четверг';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-thanks').classList.add('active');
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
                 document.querySelector('.popups .popup-error').classList.add('active');
             }
         }
