@@ -1,0 +1,68 @@
+    <div class="popup-reply">
+        <button class="popup-reply__close _popup-reply-closer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+            </svg>
+        </button>
+        <p class="popup-reply__title">Добавление отзыва</p>
+        <form class="popup-reply__form" id="popupReplyForm" action="#">
+            <div class="popup-reply__block">
+                <p class="popup-reply__block-title">Ваше имя</p>
+                <div class="popup-reply__input">
+                    <input class="_req" type="text" name="name">
+                    <div class="error-block"><span>Введите имя</span></div>
+                </div>
+            </div>
+            <div class="popup-reply__block">
+                <p class="popup-reply__block-title">Почта</p>
+                <div class="popup-reply__input">
+                    <input class="_req" type="email" name="mail">
+                    <div class="error-block"><span>Введите корректную почту</span></div>
+                </div>
+            </div>
+            <div class="popup-reply__block popup-reply__block-large">
+                <p class="popup-reply__block-title">Ваш отзыв</p>
+                <div class="popup-reply__textarea">
+                    <textarea class="_req" name="reply"></textarea>
+                    <div class="error-block"><span>Введите отзыв</span></div>
+                </div>
+            </div>
+            <div class="popup-reply__block popup-reply__block-large">
+                <p class="popup-reply__block-title">Ваша оценка</p>
+                <div class="popup-reply__stars">
+                    <input id="ratingReplyGreat" type="radio" name="ratingReply" value="great" checked>
+                    <label class="popup-reply__star" for="ratingReplyGreat">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                        </svg>
+                    </label>
+                    <input id="ratingReplyVerygood" type="radio" name="ratingReply" value="verygood">
+                    <label class="popup-reply__star" for="ratingReplyVerygood">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                        </svg>
+                    </label>
+                    <input id="ratingReplyGood" type="radio" name="ratingReply" value="good">
+                    <label class="popup-reply__star" for="ratingReplyGood">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                        </svg>
+                    </label>
+                    <input id="ratingReplyBad" type="radio" name="ratingReply" value="bad">
+                    <label class="popup-reply__star" for="ratingReplyBad">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                        </svg>
+                    </label>
+                    <input id="ratingReplyVeryBad" type="radio" name="ratingReply" value="varybad">
+                    <label class="popup-reply__star" for="ratingReplyVeryBad">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.91845 0.898438L12.9586 6.81604L19.5261 7.87878L14.8375 12.5988L15.8563 19.1732L9.91845 16.1727L3.98062 19.1732L4.99935 12.5988L0.310835 7.87878L6.87828 6.81604L9.91845 0.898438Z" fill="#323967"/>
+                        </svg>
+                    </label>
+                </div>
+            </div>
+            <button class="popup-reply__submit">Применить</button>
+        </form>
+    </div>

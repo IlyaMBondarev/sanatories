@@ -4,7 +4,9 @@ if (document.querySelector('.popup-room__demo') && document.querySelector('.popu
 
     images.forEach(image => {
         image.addEventListener('click', () => {
-            demo.src = image.src;
+            if (!mobile) {
+                demo.src = image.src;
+            }
         })
     })
 }
