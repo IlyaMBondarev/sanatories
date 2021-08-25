@@ -1,0 +1,70 @@
+.product-tabs
+    margin-top: 30px
+    margin-bottom: 30px
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    &__left
+        width: 230px
+        min-width: 230px
+        max-width: 230px
+        margin-right: 50px
+    &__tab
+        display: block
+        padding: 20px 10px
+        cursor: pointer
+        &:not(:last-child)
+            border-bottom: 2px solid #ffffff10
+        & span
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            transition: color 0.2s ease-in-out
+        & input[type="radio"]
+            position: absolute
+            left: -100vw
+            width: 0
+            height: 0
+            opacity: 0
+            visibility: hidden
+            &:checked + span
+                color: #97DC52
+        &:hover span
+            color: #97DC52
+    &__right
+    &__tab-content
+        max-height: 0
+        opacity: 0
+        overflow: hidden
+        transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out 0.5s
+        &.active
+            opacity: 1
+            transition: opacity 0.5s ease-in-out 0.5s, max-height 0.5s ease-in-out 0.5s
+    &__title
+        font-size: 22px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 20px
+    &__content
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: #ffffff80
+        margin-bottom: 20px
+    &__list
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: #ffffff80
+        margin-bottom: 20px
+        &_ordered
+            padding-left: 20px
+        &_unordered
+            padding-left: 20px
+            & li
+                list-style: disc
+    & hr
+        border: 1px inset #ffffff80
+        margin-bottom: 20px

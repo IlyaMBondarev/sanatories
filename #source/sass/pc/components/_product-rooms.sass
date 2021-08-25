@@ -1,0 +1,46 @@
+.product-rooms
+    margin-bottom: 40px
+    &__top
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        margin-bottom: 12px
+    &__title
+        font-size: 30px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 6px
+    &__content
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #ffffff80
+        &_important
+            color: #FFCD4B
+    &__parameters
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        background: transparent
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: #97DC52
+        margin-left: 20px
+        & img
+            transition: transform 0.2s ease-in-out
+        &:hover img
+            transform: translateX(-5px)
+    &__more
+        display: flex
+        align-items: center
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: #97DC52
+        background: transparent
+        & svg
+            transition: transform 0.2s
+        &:hover svg
+            transform: translateX(5px)

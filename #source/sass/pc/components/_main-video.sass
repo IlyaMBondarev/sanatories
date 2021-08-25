@@ -1,0 +1,31 @@
+.main-video
+    margin-bottom: 60px
+    & + *
+        clear: both
+    &__title
+        & span
+            display: block
+    &__items
+    &__item
+    &__video
+        min-width: calc(50% - 15px)
+        max-width: calc(50% - 15px)
+        height: min-content
+        float: left
+        margin-right: 30px
+        margin-bottom: 20px
+        border-radius: 10px
+        overflow: hidden
+        position: relative
+        & > img
+            max-width: 100%
+            max-height: 100%
+            border-radius: 10px
+        & > *
+            min-height: 250px
+    &__content
+        font-size: 17px
+        line-height: 27px
+        color: #ffffff80
+        &:not(:first-of-type)
+            margin-top: 40px

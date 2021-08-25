@@ -1,0 +1,66 @@
+.product-banner
+    margin-top: 30px
+    margin-bottom: 10px
+    border-radius: 10px
+    overflow: hidden
+    height: 220px
+    width: 100%
+    position: relative
+    display: flex
+    align-items: center
+    &-blue
+        background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+    &-black
+        background: linear-gradient(274.32deg, #51486C 0%, #52594A 0.01%, #050606 102.13%)
+    &__main
+        max-width: 55%
+        padding-left: 30px
+        position: relative
+        z-index: 2
+    &__title
+        font-size: 30px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 5px
+    &__content
+        font-size: 20px
+        line-height: 28px
+        font-weight: 600
+        color: $white
+    &__submit
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 14px 40px
+        margin-top: 12px
+        border-radius: 10px
+        background: #E45E12
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        transition: all 0.2s ease-in-out
+        &:hover
+            box-shadow: 0px 0px 7px #E45E12
+    &__image
+        position: absolute
+        right: 0
+        top: 0
+        min-height: 100%
+        max-height: 100%
+    &__more
+        position: absolute
+        z-index: 1
+        bottom: 20px
+        right: 20px
+        background: #6487EB
+        border-radius: 10px
+        padding: 4px 7px
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: $white
+        transition: all 0.2s ease-in-out
+        &:hover
+            background: #8DAAFE

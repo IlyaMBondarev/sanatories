@@ -1,0 +1,61 @@
+.product-medical-base
+    margin-bottom: 40px
+    &__title
+        font-size: 30px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 20px
+    &__items
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+        flex-wrap: wrap
+        margin-bottom: 13px
+        transition: max-height 0.2s ease-in-out
+    &__item
+        position: relative
+        height: 171px
+        width: calc((100% - 34px)/3)
+        border-radius: 10px
+        background: #4E5AC0
+        overflow: hidden
+        margin-bottom: 17px
+        &:not(:nth-child(3n))
+            margin-right: 17px
+        & > img
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__item-link
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 48px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background: #4E5AC0
+        opacity: 0.8
+        padding: 0 17px 0 10px
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: $white
+        & img
+            transition: transform 0.2s ease-in-out
+        &:hover img
+            transform: translateX(7px)
+    &__more
+        display: flex
+        align-items: center
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: #97DC52
+        background: transparent
+        & svg
+            transition: transform 0.2s
+        &:hover svg
+            transform: translateX(5px)

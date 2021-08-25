@@ -1,0 +1,124 @@
+.popup-callback
+    position: absolute
+    right: 0
+    height: 100%
+    width: 416px
+    max-width: 100%
+    background: #404A9B
+    padding: 20px 0
+    overflow: hidden
+    transform: translateX(101%)
+    transition: transform 0.3s ease-in-out
+    &.active
+        transform: translateX(0)
+        transition: transform 0.3s ease-in-out 0.2s
+    &__close
+        display: block
+        margin-left: auto
+        margin-right: 20px
+        margin-bottom: 10px
+        background: transparent
+        cursor: pointer
+    &__tabs
+        display: flex
+        align-items: flex-end
+        margin-bottom: 30px
+    &__tab
+        flex-grow: 1
+        cursor: pointer
+        & span
+            display: flex
+            justify-content: center
+            font-size: 20px
+            line-height: 25px
+            font-weight: 700
+            color: $white
+            padding: 10px 20px
+            border-bottom: 3px solid #ffffff10
+            white-space: nowrap
+            transition: all 0.2s ease-in-out
+        & input[type="radio"]
+            position: absolute
+            width: 0
+            height: 0
+            opacity: 0
+            visibility: hidden
+            left: -100vw
+            &:checked + span
+                border-color: #84CF61
+    &__block
+        position: relative
+    &__tab-content
+        padding: 0 30px
+        position: absolute
+        width: 100%
+        top: 0
+        left: 0
+        transition: all 0.3s ease-in-out
+        &:first-of-type
+            opacity: 0
+            transform: translate(-100%)
+        &:last-of-type
+            opacity: 0
+            transform: translate(100%)
+        &.active
+            opacity: 1
+            transform: none
+    &__content
+        font-size: 17px
+        line-height: 22px
+        font-weight: 600
+        color: #ffffff85
+        margin-bottom: 30px
+    &__form
+        display: flex
+        flex-direction: column
+        align-items: stretch
+        & input
+            position: relative
+            z-index: 1
+            width: 100%
+            height: 48px
+            background: rgba(0, 0, 0, 0.2)
+            border-radius: 10px
+            padding: 8px 12px
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: $white
+            &::placeholder
+                color: #ffffff40
+        & button
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 48px
+            background: #4EB012
+            border-radius: 10px
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: $white
+    &__form-block
+        position: relative
+        margin-bottom: 20px
+        border-radius: 10px
+    &__list
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+    &__item
+        margin-bottom: 30px
+    &__link
+        display: flex
+        align-items: center
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: $white
+        & img
+            width: 40px
+            min-width: 40px
+            height: 40px
+            margin-right: 20px

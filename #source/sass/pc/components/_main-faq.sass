@@ -1,0 +1,59 @@
+.main-faq
+    margin-bottom: 40px
+    &__title
+    &__items
+    &__item
+        display: block
+        padding: 23px
+        cursor: pointer
+        &:not(:last-of-type)
+            border-bottom: 2px solid #ffffff80
+        & input
+            display: none
+            &:checked + .faq__question
+                color: #97DC52
+                & svg
+                    transform: rotateX(180deg)
+                    & *
+                        fill: #97DC52
+            &:checked ~ .main-faq__answer
+                margin-top: 10px
+                max-height: 200px
+                overflow: auto
+    &__question
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-size: 22px
+        line-height: 120%
+        font-weight: 600
+        & span
+            transition: all 0.2s ease-in-out
+            margin-right: 20px
+        & svg
+            transition: all 0.2s ease-in-out
+            & *
+                transition: all 0.2s ease-in-out
+    &__answer
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #ffffff80
+        max-height: 0
+        overflow: hidden
+        transition: all 0.2s linear, overflow 0s 0.21s
+        scrollbar-width: thin
+        scrollbar-color: #ffffff80 transparent
+        &::-webkit-scrollbar
+            background-color: #ffffff10
+            width: 2px
+            &-thumb
+                background-color: #ffffff80
+                border-radius: 10px
+        & ol
+            padding-left: 20px
+        & ul
+            padding-left: 20px
+            & li
+                list-style: disc

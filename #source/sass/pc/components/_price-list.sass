@@ -1,0 +1,100 @@
+.price-list
+    width: 100%
+    background: rgba(0, 0, 0, 0.1)
+    border: 2px solid rgba(0, 0, 0, 0.1)
+    border-radius: 10px
+    padding: 20px
+    &__title
+        font-size: 22px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 12px
+    &__block
+        padding: 18px 0 16px
+        border-top: 2px solid #00000010
+    &__block-title
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+    &__item
+        margin-top: 10px
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+    &__item-left
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: #ffffff80
+    &__item-right
+    &__item-price
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: $white
+        display: flex
+        align-items: center
+        justify-content: flex-end
+    &__price-info
+        margin-left: 5px
+        position: relative
+        cursor: pointer
+        height: 20px
+        width: 20px
+        min-width: 20px
+        & > svg
+            width: 20px
+            height: 20px
+            & *
+                transition: all 0.2s ease-in-out
+        &:hover &-list
+            opacity: 1
+            display: block
+            transition: all 0.2s ease-in-out
+        &:hover > svg
+            & rect
+                fill: #4E5AC0
+            & path
+                fill: $white
+    &:nth-child(2) &__price-info-list
+        left: auto
+        right: 10px
+        border-radius: 10px 10px 0px 10px
+        &::after
+            right: 0
+            transform: scale(-1, 1)
+    &__price-info-list
+        position: absolute
+        bottom: calc(100% + 18px)
+        left: 10px
+        background: #7383C5
+        padding: 20px
+        width: max-content
+        max-width: 300px
+        border-radius: 10px 10px 10px 0px
+        cursor: default
+        opacity: 0
+        display: none
+        transition: all 0.2s ease-in-out
+        &::after
+            content: url('../../img/products/common/room-info-tail.svg')
+            position: absolute
+            top: 98%
+            left: 0
+        & > li
+            margin-left: 20px
+            list-style-type: disc
+            &:not(:last-child)
+                margin-bottom: 10px
+    &__price-info-title
+        font-size: 14px
+        line-height: 19px
+        font-weight: 700
+        color: $white
+    &__price-info-content
+        font-size: 12px
+        line-height: 115.5%
+        font-weight: 700
+        color: $white

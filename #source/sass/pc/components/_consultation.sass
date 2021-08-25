@@ -1,0 +1,87 @@
+.consultation
+    margin-bottom: 30px
+    &__row
+        padding: 30px
+        background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+        border-radius: 10px
+        display: flex
+        justify-content: flex-start
+        align-items: center
+    &__image
+        position: relative
+        width: 270px
+        height: 180px
+        border-radius: 10px
+        overflow: hidden
+        margin-right: 25px
+        & img
+            position: absolute
+            min-width: 100%
+            min-height: 100%
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+    &__main
+        flex-grow: 1
+    &__title
+        font-size: 30px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        margin-bottom: 30px
+    &__form
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 23px
+    &__block
+        position: relative
+        width: calc((100% - 40px) / 3)
+        border-radius: 15px
+    &__input
+        position: relative
+        z-index: 1
+        height: 48px
+        width: 100%
+        padding: 8px 12px
+        background: rgba(0, 0, 0, 0.2)
+        border-radius: 15px
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: $white
+        &::placeholder
+            color: #ffffff40
+    &__submit
+        width: calc((100% - 40px) / 3)
+        height: 48px
+        display: flex
+        justify-content: center
+        align-items: center
+        background: #4EB012
+        border-radius: 10px
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+        transition: all 0.2s ease-in-out
+        &:hover
+            background: #97DC52
+            box-shadow: 0px 0px 5px #97DC52
+    &__phones
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+    &__phone
+        width: calc((100% - 40px) / 3)
+        margin-right: 20px
+    &__phone-link
+        font-size: 17px
+        line-height: 120%
+        font-weight: 700
+        color: $white
+    &__phone-content
+        font-size: 17px
+        line-height: 27px
+        font-weight: 600
+        color: #ffffff80
