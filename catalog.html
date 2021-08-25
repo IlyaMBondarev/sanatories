@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/pc/catalog.css">
-    <link rel="stylesheet" href="css/tablet/catalog.css">
-    <link rel="stylesheet" href="css/mobile/catalog.css">
+    <link rel="stylesheet" href="css/pc/style.css">
+    <link rel="stylesheet" href="css/tablet/style.css">
+    <link rel="stylesheet" href="css/mobile/style.css">
 </head>
 <body>
 <main class="page">
@@ -414,7 +414,7 @@
                             <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                         </div>
                         <div class="select__main select-main">
-                            <ul class="select__list select-list">
+                            <ul class="select__list select-list select-list-multiple">
                                 <li class="select__item select-item">Желудочно-кишечный тракт</li>
                                 <li class="select__item select-item">Опорно-двигательная система</li>
                                 <li class="select__item select-item">Сердечно-сосудистая система</li>
@@ -742,228 +742,139 @@
         </div>
     </div>
 </header>
-<nav class="nav not-mobile">
-    <ul class="nav__list container">
-        <li class="nav__item dropdown">
-            <a href="#" class="nav__link">Популярные категории</a>
-            <div class="dropdown__block">
-                <ul class="dropdown__list">
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Лучшие</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">С бассейном</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Без лечения</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Эконом</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Шведский стол</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Семейные</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Новый год</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav__item dropdown dropdown__large">
-            <a href="#" class="nav__link">Профили лечения</a>
-            <div class="dropdown__block dropdown__block-large">
-                <ul class="dropdown__list">
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Желудочно-кишечный тракт (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Опорно-двигательная система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Желчевыводящая система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Сердечно-сосудистая система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Офтальмология (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Мочеполовая система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Ожирение / похудение (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Заболевания печени (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Нервная система (81)</a></li>
-                </ul>
-                <ul class="dropdown__list">
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Урология (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Сахарный диабет (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Гинекология (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Костно-мышечная система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Пищеварительная система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Эндокринная система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Иммунная система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Аллергология (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">ЛОР (81)</a></li>
-                </ul>
-                <ul class="dropdown__list">
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Дыхательная система (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Кожные заболевания (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">SPA (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Стоматология (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Обмен веществ (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Педиатрия (81)</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Общетерапевтический (81)</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav__item dropdown">
-            <a href="#" class="nav__link">О Кисловодске</a>
-            <div class="dropdown__block">
-                <ul class="dropdown__list">
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Обзоры санаториев</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Описание курорта</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Достопримечательности</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Досуг</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Афиша</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav__item dropdown">
-            <a href="#" class="nav__link">Блог</a>
-            <div class="dropdown__block">
-                <ul class="dropdown__list">
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Памятка туриста</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Памятка туриста</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Новости</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav__item dropdown">
-            <a href="#" class="nav__link">Компания</a>
-            <div class="dropdown__block">
-                <ul class="dropdown__list">
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">О компании</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Наша команда</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Вопросы и ответы</a></li>
-                    <li class="dropdown__item"><a href="#" class="dropdown__link">Отзывы</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
-    </ul>
-</nav>
-
-<div class="burger mobile">
-    <button class="burger__close _burger-closer">
+<div class="burger">
+    <button class="burger__close mobile _burger-closer">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.18175 22.2736C1.76754 22.8593 2.71729 22.8593 3.30307 22.2736L22.395 3.18167C22.9807 2.59588 22.9807 1.64613 22.395 1.06035C21.8092 0.474561 20.8594 0.474562 20.2736 1.06035L1.18175 20.1522C0.595968 20.738 0.595968 21.6878 1.18175 22.2736Z" fill="white"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.06043 1.27355C0.474647 1.85934 0.474647 2.80908 1.06043 3.39487L20.1523 22.4868C20.7381 23.0725 21.6879 23.0725 22.2736 22.4868C22.8594 21.901 22.8594 20.9512 22.2736 20.3654L3.18175 1.27355C2.59597 0.687765 1.64622 0.687764 1.06043 1.27355Z" fill="white"/>
         </svg>
     </button>
-    <div class="burger__main">
+    <div class="burger__main container">
         <div class="burger__nav">
             <ul class="burger__nav-list">
-                <li class="burger__nav-item _burger-drop">
+                <li class="burger__nav-item _burger-drop dropdown">
                     <a href="#" class="burger__nav-link _burger-drop-btn">
                         <span>Популярные категории</span>
-                        <img src="img/icons/chevron-down-white.svg" alt="">
+                        <img class="mobile" src="img/icons/chevron-down-white.svg" alt="">
                     </a>
-                    <div class="burger__nav-drop _burger-drop-block">
-                        <ul class="burger__nav-droplist">
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Лучшие</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">С бассейном</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Без лечения</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Эконом</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Шведский стол</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Семейные</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Новый год</a></li>
+                    <div class="burger__nav-drop _burger-drop-block dropdown__block">
+                        <ul class="burger__nav-droplist dropdown__list">
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Лучшие</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">С бассейном</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Без лечения</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Эконом</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Шведский стол</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Семейные</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Новый год</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="burger__nav-item _burger-drop">
+                <li class="burger__nav-item _burger-drop dropdown dropdown__large">
                     <a href="#" class="burger__nav-link _burger-drop-btn">
                         <span>Профили лечения</span>
-                        <img src="img/icons/chevron-down-white.svg" alt="">
+                        <img class="mobile" src="img/icons/chevron-down-white.svg" alt="">
                     </a>
-                    <div class="burger__nav-drop _burger-drop-block">
-                        <ul class="burger__nav-droplist">
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Желудочно-кишечный тракт (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Опорно-двигательная система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Желчевыводящая система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Сердечно-сосудистая система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Офтальмология (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Мочеполовая система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Ожирение / похудение (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Заболевания печени (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Нервная система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Урология (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Сахарный диабет (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Гинекология (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Костно-мышечная система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Пищеварительная система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Эндокринная система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Иммунная система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Аллергология (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">ЛОР (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Дыхательная система (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Кожные заболевания (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">SPA (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Стоматология (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Обмен веществ (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Педиатрия (81)</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Общетерапевтический (81)</a></li>
+                    <div class="burger__nav-drop _burger-drop-block dropdown__block dropdown__block-large">
+                        <ul class="burger__nav-droplist dropdown__list">
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Желудочно-кишечный тракт (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Опорно-двигательная система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Желчевыводящая система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Сердечно-сосудистая система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Офтальмология (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Мочеполовая система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Ожирение / похудение (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Заболевания печени (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Нервная система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Урология (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Сахарный диабет (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Гинекология (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Костно-мышечная система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Пищеварительная система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Эндокринная система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Иммунная система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Аллергология (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">ЛОР (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Дыхательная система (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Кожные заболевания (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">SPA (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Стоматология (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Обмен веществ (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Педиатрия (81)</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Общетерапевтический (81)</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="burger__nav-item _burger-drop">
+                <li class="burger__nav-item _burger-drop dropdown">
                     <a href="#" class="burger__nav-link _burger-drop-btn">
                         <span>О Кисловодске</span>
-                        <img src="img/icons/chevron-down-white.svg" alt="">
+                        <img class="mobile" src="img/icons/chevron-down-white.svg" alt="">
                     </a>
-                    <div class="burger__nav-drop _burger-drop-block">
-                        <ul class="burger__nav-droplist">
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Обзоры санаториев</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Описание курорта</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Достопримечательности</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Досуг</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Афиша</a></li>
+                    <div class="burger__nav-drop _burger-drop-block dropdown__block">
+                        <ul class="burger__nav-droplist dropdown__list">
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Обзоры санаториев</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Описание курорта</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Достопримечательности</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Досуг</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Афиша</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="burger__nav-item _burger-drop">
+                <li class="burger__nav-item _burger-drop dropdown">
                     <a href="#" class="burger__nav-link _burger-drop-btn">
                         <span>Блог</span>
-                        <img src="img/icons/chevron-down-white.svg" alt="">
+                        <img class="mobile" src="img/icons/chevron-down-white.svg" alt="">
                     </a>
-                    <div class="burger__nav-drop _burger-drop-block">
-                        <ul class="burger__nav-droplist">
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Памятка туриста</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Памятка туриста</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Новости</a></li>
+                    <div class="burger__nav-drop _burger-drop-block dropdown__block">
+                        <ul class="burger__nav-droplist dropdown__list">
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Памятка туриста</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Памятка туриста</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Новости</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="burger__nav-item _burger-drop">
+                <li class="burger__nav-item _burger-drop dropdown">
                     <a href="#" class="burger__nav-link _burger-drop-btn">
                         <span>Компания</span>
-                        <img src="img/icons/chevron-down-white.svg" alt="">
+                        <img class="mobile" src="img/icons/chevron-down-white.svg" alt="">
                     </a>
-                    <div class="burger__nav-drop _burger-drop-block">
-                        <ul class="burger__nav-droplist">
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">О компании</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Наша команда</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Вопросы и ответы</a></li>
-                            <li class="burger__nav-dropitem"><a href="#" class="burger__nav-droplink">Отзывы</a></li>
+                    <div class="burger__nav-drop _burger-drop-block dropdown__block">
+                        <ul class="burger__nav-droplist dropdown__list">
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">О компании</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Наша команда</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Вопросы и ответы</a></li>
+                            <li class="burger__nav-dropitem dropdown__item"><a href="#" class="burger__nav-droplink dropdown__link">Отзывы</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="burger__nav-item"><a href="#" class="burger__nav-link">Контакты</a></li>
             </ul>
         </div>
-        <div class="burger__phone">
+        <div class="burger__phone mobile">
             <p class="burger__phone-title">Бесплатный по России</p>
             <p class="burger__phone-link">8 (800) 855-35-35</p>
         </div>
-        <div class="burger__phone">
+        <div class="burger__phone mobile">
             <p class="burger__phone-title">Номер в Железноводске</p>
             <p class="burger__phone-link">8 (800) 855-35-35</p>
         </div>
-        <div class="burger__social">
+        <div class="burger__social mobile">
             <a class="burger__social-link" href="#" target="_blank"><img src="img/icons/instagram.svg" alt=""></a>
             <a class="burger__social-link" href="#" target="_blank"><img src="img/icons/whatsapp.svg" alt=""></a>
             <a class="burger__social-link" href="#" target="_blank"><img src="img/icons/telegram.svg" alt=""></a>
             <a class="burger__social-link" href="#" target="_blank"><img src="img/icons/viber.svg" alt=""></a>
         </div>
-        <button class="burger__callback-btn _popup-callback-opener">Заказать звонок</button>
+        <button class="burger__callback-btn mobile _popup-callback-opener">Заказать звонок</button>
     </div>
 </div>    <section class="content">
         <section class="pick-up _labeltabs not-mobile">
             <div class="pick-up__top">
                 <div class="pick-up__tabs container">
-                    <input class="_labeltabs-input" id="pickuptab0" type="radio" name="main-pick-up" checked>
+                    <input class="_labeltabs-input" id="pickuptab0" type="radio" name="main-pick-up-pc" checked>
                     <label class="pick-up__tab" for="pickuptab0">
                         <img src="img/icons/search.svg" alt="">
                         <span>Найти самому</span>
                     </label>
-                    <input class="_labeltabs-input" id="pickuptab1" type="radio" name="main-pick-up">
+                    <input class="_labeltabs-input" id="pickuptab1" type="radio" name="main-pick-up-pc">
                     <label class="pick-up__tab" for="pickuptab1">
                         <img src="img/icons/list.svg" alt="">
                         <span>Заказать подбор</span>
@@ -1007,7 +918,7 @@
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-main">
-                                                <ul class="select__list select-list">
+                                                <ul class="select__list select-list select-list-multiple">
                                                     <li class="select__item select-item">Желудочно-кишечный тракт</li>
                                                     <li class="select__item select-item">Опорно-двигательная система</li>
                                                     <li class="select__item select-item">Сердечно-сосудистая система</li>
@@ -1231,12 +1142,12 @@
         <section class="pick-up _labeltabs mobile">
             <div class="pick-up__top">
                 <div class="pick-up__tabs">
-                    <input class="_labeltabs-input" id="pickuptab2" type="radio" name="main-pick-up" checked>
+                    <input class="_labeltabs-input" id="pickuptab2" type="radio" name="main-pick-up-mobile" checked>
                     <label class="pick-up__tab" for="pickuptab2">
                         <img src="img/icons/search.svg" alt="">
                         <span>Найти самому</span>
                     </label>
-                    <input class="_labeltabs-input" id="pickuptab3" type="radio" name="main-pick-up">
+                    <input class="_labeltabs-input" id="pickuptab3" type="radio" name="main-pick-up-mobile">
                     <label class="pick-up__tab" for="pickuptab3">
                         <img src="img/icons/list.svg" alt="">
                         <span>Заказать подбор</span>
@@ -1283,13 +1194,12 @@
                     <div class="filters__block">
                         <div class="filters__select select">
                             <div class="select__block select-block">
-                                <span class="select__current select-current">Не выбрано</span>
-                                <input class="select__current-input select-current-input" name="medical" type="text" value="Не выбрано">
+                                <span class="select__current select-current">Ничего не выбрано</span>
+                                <input class="select__current-input select-current-input" name="medical" type="text" value="">
                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                             </div>
                             <div class="select__main select-main">
-                                <ul class="select__list select-list">
-                                    <li class="select__item select-item active">Не выбрано</li>
+                                <ul class="select__list select-list select-list-multiple">
                                     <li class="select__item select-item">Заболевание</li>
                                     <li class="select__item select-item">Сердечно-сосудистые заболевания</li>
                                     <li class="select__item select-item">Заболевание</li>
@@ -1967,5 +1877,5 @@
         </div>
     </div>
 </footer></main>
-<script src="js/catalog.js"></script></body>
+<script src="js/app.js"></script></body>
 </html>
