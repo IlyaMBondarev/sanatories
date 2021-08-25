@@ -1,0 +1,72 @@
+@media screen and ( max-width: 1230px )
+    .product-chosen
+        display: block
+        background: #404A9B
+        &__back
+            padding: 12px 15px
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            & svg, & img
+                margin-right: 12px
+        &__block
+            padding: 12px 15px
+            border-top: 1px solid #ffffff10
+            &_hor
+                display: flex
+                justify-content: space-between
+                align-items: flex-end
+        &__left
+            flex-grow: 1
+        &__title
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: #ffffff80
+            margin-bottom: 15px
+        &__content
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: #ffffff80
+            & span
+                white-space: nowrap
+            &_important
+                color: #FFCD4B
+                margin-bottom: 5px
+        &__edit
+            position: relative
+            flex: 0 0 48px
+            height: 48px
+            display: flex
+            justify-content: center
+            align-items: center
+            background: #ffffff10
+            border-radius: 10px
+            margin-left: 20px
+            &::before
+                content: ''
+                position: absolute
+                left: -15px
+                top: 8px
+                height: 32px
+                width: 1px
+                background: #ffffff10
+        &__price
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #ffffff80
+            &:not(:last-child)
+                margin-bottom: 5px
+            & span.price
+                font-size: 22px
+                line-height: 27px
+                font-weight: 700
+                color: $white
+            & span.white
+                color: $white

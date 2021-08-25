@@ -1,0 +1,157 @@
+@media screen and ( max-width: 1230px )
+    .footer-message
+        background: #404A9B
+        &__row
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 15px 0 15px
+        &__left
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__image
+        &__block
+            margin-left: 20px
+        &__title
+            font-size: 20px
+            line-height: 120%
+            font-weight: 700
+            margin-bottom: 10px
+        &__content
+            font-size: 14px
+            font-weight: 600
+            color: #ffffff80
+        &__right
+            position: relative
+            width: 360px
+            min-width: 360px
+            height: 40px
+            border-radius: 10px
+        &__form-block
+            position: relative
+            z-index: 1
+            height: 100%
+            width: 100%
+            border-radius: 10px
+            & input
+                position: relative
+                z-index: 1
+                display: block
+                width: 100%
+                height: 100%
+                font-size: 14px
+                line-height: 120%
+                font-weight: 700
+                color: $white
+                padding: 5px 160px 5px 10px
+                background: rgba(0, 0, 0, 0.2)
+                border-radius: 10px
+                &:placeholder
+                    color: #ffffff40
+        &__right button
+                position: absolute
+                z-index: 2
+                top: 0
+                right: 0
+                height: 100%
+                width: 150px
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 14px
+                font-weight: 600
+                color: $white
+                background: #6487EB
+                border-radius: 10px
+                transition: background 0.2s ease-in-out
+                &:hover
+                    background: #8DAAFE
+
+    .footer
+        background: #323967
+        &__row
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            padding: 20px 0 20px
+        &__left
+            flex-grow: 1
+            margin-right: 20px
+        &__top
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-wrap: wrap
+            margin-bottom: 20px
+        &__phone
+            margin-bottom: 20px
+            margin-right: 5px
+        &__phone-title
+            font-size: 14px
+            line-height: 16px
+            font-weight: 600
+            color: #ffffff80
+            margin-bottom: 5px
+        &__phone-link
+            font-size: 20px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+        &__callback-btn
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: $white
+            padding: 10px 22px
+            background: #4EB012
+            border-radius: 10px
+            white-space: nowrap
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: #97DC52
+                box-shadow: 0px 0px 5px #97DC52
+        &__social
+        &__social-title
+            font-size: 14px
+            line-height: 20px
+            font-weight: 600
+            color: #ffffff80
+            margin-bottom: 10px
+        &__social-links
+            display: flex
+            justify-content: flex-start
+            align-items: center
+        &__social-link
+            width: 20px
+            min-width: 20px
+            height: 20px
+            &:not(:last-of-type)
+                margin-right: 30px
+            & img
+                width: 100%
+                height: 100%
+                object-fit: contain
+        &__right
+            width: 222px
+            min-width: 222px
+            border-left: 2px solid #ffffff10
+            padding-left: 20px
+        &__list
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-wrap: wrap
+            padding-top: 5px
+            padding-bottom: 15px
+        &__item
+            min-width: 200px
+            margin-bottom: 5px
+        &__link
+            font-size: 14px
+            line-height: 20px
+            font-weight: 600
+            color: #ffffff85
+            transition: color 0.2s ease-in-out
+            &:hover
+                color: $white

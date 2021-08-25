@@ -1,0 +1,92 @@
+@media screen and ( max-width: 1230px )
+    .interesting
+        &__title
+        &__items
+            position: relative
+        &__item
+            width: 340px
+            max-width: 85vw
+            background: #4E5AC0
+            border-radius: 10px
+            overflow: hidden
+        &__item-image
+            position: relative
+            height: 200px
+            width: 100%
+            margin-bottom: 20px
+            overflow: hidden
+            display: flex
+            justify-content: center
+            align-items: center
+            & img
+                height: 100%
+                width: 100%
+                object-fit: cover
+            & span
+                position: absolute
+                z-index: 2
+                bottom: 5px
+                left: 10px
+                display: inline-block
+                padding: 4px 10px
+                font-size: 14px
+                line-height: 20px
+                font-weight: 600
+                color: $white
+                border-radius: 5px
+                background: #4F75FC
+                &.popular
+                    background: #D92C4B
+                &.important
+                    background: #E3871B
+                &.econom
+                    background: #68A41D
+                &.travel
+                    background: #6E51D9
+                &.note
+                    background: #4F75FC
+        &__item-title
+            display: block
+            font-size: 22px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            padding: 0 20px
+            margin-bottom: 10px
+        &__item-bottom
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 0 20px
+            margin-bottom: 20px
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+        &__arrow
+            display: none
+        &__links
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin-top: 20px
+        &__link
+            max-width: 340px
+            min-width: auto
+            width: 95%
+            height: 48px
+            display: flex
+            justify-content: center
+            align-items: center
+            background: #6487EB
+            border-radius: 10px
+            font-size: 17px
+            font-weight: 600
+            color: $white
+            margin-bottom: 15px
+            transition: background 0.2s ease-in-out
+            &:hover
+                background: #8DAAFE
+            &:not(:first-child)
+                margin-left: 0

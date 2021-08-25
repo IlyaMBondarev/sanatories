@@ -1,0 +1,41 @@
+@media screen and ( max-width: 1230px )
+    .product-nav
+        position: relative
+        z-index: 50
+        padding-top: 0
+        background: #373F80
+        border-bottom: 2px solid #ffffff10
+        margin-left: -10px
+        margin-right: -10px
+        padding-left: 10px
+        padding-right: 10px
+        border-radius: 10px 10px 0 0
+        &__list
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__item
+        &__link
+            display: block
+            position: relative
+            padding: 10px
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #ffffff80
+            transition: all 0.2s ease-in-out
+            &::after
+                content: ''
+                position: absolute
+                top: calc(100% - 1px)
+                left: 0
+                height: 3px
+                width: 100%
+                background: #97DC52
+                opacity: 0
+                transition: all 0.2s ease-in-out
+            &:hover,
+            &.active
+                color: #97DC52
+                &::after
+                    opacity: 1

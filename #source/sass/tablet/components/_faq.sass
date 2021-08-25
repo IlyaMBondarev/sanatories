@@ -1,0 +1,61 @@
+@media screen and ( max-width: 1230px )
+    .faq
+        &__title
+        &__items
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: flex-start
+        &__item
+            width: 80%
+            background: #00000020
+            padding: 20px
+            border-radius: 10px
+            &:not(:last-child)
+                margin-bottom: 40px
+            &:nth-child(2n)
+                align-self: flex-end
+                text-align: right
+        &__question
+            font-size: 22px
+            line-height: 27px
+            font-weight: 700
+            color: $white
+            margin-bottom: 15px
+        &__answer
+            text-align: justify
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #ffffff80
+            & a
+                color: $white
+                text-decoration: underline
+                transition: all 0.3s ease-in-out
+                &:hover
+                    color: #ffffff80
+                    text-decoration: underline
+            & p
+                margin-bottom: 10px
+            & strong
+                color: $white
+            & ul
+                padding: 10px 0 10px 20px
+                & li
+                    list-style: disc
+                    padding-bottom: 10px
+            & ol
+                padding: 10px 0 10px 20px
+                & li
+                    list-style: initial
+                    padding-bottom: 10px
+
+@media screen and ( max-width: 1023px )
+    .faq
+        &__item
+            width: 100%
+            &:not(:last-child)
+                margin-bottom: 30px
+            &:nth-child(2n)
+                align-self: flex-start
+                text-align: left

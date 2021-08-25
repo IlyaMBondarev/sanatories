@@ -1,0 +1,270 @@
+@media screen and ( max-width: 1230px )
+    .catalog-main
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        &__aside
+            display: none
+        &__main
+            width: 100%
+            max-width: 100%
+            min-width: 100%
+            margin-bottom: 20px
+        &__top
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 20px
+        &__title
+            margin-bottom: 0
+            text-align: left
+            line-height: 110%
+        &__switch-btn
+            width: 150px
+            flex: 0 0 150px
+            height: 40px
+            margin-left: 10px
+            display: flex
+            justify-content: center
+            align-items: center
+            background: #6487EB
+            border-radius: 10px
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            transition: all 0.2s ease-in-out
+            & img
+                margin-right: 10px
+            &:hover
+                background: #8DAAFE
+        &__empty
+            margin-bottom: 20px
+        &__empty-content
+            font-size: 20px
+            line-height: 27px
+            font-weight: 700
+            color: $white
+        &__sort
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            flex-wrap: wrap
+            margin-bottom: 20px
+        &__sort-content
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff60
+        &__sort-item
+            & label
+                margin-right: 20px
+                font-size: 17px
+                line-height: 27px
+                font-weight: 600
+                color: #ffffff80
+                cursor: pointer
+                transition: all 0.2s ease-in-out
+                &:hover
+                    color: #97DC52
+                    text-decoration-line: underline
+            &:first-of-type label
+                margin-left: 20px
+            & input
+                position: absolute
+                left: -100vw
+                width: 0
+                height: 0
+                opacity: 0
+                visibility: hidden
+                &:checked + label
+                    color: #97DC52
+                    text-decoration-line: underline
+        &__chosen
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            white-space: nowrap
+            margin-bottom: 20px
+            overflow-x: auto
+            scrollbar-width: thin
+            scrollbar-width: none
+            scrollbar-color: #ffffff80 transparent
+            &::-webkit-scrollbar
+                background-color: #ffffff10
+                width: 0
+                height: 0
+                &-thumb
+                    background-color: #ffffff80
+                    border-radius: 10px
+                    width: 0
+        &__chosen-item
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 4px 8px
+            background: #ffffff12
+            border: 1px solid #ffffff24
+            border-radius: 16px
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            &:not(:last-child)
+                margin-right: 15px
+            & > button
+                margin-left: 10px
+                background: transparent
+        &__consultation
+            padding: 10px
+            margin-bottom: 15px
+            background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+            border-radius: 10px
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__consultation-image
+            position: relative
+            min-height: 112px
+            min-width: 166px
+            border-radius: 10px
+            overflow: hidden
+            & img
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                width: 100%
+        &__consultation-main
+            padding: 0 10px
+        &__consultation-title
+            font-size: 22px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 10px
+        &__consultation-content
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            white-space: normal
+        &__consultation-form
+        &__consultation-block
+            position: relative
+            margin-bottom: 16px
+            border-radius: 10px
+            & input
+                position: relative
+                z-index: 1
+                display: block
+                height: 48px
+                width: 228px
+                min-width: 228px
+                border-radius: 10px
+                background: #00000020
+                padding: 8px 12px
+                font-size: 17px
+                line-height: 27px
+                font-weight: 600
+                color: $white
+        &__consultation-submit
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 48px
+            width: 228px
+            min-width: 228px
+            border-radius: 10px
+            background: #4EB012
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: #97DC52
+                box-shadow: 0px 0px 5px #97DC52
+        &__subscribe
+            position: relative
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            padding: 25px 25px 20px 25px
+            background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+            border-radius: 10px
+            &::before
+                content: url('../../img/consultation/paper-plane.svg')
+                position: absolute
+                bottom: 0
+                right: 40px
+        &__subscribe-image
+            position: relative
+            margin-right: 20px
+        &__subscribe-main
+            position: relative
+        &__subscribe-title
+            font-size: 22px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 10px
+        &__subscribe-content
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            margin-bottom: 10px
+        &__subscribe-button
+            padding: 10px 32px
+            background: $white
+            border-radius: 10px
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #3D92F5
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: #97DC52
+                box-shadow: 0px 0px 5px #97DC52
+                color: #FFFFFF
+        &__settings-opener
+            position: fixed
+            z-index: 499
+            left: 50%
+            bottom: 30px
+            transform: translateX(-50%)
+            width: 200px
+            height: 48px
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            border-radius: 10px
+            background: #4EB012
+            transition: all 0.2s ease-in-out
+            & img
+                margin-right: 10px
+            &:hover
+                background: #97DC52
+                box-shadow: 0px 0px 5px #97DC52
+        &__more
+            margin: 20px auto 0
+            width: 100%
+            max-width: 340px
+            height: 48px
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: $white
+            background: #6487EB
+            border-radius: 10px
+            transition: background 0.3s ease-in-out
+            &:hover
+                background: #8DAAFE

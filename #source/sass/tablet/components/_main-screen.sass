@@ -1,0 +1,39 @@
+@media screen and ( max-width: 1230px )
+    .main-screen
+        position: relative
+        width: 100%
+        min-height: 500px
+        height: calc(100vh - 128px)
+        &__image
+            position: absolute
+            width: 100%
+            height: calc(100% + 128px)
+            overflow: hidden
+            & img
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+                min-width: 100%
+                min-height: 100%
+        &__container
+            position: relative
+            z-index: 5
+        &__slide-down
+            position: absolute
+            z-index: 6
+            bottom: 45px
+            left: 50%
+            transform: translateX(-50%)
+            height: 40px
+            width: 40px
+            display: flex
+            justify-content: center
+            align-items: center
+            border: 2px solid $white
+            border-radius: 50%
+            background: transparent
+            transition: all 0.2s ease-in-out
+            &:hover
+                transform: translateX(-50%) translateY(-5px)
+                background: #ffffff40

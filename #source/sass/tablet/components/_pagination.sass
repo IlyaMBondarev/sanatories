@@ -1,0 +1,25 @@
+@media screen and ( max-width: 1230px )
+    .pagination
+        margin: 30px 0 0
+        display: flex
+        justify-content: center
+        align-items: center
+        &__link
+            min-width: 32px
+            height: 32px
+            display: flex
+            justify-content: center
+            align-items: center
+            margin: 0 2px
+            font-size: 14px
+            font-weight: 600
+            color: $white
+            border-radius: 5px
+            transition: all 0.2s ease-in-out
+            &:not(.active, .disabled, .inactive):hover
+                background: rgba(255, 255, 255, 0.1)
+            &.active
+                background: #7383C5
+            &.disabled
+                cursor: default
+                opacity: 0.1

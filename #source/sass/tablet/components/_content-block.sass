@@ -1,0 +1,182 @@
+@media screen and ( max-width: 1230px )
+    .content-block
+        & h1
+            font-size: 40px
+            line-height: 50px
+            font-weight: 700
+            color: $white
+            margin-bottom: 20px
+        & h2
+            font-size: 30px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 20px
+        & h3
+            font-size: 22px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 10px
+        & h4, & h5, & h6
+            font-size: 22px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            margin-bottom: 10px
+        & p
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            margin-bottom: 10px
+        & p.small
+            font-size: 12px
+            line-height: 14px
+        & > p
+            margin-bottom: 20px
+        & .float
+            margin-bottom: 20px
+        & .float img
+            float: left
+            width: 300px
+            height: 300px
+            object-fit: contain
+            object-position: top center
+            margin-right: 20px
+            margin-bottom: 20px
+        & .float p
+            margin-bottom: 20px
+        & .float + *
+            clear: both
+        & img
+            border-radius: 10px
+        & > img
+            display: block
+            max-width: 100%
+            margin: 20px auto
+        & strong
+            font-weight: 700
+            color: $white
+        & ul
+            padding: 0 0 10px 30px
+            & li
+                padding-left: 10px
+                padding-bottom: 10px
+                list-style-type: disc
+                font-size: 17px
+                line-height: 120%
+                font-weight: 600
+                color: #ffffff80
+        & ol
+            padding: 0 0 10px 20px
+            & li
+                padding-left: 10px
+                padding-bottom: 10px
+                font-size: 17px
+                line-height: 120%
+                font-weight: 600
+                color: #ffffff80
+        & a
+            color: #4EB012
+            text-decoration: underline
+            transition: all 0.3s ease-in-out
+            &:hover
+                color: $white
+                text-decoration: underline
+        & .important
+            background: #6E51D9
+            border-radius: 10px
+            padding: 15px
+            margin: 15px 0
+            &-info
+                display: flex
+                justify-content: flex-start
+                align-items: center
+            & .info
+                position: relative
+                display: flex
+                align-items: center
+                margin-left: 5px
+                cursor: pointer
+            & .info-block
+                display: block
+                position: absolute
+                white-space: nowrap
+                bottom: calc(100% + 18px)
+                left: 50%
+                background: #7383C5
+                border-radius: 10px 10px 10px 0px
+                padding: 15px
+                transition: all 0.2s ease-in-out
+                opacity: 0
+                display: none
+                cursor: initial
+                &::after
+                    content: url('../../img/products/common/room-info-tail.svg')
+                    position: absolute
+                    top: 95%
+                    left: 0
+                & span
+                    display: block
+                    font-size: 12px
+                    line-height: 14px
+                    font-size: 700
+                    color: $white
+                    & strong
+                        font-size: 14px
+                        line-height: 20px
+            & .info:hover .info-block
+                opacity: 1
+                display: block
+        & .gallery
+            margin-bottom: 20px
+        & .gallery__big
+            margin-bottom: 20px
+            & .gallery__item
+                position: relative
+                display: block
+                height: 47vw
+                & img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    border-radius: 10px
+                & span
+                    position: absolute
+                    left: 0
+                    top: 0
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 87.15%, #000000 100%)
+                    border-radius: 10px
+                    display: flex
+                    align-items: flex-end
+                    padding: 20px
+                    color: $white
+        & .gallery__items
+            padding-bottom: 10px
+            overflow-x: auto
+            scrollbar-width: 4px
+            scrollbar-color: #ffffff80
+            display: flex
+            &::-webkit-scrollbar
+                width: 0
+                height: 4px
+                background: #ffffff10
+                &-thumb
+                    width: 0
+                    height: 4px
+                    background: #ffffff80
+                    border-radius: 4px
+            & .gallery__item
+                position: relative
+                display: block
+                flex: 0 0 calc((100% - 80px)/5)
+                &:not(:last-child)
+                    margin-right: 20px
+                & img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+                    border-radius: 10px

@@ -1,0 +1,55 @@
+@media screen and ( max-width: 1230px )
+    .popup-thanks
+        position: absolute
+        left: 50%
+        top: 50%
+        width: calc(90vw - 30px)
+        padding: 40px 30px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+        border-radius: 10px
+        opacity: 0
+        transform: translate(-50%, -50%) translateX(100vw)
+        &.active
+            transform: translate(-50%, -50%) translateX(0)
+            opacity: 1
+        &__close
+            position: absolute
+            z-index: 1
+            top: 0
+            left: calc(100% + 10px)
+            height: 32px
+            width: 32px
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            background: rgba(255, 255, 255, 0.3)
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: rgba(255, 255, 255, 0.6)
+        &__icon
+            width: 100px
+            height: 100px
+            margin-bottom: 30px
+            & img
+                width: 100%
+                height: 100%
+                object-fit: contain
+                object-position: center
+        &__title
+            font-size: 26px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            text-align: center
+            margin-bottom: 15px
+        &__content
+            font-size: 20px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            text-align: center
