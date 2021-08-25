@@ -1,0 +1,94 @@
+@media screen and ( max-width: 767px )
+    .product-banner
+        margin-top: 20px
+        margin-bottom: 20px
+        border-radius: 10px
+        overflow: hidden
+        height: auto
+        width: 100%
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        &-blue
+            background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+        &-black
+            background: linear-gradient(274.32deg, #51486C 0%, #52594A 0.01%, #050606 102.13%)
+        &__main
+            max-width: 100%
+            padding: 20px 15px 200px 15px
+            position: relative
+            z-index: 2
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: flex-start
+        &__title
+            font-size: 30px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 15px
+        &__subtitle
+            font-size: 22px
+            line-height: 27px
+            font-weight: 600
+            color: $white
+        &__content
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+        &__submit
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 0
+            height: 48px
+            width: 100%
+            max-width: 340px
+            margin-top: 12px
+            margin-bottom: 10px
+            border-radius: 10px
+            background: #E45E12
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            transition: all 0.2s ease-in-out
+            &:hover
+                box-shadow: 0px 0px 7px #E45E12
+        &__image
+            position: absolute
+            right: 0
+            top: auto
+            bottom: 0
+            width: 100%
+            min-height: auto
+            max-height: 250px
+            margin-top: -30px
+            & img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                &.contain
+                    height: 250px
+                    object-fit: contain
+                    object-position: right bottom
+        &__more
+            position: absolute
+            z-index: 1
+            bottom: 10px
+            right: 50%
+            transform: translateX(50%)
+            white-space: nowrap
+            background: #6487EB
+            border-radius: 10px
+            padding: 4px 7px
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: #8DAAFE

@@ -1,0 +1,284 @@
+@media screen and ( max-width: 767px )
+    .catalog-main
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        &__aside
+            display: none
+        &__main
+            width: 100%
+            max-width: 100%
+            min-width: 100%
+            padding: 20px 15px
+            margin-bottom: 0
+        &__top
+            display: none
+        &__title
+            margin-bottom: 0
+            text-align: left
+            line-height: 110%
+        &__switch-btn
+            width: 150px
+            flex: 0 0 150px
+            height: 40px
+            margin-left: 10px
+            display: flex
+            justify-content: center
+            align-items: center
+            background: #6487EB
+            border-radius: 10px
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            transition: all 0.2s ease-in-out
+            & img
+                margin-right: 10px
+            &:hover
+                background: #8DAAFE
+        &__empty
+            margin-bottom: 20px
+        &__empty-content
+            font-size: 20px
+            line-height: 27px
+            font-weight: 700
+            color: $white
+        &__sort
+            display: none
+        &__sort-content
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff60
+        &__sort-item
+            & label
+                margin-right: 20px
+                font-size: 17px
+                line-height: 27px
+                font-weight: 600
+                color: #ffffff80
+                cursor: pointer
+                transition: all 0.2s ease-in-out
+                &:hover
+                    color: #97DC52
+                    text-decoration-line: underline
+            &:first-of-type label
+                margin-left: 20px
+            & input
+                position: absolute
+                left: -100vw
+                width: 0
+                height: 0
+                opacity: 0
+                visibility: hidden
+                &:checked + label
+                    color: #97DC52
+                    text-decoration-line: underline
+        &__chosen
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            white-space: nowrap
+            margin-bottom: 20px
+            overflow-x: auto
+            scrollbar-width: thin
+            scrollbar-width: none
+            scrollbar-color: #ffffff80 transparent
+            margin-right: -15px
+            &::-webkit-scrollbar
+                background-color: #ffffff10
+                width: 0
+                height: 0
+                &-thumb
+                    background-color: #ffffff80
+                    border-radius: 10px
+                    width: 0
+        &__chosen-item
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 4px 8px
+            background: #ffffff12
+            border: 1px solid #ffffff24
+            border-radius: 16px
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            &:not(:last-child)
+                margin-right: 15px
+            & > button
+                margin-left: 10px
+                background: transparent
+        &__consultation
+            padding: 20px
+            margin-bottom: 20px
+            background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+            border-radius: 10px
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
+        &__consultation-image
+            position: relative
+            min-height: auto
+            min-width: auto
+            width: 300px
+            max-width: 100%
+            height: 169px
+            border-radius: 10px
+            overflow: hidden
+            margin-bottom: 15px
+            & img
+                position: static
+                top: 0
+                left: 0
+                transform: none
+                width: 100%
+                height: 100%
+                object-fit: cover
+                border-radius: 10px
+        &__consultation-main
+            padding: 0
+        &__consultation-title
+            font-size: 22px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 15px
+        &__consultation-content
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #ffffff80
+            white-space: normal
+            margin-bottom: 15px
+        &__consultation-form
+            width: 100%
+        &__consultation-block
+            position: relative
+            margin: 0 auto 16px
+            border-radius: 10px
+            width: 100%
+            min-width: auto
+            max-width: 300px
+            & input
+                position: relative
+                z-index: 1
+                display: block
+                height: 48px
+                width: 100%
+                min-width: auto
+                border-radius: 10px
+                background: #00000020
+                padding: 8px 12px
+                font-size: 17px
+                line-height: 27px
+                font-weight: 600
+                color: $white
+        &__consultation-submit
+            display: flex
+            justify-content: center
+            align-items: center
+            margin: 0 auto
+            height: 48px
+            width: 100%
+            min-width: auto
+            max-width: 300px
+            border-radius: 10px
+            background: #4EB012
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: #97DC52
+                box-shadow: 0px 0px 5px #97DC52
+        &__subscribe
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
+            padding: 25px 20px 80px
+            background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+            border-radius: 10px
+            overflow: hidden
+            &::before
+                content: url('../../img/consultation/paper-plane.svg')
+                position: absolute
+                bottom: 0
+                right: 30px
+        &__subscribe-image
+            position: relative
+            margin-right: 0
+            margin-bottom: 22px
+            margin-left: 50px
+        &__subscribe-main
+            position: relative
+        &__subscribe-title
+            font-size: 22px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            text-align: center
+            margin-bottom: 10px
+        &__subscribe-content
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #ffffff80
+            text-align: center
+            margin-bottom: 22px
+        &__subscribe-button
+            display: block
+            margin: 0 auto
+            padding: 13px 30px
+            background: $white
+            border-radius: 10px
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #3D92F5
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: #97DC52
+                box-shadow: 0px 0px 5px #97DC52
+                color: #FFFFFF
+        &__settings-opener
+            position: fixed
+            z-index: 499
+            left: 50%
+            bottom: 30px
+            transform: translateX(-50%)
+            width: 200px
+            height: 48px
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            border-radius: 10px
+            background: #4EB012
+            transition: all 0.2s ease-in-out
+            & img
+                margin-right: 10px
+            &:hover
+                background: #97DC52
+                box-shadow: 0px 0px 5px #97DC52
+        &__more
+            display: block
+            width: auto
+            max-width: none
+            height: auto
+            margin: 20px auto 0
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #97DC52
+            background: transparent
+            &:hover
+                background: transparent

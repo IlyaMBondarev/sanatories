@@ -1,0 +1,55 @@
+@media screen and ( max-width: 767px )
+    .main-banner
+        position: relative
+        margin: 0 0 40px
+        overflow: hidden
+        background: linear-gradient(104.27deg, #6487EB 0%, #4B71F4 94.33%)
+        &__images
+        &__image
+            position: absolute
+            &-flower-small
+                bottom: auto
+                top: 50px
+                right: 50px
+                left: auto
+            &-flower-big
+                bottom: auto
+                top: 0
+                left: 0
+            &-baggage
+                bottom: 0px
+                right: 50%
+                transform: translateX(50%)
+        &__main
+            position: relative
+            z-index: 1
+            padding: 128px 15px 230px
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__content
+            font-size: 30px
+            line-height: 120%
+            font-weight: 700
+            text-align: center
+            & span
+                display: inline
+        &__button
+            width: 100%
+            max-width: 340px
+            height: 48px
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #fafafa
+            padding: 0
+            margin-top: 25px
+            background: #4EB012
+            border-radius: 10px
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: #97DC52
+                box-shadow: 0px 0px 5px #97DC52

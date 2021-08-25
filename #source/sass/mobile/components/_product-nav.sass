@@ -1,0 +1,52 @@
+@media screen and ( max-width: 767px )
+    .product-nav
+        position: fixed
+        left: 0
+        top: auto !important
+        bottom: 0
+        width: 100%
+        z-index: 400
+        padding-top: 0
+        padding-left: 0
+        padding-right: 0
+        margin-left: 0
+        margin-right: 0
+        border-radius: 0
+        background: #373F80
+        border-bottom: none
+        &__list
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__item
+            flex: 1 1 0
+        &__link
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            position: relative
+            padding: 10px 2px
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #ffffff80
+            transition: all 0.2s ease-in-out
+            & img
+                margin-bottom: 5px
+                width: 24px
+                height: 24px
+                object-fit: contain
+            &::after
+                content: none
+            &:hover,
+            &.active
+                color: #ffffff80
+
+@media screen and ( max-width: 400px )
+    .product-nav
+        &__link
+            font-size: 14px
+            & img
+                width: 20px
+                height: 20px

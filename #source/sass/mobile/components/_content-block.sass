@@ -1,0 +1,217 @@
+@media screen and ( max-width: 767px )
+    .content-block
+        background: #373F80
+        padding: 20px 10px
+        border-radius: 10px
+        margin-top: 20px
+        margin-bottom: 20px
+        & h1
+            font-size: 30px
+            line-height: 40px
+            font-weight: 700
+            color: $white
+            margin-bottom: 20px
+        & h2
+            font-size: 30px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 20px
+        & h3
+            font-size: 22px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 10px
+        & h4, & h5, & h6
+            font-size: 22px
+            line-height: 120%
+            font-weight: 600
+            color: $white
+            margin-bottom: 10px
+        & p
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            margin-bottom: 10px
+        & p.small
+            font-size: 12px
+            line-height: 14px
+        & > p
+            margin-bottom: 20px
+        & .float
+            margin-bottom: 20px
+        & .float img
+            float: left
+            width: 200px
+            height: 200px
+            object-fit: contain
+            object-position: top center
+            margin-right: 15px
+            margin-bottom: 15px
+        & .float p
+            margin-bottom: 20px
+        & .float + *
+            clear: both
+        & img
+            border-radius: 10px
+        & > img
+            display: block
+            max-width: 100%
+            margin: 20px auto
+        & strong
+            font-weight: 700
+            color: $white
+        & ul
+            padding: 0 0 10px 20px
+            & li
+                padding-left: 10px
+                padding-bottom: 10px
+                list-style-type: disc
+                font-size: 17px
+                line-height: 120%
+                font-weight: 600
+                color: #ffffff80
+        & ol
+            padding: 0 0 10px 20px
+            & li
+                padding-left: 10px
+                padding-bottom: 10px
+                font-size: 17px
+                line-height: 120%
+                font-weight: 600
+                color: #ffffff80
+        & a
+            color: #4EB012
+            text-decoration: underline
+            transition: all 0.3s ease-in-out
+            &:hover
+                color: $white
+                text-decoration: underline
+        & .important
+            background: #6E51D9
+            border-radius: 10px
+            padding: 15px
+            margin: 15px 0
+            &-info
+                display: flex
+                justify-content: flex-start
+                align-items: center
+            & .info
+                position: relative
+                display: flex
+                align-items: center
+                margin-left: 5px
+                cursor: pointer
+            & .info-block
+                display: block
+                position: absolute
+                white-space: nowrap
+                bottom: calc(100% + 18px)
+                left: 50%
+                background: #7383C5
+                border-radius: 10px 10px 10px 0px
+                padding: 15px
+                transition: all 0.2s ease-in-out
+                opacity: 0
+                display: none
+                cursor: initial
+                &::after
+                    content: url('../../img/products/common/room-info-tail.svg')
+                    position: absolute
+                    top: 95%
+                    left: 0
+                & span
+                    display: block
+                    font-size: 12px
+                    line-height: 14px
+                    font-size: 700
+                    color: $white
+                    & strong
+                        font-size: 14px
+                        line-height: 20px
+            & .info:hover .info-block
+                opacity: 1
+                display: block
+        & .gallery
+            margin-bottom: 15px
+        & .gallery__big
+            margin-bottom: 15px
+            & .gallery__item
+                position: relative
+                display: block
+                height: 50vw
+                & img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    border-radius: 10px
+                & span
+                    position: absolute
+                    left: 0
+                    top: 0
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 87.15%, #000000 100%)
+                    border-radius: 10px
+                    display: flex
+                    align-items: flex-end
+                    padding: 10px
+                    color: $white
+        & .gallery__items
+            padding-bottom: 10px
+            overflow-x: auto
+            scrollbar-width: 2px
+            scrollbar-color: #ffffff80
+            display: flex
+            &::-webkit-scrollbar
+                width: 0
+                height: 2px
+                background: #ffffff10
+                &-thumb
+                    width: 0
+                    height: 2px
+                    background: #ffffff80
+                    border-radius: 2px
+            & .gallery__item
+                position: relative
+                display: block
+                flex: 0 0 calc((100% - 30px)/3)
+                &:not(:last-child)
+                    margin-right: 15px
+                & img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+                    border-radius: 10px
+
+@media screen and ( max-width: 500px )
+    .content-block
+        & p
+            font-size: 14px
+            line-height: 20px
+        & .float img
+            width: 45vw
+            height: 45vw
+        & ul
+            padding-left: 20px
+            & li
+                padding-left: 0
+                font-size: 14px
+                line-height: 20px
+        & ol
+            padding-left: 20px
+            & li
+                padding-left: 0
+                font-size: 14px
+                line-height: 20px
+        & .gallery
+            margin-bottom: 15px
+        & .gallery__big
+            margin-bottom: 10px
+        & .gallery__items
+            & .gallery__item
+                flex: 0 0 calc((100% - 20px)/3)
+                &:not(:last-child)
+                    margin-right: 10px

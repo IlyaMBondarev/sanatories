@@ -1,0 +1,102 @@
+@media screen and ( max-width: 767px )
+    .popup-procedure
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 95vw
+        height: max-content
+        max-height: 90vh
+        padding: 40px 10px 10px
+        background: #404A9B
+        border-radius: 10px
+        opacity: 0
+        transform: translateX(100vw)
+        &.active
+            transform: translateX(0)
+            opacity: 1
+        &__close
+            position: absolute
+            z-index: 1
+            top: 10px
+            left: auto
+            right: 10px
+            height: 32px
+            width: 32px
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            background: rgba(255, 255, 255, 0.3)
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: rgba(255, 255, 255, 0.6)
+        &__main
+            max-height: calc(90vh - 50px)
+            padding: 10px 5px
+            overflow-x: visible
+            overflow-y: auto
+            scrollbar-width: 4px
+            scrollbar-color: $white
+            &::-webkit-scrollbar
+                width: 4px
+                height: 0
+                background: transparent
+                &-thumb
+                    width: 4px
+                    height: 0
+                    background: $white
+                    border-radius: 4px
+        &__top
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            height: auto
+            margin-bottom: 10px
+        &__big
+            height: 100%
+            flex-grow: 1
+            & > img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                border-radius: 10px
+        &__list
+            flex: 0 0 auto
+            padding: 10px 0
+            max-height: none
+            overflow-y: visible
+            overflow-x: auto
+            scrollbar-width: 10px
+            scrollbar-color: #ffffff40
+            display: flex
+            &::-webkit-scrollbar
+                width: 0
+                height: 10px
+                background: #ffffff10
+                &-thumb
+                    width: 0
+                    height: 10px
+                    background: #ffffff40
+                    border-radius: 10px
+            & > img
+                width: 200px
+                height: 130px
+                object-fit: cover
+                border-radius: 10px
+                &:not(:last-child)
+                    margin-bottom: 0
+                    margin-right: 10px
+        &__title
+            font-size: 20px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 10px
+        &__content
+            font-size: 14px
+            line-height: 20px
+            font-weight: 600
+            color: #ffffff80

@@ -1,0 +1,66 @@
+@media screen and ( max-width: 767px )
+    .product-map
+        margin-bottom: 0
+        &__title
+            font-size: 30px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 10px
+        &__map
+            position: relative
+            height: 40vw
+            width: calc(100% + 30px)
+            margin: 0 -15px
+            border-radius: 0
+            overflow: hidden
+            margin-bottom: 10px
+            & > img
+                width: 100%
+                height: 100%
+                object-fit: cover
+        &__main
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: stretch
+        &__block
+            width: 100%
+            margin-right: 0
+            padding: 10px 0
+            &:not(:last-child)
+                border-bottom: 2px solid #ffffff10
+        &__block-title
+            padding: 14px 0
+            margin-bottom: 0
+            display: flex
+            justify-content: space-between
+            align-items: center
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            & img
+                margin: 0 15px
+                transition: transform 0.3s ease-in-out
+            &.active img
+                transform: rotateX(180deg)
+        &__block-list
+            max-height: 0
+            overflow: hidden
+            transition: max-height 0.3s ease-in-out
+        &__block-item
+            display: flex
+            justify-content: space-between
+            align-items: center
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #ffffff80
+            margin-bottom: 15px
+
+@media screen and ( max-width: 400px )
+    .product-map
+        &__map
+            width: calc(100% + 20px)
+            margin: 0 -10px

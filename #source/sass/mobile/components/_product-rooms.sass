@@ -1,0 +1,66 @@
+@media screen and ( max-width: 767px )
+    .product-rooms
+        margin-bottom: 30px
+        &__top
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 12px 15px
+            margin-bottom: 12px
+            background: #404A9B
+            margin: 0 -15px 20px
+        &__title
+            font-size: 30px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+            margin-bottom: 15px
+        &__top-title
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            &_important
+                color: #FFCD4B
+        &__content
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #ffffff80
+            & span
+                white-space: nowrap
+            &_important
+                color: #FFCD4B
+        &__parameters
+            background: transparent
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: #97DC52
+            white-space: nowrap
+            padding: 5px 0 5px 20px
+            border-left: 1px solid #ffffff10
+            margin-left: 5px
+        &__more
+            margin: 30px auto 0
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: #97DC52
+            background: transparent
+            & svg
+                transition: transform 0.2s
+            &:hover svg
+                transform: translateX(5px)
+
+@media screen and ( max-width: 375px )
+    .product-rooms
+        &__content
+            font-size: 14px
+            line-height: 20px
+        &__parameters
+            font-size: 14px
+            line-height: 20px

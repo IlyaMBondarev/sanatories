@@ -1,0 +1,98 @@
+@media screen and ( max-width: 767px )
+    .news
+        margin-top: 20px
+        margin-bottom: 20px
+        &__items
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: flex-start
+        &__item
+            width: 100%
+            background: #373F80
+            padding: 10px
+            border-radius: 10px
+            display: flex
+            justify-content: flex-start
+            align-items: stretch
+            &:not(:last-of-type)
+                margin-bottom: 20px
+            &:nth-child(2n)
+                align-self: flex-start
+                & > *:first-child
+                    order: initial
+                    margin-right: 10px
+                    margin-left: 0
+        &__item-image
+            flex: 0 0 150px
+            margin-right: 10px
+            & img
+                width: 100%
+                height: 100%
+                object-fit: contain
+                object-position: top center
+                border-radius: 0
+        &__item-main
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+        &__item-title
+            margin-bottom: 15px
+            & a
+                font-size: 20px
+                line-height: 120%
+                font-weight: 700
+                color: $white
+                &:hover
+                    text-decoration: underline
+        &__item-content
+            font-size: 17px
+            line-height: 120%
+            font-weight: 600
+            color: #ffffff80
+            margin-bottom: 15px
+        &__item-date
+            margin-top: auto
+            font-size: 17px
+            line-height: 120%
+            font-weight: 700
+            color: $white
+        &__more
+            display: block
+            width: auto
+            max-width: none
+            height: auto
+            margin: 0 auto
+            font-size: 17px
+            line-height: 27px
+            font-weight: 600
+            color: #97DC52
+            background: transparent
+            &:hover
+                background: transparent
+
+@media screen and ( max-width: 500px )
+    .news
+        &__item
+            flex-direction: column
+            align-items: center
+            &:nth-child(2n)
+                & > *:first-child
+                    margin-right: 0
+        &__item-image
+            margin-right: 0
+            margin-bottom: 15px
+            flex: none
+            width: 60%
+            min-width: 250px
+            border-radius: 5px
+            & img
+                border-radius: 5px
+        &__item-title
+            text-align: center
+            & a
+                text-decoration: underline
+        &__item-content
+            text-align: center
+        &__item-date
+            text-align: left
