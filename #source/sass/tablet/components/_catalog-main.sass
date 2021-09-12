@@ -45,6 +45,11 @@
             line-height: 27px
             font-weight: 700
             color: $white
+        &__empty-content-link
+            color: #ffffff80
+            text-decoration: underline
+            cursor: pointer
+            display: inline-block
         &__sort
             display: flex
             justify-content: flex-start
@@ -63,11 +68,19 @@
                 line-height: 27px
                 font-weight: 600
                 color: #ffffff80
+                display: flex
+                align-items: center
                 cursor: pointer
                 transition: all 0.2s ease-in-out
+                text-decoration-line: underline
+                text-decoration-color: transparent
+                & svg *
+                    transition: all 0.2s ease-in-out
                 &:hover
                     color: #97DC52
-                    text-decoration-line: underline
+                    text-decoration-color: #97DC52
+                &:hover svg *
+                    stroke: #97DC52
             &:first-of-type label
                 margin-left: 20px
             & input
@@ -79,7 +92,9 @@
                 visibility: hidden
                 &:checked + label
                     color: #97DC52
-                    text-decoration-line: underline
+                    text-decoration-color: #97DC52
+                    & svg *
+                        stroke: #97DC52
         &__chosen
             display: flex
             justify-content: flex-start
@@ -186,6 +201,7 @@
                 background: #97DC52
                 box-shadow: 0px 0px 5px #97DC52
         &__subscribe
+            margin-top: 20px
             position: relative
             display: flex
             justify-content: flex-start
