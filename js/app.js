@@ -792,6 +792,11 @@ if (document.querySelector('._vert-tabs')) {
     vertTabs.forEach(vertTabs => {
         let buttons = vertTabs.querySelectorAll('._vert-tabs-button');
         let contents = vertTabs.querySelectorAll('._vert-tabs-button + ._vert-tabs-content');
+
+        if (!contents.length) {
+            contents = vertTabs.querySelectorAll('._vert-tabs-content');
+        }
+
         let activeIndex = null;
 
         buttons.forEach((button, index) => {
@@ -802,13 +807,20 @@ if (document.querySelector('._vert-tabs')) {
             }
             button.addEventListener('click', () => {
                 if (activeIndex === index) {
-                    contents[activeIndex].style.maxHeight = '0';
+                    contents[activeIndex].style.maxHeight = '';
                     button.classList.remove('active');
-                    activeIndex = null;
+                    contents[activeIndex].style.overflow = '';
+                    setTimeout(() => {
+                        contents[activeIndex].style.overflow = '';
+                        activeIndex = null;
+                    }, 300)
                 } else {
                     activeIndex = index;
                     button.classList.add('active');
                     contents[activeIndex].style.maxHeight = `${contents[activeIndex].scrollHeight}px`;
+                    setTimeout(() => {
+                        contents[activeIndex].style.overflow = 'visible';
+                    }, 300)
                 }
             })
         })
@@ -902,14 +914,29 @@ if (document.querySelector('.slide-down') && document.querySelector('.slide-to')
         })
     })
 }
-if (document.querySelector('._video')) {
-    let videos = document.querySelectorAll('._video');
+if (document.querySelector('._map')) {
+    let maps = document.querySelectorAll('._map');
 
-    videos.forEach(video => {
-        video.addEventListener('click', () => {
-            if (video.classList.contains('_video')) {
-                video.innerHTML = `<iframe src="${video.dataset.linktovideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="height: 100%; width: 100%"></iframe>`;
-                video.classList.remove('_video');
+    maps.forEach(map => {
+        map.addEventListener('click', () => {
+            if (map.classList.contains('_map')) {
+                // загрузка карты по каким-то параметрам
+                map.classList.remove('_map');
+            }
+        })
+    })
+}
+if (document.querySelector('._map')) {
+    let maps = document.querySelectorAll('._map');
+
+    maps.forEach(map => {
+        map.addEventListener('click', () => {
+            if (map.classList.contains('_map')) {
+
+                // загрузка карты по каким-то параметрам
+                // TODO
+
+                map.classList.remove('_map');
             }
         })
     })
@@ -1419,6 +1446,13 @@ if (document.querySelector('.select')) {
 
         block.addEventListener('click', () => {
             select.classList.toggle('active');
+        })
+
+        document.addEventListener('popstate', (event) => {
+            if (mobile && select.classList.contains('active')) {
+                event.preventDefault();
+                select.classList.remove('active');
+            }
         })
 
         document.addEventListener('click', (event) => {
@@ -2711,6 +2745,60 @@ if (document.getElementById('popupSettingsForm')) {
             } else {
                 document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
                 document.querySelector('.popups .popup-settings').classList.remove('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
+if (document.getElementById('filtersForm')) {
+    let filtersForm = document.getElementById('filtersForm');
+
+    let requiredInputs = filtersForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    filtersForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(filtersForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
                 document.querySelector('.popups .popup-error').classList.add('active');
             }
         }

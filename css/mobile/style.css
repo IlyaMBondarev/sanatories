@@ -28,7 +28,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .mobile {
     display: none !important;
   }
@@ -1521,6 +1521,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: #ffffff;
   }
+  .catalog-main__empty-content-link {
+    color: #ffffff80;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+  }
   .catalog-main__sort {
     display: none;
   }
@@ -1536,13 +1542,25 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 27px;
     font-weight: 600;
     color: #ffffff80;
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    -webkit-text-decoration-color: transparent;
+            text-decoration-color: transparent;
+  }
+  .catalog-main__sort-item label svg * {
     transition: all 0.2s ease-in-out;
   }
   .catalog-main__sort-item label:hover {
     color: #97DC52;
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+    -webkit-text-decoration-color: #97DC52;
+            text-decoration-color: #97DC52;
+  }
+  .catalog-main__sort-item label:hover svg * {
+    stroke: #97DC52;
   }
   .catalog-main__sort-item:first-of-type label {
     margin-left: 20px;
@@ -1557,8 +1575,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   .catalog-main__sort-item input:checked + label {
     color: #97DC52;
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+    -webkit-text-decoration-color: #97DC52;
+            text-decoration-color: #97DC52;
+  }
+  .catalog-main__sort-item input:checked + label svg * {
+    stroke: #97DC52;
   }
   .catalog-main__chosen {
     display: flex;
@@ -1699,6 +1720,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0px 0px 5px #97DC52;
   }
   .catalog-main__subscribe {
+    margin-top: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1881,8 +1903,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 767px) {
   .consultation {
-    display: none;
-    margin-bottom: 30px;
+    margin: 30px;
+    width: auto;
   }
   .consultation__container {
     padding: 0;
@@ -1979,6 +2001,16 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 27px;
     font-weight: 600;
     color: #ffffff80;
+  }
+}
+@media screen and (max-width: 540px) {
+  .consultation {
+    margin: 20px 30px;
+  }
+  .consultation__form {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 767px) {
@@ -3492,7 +3524,7 @@ h1, h2, h3, h4, h5, h6 {
   .main-pick-up__items {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 290px;
     border-radius: 0px 0 10px 10px;
   }
   .main-pick-up__item {
@@ -3521,6 +3553,7 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(180.04deg, #404A9B 55.63%, #2BA8D0 115.2%), #404A9B;
     transform-origin: right;
     transform: scaleX(0);
+    overflow: hidden;
   }
   .main-pick-up__item.active {
     opacity: 1;
@@ -3634,6 +3667,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     transform: none;
     max-width: 100%;
+    max-height: 130%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -3819,7 +3853,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 767px) {
   .pagination {
-    display: none;
+    margin: 30px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pagination__link {
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+  .pagination__link:not(.active, .disabled, .inactive):hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .pagination__link.active {
+    background: #7383C5;
+  }
+  .pagination__link.disabled {
+    cursor: default;
+    opacity: 0.1;
   }
 }
 @media screen and (max-width: 767px) {
@@ -4196,7 +4256,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 48px;
   }
   .popup-parameters__submit {
-    width: 100%;
     height: 48px;
     margin-bottom: 20px;
     display: flex;
@@ -4217,6 +4276,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 500px) {
   .popup-parameters__block {
+    width: 100%;
+  }
+  .popup-parameters__submit {
     width: 100%;
   }
 }
@@ -5324,6 +5386,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: #ffffff80;
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
   .popup-settings__sort-block label::before {
     content: "";
@@ -6426,14 +6490,18 @@ h1, h2, h3, h4, h5, h6 {
   }
   .product-prices__row {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 0;
   }
   .product-prices__row-1 > .product-prices__block {
     width: 100%;
   }
   .product-prices__row-2 > .product-prices__block {
-    width: calc(50% - 5px);
+    width: 100%;
+  }
+  .product-prices__block {
+    margin-bottom: 15px;
   }
   .product-prices__block-title {
     font-size: 14px;
@@ -6538,7 +6606,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
   }
   .product-prices__center-title {
-    font-size: 30px;
+    font-size: 26px;
     line-height: 120%;
     font-weight: 700;
     color: #ffffff;
@@ -6546,7 +6614,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
   }
   .product-prices__center-content {
-    font-size: 17px;
+    font-size: 14px;
     line-height: 120%;
     font-weight: 700;
     color: #ffffff;
@@ -6668,6 +6736,7 @@ h1, h2, h3, h4, h5, h6 {
   .product-replies__audio {
     margin-top: 20px;
     margin-bottom: 20px;
+    width: 100%;
   }
   .product-replies__audio > audio {
     width: 100%;
@@ -6900,6 +6969,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: nowrap;
     max-height: 150px;
     overflow: hidden;
+    transition: all 0.3s ease-in-out;
   }
   .product-service__item {
     display: flex;
@@ -6927,6 +6997,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: #97DC52;
     background: transparent;
+  }
+  .product-service__more svg {
+    transition: transform 0.3s ease-in-out;
+  }
+  .product-service__more.active svg {
+    transform: rotateX(180deg);
   }
 }
 @media screen and (max-width: 767px) {

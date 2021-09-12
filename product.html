@@ -1404,7 +1404,7 @@
             </svg>
         </button>
         <p class="popup-parameters__title">Выберите параметры поездки:</p>
-        <form class="popup-parameters__form _pick-up-type" id="parametersProductForm" action="#">
+        <form class="popup-parameters__form" id="parametersProductForm" action="#">
             <div class="popup-parameters__block">
                 <p class="popup-parameters__block-title">Цель поездки</p>
                 <div class="popup-parameters__select select">
@@ -1415,65 +1415,9 @@
                         <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                     </div>
                     <div class="select__main select-main">
-                        <ul class="select__list select-list _pick-up-type_list">
-                            <li class="select__item select-item _pick-up-type_item active">С лечением</li>
-                            <li class="select__item select-item _pick-up-type_item">Без лечения</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="popup-parameters__block _pick-up-type_block">
-                <p class="popup-parameters__block-title">Профиль лечения</p>
-                <div class="popup-parameters__select select">
-                    <div class="select__block select-block">
-                        <span class="select__current select-current">Профиль лечения</span>
-                        <input class="select__current-input select-current-input" type="text" value="">
-                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                    </div>
-                    <div class="select__main select-main">
-                        <ul class="select__list select-list select-list-multiple">
-                            <li class="select__item select-item">Желудочно-кишечный тракт</li>
-                            <li class="select__item select-item">Опорно-двигательная система</li>
-                            <li class="select__item select-item">Сердечно-сосудистая система</li>
-                            <li class="select__item select-item">Желчевыводящая система</li>
-                            <li class="select__item select-item">Офтальмология</li>
-                            <li class="select__item select-item">Мочеполовая система</li>
-                            <li class="select__item select-item">Ожирение/похудение</li>
-                            <li class="select__item select-item">Заболевания печени</li>
-                            <li class="select__item select-item">Нервная система</li>
-                            <li class="select__item select-item">Урология</li>
-                            <li class="select__item select-item">Сахарный диабет</li>
-                            <li class="select__item select-item">Гинекология</li>
-                            <li class="select__item select-item">Костно-мышечная система</li>
-                            <li class="select__item select-item">Пищеварительная система</li>
-                            <li class="select__item select-item">Эндокринная система</li>
-                            <li class="select__item select-item">Иммунная система</li>
-                            <li class="select__item select-item">Аллергология</li>
-                            <li class="select__item select-item">ЛОР</li>
-                            <li class="select__item select-item">Дыхательная система</li>
-                            <li class="select__item select-item">Кожные заболевания</li>
-                            <li class="select__item select-item">SPA</li>
-                            <li class="select__item select-item">Стоматология</li>
-                            <li class="select__item select-item">Обмен веществ</li>
-                            <li class="select__item select-item">Педиатрия</li>
-                            <li class="select__item select-item">Общетерапевтический</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="popup-parameters__block _pick-up-type_block hidden">
-                <p class="popup-parameters__block-title">Питание</p>
-                <div class="popup-parameters__select select">
-                    <div class="select__block select-block">
-                        <span class="select__current select-current">Питание</span>
-                        <input class="select__current-input select-current-input" name="food" type="text" value="">
-                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                    </div>
-                    <div class="select__main select-main">
                         <ul class="select__list select-list">
-                            <li class="select__item select-item">Двухразовое</li>
-                            <li class="select__item select-item">Трёхразовое</li>
-                            <li class="select__item select-item">Шведский стол</li>
+                            <li class="select__item select-item active">С лечением</li>
+                            <li class="select__item select-item">Без лечения</li>
                         </ul>
                     </div>
                 </div>
@@ -2235,7 +2179,7 @@
                             <span>Указать</span>
                         </button>
                     </div>
-                    <div class="product-rooms__item _rooms-items">
+                    <div class="product-rooms__items _rooms-items">
                         <article class="room">
                             <div class="room__main">
                                 <div class="room__image _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
@@ -2246,6 +2190,12 @@
                                     <p class="room__content">Площадь номера: 43 кв.м.</p>
                                     <p class="room__content">Количество комнат: 1</p>
                                     <p class="room__content">Вмещает: 2 + 1</p>
+                                    <button class="room__more not-mobile _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
+                                        <span>Подробнее о номере </span>
+                                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                             <div class="room__info">
@@ -2405,6 +2355,12 @@
                                     <p class="room__content">Площадь номера: 43 кв.м.</p>
                                     <p class="room__content">Количество комнат: 1</p>
                                     <p class="room__content">Вмещает: 2 + 1</p>
+                                    <button class="room__more not-mobile _popup-room-opener" data-roomname="Double plus однокомнатный двухместный (корпус&nbsp;АБ)">
+                                        <span>Подробнее о номере </span>
+                                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#97DC52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                             <div class="room__info">
@@ -2576,9 +2532,9 @@
                     </div>
                 </div>
                 <div class="wrapper__mobile-container _nav-item">
-                    <div class="product-service">
+                    <div class="product-service _vert-tabs">
                         <h2 class="product-service__title">Сервис и удобства</h2>
-                        <ul class="product-service__list">
+                        <ul class="product-service__list _vert-tabs-content">
                             <li class="product-service__item"><img src="img/products/common/wifi.svg" alt=""><span>Wi-Fi на всей территории</span></li>
                             <li class="product-service__item"><img src="img/products/common/wifi.svg" alt=""><span>Wi-Fi на всей территории</span></li>
                             <li class="product-service__item"><img src="img/products/common/child.svg" alt=""><span>Принимают с детьми от 0 лет</span></li>
@@ -2588,7 +2544,7 @@
                             <li class="product-service__item"><img src="img/products/common/parking-lot.svg" alt=""><span>Бесплатная парковка</span></li>
                             <li class="product-service__item"><img src="img/products/common/parking-lot.svg" alt=""><span>Бесплатная парковка</span></li>
                         </ul>
-                        <button class="product-service__more mobile">
+                        <button class="product-service__more mobile _vert-tabs-button">
                             <span>Подробнее</span>
                             <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13.8929 0.707107C13.5024 0.316582 12.8692 0.316582 12.4787 0.707107L7.91956 5.26623C7.70471 5.48108 7.35715 5.48114 7.14352 5.26508C6.25527 4.36675 4.04063 2.13055 2.69336 0.801655C2.27994 0.393878 1.61876 0.40143 1.20796 0.811851C0.790054 1.22938 0.7899 1.90668 1.20762 2.3244L6.53189 7.64867C7.03824 8.15502 7.8592 8.15502 8.36555 7.64867L13.8929 2.12132C14.2834 1.7308 14.2834 1.09763 13.8929 0.707107Z" fill="#97DC52"/>
@@ -2919,7 +2875,7 @@
                                 <h3 class="product-prices__center-title">Остался один шаг до получения точной стоимости</h3>
                                 <p class="product-prices__center-content">Эксперт куратолог перезвонит вам и сообщит точные цены</p>
                                 <form class="product-prices__callback" id="pricesProductLastForm" action="#">
-                                    <div class="product-prices__row product-prices__row-1">
+                                    <div class="product-prices__row product-prices__row-2">
                                         <div class="product-prices__block">
                                             <p class="product-prices__block-title">Ваше имя</p>
                                             <div class="product-prices__input">
@@ -2927,8 +2883,6 @@
                                                 <div class="error-block"><span>Введите имя</span></div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="product-prices__row product-prices__row-1">
                                         <div class="product-prices__block">
                                             <p class="product-prices__block-title">Телефон</p>
                                             <div class="product-prices__input">
@@ -3234,7 +3188,7 @@
                 <div class="wrapper__mobile-container _nav-item">
                     <div class="product-map">
                         <h2 class="product-map__title">Расположение</h2>
-                        <div class="product-map__map">
+                        <div class="product-map__map _map" id="map" data-x="33" data-y="40" data-zoom="13">
                             <img src="img/products/id/map.jpg" alt="">
                         </div>
                         <div class="product-map__main not-mobile">
@@ -3314,7 +3268,7 @@
             <aside class="wrapper__aside _aside not-tablet">
                 <div class="product-search">
                     <h3 class="product-search__title">Вы выбрали:</h3>
-                    <form class="product-search__form _pick-up-type" id="searchProductForm" action="#">
+                    <form class="product-search__form" id="searchProductForm" action="#">
                         <div class="product-search__block">
                             <div class="product-search__select select">
                                 <div class="select__block select-block">
@@ -3324,63 +3278,9 @@
                                     <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                 </div>
                                 <div class="select__main select-main">
-                                    <ul class="select__list select-list _pick-up-type_list">
-                                        <li class="select__item select-item _pick-up-type_item active">С лечением</li>
-                                        <li class="select__item select-item _pick-up-type_item">Без лечения</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-search__block _pick-up-type_block">
-                            <div class="product-search__select select">
-                                <div class="select__block select-block">
-                                    <span class="select__current select-current">Профиль лечения</span>
-                                    <input class="select__current-input select-current-input" type="text" value="">
-                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                </div>
-                                <div class="select__main select-main">
-                                    <ul class="select__list select-list select-list-multiple">
-                                        <li class="select__item select-item">Желудочно-кишечный тракт</li>
-                                        <li class="select__item select-item">Опорно-двигательная система</li>
-                                        <li class="select__item select-item">Сердечно-сосудистая система</li>
-                                        <li class="select__item select-item">Желчевыводящая система</li>
-                                        <li class="select__item select-item">Офтальмология</li>
-                                        <li class="select__item select-item">Мочеполовая система</li>
-                                        <li class="select__item select-item">Ожирение/похудение</li>
-                                        <li class="select__item select-item">Заболевания печени</li>
-                                        <li class="select__item select-item">Нервная система</li>
-                                        <li class="select__item select-item">Урология</li>
-                                        <li class="select__item select-item">Сахарный диабет</li>
-                                        <li class="select__item select-item">Гинекология</li>
-                                        <li class="select__item select-item">Костно-мышечная система</li>
-                                        <li class="select__item select-item">Пищеварительная система</li>
-                                        <li class="select__item select-item">Эндокринная система</li>
-                                        <li class="select__item select-item">Иммунная система</li>
-                                        <li class="select__item select-item">Аллергология</li>
-                                        <li class="select__item select-item">ЛОР</li>
-                                        <li class="select__item select-item">Дыхательная система</li>
-                                        <li class="select__item select-item">Кожные заболевания</li>
-                                        <li class="select__item select-item">SPA</li>
-                                        <li class="select__item select-item">Стоматология</li>
-                                        <li class="select__item select-item">Обмен веществ</li>
-                                        <li class="select__item select-item">Педиатрия</li>
-                                        <li class="select__item select-item">Общетерапевтический</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-search__block _pick-up-type_block hidden">
-                            <div class="product-search__select select">
-                                <div class="select__block select-block">
-                                    <span class="select__current select-current">Питание</span>
-                                    <input class="select__current-input select-current-input" name="food" type="text" value="">
-                                    <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                </div>
-                                <div class="select__main select-main">
                                     <ul class="select__list select-list">
-                                        <li class="select__item select-item">Двухразовое</li>
-                                        <li class="select__item select-item">Трёхразовое</li>
-                                        <li class="select__item select-item">Шведский стол</li>
+                                        <li class="select__item select-item active">С лечением</li>
+                                        <li class="select__item select-item">Без лечения</li>
                                     </ul>
                                 </div>
                             </div>
