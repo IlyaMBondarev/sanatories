@@ -16,6 +16,7 @@
             flex-wrap: nowrap
             max-height: 150px
             overflow: hidden
+            transition: all 0.3s ease-in-out
         &__item
             display: flex
             justify-content: flex-start
@@ -40,3 +41,7 @@
             font-weight: 600
             color: #97DC52
             background: transparent
+            & svg
+                transition: transform 0.3s ease-in-out
+            &.active svg
+                transform: rotateX(180deg)
