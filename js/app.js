@@ -1454,7 +1454,6 @@ if (document.querySelector('.select')) {
         window.addEventListener('popstate', (event) => {
             if (mobile && select.classList.contains('active')) {
                 event.preventDefault();
-                history.back();
                 select.classList.remove('active')
             }
         })
