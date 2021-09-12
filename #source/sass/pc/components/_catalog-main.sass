@@ -46,6 +46,11 @@
         line-height: 27px
         font-weight: 700
         color: $white
+    &__empty-content-link
+        color: #ffffff80
+        text-decoration: underline
+        cursor: pointer
+        display: inline-block
     &__sort
         display: flex
         justify-content: flex-start
@@ -64,11 +69,19 @@
             line-height: 27px
             font-weight: 600
             color: #ffffff80
+            display: flex
+            align-items: center
             cursor: pointer
             transition: all 0.2s ease-in-out
+            text-decoration-line: underline
+            text-decoration-color: transparent
+            & svg *
+                transition: all 0.2s ease-in-out
             &:hover
                 color: #97DC52
-                text-decoration-line: underline
+                text-decoration-color: #97DC52
+            &:hover svg *
+                stroke: #97DC52
         &:first-of-type label
             margin-left: 23px
         & input
@@ -80,7 +93,44 @@
             visibility: hidden
             &:checked + label
                 color: #97DC52
-                text-decoration-line: underline
+                text-decoration-color: #97DC52
+                & svg *
+                    stroke: #97DC52
+    &__chosen
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        white-space: nowrap
+        margin-bottom: 20px
+        overflow-x: auto
+        scrollbar-width: thin
+        scrollbar-width: none
+        scrollbar-color: #ffffff80 transparent
+        &::-webkit-scrollbar
+            background-color: #ffffff10
+            width: 0
+            height: 0
+            &-thumb
+                background-color: #ffffff80
+                border-radius: 10px
+                width: 0
+    &__chosen-item
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 4px 8px
+        background: #ffffff12
+        border: 1px solid #ffffff24
+        border-radius: 16px
+        font-size: 17px
+        line-height: 120%
+        font-weight: 600
+        color: $white
+        &:not(:last-child)
+            margin-right: 15px
+        & > button
+            margin-left: 10px
+            background: transparent
     &__consultation
         padding: 20px
         margin-bottom: 30px
@@ -152,6 +202,7 @@
             background: #97DC52
             box-shadow: 0px 0px 5px #97DC52
     &__subscribe
+        margin-top: 30px
         position: relative
         display: flex
         justify-content: flex-start
