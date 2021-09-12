@@ -23,7 +23,6 @@
                 <img src="img/main-screen/main-screen-back.jpg" alt="">
             </div>
             <div class="main-screen__pick-up main-pick-up container">
-                <h2 class="main-pick-up__title not-mobile">Санатории Кисловодска цены на 2020 год</h2>
                 <div class="main-pick-up__main container _labeltabs">
                     <div class="main-pick-up__tabs">
                         <input class="_labeltabs-input" id="mainpickuptab0" type="radio" name="main-pick-up" checked>
@@ -41,7 +40,7 @@
                         <div class="main-pick-up__item _labeltabs-content active">
                             <h2 class="main-pick-up__title">Санатории Кисловодска цены на 2020 год</h2>
                             <form class="main-pick-up__form" id="mainPickUpForm" action="#">
-                                <div class="main-pick-up__form-main _pick-up-type">
+                                <div class="main-pick-up__form-main">
                                     <div class="main-pick-up__block">
                                         <div class="main-pick-up__select select">
                                             <div class="select__block select-block">
@@ -51,63 +50,9 @@
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-main">
-                                                <ul class="select__list select-list _pick-up-type_list">
-                                                    <li class="select__item select-item _pick-up-type_item active">С лечением</li>
-                                                    <li class="select__item select-item _pick-up-type_item">Без лечения</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-pick-up__block _pick-up-type_block">
-                                        <div class="main-pick-up__select select">
-                                            <div class="select__block select-block">
-                                                <span class="select__current select-current">Профиль лечения</span>
-                                                <input class="select__current-input select-current-input" type="text" value="">
-                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                            </div>
-                                            <div class="select__main select-main">
-                                                <ul class="select__list select-list select-list-multiple">
-                                                    <li class="select__item select-item">Желудочно-кишечный тракт</li>
-                                                    <li class="select__item select-item">Опорно-двигательная система</li>
-                                                    <li class="select__item select-item">Сердечно-сосудистая система</li>
-                                                    <li class="select__item select-item">Желчевыводящая система</li>
-                                                    <li class="select__item select-item">Офтальмология</li>
-                                                    <li class="select__item select-item">Мочеполовая система</li>
-                                                    <li class="select__item select-item">Ожирение/похудение</li>
-                                                    <li class="select__item select-item">Заболевания печени</li>
-                                                    <li class="select__item select-item">Нервная система</li>
-                                                    <li class="select__item select-item">Урология</li>
-                                                    <li class="select__item select-item">Сахарный диабет</li>
-                                                    <li class="select__item select-item">Гинекология</li>
-                                                    <li class="select__item select-item">Костно-мышечная система</li>
-                                                    <li class="select__item select-item">Пищеварительная система</li>
-                                                    <li class="select__item select-item">Эндокринная система</li>
-                                                    <li class="select__item select-item">Иммунная система</li>
-                                                    <li class="select__item select-item">Аллергология</li>
-                                                    <li class="select__item select-item">ЛОР</li>
-                                                    <li class="select__item select-item">Дыхательная система</li>
-                                                    <li class="select__item select-item">Кожные заболевания</li>
-                                                    <li class="select__item select-item">SPA</li>
-                                                    <li class="select__item select-item">Стоматология</li>
-                                                    <li class="select__item select-item">Обмен веществ</li>
-                                                    <li class="select__item select-item">Педиатрия</li>
-                                                    <li class="select__item select-item">Общетерапевтический</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-pick-up__block _pick-up-type_block hidden">
-                                        <div class="main-pick-up__select select">
-                                            <div class="select__block select-block">
-                                                <span class="select__current select-current">Питание</span>
-                                                <input class="select__current-input select-current-input" name="food" type="text" value="">
-                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                            </div>
-                                            <div class="select__main select-main">
                                                 <ul class="select__list select-list">
-                                                    <li class="select__item select-item">Двухразовое</li>
-                                                    <li class="select__item select-item">Трёхразовое</li>
-                                                    <li class="select__item select-item">Шведский стол</li>
+                                                    <li class="select__item select-item active">С лечением</li>
+                                                    <li class="select__item select-item">Без лечения</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -269,8 +214,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <button class="main-pick-up__button main-pick-up__submit tablet" type="submit">Найти санатории</button>
                                 </div>
-                                <button class="main-pick-up__button main-pick-up__submit" type="submit">Найти санатории</button>
+                                <button class="main-pick-up__button main-pick-up__submit not-tablet" type="submit">Найти санатории</button>
                             </form>
                         </div>
                         <div class="main-pick-up__item _labeltabs-content">
@@ -307,7 +253,7 @@
                     <div class="main-pick-up__items">
                         <div class="main-pick-up__item _labeltabs-content active">
                             <form class="main-pick-up__form" id="mainPickUpFormMobile" action="#">
-                                <div class="main-pick-up__form-main _pick-up-type">
+                                <div class="main-pick-up__form-main">
                                     <div class="main-pick-up__block">
                                         <div class="main-pick-up__select select">
                                             <div class="select__block select-block">
@@ -317,63 +263,9 @@
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-main">
-                                                <ul class="select__list select-list _pick-up-type_list">
-                                                    <li class="select__item select-item _pick-up-type_item active">С лечением</li>
-                                                    <li class="select__item select-item _pick-up-type_item">Без лечения</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-pick-up__block _pick-up-type_block">
-                                        <div class="main-pick-up__select select">
-                                            <div class="select__block select-block">
-                                                <span class="select__current select-current">Профиль лечения</span>
-                                                <input class="select__current-input select-current-input" type="text" value="">
-                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                            </div>
-                                            <div class="select__main select-main">
-                                                <ul class="select__list select-list select-list-multiple">
-                                                    <li class="select__item select-item">Желудочно-кишечный тракт</li>
-                                                    <li class="select__item select-item">Опорно-двигательная система</li>
-                                                    <li class="select__item select-item">Сердечно-сосудистая система</li>
-                                                    <li class="select__item select-item">Желчевыводящая система</li>
-                                                    <li class="select__item select-item">Офтальмология</li>
-                                                    <li class="select__item select-item">Мочеполовая система</li>
-                                                    <li class="select__item select-item">Ожирение/похудение</li>
-                                                    <li class="select__item select-item">Заболевания печени</li>
-                                                    <li class="select__item select-item">Нервная система</li>
-                                                    <li class="select__item select-item">Урология</li>
-                                                    <li class="select__item select-item">Сахарный диабет</li>
-                                                    <li class="select__item select-item">Гинекология</li>
-                                                    <li class="select__item select-item">Костно-мышечная система</li>
-                                                    <li class="select__item select-item">Пищеварительная система</li>
-                                                    <li class="select__item select-item">Эндокринная система</li>
-                                                    <li class="select__item select-item">Иммунная система</li>
-                                                    <li class="select__item select-item">Аллергология</li>
-                                                    <li class="select__item select-item">ЛОР</li>
-                                                    <li class="select__item select-item">Дыхательная система</li>
-                                                    <li class="select__item select-item">Кожные заболевания</li>
-                                                    <li class="select__item select-item">SPA</li>
-                                                    <li class="select__item select-item">Стоматология</li>
-                                                    <li class="select__item select-item">Обмен веществ</li>
-                                                    <li class="select__item select-item">Педиатрия</li>
-                                                    <li class="select__item select-item">Общетерапевтический</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-pick-up__block _pick-up-type_block hidden">
-                                        <div class="main-pick-up__select select">
-                                            <div class="select__block select-block">
-                                                <span class="select__current select-current">Питание</span>
-                                                <input class="select__current-input select-current-input" name="food" type="text" value="">
-                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                            </div>
-                                            <div class="select__main select-main">
                                                 <ul class="select__list select-list">
-                                                    <li class="select__item select-item">Двухразовое</li>
-                                                    <li class="select__item select-item">Трёхразовое</li>
-                                                    <li class="select__item select-item">Шведский стол</li>
+                                                    <li class="select__item select-item active">С лечением</li>
+                                                    <li class="select__item select-item">Без лечения</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1060,8 +952,8 @@
                     </div>
                 </div>
                 <div class="interesting__links">
-                    <button class="interesting__link">Больше акций</button>
-                    <button class="interesting__link">Больше новостей</button>
+                    <a class="interesting__link" href="#">Больше акций</a>
+                    <a class="interesting__link" href="#">Больше новостей</a>
                 </div>
             </section>
         </section>

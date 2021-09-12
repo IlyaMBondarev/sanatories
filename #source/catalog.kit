@@ -45,7 +45,7 @@
                                 <button class="pick-up__edit-btn _pick-up__edit-opener"><img src="img/icons/pencil.svg" alt=""></button>
                             </div>
                             <div class="pick-up__item-block container _pick-up__edit-form">
-                                <form class="pick-up__edit _pick-up-type" id="pickUpForm" action="#">
+                                <form class="pick-up__edit" id="pickUpForm" action="#">
                                     <div class="pick-up__block">
                                         <div class="pick-up__select select">
                                             <div class="select__block select-block">
@@ -55,63 +55,9 @@
                                                 <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
                                             </div>
                                             <div class="select__main select-main">
-                                                <ul class="select__list select-list _pick-up-type_list">
-                                                    <li class="select__item select-item _pick-up-type_item active">С лечением</li>
-                                                    <li class="select__item select-item _pick-up-type_item">Без лечения</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pick-up__block _pick-up-type_block">
-                                        <div class="pick-up__select select">
-                                            <div class="select__block select-block">
-                                                <span class="select__current select-current">Профиль лечения</span>
-                                                <input class="select__current-input select-current-input" type="text" value="">
-                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                            </div>
-                                            <div class="select__main select-main">
-                                                <ul class="select__list select-list select-list-multiple">
-                                                    <li class="select__item select-item">Желудочно-кишечный тракт</li>
-                                                    <li class="select__item select-item">Опорно-двигательная система</li>
-                                                    <li class="select__item select-item">Сердечно-сосудистая система</li>
-                                                    <li class="select__item select-item">Желчевыводящая система</li>
-                                                    <li class="select__item select-item">Офтальмология</li>
-                                                    <li class="select__item select-item">Мочеполовая система</li>
-                                                    <li class="select__item select-item">Ожирение/похудение</li>
-                                                    <li class="select__item select-item">Заболевания печени</li>
-                                                    <li class="select__item select-item">Нервная система</li>
-                                                    <li class="select__item select-item">Урология</li>
-                                                    <li class="select__item select-item">Сахарный диабет</li>
-                                                    <li class="select__item select-item">Гинекология</li>
-                                                    <li class="select__item select-item">Костно-мышечная система</li>
-                                                    <li class="select__item select-item">Пищеварительная система</li>
-                                                    <li class="select__item select-item">Эндокринная система</li>
-                                                    <li class="select__item select-item">Иммунная система</li>
-                                                    <li class="select__item select-item">Аллергология</li>
-                                                    <li class="select__item select-item">ЛОР</li>
-                                                    <li class="select__item select-item">Дыхательная система</li>
-                                                    <li class="select__item select-item">Кожные заболевания</li>
-                                                    <li class="select__item select-item">SPA</li>
-                                                    <li class="select__item select-item">Стоматология</li>
-                                                    <li class="select__item select-item">Обмен веществ</li>
-                                                    <li class="select__item select-item">Педиатрия</li>
-                                                    <li class="select__item select-item">Общетерапевтический</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pick-up__block _pick-up-type_block hidden">
-                                        <div class="pick-up__select select">
-                                            <div class="select__block select-block">
-                                                <span class="select__current select-current">Питание</span>
-                                                <input class="select__current-input select-current-input" name="food" type="text" value="">
-                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                                            </div>
-                                            <div class="select__main select-main">
                                                 <ul class="select__list select-list">
-                                                    <li class="select__item select-item">Двухразовое</li>
-                                                    <li class="select__item select-item">Трёхразовое</li>
-                                                    <li class="select__item select-item">Шведский стол</li>
+                                                    <li class="select__item select-item active">С лечением</li>
+                                                    <li class="select__item select-item">Без лечения</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -316,7 +262,7 @@
                                     <p class="pick-up__item-content"><span>1 - 13 сен</span> <span>12 ночей</span> <span>3 билета</span></p>
                                     <p class="pick-up__item-content"><span class="important"><img src="img/icons/gift.svg" alt=""> Встреча в подарок</span></p>
                                 </div>
-                                <button class="pick-up__edit-btn _popup-settings-opener"><img src="img/icons/pencil.svg" alt=""></button>
+                                <button class="pick-up__edit-btn _popup-parameters-opener"><img src="img/icons/pencil.svg" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -341,7 +287,7 @@
         </section>
         <section class="main-content catalog-main container">
             <div class="catalog-main__aside not-tablet">
-                <div class="filters">
+                <form class="filters" id="filtersForm" action="#">
                     <p class="filters__title">Профиль лечения</p>
                     <div class="filters__block">
                         <div class="filters__select select">
@@ -448,7 +394,8 @@
                         <input id="filterGoodEnough0" name="filterGoodEnough" type="checkbox">
                         <label for="filterGoodEnough0">Достаточно хорошо 6+</label>
                     </div>
-                </div>
+                    <button class="filters__submit">Применить</button>
+                </form>
             </div>
             <div class="catalog-main__main">
                 <button class="catalog-main__settings-opener _popup-settings-opener tablet">
@@ -462,9 +409,10 @@
                         <span>На карте</span>
                     </button>
                 </div>
-                <div class="catalog-main__empty hidden">
+                <div class="catalog-main__empty">
                     <p class="catalog-main__empty-content">Увы, по Вашему запросу не найдены подходящие санатории</p>
                     <p class="catalog-main__empty-content">Смягчите условия поиска или закажите бесплатный подбор у эксперта курортолога</p>
+                    <p class="catalog-main__empty-content catalog-main__empty-content-link _popup-callback-opener">Спросить условия поиска</p>
                 </div>
                 <div class="catalog-main__sort not-mobile">
                     <p class="catalog-main__sort-content">Сортировать по:</p>
@@ -473,8 +421,22 @@
                         <label for="sortRecomendations">Наши рекомендации</label>
                     </div>
                     <div class="catalog-main__sort-item">
-                        <input id="sortPrice" name="sortBy" value="sortPrice" type="radio">
-                        <label for="sortPrice">Цене</label>
+                        <input id="sortPriceDown" name="sortBy" value="sortPriceDown" type="radio">
+                        <label for="sortPriceDown">
+                            <span>Цене</span>
+                            <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(90deg)">
+                                <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#ffffff80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="catalog-main__sort-item">
+                        <input id="sortPriceUp" name="sortBy" value="sortPriceUp" type="radio">
+                        <label for="sortPriceUp">
+                            <span>Цене</span>
+                            <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-90deg)">
+                                <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#ffffff80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </label>
                     </div>
                     <div class="catalog-main__sort-item">
                         <input id="sortLevelOfService" name="sortBy" value="sortLevelOfService" type="radio">
@@ -485,7 +447,7 @@
                         <label for="sortCountOfProcedures">Количество процедур</label>
                     </div>
                 </div>
-                <div class="catalog-main__chosen tablet">
+                <div class="catalog-main__chosen">
                     <span class="catalog-main__chosen-item"><span>Есть бассейн</span> <button><img src="img/icons/close-rounded.svg" alt=""></button></span>
                     <span class="catalog-main__chosen-item"><span>Есть барсейн</span> <button><img src="img/icons/close-rounded.svg" alt=""></button></span>
                     <span class="catalog-main__chosen-item"><span>Есть бассейн</span> <button><img src="img/icons/close-rounded.svg" alt=""></button></span>
@@ -904,16 +866,6 @@
                             </div>
                         </div>
                     </article>
-                    <div class="catalog-main__subscribe">
-                        <div class="catalog-main__subscribe-image">
-                            <img src="img/consultation/message-man.svg" alt="">
-                        </div>
-                        <div class="catalog-main__subscribe-main">
-                            <h3 class="catalog-main__subscribe-title">Понравился санаторий?</h3>
-                            <p class="catalog-main__subscribe-content">Мы сообщим, когда цены на него снизятся или появятся скидки.</p>
-                            <button class="catalog-main__subscribe-button _popup-subscribe-opener">Отслеживать цены</button>
-                        </div>
-                    </div>
                     <button class="catalog-main__more">
                         <span>Показать ещё</span>
                         <svg class="mobile" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -931,10 +883,20 @@
                         <a class="pagination__link" href="#">10</a>
                         <a class="pagination__link" href="#"><img src="img/icons/arrow-right-white.svg" alt=""></a>
                     </div>
+                    <div class="catalog-main__subscribe">
+                        <div class="catalog-main__subscribe-image">
+                            <img src="img/consultation/message-man.svg" alt="">
+                        </div>
+                        <div class="catalog-main__subscribe-main">
+                            <h3 class="catalog-main__subscribe-title">Понравился санаторий?</h3>
+                            <p class="catalog-main__subscribe-content">Мы сообщим, когда цены на него снизятся или появятся скидки.</p>
+                            <button class="catalog-main__subscribe-button _popup-subscribe-opener">Отслеживать цены</button>
+                        </div>
+                    </div>
                 </section>
             </div>
         </section>
-        <section class="consultation not-mobile">
+        <section class="consultation">
             <div class="consultation__container container">
                 <div class="consultation__row">
                     <div class="consultation__image">

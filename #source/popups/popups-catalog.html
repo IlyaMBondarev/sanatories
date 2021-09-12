@@ -198,11 +198,11 @@
         <p class="popup-pick-up-thanks__content">Эксперт-курортолог изучит Ваши ответы и скоро предложит лучшие путевки в санатории Кисловодска с учетом официальных цен, акций и спецпредложений санаториев. Укажите контактные данные, по которым с Вами можно связаться.</p>
         <form class="popup-pick-up-thanks__form" id="popupQuizThanksForm" action="#">
             <div class="popup-pick-up-thanks__block">
-                <input class="_req" type="text" placeholder="Ваше имя">
+                <input class="_req" type="text" name="name" placeholder="Ваше имя">
                 <div class="error-block"><span>Введите имя</span></div>
             </div>
             <div class="popup-pick-up-thanks__block">
-                <input class="_req _tel" type="text" placeholder="+7">
+                <input class="_req _tel" type="text" name="phone" placeholder="+7">
                 <div class="error-block"><span>Введите корректный номер</span></div>
             </div>
             <button class="popup-pick-up-thanks__submit">Получить результаты</button>
@@ -274,239 +274,37 @@
             </div>
         </div>
         <form class="popup-settings__main" id="popupSettingsForm" action="#">
-            <div class="popup-settings__pick-up _pick-up-type">
-                <div class="popup-settings__pick-up-block popup-settings__pick-up-block_large">
-                    <p class="popup-settings__pick-up-block-title">Цель поездки</p>
-                    <div class="popup-settings__pick-up-select select">
-                        <div class="select__block select-block">
-                            <span class="select__current select-current">С лечением</span>
-                            <input class="select__current-input select-current-input" name="medical" type="text" value="С лечением">
-                            <div class="error-block"><span>Выберите один из пунктов</span></div>
-                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                        </div>
-                        <div class="select__main select-main">
-                            <ul class="select__list select-list _pick-up-type_list">
-                                <li class="select__item select-item _pick-up-type_item active">С лечением</li>
-                                <li class="select__item select-item _pick-up-type_item">Без лечения</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-settings__pick-up-block popup-settings__pick-up-block_large _pick-up-type_block">
-                    <p class="popup-settings__pick-up-block-title">Профиль лечения</p>
-                    <div class="popup-settings__pick-up-select select">
-                        <div class="select__block select-block">
-                            <span class="select__current select-current">Профиль лечения</span>
-                            <input class="select__current-input select-current-input" type="text" value="">
-                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                        </div>
-                        <div class="select__main select-main">
-                            <ul class="select__list select-list select-list-multiple">
-                                <li class="select__item select-item">Желудочно-кишечный тракт</li>
-                                <li class="select__item select-item">Опорно-двигательная система</li>
-                                <li class="select__item select-item">Сердечно-сосудистая система</li>
-                                <li class="select__item select-item">Желчевыводящая система</li>
-                                <li class="select__item select-item">Офтальмология</li>
-                                <li class="select__item select-item">Мочеполовая система</li>
-                                <li class="select__item select-item">Ожирение/похудение</li>
-                                <li class="select__item select-item">Заболевания печени</li>
-                                <li class="select__item select-item">Нервная система</li>
-                                <li class="select__item select-item">Урология</li>
-                                <li class="select__item select-item">Сахарный диабет</li>
-                                <li class="select__item select-item">Гинекология</li>
-                                <li class="select__item select-item">Костно-мышечная система</li>
-                                <li class="select__item select-item">Пищеварительная система</li>
-                                <li class="select__item select-item">Эндокринная система</li>
-                                <li class="select__item select-item">Иммунная система</li>
-                                <li class="select__item select-item">Аллергология</li>
-                                <li class="select__item select-item">ЛОР</li>
-                                <li class="select__item select-item">Дыхательная система</li>
-                                <li class="select__item select-item">Кожные заболевания</li>
-                                <li class="select__item select-item">SPA</li>
-                                <li class="select__item select-item">Стоматология</li>
-                                <li class="select__item select-item">Обмен веществ</li>
-                                <li class="select__item select-item">Педиатрия</li>
-                                <li class="select__item select-item">Общетерапевтический</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-settings__pick-up-block popup-settings__pick-up-block_large _pick-up-type_block hidden">
-                    <p class="popup-settings__pick-up-block-title">Питание</p>
-                    <div class="popup-settings__pick-up-select select">
-                        <div class="select__block select-block">
-                            <span class="select__current select-current">Питание</span>
-                            <input class="select__current-input select-current-input" name="food" type="text" value="">
-                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                        </div>
-                        <div class="select__main select-main">
-                            <ul class="select__list select-list">
-                                <li class="select__item select-item">Двухразовое</li>
-                                <li class="select__item select-item">Трёхразовое</li>
-                                <li class="select__item select-item">Шведский стол</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-settings__pick-up-block mobile">
-                    <p class="popup-settings__pick-up-block-title">Заезд</p>
-                    <div class="popup-settings__pick-up-select select">
-                        <div class="select__block select-block">
-                            <span class="select__current select-calendar-current"></span>
-                            <input class="select__current-input select-current-input-dates _req" name="dates" type="text" value="">
-                            <div class="error-block"><span>Пожалуйста, выберите дату</span></div>
-                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                        </div>
-                        <div class="select__main select-calendar__parent select-main">
-                            <div class="select-pick-date select-calendar">
-                                <div class="select-calendar__main">
-                                    <button class="select-calendar__arrow select-calendar-arrow-left" type="button">
-                                        <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M19 9L11.5 16.5L19 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
-                                    <div class="select-calendar__center">
-                                        <p class="select-calendar__content select-calendar-month"></p>
-                                        <table class="select-calendar__table select-calendar-table">
-                                            <thead>
-                                                <tr>
-                                                    <td>пн</td>
-                                                    <td>вт</td>
-                                                    <td>ср</td>
-                                                    <td>чт</td>
-                                                    <td>пт</td>
-                                                    <td>сб</td>
-                                                    <td>вс</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <button class="select-calendar__arrow select-calendar-arrow-right" type="button">
-                                        <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 9L19.5 16.5L12 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-settings__pick-up-block mobile">
-                    <p class="popup-settings__pick-up-block-title">Количество дней</p>
-                    <div class="popup-settings__pick-up-select select">
-                        <div class="select__block select-block">
-                            <span class="select__current select-current">1</span>
-                            <input class="select__current-input select-current-input" name="countDays" type="text" value="1">
-                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                        </div>
-                        <div class="select__main select-main">
-                            <ul class="select__list select-list">
-                                <li class="select__item select-item active">1</li>
-                                <li class="select__item select-item">2</li>
-                                <li class="select__item select-item">3</li>
-                                <li class="select__item select-item">4</li>
-                                <li class="select__item select-item">5</li>
-                                <li class="select__item select-item">6</li>
-                                <li class="select__item select-item">7</li>
-                                <li class="select__item select-item">8</li>
-                                <li class="select__item select-item">9</li>
-                                <li class="select__item select-item">10</li>
-                                <li class="select__item select-item">11</li>
-                                <li class="select__item select-item">12</li>
-                                <li class="select__item select-item">13</li>
-                                <li class="select__item select-item">14</li>
-                                <li class="select__item select-item">15</li>
-                                <li class="select__item select-item">16</li>
-                                <li class="select__item select-item">17</li>
-                                <li class="select__item select-item">18</li>
-                                <li class="select__item select-item">19</li>
-                                <li class="select__item select-item">20</li>
-                                <li class="select__item select-item">21</li>
-                                <li class="select__item select-item">22</li>
-                                <li class="select__item select-item">23</li>
-                                <li class="select__item select-item">24</li>
-                                <li class="select__item select-item">25</li>
-                                <li class="select__item select-item">26</li>
-                                <li class="select__item select-item">27</li>
-                                <li class="select__item select-item">28</li>
-                                <li class="select__item select-item">29</li>
-                                <li class="select__item select-item">30</li>
-                                <li class="select__item select-item">Больше 30</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-settings__pick-up-block mobile">
-                    <p class="popup-settings__pick-up-block-title">Взрослых</p>
-                    <div class="popup-settings__pick-up-select select">
-                        <div class="select__block select-block">
-                            <span class="select__current select-current">1</span>
-                            <input class="select__current-input select-current-input" name="parents" type="text" value="1">
-                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                        </div>
-                        <div class="select__main select-main">
-                            <ul class="select__list select-list">
-                                <li class="select__item select-item">0</li>
-                                <li class="select__item select-item active">1</li>
-                                <li class="select__item select-item">2</li>
-                                <li class="select__item select-item">3</li>
-                                <li class="select__item select-item">4</li>
-                                <li class="select__item select-item">5</li>
-                                <li class="select__item select-item">6</li>
-                                <li class="select__item select-item">7</li>
-                                <li class="select__item select-item">8</li>
-                                <li class="select__item select-item">9</li>
-                                <li class="select__item select-item">10</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-settings__pick-up-block mobile">
-                    <p class="popup-settings__pick-up-block-title">Детей</p>
-                    <div class="popup-settings__pick-up-select select">
-                        <div class="select__block select-block">
-                            <span class="select__current select-current">1</span>
-                            <input class="select__current-input select-current-input" name="childs" type="text" value="1">
-                            <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
-                        </div>
-                        <div class="select__main select-main">
-                            <ul class="select__list select-list">
-                                <li class="select__item select-item">0</li>
-                                <li class="select__item select-item active">1</li>
-                                <li class="select__item select-item">2</li>
-                                <li class="select__item select-item">3</li>
-                                <li class="select__item select-item">4</li>
-                                <li class="select__item select-item">5</li>
-                                <li class="select__item select-item">6</li>
-                                <li class="select__item select-item">7</li>
-                                <li class="select__item select-item">8</li>
-                                <li class="select__item select-item">9</li>
-                                <li class="select__item select-item">10</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="popup-settings__sort mobile">
                 <p class="popup-settings__sort-title">Сортировка</p>
                 <div class="popup-settings__sort-block">
-                    <input id="sortRecomendations" name="sortBy0" value="sortRecomendations" type="radio" checked>
-                    <label for="sortRecomendations">Рекомендовано</label>
+                    <input id="sortRecomendations1" name="sortBy0" value="sortRecomendations1" type="radio" checked>
+                    <label for="sortRecomendations1">Рекомендовано</label>
                 </div>
                 <div class="popup-settings__sort-block">
-                    <input id="sortPrice" name="sortBy0" value="sortPrice" type="radio">
-                    <label for="sortPrice">Цена</label>
+                    <input id="sortPriceDown1" name="sortBy0" value="sortPriceDown1" type="radio">
+                    <label for="sortPriceDown1">
+                        <span>Цена</span>
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(90deg)">
+                            <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#ffffff80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </label>
                 </div>
                 <div class="popup-settings__sort-block">
-                    <input id="sortLevelOfService" name="sortBy0" value="sortLevelOfService" type="radio">
-                    <label for="sortLevelOfService">Уровень сервиса</label>
+                    <input id="sortPriceUp1" name="sortBy0" value="sortPriceUp1" type="radio">
+                    <label for="sortPriceUp1">
+                        <span>Цена</span>
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-90deg)">
+                            <path d="M3.875 9H14.8438M14.8438 9L10.625 4.78125M14.8438 9L10.625 13.2188" stroke="#ffffff80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </label>
                 </div>
                 <div class="popup-settings__sort-block">
-                    <input id="sortCountOfProcedures" name="sortBy0" value="sortCountOfProcedures" type="radio">
-                    <label for="sortCountOfProcedures">Количество процедур</label>
+                    <input id="sortLevelOfService1" name="sortBy0" value="sortLevelOfService1" type="radio">
+                    <label for="sortLevelOfService1">Уровень сервиса</label>
+                </div>
+                <div class="popup-settings__sort-block">
+                    <input id="sortCountOfProcedures1" name="sortBy0" value="sortCountOfProcedures1" type="radio">
+                    <label for="sortCountOfProcedures1">Количество процедур</label>
                 </div>
             </div>
             <div class="filters">
@@ -602,5 +400,193 @@
                 </div>
             </div>
             <button class="popup-settings__submit">Применить</button>
+        </form>
+    </div>
+    <div class="popup-parameters">
+        <button class="popup-parameters__close _popup-parameters-closer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.788161 14.8497C1.17869 15.2402 1.81185 15.2402 2.20238 14.8497L14.9303 2.12176C15.3208 1.73124 15.3208 1.09807 14.9303 0.70755C14.5398 0.317025 13.9066 0.317024 13.5161 0.70755L0.788162 13.4355C0.397637 13.826 0.397637 14.4592 0.788161 14.8497Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.7072 0.849685C0.316676 1.24021 0.316676 1.87337 0.7072 2.2639L13.4351 14.9918C13.8256 15.3823 14.4588 15.3823 14.8493 14.9918C15.2399 14.6013 15.2399 13.9681 14.8493 13.5776L2.12141 0.849685C1.73089 0.459161 1.09772 0.459161 0.7072 0.849685Z" fill="white"/>
+            </svg>
+        </button>
+        <p class="popup-parameters__title">Выберите параметры поездки:</p>
+        <form class="popup-parameters__form" id="parametersProductForm" action="#">
+            <div class="popup-parameters__block">
+                <p class="popup-parameters__block-title">Цель поездки</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-current">С лечением</span>
+                        <input class="select__current-input select-current-input" name="medical" type="text" value="С лечением">
+                        <div class="error-block"><span>Выберите один из пунктов</span></div>
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <ul class="select__list select-list">
+                            <li class="select__item select-item active">С лечением</li>
+                            <li class="select__item select-item">Без лечения</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-parameters__block">
+                <p class="popup-parameters__block-title">Даты / Количество дней</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block">
+                        <span class="select__current select-calendar-current"></span>
+                        <input class="select__current-input select-current-input-dates _req" name="dates" type="text" value="">
+                        <div class="error-block"><span>Пожалуйста, заполните даты</span></div>
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-calendar__parent select-main">
+                        <div class="select-calendar">
+                            <div class="select-calendar__main">
+                                <button class="select-calendar__arrow select-calendar-arrow-left" type="button">
+                                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 9L11.5 16.5L19 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <div class="select-calendar__center">
+                                    <p class="select-calendar__content select-calendar-month"></p>
+                                    <table class="select-calendar__table select-calendar-table">
+                                        <thead>
+                                            <tr>
+                                                <td>пн</td>
+                                                <td>вт</td>
+                                                <td>ср</td>
+                                                <td>чт</td>
+                                                <td>пт</td>
+                                                <td>сб</td>
+                                                <td>вс</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <button class="select-calendar__arrow select-calendar-arrow-right" type="button">
+                                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 9L19.5 16.5L12 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="select-calendar__around">
+                                <div class="select-calendar__enter">
+                                    <p class="select-calendar__content">Заезд</p>
+                                    <div class="select-calendar__block">
+                                        <input class="select-calendar-enter-input" name="enter-date" type="number" min="1" max="31" step="1">
+                                        <div class="select-calendar__select select select-calendar-enter-select">
+                                            <div class="select__block select-block">
+                                                <span class="select__current select-current"></span>
+                                                <input class="select__current-input select-current-input" name="enter-month" type="text" value="">
+                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                                            </div>
+                                            <div class="select__main select-main">
+                                                <ul class="select__list select-list _pick-up-type_list">
+                                                    <li class="select__item select-item _pick-up-type_item">Январь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Февраль</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Март</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Апрель</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Май</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Июнь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Июль</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Август</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Сентябрь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Октябрь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Ноябрь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Декабрь</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="select-calendar__exit">
+                                    <p class="select-calendar__content">Выезд</p>
+                                    <div class="select-calendar__block">
+                                        <input class="select-calendar-exit-input" name="exit-date" type="number" min="1" max="31" step="1">
+                                        <div class="select-calendar__select select select-calendar-exit-select">
+                                            <div class="select__block select-block">
+                                                <span class="select__current select-current"></span>
+                                                <input class="select__current-input select-current-input" name="exit-month" type="text" value="">
+                                                <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                                            </div>
+                                            <div class="select__main select-main">
+                                                <ul class="select__list select-list _pick-up-type_list">
+                                                    <li class="select__item select-item _pick-up-type_item">Январь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Февраль</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Март</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Апрель</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Май</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Июнь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Июль</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Август</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Сентябрь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Октябрь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Ноябрь</li>
+                                                    <li class="select__item select-item _pick-up-type_item">Декабрь</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="select-calendar__count">
+                                <p class="select-calendar__content">Кол-во дней</p>
+                                <div class="select-calendar__block">
+                                    <input class="select-calendar-count-days" name="count-days" type="number" min="1" max="30" step="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-parameters__block">
+                <p class="popup-parameters__block-title">Количество билетов</p>
+                <div class="popup-parameters__select select">
+                    <div class="select__block select-block" data-text="">
+                        <span class="select__current select-current"></span>
+                        <input class="select__current-input select-current-input-tickets _req" name="tickets" type="number" value="">
+                        <div class="error-block"><span>Пожалуйста, заполните количество</span></div>
+                        <input class="select__current-input select-current-input-parents" name="parents" type="number" value="">
+                        <input class="select__current-input select-current-input-childs" name="childs" type="number" value="">
+                        <img class="select__arrow select-arrow" src="img/icons/chevron-down-white.svg" alt="">
+                    </div>
+                    <div class="select__main select-main">
+                        <div class="select__count select-count">
+                            <span>Взрослых:</span>
+                            <div class="select__count-block select-parents">
+                                <button class="select-parents-less" type="button">
+                                    <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
+                                    </svg>
+                                </button>
+                                <span class="select-parents-count">1</span>
+                                <button class="select-parents-more" type="button">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="select__count select-count">
+                            <span>Детей:</span>
+                            <div class="select__count-block select-childs">
+                                <button class="select-childs-less" type="button">
+                                    <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 0H15C15.5523 0 16 0.447716 16 1C16 1.55229 15.5523 2 15 2L1 2C0.447715 2 0 1.55228 0 1C0 0.447715 0.447715 0 1 0Z" fill="white"/>
+                                    </svg>
+                                </button>
+                                <span class="select-childs-count">2</span>
+                                <button class="select-childs-more" type="button">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 7V1C7 0.447715 7.44772 0 8 0C8.55229 0 9 0.447715 9 1V7L15 7C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9L9 9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55228 0 8C0 7.44771 0.447715 7 1 7H7Z" fill="white"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="popup-parameters__submit">Применить</button>
         </form>
     </div>

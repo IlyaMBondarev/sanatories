@@ -441,6 +441,16 @@ if (document.querySelector('.select')) {
 
         block.addEventListener('click', () => {
             select.classList.toggle('active');
+            if (mobile && select.classList.contains('active')) {
+                history.pushState(null, 'выпадающий список')
+            }
+        })
+        
+        window.addEventListener('popstate', (event) => {
+            if (mobile && select.classList.contains('active')) {
+                event.preventDefault();
+                select.classList.remove('active')
+            }
         })
 
         document.addEventListener('click', (event) => {

@@ -16,6 +16,7 @@
 //@prepros-append components/product-sticky.js
 //@prepros-append components/slide-down.js
 //@prepros-append components/video.js
+//@prepros-append components/map.js
 
 
 //@prepros-append components/room-images.js

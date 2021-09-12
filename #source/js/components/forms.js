@@ -927,6 +927,60 @@ if (document.getElementById('popupSettingsForm')) {
     })
 }
 
+if (document.getElementById('filtersForm')) {
+    let filtersForm = document.getElementById('filtersForm');
+
+    let requiredInputs = filtersForm.querySelectorAll('._req');
+
+    requiredInputs.forEach(req => {
+        req.addEventListener('change', () => {
+            req.classList.remove('_error');
+        })
+        req.addEventListener('input', () => {
+            req.classList.remove('_error');
+        })
+    })
+
+    filtersForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let errors = 0;
+
+        requiredInputs.forEach(req => {
+            if (!isValid(req)) {
+                errors++;
+                req.classList.add('_error');
+            }
+        })
+
+        if (!errors) {
+            let formData = new FormData(filtersForm);
+
+            //отправка
+
+            /*
+            let response = await fetch('/path', {
+                method: 'POST',
+                body: new FormData(formElem)
+                });
+
+            let result = await response.json();
+            */
+            let result = {
+                ok: true,
+            }
+
+            if (result.ok) {
+                
+            } else {
+                document.querySelector('.popups .popup-error .popup-error__title').textContent = 'Произошла какая-то ошибка. Попробуйте еще раз';
+                document.querySelector('.popups').classList.add('active');
+                document.querySelector('.popups .popup-error').classList.add('active');
+            }
+        }
+        
+    })
+}
+
 if (document.getElementById('popupReplyForm')) {
     let popupReplyForm = document.getElementById('popupReplyForm');
 
