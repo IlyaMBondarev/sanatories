@@ -1339,10 +1339,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
   }
   .select-calendar__exit {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+  }
+  .select-calendar__exit > .select-calendar__content {
+    margin-bottom: 0;
+    margin-right: 5px;
   }
   .select-calendar__count {
     display: flex;
