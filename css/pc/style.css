@@ -1117,6 +1117,10 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: middle;
   cursor: pointer;
 }
+.select-calendar__table td.disabled {
+  cursor: default;
+  color: #ffffff60;
+}
 .select-calendar__table td.date:hover {
   background: rgba(255, 255, 255, 0.1);
 }
@@ -1139,24 +1143,27 @@ h1, h2, h3, h4, h5, h6 {
 .select-calendar__around {
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 5px;
 }
 .select-calendar__enter {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .select-calendar__exit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .select-calendar__count {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10px;
 }
 .select-calendar__enter input[type=number], .select-calendar__exit input[type=number], .select-calendar__count input[type=number] {
   height: 32px;
@@ -1170,6 +1177,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #ffffff;
   -moz-appearance: textfield;
+}
+.select-calendar__enter input[type=number]:disabled, .select-calendar__exit input[type=number]:disabled, .select-calendar__count input[type=number]:disabled {
+  background: transparent;
 }
 .select-calendar__enter input[type=number]:placeholder, .select-calendar__exit input[type=number]:placeholder, .select-calendar__count input[type=number]:placeholder {
   color: #ffffff80;
@@ -1192,6 +1202,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 96px;
   border-radius: 5px;
 }
+.select-calendar__select.disabled {
+  background: transparent;
+}
+.select-calendar__select.disabled .select__block {
+  cursor: default;
+}
 .select-calendar__select .select__main {
   padding: 0 6px;
 }
@@ -1203,6 +1219,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .select-calendar__select .select__arrow {
   width: 6px;
+}
+.select-calendar__select.disabled .select__arrow {
+  display: none;
 }
 .select-calendar__select .select__current, .select-calendar__select .select__item {
   font-size: 14px;
@@ -1264,6 +1283,13 @@ h1, h2, h3, h4, h5, h6 {
 .wrapper__aside::-webkit-scrollbar-thumb {
   width: 0;
   background-color: transparent;
+}
+.wrapper__aside .select-calendar__parent {
+  width: 266px;
+  min-width: 266px;
+}
+.wrapper__aside .select-calendar__center {
+  padding: 16px 0;
 }
 .wrapper__aside-block {
   padding: 20px;
@@ -3263,6 +3289,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 .main-pick-up__submit {
   margin-left: auto;
+}
+.main-pick-up__item-title {
+  font-size: 40px;
+  line-height: 100%;
+  font-weight: 700;
+  color: #ffffff;
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
 }
 .main-pick-up__back {
   position: absolute;
@@ -5269,7 +5304,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff80;
   margin-bottom: 20px;
 }
-.product-item__images {
+.product-item__images .swiper-wrapper {
   display: grid;
   height: 430px;
   gap: 10px;
@@ -5294,6 +5329,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+.product-item__image:nth-child(n+6) {
+  display: none;
 }
 .product-item__images-btn {
   position: relative;
@@ -5464,14 +5502,9 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   margin-bottom: 20px;
 }
-.product-map__main {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 .product-map__block {
-  width: 44%;
-  margin-right: 2%;
+  width: 100%;
+  margin-right: 0;
 }
 .product-map__block-title {
   font-size: 17px;
@@ -5479,8 +5512,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 20px;
-}
-.product-map__block-title:not(:first-of-type) {
   margin-top: 30px;
 }
 .product-map__block-item {
@@ -5513,10 +5544,12 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   margin-bottom: 13px;
   transition: max-height 0.2s ease-in-out;
+  max-height: 370px;
+  overflow: hidden;
 }
 .product-medical-base__item {
   position: relative;
-  height: 171px;
+  height: 170px;
   width: calc((100% - 34px)/3);
   border-radius: 10px;
   background: #4E5AC0;
@@ -5809,23 +5842,23 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   margin-bottom: 20px;
 }
-.product-replies__items {
+.product-replies__items .swiper-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 30px;
+  margin-bottom: 30px;
 }
 .product-replies__item {
   width: calc((100% - 30px) / 2);
   background: #404A9B;
   border-radius: 10px;
   padding: 20px 15px 30px 20px;
-  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-}
-.product-replies__item:not(:nth-of-type(2n)) {
-  margin-right: 30px;
+  height: auto;
 }
 .product-replies__name {
   font-size: 17px;
@@ -5866,6 +5899,7 @@ h1, h2, h3, h4, h5, h6 {
 .product-replies__audio {
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
 .product-replies__audio > audio {
   width: 100%;
@@ -5969,6 +6003,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .product-rooms__parameters:hover img {
   transform: translateX(-5px);
+}
+.product-rooms__items {
+  overflow: hidden;
 }
 .product-rooms__more {
   display: flex;

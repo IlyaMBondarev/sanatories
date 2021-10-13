@@ -672,7 +672,7 @@ if (document.querySelector('.popup-room__slider > .swiper-container')) {
     });
 }
 
-if (document.querySelector('.popup-images > .swiper-container')) {
+if (document.querySelector('.popup-images > .swiper-container') && mobile) {
     const popupImagesSlider = new Swiper('.popup-images > .swiper-container', {
         navigation: {
             nextEl: '.swiper-button-next',
@@ -704,7 +704,7 @@ if (document.querySelector('.product-item__images.swiper-container')) {
     });
 }
 
-if (document.querySelector('.product-replies__items.swiper-container')) {
+if (document.querySelector('.product-replies__items.swiper-container') && mobile) {
     const productItemImagesSlider = new Swiper('.product-replies__items.swiper-container', {
         watchOverflow: true,
         slidesPerView: 'auto',
@@ -797,29 +797,29 @@ if (document.querySelector('._vert-tabs')) {
             contents = vertTabs.querySelectorAll('._vert-tabs-content');
         }
 
-        let activeIndex = null;
-
         buttons.forEach((button, index) => {
             if (button.classList.contains('active')) {
-                activeIndex = index;
                 button.classList.add('active');
-                contents[activeIndex].style.maxHeight = `${contents[activeIndex].scrollHeight}px`;
+                contents[index].style.maxHeight = `${contents[index].scrollHeight}px`;
             }
             button.addEventListener('click', () => {
-                if (activeIndex === index) {
-                    contents[activeIndex].style.maxHeight = '';
+                if (button.classList.contains('_vert-tabs-button-hide')) {
+                    button.classList.add('hidden')
+                }
+                if (button.classList.contains('active')) {
+                    contents[index].style.maxHeight = '';
                     button.classList.remove('active');
-                    contents[activeIndex].style.overflow = '';
+                    contents[index].style.overflow = '';
+                    contents[index].style.opacity = '';
                     setTimeout(() => {
-                        contents[activeIndex].style.overflow = '';
-                        activeIndex = null;
+                        contents[index].style.overflow = '';
                     }, 300)
                 } else {
-                    activeIndex = index;
                     button.classList.add('active');
-                    contents[activeIndex].style.maxHeight = `${contents[activeIndex].scrollHeight}px`;
+                    contents[index].style.maxHeight = `${contents[index].scrollHeight}px`;
+                    contents[index].style.opacity = '1';
                     setTimeout(() => {
-                        contents[activeIndex].style.overflow = 'visible';
+                        contents[index].style.overflow = 'visible';
                     }, 300)
                 }
             })
@@ -914,14 +914,71 @@ if (document.querySelector('.slide-down') && document.querySelector('.slide-to')
         })
     })
 }
-if (document.querySelector('._map')) {
-    let maps = document.querySelectorAll('._map');
+if (document.querySelector('._reply-open')) {
+    let replyBtns = document.querySelectorAll('._reply-open');
 
-    maps.forEach(map => {
-        map.addEventListener('click', () => {
-            if (map.classList.contains('_map')) {
-                // загрузка карты по каким-то параметрам
-                map.classList.remove('_map');
+    replyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.dataset.reply) {
+                let reply = document.createElement('div');
+                
+                reply.style.cssText = `position: fixed;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100vw;
+                                        height: 100vh;
+                                        z-index: 9999999;
+                                        transition: all 0.3s ease-in-out;
+                                        opacity: 0;
+                                        background: #00000080;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        cursor: pointer;
+                                        `;
+
+                let replyText = document.createElement('div');
+
+                replyText.style.cssText = `min-width: 300px;
+                                            width: 500px;
+                                            max-width: 80vw;
+                                            overflow: auto;
+                                            max-height: 80vh;
+                                            background: #404A9B;
+                                            padding: 20px;
+                                            border-radius: 10px;
+                                            font-size: 20px;
+                                            line-height: 27px;
+                                            color: #ffffff;
+                                            `;
+                replyText.textContent = btn.dataset.reply;
+
+                reply.appendChild(replyText);
+
+                document.querySelector('body').appendChild(reply);
+
+                setTimeout(() => {
+                    reply.style.opacity = '1';
+                }, 0);
+
+                reply.addEventListener('click', () => {
+                    reply.style.opacity = '0';
+                    setTimeout(() => {
+                        document.querySelector('body').removeChild(reply);
+                    }, 300);
+                })
+            }
+        })
+    })
+}
+if (document.querySelector('._video')) {
+    let videos = document.querySelectorAll('._video');
+
+    videos.forEach(video => {
+        video.addEventListener('click', () => {
+            if (video.classList.contains('_video')) {
+                video.innerHTML = `<iframe src="${video.dataset.linktovideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="height: 100%; width: 100%"></iframe>`;
+                video.classList.remove('_video');
             }
         })
     })
@@ -953,22 +1010,20 @@ if (document.querySelector('.popup-room__demo') && document.querySelector('.popu
         })
     })
 }
-if (document.querySelector('._medical-base')) {
+/* if (document.querySelector('._medical-base')) {
     let medicalBase = document.querySelector('._medical-base');
     let medicalBaseItems = medicalBase.querySelector('._medical-base-items');
+    let medicalBaseItemsChilds = medicalBaseItems.querySelector('._medical-base-items > *');
     let medicalBaseLoadBtn = medicalBase.querySelector('._medical-base-load');
+
+    if (medicalBaseItemsChilds.length > medicalBaseItems.dataset.defaultCountOfMaxShownItems) {
+        medicalBaseItems.style.maxHeight = `${}px`;
+    } else {
+        medicalBaseLoadBtn.classList.add('hidden')
+    }
 
     medicalBaseLoadBtn.addEventListener('click', () => {
         if (medicalBaseLoadBtn.classList.contains('_medical-base-load')) {
-            medicalBaseItems.style.maxHeight = `${medicalBaseItems.scrollHeight}px`;
-
-            //загрузка новых блоков
-            let item = medicalBaseItems.children[0].outerHTML;
-            let randomCountItems = Math.floor(Math.random()*10) + 2;
-            for (let i = 0; i < randomCountItems; i++) {
-                medicalBaseItems.innerHTML += item;
-            }
-            //конец загрузки
 
             setTimeout(() => {
                 medicalBaseItems.style.maxHeight = `${medicalBaseItems.scrollHeight}px`;
@@ -977,27 +1032,36 @@ if (document.querySelector('._medical-base')) {
             medicalBaseLoadBtn.classList.add('hidden');
         }
     })
-}
+} */
 if (document.querySelector('._rooms')) {
     let rooms = document.querySelector('._rooms');
     let roomsItems = rooms.querySelector('._rooms-items');
+    let roomsItemsChilds = roomsItems.querySelectorAll('._rooms-items > *');
     let roomsLoadBtn = rooms.querySelector('._rooms-load');
+
+    if (!roomsItems.dataset.defaultcountofmaxshownitems) {
+        roomsItems.dataset.defaultcountofmaxshownitems = 2;
+    }
+
+    if (roomsItemsChilds.length > roomsItems.dataset.defaultcountofmaxshownitems) {
+        let currHeigth = 0;
+
+        for (let i = 0; i < roomsItems.dataset.defaultcountofmaxshownitems; i++) {
+            currHeigth += roomsItemsChilds[i].scrollHeight + 18;
+        }
+
+        roomsItems.style.maxHeight = `${currHeigth}px`;
+
+        setTimeout(() => {
+            roomsItems.style.transition = 'max-height 0.2s ease-in-out';
+        })
+    } else {
+        roomsLoadBtn.classList.add('hidden')
+    }
 
     roomsLoadBtn.addEventListener('click', () => {
         if (roomsLoadBtn.classList.contains('_rooms-load')) {
             roomsItems.style.maxHeight = `${roomsItems.scrollHeight}px`;
-
-            //загрузка новых блоков
-            let item = roomsItems.children[0].outerHTML;
-            let randomCountItems = Math.ceil(Math.random()*5);
-            for (let i = 0; i < randomCountItems; i++) {
-                roomsItems.innerHTML += item;
-            }
-            //конец загрузки
-
-            setTimeout(() => {
-                roomsItems.style.maxHeight = `${roomsItems.scrollHeight}px`;
-            }, 0)
             roomsLoadBtn.classList.remove('_rooms-load');
             roomsLoadBtn.classList.add('hidden');
         }
@@ -1118,9 +1182,9 @@ function fillTable(currYear, currMonth, calendarObj) {
     let startActiveDateTime = new Date(+calendarObj.calendarEnterMonthCurr.dataset.year, +calendarObj.calendarEnterMonthCurr.dataset.month, +calendarObj.calendarEnterDay.value).getTime();
     let endActiveDateTime = new Date(+calendarObj.calendarExitMonthCurr.dataset.year, +calendarObj.calendarExitMonthCurr.dataset.month, +calendarObj.calendarExitDay.value).getTime();
     if (DNfirst != 0) {
-        for(let i = 1; i < DNfirst; i++) calendar += '<td></td>';
+        for(let i = 1; i < DNfirst; i++) calendar += '<td class="disabled"></td>';
     } else {
-        for(let i = 0; i < 6; i++) calendar += '<td></td>';
+        for(let i = 0; i < 6; i++) calendar += '<td class="disabled"></td>';
     }
     if (calendarObj.calendarTable.dataset.nextyear === 'true') {
         for(let i = 1; i <= Dlast; i++) {
@@ -1131,7 +1195,9 @@ function fillTable(currYear, currMonth, calendarObj) {
                     calendar += '<td class="date active">' + i + '</td>';
                 }
             } else {
-                if (+currYear === new Date().getFullYear() && +currMonth === new Date().getMonth() && i === new Date().getDate()) {
+                if (new Date(currYear, currMonth, i).getTime() < new Date().getTime() - 24*60*60*1000) {
+                    calendar += '<td class="disabled">' + i + '</td>';
+                } else if (+currYear === new Date().getFullYear() && +currMonth === new Date().getMonth() && i === new Date().getDate()) {
                     calendar += '<td class="date today">' + i + '</td>';
                 } else {
                     calendar += '<td class="date">' + i + '</td>';
@@ -1150,7 +1216,9 @@ function fillTable(currYear, currMonth, calendarObj) {
                     calendar += '<td class="date active">' + i + '</td>';
                 }
             } else {
-                if (+currYear === new Date().getFullYear() && +currMonth === new Date().getMonth() && i === new Date().getDate()) {
+                if (new Date(currYear, currMonth, i).getTime() < new Date().getTime() - 24*60*60*1000) {
+                    calendar += '<td class="disabled">' + i + '</td>';
+                } else if (+currYear === new Date().getFullYear() && +currMonth === new Date().getMonth() && i === new Date().getDate()) {
                     calendar += '<td class="date today">' + i + '</td>';
                 } else {
                     calendar += '<td class="date">' + i + '</td>';
@@ -1162,7 +1230,7 @@ function fillTable(currYear, currMonth, calendarObj) {
         }
     }
     
-    for(let i = DNlast; i < 7; i++) calendar += '<td></td>';
+    for(let i = DNlast; i < 7; i++) calendar += '<td class="disabled"></td>';
 
     calendarObj.calendarTable.querySelector('tbody').innerHTML = calendar;
     calendarObj.calendarTable.dataset.month = D.getMonth();
@@ -1171,10 +1239,14 @@ function fillTable(currYear, currMonth, calendarObj) {
     calendarObj.calendarMonth.innerHTML = month[D.getMonth()];
 }
 
-function pullDates(currYear, enterYear, exitYear, enterMonth, exitMonth, enterDate, exitDate, calendarObj) {
+function pullDates(currYear, enterYear, exitYear, enterMonth, exitMonth, enterDate, exitDate, calendarObj, isHovered = true) {
 
     if (Math.ceil(new Date(enterYear, enterMonth, enterDate).getTime() - new Date().getTime())/24/60/60/1000 < 0) {
         enterYear = 1 + +enterYear;
+        exitYear = 1 + +exitYear;
+    } else if (Math.ceil(new Date(enterYear - 1, enterMonth, enterDate).getTime() > new Date().getTime())) {
+        enterYear = +enterYear - 1;
+        exitYear = +exitYear - 1;
     }
 
     if (Math.ceil(new Date(exitYear, exitMonth, exitDate).getTime() - new Date().getTime())/24/60/60/1000 < 0) {
@@ -1192,9 +1264,17 @@ function pullDates(currYear, enterYear, exitYear, enterMonth, exitMonth, enterDa
     }
 
     if (datesDifference <= 0) {
-        [startDate, endDate] = [endDate, startDate];
-        [enterYear, enterMonth, enterDate] = [exitYear, exitMonth, exitDate];
-        datesDifference = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24);
+        if (isHovered) {
+            [startDate, endDate] = [endDate, startDate];
+            [enterYear, enterMonth, enterDate] = [exitYear, exitMonth, exitDate];
+            datesDifference = Math.round((endDate.getTime() - startDate.getTime())/1000/60/60/24);
+        } else {
+            datesDifference = calendarObj.calendarCountDays.value;
+            endDate = new Date(enterYear, enterMonth, +enterDate + +datesDifference);
+            exitYear = endDate.getFullYear();
+            exitMonth = endDate.getMonth();
+            exitDate = endDate.getDate();
+        }
     }
 
     if (new Date().getFullYear() % 4 === 0) {
@@ -1362,9 +1442,9 @@ function fillTable2(currYear, currMonth, currDate, calendarObj) {
     let DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay();
     let calendar = '<tr>';
     if (DNfirst != 0) {
-        for(let i = 1; i < DNfirst; i++) calendar += '<td></td>';
+        for(let i = 1; i < DNfirst; i++) calendar += '<td class="disabled"></td>';
     } else {
-        for(let i = 0; i < 6; i++) calendar += '<td></td>';
+        for(let i = 0; i < 6; i++) calendar += '<td class="disabled"></td>';
     }
     for(let i = 1; i <= Dlast; i++) {
         if (+calendarObj.calendarCurr.dataset.year === +currYear && +calendarObj.calendarCurr.dataset.month === +currMonth && +currDate === +i) {
@@ -1374,7 +1454,9 @@ function fillTable2(currYear, currMonth, currDate, calendarObj) {
                 calendar += '<td class="date active">' + i + '</td>';
             }
         } else {
-            if (+currYear === new Date().getFullYear() && +currMonth === new Date().getMonth() && i === new Date().getDate()) {
+            if (new Date(currYear, currMonth, i).getTime() < new Date().getTime() - 24*60*60*1000) {
+                calendar += '<td class="disabled">' + i + '</td>';
+            } else if (+currYear === new Date().getFullYear() && +currMonth === new Date().getMonth() && i === new Date().getDate()) {
                 calendar += '<td class="date today">' + i + '</td>';
             } else {
                 calendar += '<td class="date">' + i + '</td>';
@@ -1385,7 +1467,7 @@ function fillTable2(currYear, currMonth, currDate, calendarObj) {
         }
     }
     
-    for(let i = DNlast; i < 7; i++) calendar += '<td></td>';
+    for(let i = DNlast; i < 7; i++) calendar += '<td class="disabled"></td>';
 
     calendarObj.calendarTable.querySelector('tbody').innerHTML = calendar;
     calendarObj.calendarTable.dataset.date = currDate;
@@ -1441,6 +1523,8 @@ if (document.querySelector('.select')) {
     let selects = document.querySelectorAll('.select');
 
     selects.forEach(select => {
+        if (!(select.classList.contains('disabled'))) {
+        
         let block = select.querySelector('.select-block');
         let current = select.querySelector('.select-current');
 
@@ -1546,6 +1630,8 @@ if (document.querySelector('.select')) {
                 startCountDays
             }
             
+            calendarExitDay.disabled = true;
+            calendarExitMonth.classList.add('disabled');
             calendarTable.dataset.month = new Date().getMonth();
             calendarTable.dataset.year = new Date().getFullYear();
 
@@ -1569,13 +1655,13 @@ if (document.querySelector('.select')) {
                 } else if (calendarExitDay.value < 1 && calendarExitDay.value !== '') {
                     calendarExitDay.value = 1;
                 }
-                pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj);
+                pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj, false);
             })
             
             calendarEnterDay.addEventListener('blur', () => {
                 if (calendarEnterDay.value == '') {
                     calendarEnterDay.value = 1;
-                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj);
+                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj, false);
                 }
             })
             
@@ -1587,13 +1673,13 @@ if (document.querySelector('.select')) {
                 } else if (calendarExitDay.value < 1 && calendarExitDay.value !== '') {
                     calendarExitDay.value = 1;
                 }
-                pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj);
+                pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj, false);
             })
             
             calendarExitDay.addEventListener('blur', () => {
                 if (calendarExitDay.value == '') {
                     calendarExitDay.value = 1;
-                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj);
+                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj, false);
                 }
             })
 
@@ -1602,7 +1688,7 @@ if (document.querySelector('.select')) {
                     if (calendarEnterDay.value > new Date(calendarTable.dataset.year, +index + 1, 0).getDate()) {
                         calendarEnterDay.value = new Date(calendarTable.dataset.year, +index + 1, 0).getDate();
                     }
-                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, index, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj);
+                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, index, calendarExitMonthCurr.dataset.month, calendarEnterDay.value, calendarExitDay.value, calendarObj, false);
                 })
             })
 
@@ -1611,7 +1697,7 @@ if (document.querySelector('.select')) {
                     if (calendarExitDay.value > new Date(calendarTable.dataset.year, +index + 1, 0).getDate()) {
                         calendarExitDay.value = new Date(calendarTable.dataset.year, +index + 1, 0).getDate();
                     }
-                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, index, calendarEnterDay.value, calendarExitDay.value, calendarObj);
+                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, calendarObj.calendarExitMonthCurr.dataset.year, calendarEnterMonthCurr.dataset.month, index, calendarEnterDay.value, calendarExitDay.value, calendarObj, false);
                 })
             })
             
@@ -1621,11 +1707,15 @@ if (document.querySelector('.select')) {
                 let endDate = new Date(startDate.getTime()+((+calendarObj.calendarCountDays.value + 1)*24*60*60*1000));
 
                 if (startDate.getFullYear() === endDate.getFullYear() && startDate.getMonth() === endDate.getMonth() && startDate.getDate() === endDate.getDate()) {
-                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, endDate.getFullYear(), startDate.getMonth(), endDate.getMonth(), startDate.getDate(), endDate.getDate(), calendarObj);
+                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, endDate.getFullYear(), startDate.getMonth(), endDate.getMonth(), startDate.getDate(), endDate.getDate(), calendarObj, false);
                 } else if (+endDate.getDate() === 1) {
-                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, endDate.getFullYear(), startDate.getMonth(), endDate.getMonth()-1, startDate.getDate(), new Date(calendarTable.dataset.year, endDate.getMonth(), 0).getDate(), calendarObj);
+                    if (+endDate.getMonth() === 0) {
+                        pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, endDate.getFullYear(), startDate.getMonth(), 11, startDate.getDate(), new Date(calendarTable.dataset.year, endDate.getMonth(), 0).getDate(), calendarObj, false);
+                    } else {
+                        pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, endDate.getFullYear(), startDate.getMonth(), endDate.getMonth()-1, startDate.getDate(), new Date(calendarTable.dataset.year, endDate.getMonth(), 0).getDate(), calendarObj, false);
+                    }
                 } else {
-                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, endDate.getFullYear(), startDate.getMonth(), endDate.getMonth(), startDate.getDate(), endDate.getDate()-1, calendarObj);
+                    pullDates(calendarTable.dataset.year, calendarObj.calendarEnterMonthCurr.dataset.year, endDate.getFullYear(), startDate.getMonth(), endDate.getMonth(), startDate.getDate(), endDate.getDate()-1, calendarObj, false);
                 }
             })
             
@@ -1639,6 +1729,7 @@ if (document.querySelector('.select')) {
                 if (item.classList.contains('active')) {
                     activeItems[index] = item.textContent;
                 }
+
                 item.addEventListener('click', () => {
                     if (activeItems[index]) {
                         item.classList.remove('active');
@@ -1663,6 +1754,18 @@ if (document.querySelector('.select')) {
                         select.classList.remove('active');
                     }
                 })
+
+                let values = Object.values(activeItems);
+
+                if (values.length > 1) {
+                    current.innerHTML = 'Выбрано ' + values.length + ' профиля';
+                } else if (values.length === 1) {
+                    current.innerHTML = values[0];
+                } else {
+                    current.innerHTML = 'Ничего не выбрано';
+                }
+                
+                currentInput.value = values.join(',');
             })
         } else if (select.querySelector('.select-list')) {
             let list = select.querySelector('.select-list');
@@ -1674,6 +1777,9 @@ if (document.querySelector('.select')) {
                 if (item.classList.contains('active')) {
                     activeIndex = index;
                 }
+                current.innerHTML = items[activeIndex].textContent;
+                currentInput.value = items[activeIndex].textContent;
+
                 item.addEventListener('click', () => {
                     if (current.dataset.month) {
                         select.classList.remove('active');
@@ -1823,6 +1929,8 @@ if (document.querySelector('.select')) {
                 ticketsCurrentInput.value = +childsCount + +parentsCount;
                 ticketsCurrentInput.classList.remove('_error');
             })
+        }
+    
         }
     })
 }

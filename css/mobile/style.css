@@ -1305,6 +1305,10 @@ h1, h2, h3, h4, h5, h6 {
     vertical-align: middle;
     cursor: pointer;
   }
+  .select-calendar__table td.disabled {
+    cursor: default;
+    color: #ffffff60;
+  }
   .select-calendar__table td.date:hover {
     background: rgba(255, 255, 255, 0.1);
   }
@@ -1325,23 +1329,26 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 5px;
   }
   .select-calendar__enter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .select-calendar__exit {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .select-calendar__count {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
   }
   .select-calendar__enter input[type=number], .select-calendar__exit input[type=number], .select-calendar__count input[type=number] {
     height: 32px;
@@ -1355,6 +1362,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: #ffffff;
     -moz-appearance: textfield;
+  }
+  .select-calendar__enter input[type=number]:disabled, .select-calendar__exit input[type=number]:disabled, .select-calendar__count input[type=number]:disabled {
+    background: transparent;
   }
   .select-calendar__enter input[type=number]:placeholder, .select-calendar__exit input[type=number]:placeholder, .select-calendar__count input[type=number]:placeholder {
     color: #ffffff80;
@@ -1376,6 +1386,12 @@ h1, h2, h3, h4, h5, h6 {
     height: 32px;
     width: 96px;
     border-radius: 5px;
+  }
+  .select-calendar__select.disabled {
+    background: transparent;
+  }
+  .select-calendar__select.disabled .select__block {
+    cursor: default;
   }
   .select-calendar__select .select__main {
     padding: 0 6px;
@@ -3478,6 +3494,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     top: 0;
     left: 0;
+    padding: 0;
   }
   .main-pick-up__tabs {
     display: flex;
@@ -6028,7 +6045,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff80;
     margin-bottom: 20px;
   }
-  .product-item__images {
+  .product-item__images .swiper-wrapper {
     display: flex;
     height: 250px;
     gap: 0;
@@ -6055,6 +6072,9 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+  }
+  .product-item__image:nth-child(n+6) {
+    display: block;
   }
   .product-item__images-btn {
     display: none;
@@ -6243,22 +6263,17 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     object-fit: cover;
   }
-  .product-map__main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-  }
   .product-map__block {
     width: 100%;
     margin-right: 0;
-    padding: 10px 0;
+    padding: 0;
   }
   .product-map__block:not(:last-child) {
     border-bottom: 2px solid #ffffff10;
   }
   .product-map__block-title {
     padding: 14px 0;
+    margin-top: 0;
     margin-bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -6275,15 +6290,14 @@ h1, h2, h3, h4, h5, h6 {
   .product-map__block-title.active img {
     transform: rotateX(180deg);
   }
-  .product-map__block-list {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+  .product-map__block-list:not(:last-child) {
+    border-bottom: 2px solid #ffffff10;
   }
   .product-map__block-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    column-gap: 5px;
     font-size: 17px;
     line-height: 120%;
     font-weight: 600;
@@ -6315,6 +6329,8 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
     margin-bottom: 13px;
     transition: max-height 0.2s ease-in-out;
+    max-height: 360px;
+    overflow: hidden;
   }
   .product-medical-base__item {
     position: relative;
@@ -6377,6 +6393,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media screen and (max-width: 620px) {
+  .product-medical-base__items {
+    max-height: 730px;
+  }
   .product-medical-base__item {
     width: 100%;
     max-width: 320px;
@@ -6657,18 +6676,17 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
     margin-bottom: 20px;
   }
-  .product-replies__items {
+  .product-replies__items .swiper-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-bottom: 20px;
     margin-bottom: 10px;
+    column-gap: initial;
+    row-gap: initial;
   }
-  .product-replies__items > .swiper-wrapper {
-    align-items: stretch;
-  }
-  .product-replies__items .swiper-slide {
+  .product-replies__items .swiper-wrapper .swiper-slide {
     height: auto;
   }
   .product-replies__item {
@@ -6850,6 +6868,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px 0 5px 20px;
     border-left: 1px solid #ffffff10;
     margin-left: 5px;
+  }
+  .product-rooms__items {
+    overflow: hidden;
   }
   .product-rooms__more {
     margin: 30px auto 0;
@@ -7049,13 +7070,15 @@ h1, h2, h3, h4, h5, h6 {
     color: #97DC52;
   }
   .product-tabs__tab-content {
+    margin: 0;
+    padding: 0;
     max-height: 0;
     overflow: hidden;
-    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out 0.5s;
+    transition: all 0.3s ease-in-out;
   }
-  .product-tabs.active {
+  .product-tabs__tab-content.active {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out 0.5s, max-height 0.5s ease-in-out 0.5s;
+    transition: all 0.3s ease-in-out;
   }
   .product-tabs__title {
     font-size: 22px;
@@ -7063,6 +7086,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .product-tabs__title.active + * {
+    margin: 10px 0;
   }
   .product-tabs__content {
     font-size: 17px;
@@ -7109,6 +7136,9 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 120%;
     font-weight: 700;
     color: #ffffff;
+  }
+  .product-tabs__item-title:not(:first-child) {
+    border-top: 2px solid #ffffff10;
   }
   .product-tabs__item-title img {
     margin: 0 15px;
